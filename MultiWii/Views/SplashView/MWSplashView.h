@@ -12,4 +12,10 @@
 {
     UIImageView* _background;
 }
+
+-(void) makeFlyInAnimation;
+-(void) makeFlyOutAnimation;
+
+@property (nonatomic, readonly) NSTimeInterval animateInTime;
+@property (nonatomic, readonly) NSTimeInterval animateOutTime;
 @end

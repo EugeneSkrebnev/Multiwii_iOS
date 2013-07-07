@@ -16,7 +16,11 @@ static BOOL wasInited = NO;
 {
     if (!wasInited)
     {
+        wasInited = YES;
         _background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame.png"]];
+        
+        self.width = _background.frame.size.width;
+        self.height = _background.frame.size.height;
         [self addSubview:_background];
         
         _centerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"center.png"]];

@@ -13,9 +13,6 @@
 		44453CAA17518F6900929EC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44453CA817518F6900929EC8 /* InfoPlist.strings */; };
 		44453CAC17518F6900929EC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453CAB17518F6900929EC8 /* main.m */; };
 		44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453CAF17518F6900929EC8 /* MWAppDelegate.m */; };
-		44453CB217518F6900929EC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB117518F6900929EC8 /* Default.png */; };
-		44453CB417518F6900929EC8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB317518F6900929EC8 /* Default@2x.png */; };
-		44453CB617518F6900929EC8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB517518F6900929EC8 /* Default-568h@2x.png */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -57,9 +54,6 @@
 		44453CAD17518F6900929EC8 /* MultiWii-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiWii-Prefix.pch"; sourceTree = "<group>"; };
 		44453CAE17518F6900929EC8 /* MWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWAppDelegate.h; sourceTree = "<group>"; };
 		44453CAF17518F6900929EC8 /* MWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWAppDelegate.m; sourceTree = "<group>"; };
-		44453CB117518F6900929EC8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		44453CB317518F6900929EC8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		44453CB517518F6900929EC8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
@@ -161,9 +155,6 @@
 				44453CA817518F6900929EC8 /* InfoPlist.strings */,
 				44453CAB17518F6900929EC8 /* main.m */,
 				44453CAD17518F6900929EC8 /* MultiWii-Prefix.pch */,
-				44453CB117518F6900929EC8 /* Default.png */,
-				44453CB317518F6900929EC8 /* Default@2x.png */,
-				44453CB517518F6900929EC8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -362,9 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44453CAA17518F6900929EC8 /* InfoPlist.strings in Resources */,
-				44453CB217518F6900929EC8 /* Default.png in Resources */,
-				44453CB417518F6900929EC8 /* Default@2x.png in Resources */,
-				44453CB617518F6900929EC8 /* Default-568h@2x.png in Resources */,
 				44C7CA3F1789C5520059C199 /* Splash.png in Resources */,
 				44C7CA401789C5520059C199 /* Splash5.png in Resources */,
 				44C7CA411789C5520059C199 /* Splash@2x.png in Resources */,
@@ -483,6 +471,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -495,6 +484,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

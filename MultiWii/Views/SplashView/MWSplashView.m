@@ -21,7 +21,9 @@
 {
     MAQuadrocopterFrame* frame;
 }
+
 static BOOL wasInited = NO;
+
 -(void) makeInit
 {
     if (!wasInited)
@@ -48,13 +50,15 @@ static BOOL wasInited = NO;
             spashImageName = @"Splash@2x.png";
         }
         self.frame = [UIScreen mainScreen].bounds;
-        UIImage* spashImage = [UIImage imageNamed:@"Splash5.png"];
+        UIImage* spashImage = [UIImage imageNamed:spashImageName];
         _background = [[UIImageView alloc] initWithImage:spashImage];
         [self addSubview:_background];
         frame = [[MAQuadrocopterFrame alloc] init];
         [self addSubview:frame];
     }
 }
+
+-(void) makeFlyOutAnimation{NSLog(@"NOT IMPL");}
 
 -(void) makeFlyInAnimation
 {
@@ -63,18 +67,28 @@ static BOOL wasInited = NO;
 
     [frame startSpin];
     
-    [UIView animateWithDuration:2 animations:^{
+    [UIView animateWithDuration:flyInAnimationDuration animations:^{
         frame.center = finishFlyPoint;
         frame.transform = CGAffineTransformMakeScale(1.0, 1.0);
     } completion:^(BOOL finished) {
         [frame stopSpin];
-        double delayInSeconds = 1.5;
+        double delayInSeconds = propSpinDuration;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [frame stopPropSpin];
         });
     }];
 
+}
+
+-(NSTimeInterval)animateInTime
+{
+    return flyInAnimationDuration + propSpinDuration;
+}
+
+-(NSTimeInterval)animateOutTime
+{
+    return flyOutAnimationDuration + propSpinDuration;
 }
 
 - (id)init
@@ -97,9 +111,9 @@ static BOOL wasInited = NO;
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)aframe
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:aframe];
     if (self)
     {
         [self makeInit];
