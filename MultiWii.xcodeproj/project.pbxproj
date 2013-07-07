@@ -16,6 +16,14 @@
 		44453CB217518F6900929EC8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB117518F6900929EC8 /* Default.png */; };
 		44453CB417518F6900929EC8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB317518F6900929EC8 /* Default@2x.png */; };
 		44453CB617518F6900929EC8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44453CB517518F6900929EC8 /* Default-568h@2x.png */; };
+		44B4BB681780DF6900CE91A8 /* MWSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB671780DF6900CE91A8 /* MWSplashView.m */; };
+		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
+		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
+		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
+		44C7CA411789C5520059C199 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3E1789C5520059C199 /* Splash@2x.png */; };
+		44C7CA431789C7700059C199 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA421789C7700059C199 /* Default.png */; };
+		44C7CA451789C77C0059C199 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA441789C77C0059C199 /* Default@2x.png */; };
+		44C7CA471789C7880059C199 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA461789C7880059C199 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,16 @@
 		44453CB117518F6900929EC8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		44453CB317518F6900929EC8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		44453CB517518F6900929EC8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		44B4BB661780DF6900CE91A8 /* MWSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSplashView.h; sourceTree = "<group>"; };
+		44B4BB671780DF6900CE91A8 /* MWSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSplashView.m; sourceTree = "<group>"; };
+		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		44C7CA3D1789C5520059C199 /* Splash5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash5.png; sourceTree = "<group>"; };
+		44C7CA3E1789C5520059C199 /* Splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash@2x.png"; sourceTree = "<group>"; };
+		44C7CA421789C7700059C199 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../Default.png; sourceTree = "<group>"; };
+		44C7CA441789C77C0059C199 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../Default@2x.png"; sourceTree = "<group>"; };
+		44C7CA461789C7880059C199 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +96,11 @@
 		44453CA517518F6900929EC8 /* MultiWii */ = {
 			isa = PBXGroup;
 			children = (
+				44C7CA3A1789C5520059C199 /* Resources */,
+				44B4BB691780E09700CE91A8 /* Extesions */,
+				44B4BB631780D3EB00CE91A8 /* Views */,
+				44B4BB641780D3EB00CE91A8 /* ViewControllers */,
+				44B4BB651780D3EB00CE91A8 /* BluetoothLogic */,
 				44453CAE17518F6900929EC8 /* MWAppDelegate.h */,
 				44453CAF17518F6900929EC8 /* MWAppDelegate.m */,
 				44453CA617518F6900929EC8 /* Supporting Files */,
@@ -97,6 +120,59 @@
 				44453CB517518F6900929EC8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44B4BB631780D3EB00CE91A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44B4BB661780DF6900CE91A8 /* MWSplashView.h */,
+				44B4BB671780DF6900CE91A8 /* MWSplashView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44B4BB641780D3EB00CE91A8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		44B4BB651780D3EB00CE91A8 /* BluetoothLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BluetoothLogic;
+			sourceTree = "<group>";
+		};
+		44B4BB691780E09700CE91A8 /* Extesions */ = {
+			isa = PBXGroup;
+			children = (
+				44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */,
+				44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */,
+			);
+			path = Extesions;
+			sourceTree = "<group>";
+		};
+		44C7CA3A1789C5520059C199 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA3B1789C5520059C199 /* Splash */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44C7CA3B1789C5520059C199 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA461789C7880059C199 /* Default-568h@2x.png */,
+				44C7CA441789C77C0059C199 /* Default@2x.png */,
+				44C7CA421789C7700059C199 /* Default.png */,
+				44C7CA3C1789C5520059C199 /* Splash.png */,
+				44C7CA3D1789C5520059C199 /* Splash5.png */,
+				44C7CA3E1789C5520059C199 /* Splash@2x.png */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +231,12 @@
 				44453CB217518F6900929EC8 /* Default.png in Resources */,
 				44453CB417518F6900929EC8 /* Default@2x.png in Resources */,
 				44453CB617518F6900929EC8 /* Default-568h@2x.png in Resources */,
+				44C7CA3F1789C5520059C199 /* Splash.png in Resources */,
+				44C7CA401789C5520059C199 /* Splash5.png in Resources */,
+				44C7CA411789C5520059C199 /* Splash@2x.png in Resources */,
+				44C7CA431789C7700059C199 /* Default.png in Resources */,
+				44C7CA451789C77C0059C199 /* Default@2x.png in Resources */,
+				44C7CA471789C7880059C199 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +249,8 @@
 			files = (
 				44453CAC17518F6900929EC8 /* main.m in Sources */,
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
+				44B4BB681780DF6900CE91A8 /* MWSplashView.m in Sources */,
+				44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +330,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -257,6 +342,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +367,7 @@
 				44453CBB17518F6900929EC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
