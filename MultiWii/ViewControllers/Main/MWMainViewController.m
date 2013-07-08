@@ -22,9 +22,11 @@ static BOOL firstTimeShow = YES;
     if (firstTimeShow)
     {
         firstTimeShow = NO;
-        _splash = [[MWSplashView alloc] init];
-        [self.view addSubview:_splash];
-        
+//        _splash = [[MWSplashView alloc] init];
+//        [self.view addSubview:_splash];
+        self.navigationController.navigationBarHidden = YES;
+        if (!_splash)
+            self.navigationController.navigationBarHidden = NO;
     }
 }
 
@@ -41,11 +43,25 @@ static BOOL firstTimeShow = YES;
             } completion:^(BOOL finished) {
                 [_splash removeFromSuperview];
                 _splash = nil;
+                self.navigationController.navigationBarHidden = NO;
             }];
 
             
         });
     }
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return cell;
+}
+
+
 
 @end

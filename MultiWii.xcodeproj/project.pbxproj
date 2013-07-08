@@ -41,6 +41,18 @@
 		44C7CA7D1789D9860059C199 /* switch_locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA6F1789D9860059C199 /* switch_locked@2x.png */; };
 		44C7CA7E1789D9860059C199 /* switch_unlocked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA701789D9860059C199 /* switch_unlocked@2x.png */; };
 		44C7CA7F1789D9860059C199 /* unlocked_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA711789D9860059C199 /* unlocked_icon@2x.png */; };
+		44C7CA82178A02640059C199 /* top_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA81178A02640059C199 /* top_bar@2x.png */; };
+		44C7CA84178A0BF20059C199 /* gradient_title-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA83178A0BF10059C199 /* gradient_title-text@2x.png */; };
+		44C7CA8C178A0D610059C199 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA86178A0D610059C199 /* Montserrat-Bold.ttf */; };
+		44C7CA8D178A0D610059C199 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA87178A0D610059C199 /* Montserrat-Regular.ttf */; };
+		44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA88178A0D610059C199 /* MontserratAlternates-Bold.ttf */; };
+		44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA89178A0D610059C199 /* MontserratAlternates-Regular.ttf */; };
+		44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA8A178A0D610059C199 /* MontserratSubrayada-Bold.ttf */; };
+		44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA8B178A0D610059C199 /* MontserratSubrayada-Regular.ttf */; };
+		44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA93178A19300059C199 /* bg_pattern@2x.png */; };
+		44C7CA96178A19300059C199 /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA94178A19300059C199 /* cell@2x.png */; };
+		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
+		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +101,20 @@
 		44C7CA6F1789D9860059C199 /* switch_locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_locked@2x.png"; sourceTree = "<group>"; };
 		44C7CA701789D9860059C199 /* switch_unlocked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_unlocked@2x.png"; sourceTree = "<group>"; };
 		44C7CA711789D9860059C199 /* unlocked_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlocked_icon@2x.png"; sourceTree = "<group>"; };
+		44C7CA81178A02640059C199 /* top_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_bar@2x.png"; sourceTree = "<group>"; };
+		44C7CA83178A0BF10059C199 /* gradient_title-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_title-text@2x.png"; sourceTree = "<group>"; };
+		44C7CA86178A0D610059C199 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		44C7CA87178A0D610059C199 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		44C7CA88178A0D610059C199 /* MontserratAlternates-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.ttf"; sourceTree = "<group>"; };
+		44C7CA89178A0D610059C199 /* MontserratAlternates-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Regular.ttf"; sourceTree = "<group>"; };
+		44C7CA8A178A0D610059C199 /* MontserratSubrayada-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratSubrayada-Bold.ttf"; sourceTree = "<group>"; };
+		44C7CA8B178A0D610059C199 /* MontserratSubrayada-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratSubrayada-Regular.ttf"; sourceTree = "<group>"; };
+		44C7CA93178A19300059C199 /* bg_pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern@2x.png"; sourceTree = "<group>"; };
+		44C7CA94178A19300059C199 /* cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell@2x.png"; sourceTree = "<group>"; };
+		44C7CA9B178A1C430059C199 /* MWBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBaseTableViewCell.h; sourceTree = "<group>"; };
+		44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseTableViewCell.m; sourceTree = "<group>"; };
+		44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainMenuCell.h; sourceTree = "<group>"; };
+		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +188,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44C7CA98178A1C250059C199 /* Cells */,
 				44C7CA4C1789CDA40059C199 /* QuadFrameView */,
 				44C7CA4F1789CDA40059C199 /* KnobView */,
 				44C7CA481789CCEC0059C199 /* SplashView */,
@@ -198,6 +225,9 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44C7CA92178A192F0059C199 /* Common */,
+				44C7CA85178A0D610059C199 /* Fonts */,
+				44C7CA80178A02640059C199 /* NavigationBar */,
 				44C7CA601789D9850059C199 /* CheckBox */,
 				44C7CA631789D9850059C199 /* Knob */,
 				44C7CA671789D9860059C199 /* QuadFrame */,
@@ -300,6 +330,64 @@
 			path = Switch;
 			sourceTree = "<group>";
 		};
+		44C7CA80178A02640059C199 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA83178A0BF10059C199 /* gradient_title-text@2x.png */,
+				44C7CA81178A02640059C199 /* top_bar@2x.png */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		44C7CA85178A0D610059C199 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA86178A0D610059C199 /* Montserrat-Bold.ttf */,
+				44C7CA87178A0D610059C199 /* Montserrat-Regular.ttf */,
+				44C7CA88178A0D610059C199 /* MontserratAlternates-Bold.ttf */,
+				44C7CA89178A0D610059C199 /* MontserratAlternates-Regular.ttf */,
+				44C7CA8A178A0D610059C199 /* MontserratSubrayada-Bold.ttf */,
+				44C7CA8B178A0D610059C199 /* MontserratSubrayada-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		44C7CA92178A192F0059C199 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA93178A19300059C199 /* bg_pattern@2x.png */,
+				44C7CA94178A19300059C199 /* cell@2x.png */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		44C7CA98178A1C250059C199 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA99178A1C250059C199 /* BaseCell */,
+				44C7CA9A178A1C250059C199 /* MenuTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		44C7CA99178A1C250059C199 /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA9B178A1C430059C199 /* MWBaseTableViewCell.h */,
+				44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */,
+			);
+			path = BaseCell;
+			sourceTree = "<group>";
+		};
+		44C7CA9A178A1C250059C199 /* MenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */,
+				44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */,
+			);
+			path = MenuTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +462,16 @@
 				44C7CA7D1789D9860059C199 /* switch_locked@2x.png in Resources */,
 				44C7CA7E1789D9860059C199 /* switch_unlocked@2x.png in Resources */,
 				44C7CA7F1789D9860059C199 /* unlocked_icon@2x.png in Resources */,
+				44C7CA82178A02640059C199 /* top_bar@2x.png in Resources */,
+				44C7CA84178A0BF20059C199 /* gradient_title-text@2x.png in Resources */,
+				44C7CA8C178A0D610059C199 /* Montserrat-Bold.ttf in Resources */,
+				44C7CA8D178A0D610059C199 /* Montserrat-Regular.ttf in Resources */,
+				44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */,
+				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
+				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
+				44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */,
+				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
+				44C7CA96178A19300059C199 /* cell@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +491,8 @@
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
 				44C7CA5C1789CE480059C199 /* MWBaseViewController.m in Sources */,
 				44C7CA5F1789CE770059C199 /* MWMainViewController.m in Sources */,
+				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
+				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +573,7 @@
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -486,7 +586,7 @@
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

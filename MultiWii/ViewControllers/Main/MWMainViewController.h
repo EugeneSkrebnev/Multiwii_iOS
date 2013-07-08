@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MWBaseViewController.h"
 
-@interface MWMainViewController : MWBaseViewController
+@interface MWMainViewController : MWBaseViewController<UITableViewDataSource>
 
 @end
