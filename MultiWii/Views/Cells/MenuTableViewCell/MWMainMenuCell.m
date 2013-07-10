@@ -10,22 +10,35 @@
 
 @implementation MWMainMenuCell
 
-- (id)initWithFrame:(CGRect)frame
+@synthesize title = _title;
+
++(NSString*) cellId
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    return @"MWMainMenuCell_ID";
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void) makeInit
 {
-    // Drawing code
+//    self.selectedImageViewForIcon.image = [UIImage imageNamed:@""];
+//    self.imageViewForIcon.image = [UIImage imageNamed:@""];
+    
+    self.labelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
+    self.selectedLabelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
+    
+    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"];
+    self.labelForTitle.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
+    self.selectedLabelForTitle.textColor = [UIColor whiteColor];
 }
-*/
 
+-(void)setTitle:(NSString *)title
+{
+    _title = title;
+    self.labelForTitle.text = title;
+    self.selectedLabelForTitle.text = title;
+}
+
+-(NSString *)title
+{
+    return _title;
+}
 @end

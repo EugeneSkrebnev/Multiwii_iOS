@@ -10,5 +10,6 @@
 #import "MWBaseViewController.h"
 
 @interface MWMainViewController : MWBaseViewController<UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableViewForMenu;
 
 @end

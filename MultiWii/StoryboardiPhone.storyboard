@@ -17,7 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="49" id="Tk2-FK-azY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MWMainMenuCell_ID" rowHeight="49" id="Tk2-FK-azY" customClass="MWMainMenuCell">
                                         <rect key="frame" x="0.0" y="22" width="316" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -28,11 +28,53 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="316" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <view alpha="0.90000000000000002" contentMode="scaleToFill" id="ONv-e8-rta">
+                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="clQ-Ai-tIW">
+                                                            <rect key="frame" x="13" y="5" width="39" height="39"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LabelSEL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4xD-mT-ydS">
+                                                            <rect key="frame" x="67" y="5" width="244" height="39"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98431372549019602" green="0.1764705882352941" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view alpha="0.99999999999999989" contentMode="scaleToFill" id="AeH-jn-ZTU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="rKc-Xc-Pof">
+                                                            <rect key="frame" x="13" y="5" width="39" height="39"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hAa-3n-SAI">
+                                                            <rect key="frame" x="67" y="5" width="244" height="39"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="8lW-uu-QiG"/>
+                                            <outlet property="backgroundView" destination="AeH-jn-ZTU" id="fE2-eA-FZ8"/>
+                                            <outlet property="imageViewForIcon" destination="rKc-Xc-Pof" id="3C5-ST-z8u"/>
+                                            <outlet property="labelForTitle" destination="hAa-3n-SAI" id="R4b-7y-E3c"/>
+                                            <outlet property="selectedBackgroundView" destination="ONv-e8-rta" id="IW7-5h-c15"/>
+                                            <outlet property="selectedImageViewForIcon" destination="clQ-Ai-tIW" id="LsK-HG-70T"/>
+                                            <outlet property="selectedLabelForTitle" destination="4xD-mT-ydS" id="V6L-BH-pig"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -42,15 +84,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="-   MAIN MENU   -" id="eYE-8z-O8m"/>
                     <connections>
+                        <outlet property="tableViewForMenu" destination="Rtj-Ao-gng" id="akL-Zo-m0F"/>
                         <segue destination="jWZ-1Y-4yK" kind="push" identifier="1" id="1dN-04-JXm"/>
                         <segue destination="Tln-hl-f3a" kind="push" identifier="2" id="TVP-0U-m06"/>
                         <segue destination="Rd9-TW-Kbu" kind="push" identifier="3" id="5Ne-qN-1Uz"/>
                         <segue destination="XS1-hN-AIa" kind="push" identifier="4" id="E2J-80-hwP"/>
+                        <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="eG4-Pe-ZE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-iT-1P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="-251"/>
+            <point key="canvasLocation" x="95" y="229"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dgf-IU-RIO">
@@ -140,18 +184,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tT-eH-hqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="-144"/>
+            <point key="canvasLocation" x="-495" y="229"/>
         </scene>
     </scenes>
     <resources>
         <image name="cell@2x.png" width="632" height="98"/>
     </resources>
     <classes>
+        <class className="MWBaseTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseTableViewCell.h"/>
+        </class>
         <class className="MWBaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseViewController.h"/>
         </class>
+        <class className="MWMainMenuCell" superclassName="MWBaseTableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWMainMenuCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageViewForIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelForTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectedImageViewForIcon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="selectedLabelForTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="MWMainViewController" superclassName="MWBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableViewForMenu" candidateClass="UITableView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -10,4 +10,11 @@
 
 @interface MWMainMenuCell : MWBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *labelForTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewForIcon;
+@property (weak, nonatomic) IBOutlet UILabel *selectedLabelForTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *selectedImageViewForIcon;
+
+
+@property (nonatomic, strong) NSString* title;
 @end

@@ -10,20 +10,56 @@
 
 @implementation MWBaseTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+-(void) makeInit
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        [self makeInit];
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self makeInit];
+    }
+    return self;
 }
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self makeInit];
+    }
+    return self;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        [self makeInit];
+    }
+    return self;
+}
+
+
+
++(NSString*) cellId
+{
+    NSLog(@"abstract. check logic");
+    return @"BASE";
+}
 @end

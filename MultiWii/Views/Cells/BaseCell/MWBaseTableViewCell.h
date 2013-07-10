@@ -10,4 +10,7 @@
 
 @interface MWBaseTableViewCell : UITableViewCell
 
+-(void) makeInit;
++(NSString*) cellId;
+
 @end
