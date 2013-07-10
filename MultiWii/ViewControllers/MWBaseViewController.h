@@ -10,4 +10,5 @@
 
 @interface MWBaseViewController : UIViewController
 
+@property (nonatomic, strong) NSString* viewControllerTitle;
 @end

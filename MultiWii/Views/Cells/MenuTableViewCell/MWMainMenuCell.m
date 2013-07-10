@@ -25,7 +25,7 @@
     self.labelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
     self.selectedLabelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
     
-    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"];
+    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text@2x.png"];// stretchableImageWithLeftCapWidth:0 topCapHeight:0];
     self.labelForTitle.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
     self.selectedLabelForTitle.textColor = [UIColor whiteColor];
 }

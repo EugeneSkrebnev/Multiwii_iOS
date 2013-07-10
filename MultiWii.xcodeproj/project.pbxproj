@@ -22,8 +22,16 @@
 		44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD78178D5C3700DC95C6 /* settings@2x.png */; };
 		44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD7A178D5C3700DC95C6 /* telemetry@2x.png */; };
 		44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD7B178D5C3700DC95C6 /* telemetry_pressed@2x.png */; };
-		44A6BD87178D6D1B00DC95C6 /* gradient_menu-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD86178D6D1B00DC95C6 /* gradient_menu-text@2x.png */; };
 		44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD88178D703B00DC95C6 /* settings_pressed@2x.png */; };
+		44A6BD8B178D744B00DC95C6 /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD8A178D744B00DC95C6 /* circle@2x.png */; };
+		44A6BD8F178D7DE000DC95C6 /* arrow_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD8C178D7DE000DC95C6 /* arrow_press@2x.png */; };
+		44A6BD90178D7DE000DC95C6 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD8D178D7DE000DC95C6 /* arrow@2x.png */; };
+		44A6BD91178D7DE000DC95C6 /* grayLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD8E178D7DE000DC95C6 /* grayLine.png */; };
+		44A6BD94178D82E200DC95C6 /* back_button_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD92178D82E200DC95C6 /* back_button_press@2x.png */; };
+		44A6BD95178D82E200DC95C6 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD93178D82E200DC95C6 /* back_button@2x.png */; };
+		44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD96178D86B300DC95C6 /* gradient_menu-text.png */; };
+		44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD97178D86B300DC95C6 /* gradient_menu-text@2x.png */; };
+		44A6BD9F178D8AA000DC95C6 /* MWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BD9E178D8AA000DC95C6 /* MWMainViewController.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -37,7 +45,6 @@
 		44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA531789CDA40059C199 /* MAKnobContainerLabeledView.m */; };
 		44C7CA581789CDDC0059C199 /* StoryboardiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA571789CDDC0059C199 /* StoryboardiPhone.storyboard */; };
 		44C7CA5C1789CE480059C199 /* MWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA5B1789CE480059C199 /* MWBaseViewController.m */; };
-		44C7CA5F1789CE770059C199 /* MWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA5E1789CE770059C199 /* MWMainViewController.m */; };
 		44C7CA721789D9860059C199 /* aux_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA611789D9850059C199 /* aux_check@2x.png */; };
 		44C7CA731789D9860059C199 /* aux_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA621789D9850059C199 /* aux_uncheck@2x.png */; };
 		44C7CA741789D9860059C199 /* knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA641789D9860059C199 /* knob@2x.png */; };
@@ -86,8 +93,19 @@
 		44A6BD78178D5C3700DC95C6 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		44A6BD7A178D5C3700DC95C6 /* telemetry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telemetry@2x.png"; sourceTree = "<group>"; };
 		44A6BD7B178D5C3700DC95C6 /* telemetry_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telemetry_pressed@2x.png"; sourceTree = "<group>"; };
-		44A6BD86178D6D1B00DC95C6 /* gradient_menu-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_menu-text@2x.png"; sourceTree = "<group>"; };
 		44A6BD88178D703B00DC95C6 /* settings_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_pressed@2x.png"; sourceTree = "<group>"; };
+		44A6BD8A178D744B00DC95C6 /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
+		44A6BD8C178D7DE000DC95C6 /* arrow_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_press@2x.png"; sourceTree = "<group>"; };
+		44A6BD8D178D7DE000DC95C6 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		44A6BD8E178D7DE000DC95C6 /* grayLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayLine.png; sourceTree = "<group>"; };
+		44A6BD92178D82E200DC95C6 /* back_button_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button_press@2x.png"; sourceTree = "<group>"; };
+		44A6BD93178D82E200DC95C6 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		44A6BD96178D86B300DC95C6 /* gradient_menu-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_menu-text.png"; sourceTree = "<group>"; };
+		44A6BD97178D86B300DC95C6 /* gradient_menu-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient_menu-text@2x.png"; sourceTree = "<group>"; };
+		44A6BD9B178D89C700DC95C6 /* MWMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWMenuViewController.h; sourceTree = "<group>"; };
+		44A6BD9C178D89C700DC95C6 /* MWMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWMenuViewController.m; sourceTree = "<group>"; };
+		44A6BD9D178D8AA000DC95C6 /* MWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainViewController.h; sourceTree = "<group>"; };
+		44A6BD9E178D8AA000DC95C6 /* MWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainViewController.m; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
@@ -107,8 +125,6 @@
 		44C7CA571789CDDC0059C199 /* StoryboardiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardiPhone.storyboard; sourceTree = "<group>"; };
 		44C7CA5A1789CE480059C199 /* MWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBaseViewController.h; sourceTree = "<group>"; };
 		44C7CA5B1789CE480059C199 /* MWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseViewController.m; sourceTree = "<group>"; };
-		44C7CA5D1789CE770059C199 /* MWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainViewController.h; sourceTree = "<group>"; };
-		44C7CA5E1789CE770059C199 /* MWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainViewController.m; sourceTree = "<group>"; };
 		44C7CA611789D9850059C199 /* aux_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_check@2x.png"; sourceTree = "<group>"; };
 		44C7CA621789D9850059C199 /* aux_uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_uncheck@2x.png"; sourceTree = "<group>"; };
 		44C7CA641789D9860059C199 /* knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob@2x.png"; sourceTree = "<group>"; };
@@ -210,7 +226,12 @@
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				44A6BD86178D6D1B00DC95C6 /* gradient_menu-text@2x.png */,
+				44A6BD96178D86B300DC95C6 /* gradient_menu-text.png */,
+				44A6BD97178D86B300DC95C6 /* gradient_menu-text@2x.png */,
+				44A6BD8C178D7DE000DC95C6 /* arrow_press@2x.png */,
+				44A6BD8D178D7DE000DC95C6 /* arrow@2x.png */,
+				44A6BD8E178D7DE000DC95C6 /* grayLine.png */,
+				44A6BD8A178D744B00DC95C6 /* circle@2x.png */,
 				44A6BD72178D5C3700DC95C6 /* about@2x.png */,
 				44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */,
 				44A6BD74178D5C3700DC95C6 /* connect@2x.png */,
@@ -223,6 +244,15 @@
 				44A6BD7B178D5C3700DC95C6 /* telemetry_pressed@2x.png */,
 			);
 			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		44A6BD9A178D88F400DC95C6 /* MenuBase */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BD9B178D89C700DC95C6 /* MWMenuViewController.h */,
+				44A6BD9C178D89C700DC95C6 /* MWMenuViewController.m */,
+			);
+			path = MenuBase;
 			sourceTree = "<group>";
 		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
@@ -241,6 +271,7 @@
 			children = (
 				44C7CA5A1789CE480059C199 /* MWBaseViewController.h */,
 				44C7CA5B1789CE480059C199 /* MWBaseViewController.m */,
+				44A6BD9A178D88F400DC95C6 /* MenuBase */,
 				44C7CA591789CE2D0059C199 /* Main */,
 			);
 			path = ViewControllers;
@@ -323,8 +354,8 @@
 		44C7CA591789CE2D0059C199 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				44C7CA5D1789CE770059C199 /* MWMainViewController.h */,
-				44C7CA5E1789CE770059C199 /* MWMainViewController.m */,
+				44A6BD9D178D8AA000DC95C6 /* MWMainViewController.h */,
+				44A6BD9E178D8AA000DC95C6 /* MWMainViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -396,6 +427,8 @@
 		44C7CA92178A192F0059C199 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				44A6BD92178D82E200DC95C6 /* back_button_press@2x.png */,
+				44A6BD93178D82E200DC95C6 /* back_button@2x.png */,
 				44C7CA93178A19300059C199 /* bg_pattern@2x.png */,
 				44C7CA94178A19300059C199 /* cell@2x.png */,
 			);
@@ -522,8 +555,15 @@
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
 				44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */,
 				44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */,
-				44A6BD87178D6D1B00DC95C6 /* gradient_menu-text@2x.png in Resources */,
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
+				44A6BD8B178D744B00DC95C6 /* circle@2x.png in Resources */,
+				44A6BD8F178D7DE000DC95C6 /* arrow_press@2x.png in Resources */,
+				44A6BD90178D7DE000DC95C6 /* arrow@2x.png in Resources */,
+				44A6BD91178D7DE000DC95C6 /* grayLine.png in Resources */,
+				44A6BD94178D82E200DC95C6 /* back_button_press@2x.png in Resources */,
+				44A6BD95178D82E200DC95C6 /* back_button@2x.png in Resources */,
+				44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */,
+				44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,9 +582,9 @@
 				44C7CA551789CDA40059C199 /* MAKnob.m in Sources */,
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
 				44C7CA5C1789CE480059C199 /* MWBaseViewController.m in Sources */,
-				44C7CA5F1789CE770059C199 /* MWMainViewController.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
+				44A6BD9F178D8AA000DC95C6 /* MWMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
