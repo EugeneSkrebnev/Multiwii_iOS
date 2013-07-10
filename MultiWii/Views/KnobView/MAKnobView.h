@@ -15,7 +15,7 @@ typedef enum {
     MAKnobControlTypePanSpin,   
 } MAKnobControlType;
 
-@interface MAKnob : UIControl<UIGestureRecognizerDelegate>
+@interface MAKnobView : UIControl<UIGestureRecognizerDelegate>
 {
     UIView* _backgroundView;
     UIImageView* _knobView;

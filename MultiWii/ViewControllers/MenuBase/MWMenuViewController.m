@@ -8,28 +8,36 @@
 
 #import "MWMenuViewController.h"
 #import "MWMainMenuCell.h"
+#import "MWMenuSubtitleCell.h"
 
 @implementation MWMenuViewController
 {
 
-    NSArray* titlesForCells;
-    NSArray* imagesFileNamesForCells;
+    NSArray* _titlesForCells;
+    NSArray* _subtitlesForCells;
+    NSArray* _imagesFileNamesForCells;
 }
 
-static BOOL firstTimeShow = YES;
-static NSString* cell_ID;
+
+//static NSString* cell_ID;
 
 -(UIImage*) imageForMenuItemAtIndex:(int) index andSelected:(BOOL) selected
 {
     NSString* filename;
     if (selected)
-        filename = [NSString stringWithFormat:@"%@_pressed.png", imagesFileNamesForCells[index]];
+        filename = [NSString stringWithFormat:@"%@_pressed.png", _imagesFileNamesForCells[index]];
     else
-        filename = [NSString stringWithFormat:@"%@.png", imagesFileNamesForCells[index]];
+        filename = [NSString stringWithFormat:@"%@.png", _imagesFileNamesForCells[index]];
     return [UIImage imageNamed:filename];
 }
 
 -(NSArray*) titlesForMenu
+{
+    NSLog(@"abstract");
+    return @[];
+}
+
+-(NSArray*) subtitlesForMenu
 {
     NSLog(@"abstract");
     return @[];
@@ -46,14 +54,11 @@ static NSString* cell_ID;
 {
     [super viewDidLoad];
     
-    if (firstTimeShow)
-    {
-        firstTimeShow = NO;
-        
-        titlesForCells          = [self titlesForMenu];
-        imagesFileNamesForCells = [self iconsForMenu];
 
-    }
+    _titlesForCells          = [self titlesForMenu];
+    _imagesFileNamesForCells = [self iconsForMenu];
+    _subtitlesForCells       = [self subtitlesForMenu];
+    
     self.tableViewForMenu.dataSource = self;
     self.tableViewForMenu.delegate = self;
 }
@@ -68,28 +73,45 @@ static NSString* cell_ID;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return titlesForCells.count;
+    return _titlesForCells.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!cell_ID)
-        cell_ID = [MWMainMenuCell cellId];
+    MWMainMenuCell* cell;
     
-    MWMainMenuCell* cell = [tableView dequeueReusableCellWithIdentifier:cell_ID];
+    if ((_subtitlesForCells.count > indexPath.row) && ([_subtitlesForCells[indexPath.row] length] > 0))
+    {
+        cell = (MWMainMenuCell*)[MWMenuSubtitleCell loadView];
+        [cell makeInit];
+        [(MWMenuSubtitleCell*)cell setSubtitle:_subtitlesForCells[indexPath.row]];
+    }
+    else
+    {
+        cell = (MWMainMenuCell*)[MWMainMenuCell loadView];
+        [cell makeInit];
+    }
     
-    [cell makeInit];
-    cell.title = titlesForCells[indexPath.row];
-    
+    cell.title = _titlesForCells[indexPath.row];
     cell.imageViewForIcon.image = [self imageForMenuItemAtIndex:indexPath.row andSelected:NO];
     cell.selectedImageViewForIcon.image = [self imageForMenuItemAtIndex:indexPath.row andSelected:YES];
-    
+
+
     return cell;
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@(indexPath.row).stringValue sender:self];
+    @try
+    {
+        [self performSegueWithIdentifier:@(indexPath.row).stringValue sender:self];
+    }
+    @catch (NSException *exception)
+    {
+        [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    
 }
 
 - (void)viewDidUnload {

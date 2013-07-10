@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
 //
 
-#import "MAKnob.h"
+#import "MAKnobView.h"
 #define HANDLE_OVERLAP 15
-@implementation MAKnob
+@implementation MAKnobView
 {
     float _internalValue;
     float _internalMax;

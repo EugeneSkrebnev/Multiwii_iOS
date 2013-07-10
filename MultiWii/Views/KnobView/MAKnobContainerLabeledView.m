@@ -19,7 +19,7 @@ static BOOL wasInited = NO;
         wasInited = YES;
         self.height = 130;
         self.width = 100;
-        self.knobView = [[MAKnob alloc] init];
+        self.knobView = [[MAKnobView alloc] init];
         self.knobView.center = CGPointMake(self.width / 2, self.height - 50);
         [self addSubview:self.knobView];
         self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height - self.knobView.height)];

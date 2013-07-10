@@ -19,9 +19,6 @@
 
 -(void) makeInit
 {
-//    self.selectedImageViewForIcon.image = [UIImage imageNamed:@""];
-//    self.imageViewForIcon.image = [UIImage imageNamed:@""];
-    
     self.labelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
     self.selectedLabelForTitle.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
     

@@ -10,7 +10,7 @@
 #import "MAQuadrocopterFrame.h"
 
 #define startFlyPoint CGPointMake(self.width, 0)
-#define finishFlyPoint CGPointMake(self.width / 2, self.height - 150)
+#define finishFlyPoint CGPointMake(self.width / 2, self.height - 200)
 
 #define flyInAnimationDuration 1.4
 #define flyOutAnimationDuration 2

@@ -12,5 +12,6 @@
 
 -(void) makeInit;
 +(NSString*) cellId;
++(MWBaseTableViewCell*) loadView;
 
 @end

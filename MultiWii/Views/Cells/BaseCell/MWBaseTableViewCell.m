@@ -55,11 +55,22 @@
     return self;
 }
 
-
-
 +(NSString*) cellId
 {
     NSLog(@"abstract. check logic");
     return @"BASE";
 }
+
++(NSString*) xibName
+{
+    return NSStringFromClass(self);
+}
+
++(MWBaseTableViewCell*) loadView
+{
+    MWBaseTableViewCell* res = [[[NSBundle mainBundle] loadNibNamed:[self xibName] owner:nil options:nil] lastObject];
+    [res makeInit];
+    return res;
+}
+
 @end

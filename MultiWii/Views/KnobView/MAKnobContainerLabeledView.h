@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MAKnob.h"
+#import "MAKnobView.h"
 
 @interface MAKnobContainerLabeledView : UIView
 @property (nonatomic, strong) UILabel* valueLabel;
-@property (nonatomic, strong) MAKnob* knobView;
+@property (nonatomic, strong) MAKnobView* knobView;
 @end
