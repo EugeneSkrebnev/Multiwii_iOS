@@ -32,6 +32,7 @@
 		44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD96178D86B300DC95C6 /* gradient_menu-text.png */; };
 		44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD97178D86B300DC95C6 /* gradient_menu-text@2x.png */; };
 		44A6BD9F178D8AA000DC95C6 /* MWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BD9E178D8AA000DC95C6 /* MWMainViewController.m */; };
+		44A6BDA0178D8B1C00DC95C6 /* MWMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BD9C178D89C700DC95C6 /* MWMenuViewController.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -585,6 +586,7 @@
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
 				44A6BD9F178D8AA000DC95C6 /* MWMainViewController.m in Sources */,
+				44A6BDA0178D8B1C00DC95C6 /* MWMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
