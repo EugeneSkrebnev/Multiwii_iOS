@@ -73,6 +73,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView.rowHeight * _titlesForCells.count < 320 - tableView.top)
+        tableView.height = tableView.rowHeight * _titlesForCells.count;
+    
     return _titlesForCells.count;
 }
 
@@ -109,6 +112,8 @@
     }
     @catch (NSException *exception)
     {
+        NSLog(@"NSException !!! : %@", exception);
+        
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
     }
     

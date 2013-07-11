@@ -66,6 +66,18 @@
 		44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BDEE178E089900DC95C6 /* aux_check@2x.png */; };
 		44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BDEF178E089900DC95C6 /* aux_uncheck@2x.png */; };
 		44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BDF4178E095C00DC95C6 /* MACheckBox.m */; };
+		44A6BDF9178EBB6C00DC95C6 /* MWAuxSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BDF8178EBB6C00DC95C6 /* MWAuxSelectViewController.m */; };
+		44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BDFC178EC6C100DC95C6 /* MASwitch.m */; };
+		44A6BE08178EDC0C00DC95C6 /* MWBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE07178EDC0C00DC95C6 /* MWBaseButton.m */; };
+		44A6BE0B178EDC4000DC95C6 /* MWIconBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE0A178EDC4000DC95C6 /* MWIconBaseButton.m */; };
+		44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE0D178EDDBF00DC95C6 /* icon_button@2x.png */; };
+		44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE0E178EDDBF00DC95C6 /* icon_button_pressed@2x.png */; };
+		44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE12178EE50F00DC95C6 /* MWBuyButton.m */; };
+		44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE15178EE5F200DC95C6 /* MWVisitSiteButton.m */; };
+		44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE17178EE92000DC95C6 /* buy@2x.png */; };
+		44A6BE1C178EE92000DC95C6 /* site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE18178EE92000DC95C6 /* site@2x.png */; };
+		44A6BE1D178EE92000DC95C6 /* top_bar_button_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE19178EE92000DC95C6 /* top_bar_button_pressed@2x.png */; };
+		44A6BE1E178EE92000DC95C6 /* top_bar_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE1A178EE92000DC95C6 /* top_bar_button@2x.png */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -177,6 +189,24 @@
 		44A6BDEF178E089900DC95C6 /* aux_uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_uncheck@2x.png"; sourceTree = "<group>"; };
 		44A6BDF3178E095C00DC95C6 /* MACheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACheckBox.h; sourceTree = "<group>"; };
 		44A6BDF4178E095C00DC95C6 /* MACheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACheckBox.m; sourceTree = "<group>"; };
+		44A6BDF7178EBB6C00DC95C6 /* MWAuxSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAuxSelectViewController.h; sourceTree = "<group>"; };
+		44A6BDF8178EBB6C00DC95C6 /* MWAuxSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAuxSelectViewController.m; sourceTree = "<group>"; };
+		44A6BDFB178EC6C100DC95C6 /* MASwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASwitch.h; sourceTree = "<group>"; };
+		44A6BDFC178EC6C100DC95C6 /* MASwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASwitch.m; sourceTree = "<group>"; };
+		44A6BE06178EDC0C00DC95C6 /* MWBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBaseButton.h; sourceTree = "<group>"; };
+		44A6BE07178EDC0C00DC95C6 /* MWBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseButton.m; sourceTree = "<group>"; };
+		44A6BE09178EDC4000DC95C6 /* MWIconBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIconBaseButton.h; sourceTree = "<group>"; };
+		44A6BE0A178EDC4000DC95C6 /* MWIconBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWIconBaseButton.m; sourceTree = "<group>"; };
+		44A6BE0D178EDDBF00DC95C6 /* icon_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_button@2x.png"; sourceTree = "<group>"; };
+		44A6BE0E178EDDBF00DC95C6 /* icon_button_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_button_pressed@2x.png"; sourceTree = "<group>"; };
+		44A6BE11178EE50F00DC95C6 /* MWBuyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBuyButton.h; sourceTree = "<group>"; };
+		44A6BE12178EE50F00DC95C6 /* MWBuyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBuyButton.m; sourceTree = "<group>"; };
+		44A6BE14178EE5F200DC95C6 /* MWVisitSiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWVisitSiteButton.h; sourceTree = "<group>"; };
+		44A6BE15178EE5F200DC95C6 /* MWVisitSiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWVisitSiteButton.m; sourceTree = "<group>"; };
+		44A6BE17178EE92000DC95C6 /* buy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy@2x.png"; sourceTree = "<group>"; };
+		44A6BE18178EE92000DC95C6 /* site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "site@2x.png"; sourceTree = "<group>"; };
+		44A6BE19178EE92000DC95C6 /* top_bar_button_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_bar_button_pressed@2x.png"; sourceTree = "<group>"; };
+		44A6BE1A178EE92000DC95C6 /* top_bar_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_bar_button@2x.png"; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
@@ -433,6 +463,84 @@
 			path = AuxCheckBox;
 			sourceTree = "<group>";
 		};
+		44A6BDF6178EBAA100DC95C6 /* AUX */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BDF7178EBB6C00DC95C6 /* MWAuxSelectViewController.h */,
+				44A6BDF8178EBB6C00DC95C6 /* MWAuxSelectViewController.m */,
+			);
+			path = AUX;
+			sourceTree = "<group>";
+		};
+		44A6BDFA178EC6C100DC95C6 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BDFB178EC6C100DC95C6 /* MASwitch.h */,
+				44A6BDFC178EC6C100DC95C6 /* MASwitch.m */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		44A6BE01178EDB8100DC95C6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE02178EDB8200DC95C6 /* BaseButton */,
+				44A6BE03178EDB8200DC95C6 /* IconButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		44A6BE02178EDB8200DC95C6 /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE06178EDC0C00DC95C6 /* MWBaseButton.h */,
+				44A6BE07178EDC0C00DC95C6 /* MWBaseButton.m */,
+			);
+			path = BaseButton;
+			sourceTree = "<group>";
+		};
+		44A6BE03178EDB8200DC95C6 /* IconButton */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE04178EDB8200DC95C6 /* Buy */,
+				44A6BE05178EDB8200DC95C6 /* Site */,
+				44A6BE09178EDC4000DC95C6 /* MWIconBaseButton.h */,
+				44A6BE0A178EDC4000DC95C6 /* MWIconBaseButton.m */,
+			);
+			path = IconButton;
+			sourceTree = "<group>";
+		};
+		44A6BE04178EDB8200DC95C6 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE11178EE50F00DC95C6 /* MWBuyButton.h */,
+				44A6BE12178EE50F00DC95C6 /* MWBuyButton.m */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		44A6BE05178EDB8200DC95C6 /* Site */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE14178EE5F200DC95C6 /* MWVisitSiteButton.h */,
+				44A6BE15178EE5F200DC95C6 /* MWVisitSiteButton.m */,
+			);
+			path = Site;
+			sourceTree = "<group>";
+		};
+		44A6BE0C178EDDBE00DC95C6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				44A6BE17178EE92000DC95C6 /* buy@2x.png */,
+				44A6BE18178EE92000DC95C6 /* site@2x.png */,
+				44A6BE19178EE92000DC95C6 /* top_bar_button_pressed@2x.png */,
+				44A6BE1A178EE92000DC95C6 /* top_bar_button@2x.png */,
+				44A6BE0D178EDDBF00DC95C6 /* icon_button@2x.png */,
+				44A6BE0E178EDDBF00DC95C6 /* icon_button_pressed@2x.png */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +549,8 @@
 				44C7CA4F1789CDA40059C199 /* KnobView */,
 				44C7CA481789CCEC0059C199 /* SplashView */,
 				44A6BDF2178E095B00DC95C6 /* AuxCheckBox */,
+				44A6BDFA178EC6C100DC95C6 /* Switch */,
+				44A6BE01178EDB8100DC95C6 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,6 +564,7 @@
 				44C7CA591789CE2D0059C199 /* Main */,
 				44A6BDA1178D937C00DC95C6 /* Settings */,
 				44A6BDC9178DFC5D00DC95C6 /* About */,
+				44A6BDF6178EBAA100DC95C6 /* AUX */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +588,7 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44A6BE0C178EDDBE00DC95C6 /* Buttons */,
 				44A6BDED178E089800DC95C6 /* AUXCheckBox */,
 				44A6BDCD178E020300DC95C6 /* About */,
 				44A6BDA5178D9B0B00DC95C6 /* SettingsMenu */,
@@ -779,6 +891,12 @@
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
+				44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */,
+				44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */,
+				44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */,
+				44A6BE1C178EE92000DC95C6 /* site@2x.png in Resources */,
+				44A6BE1D178EE92000DC95C6 /* top_bar_button_pressed@2x.png in Resources */,
+				44A6BE1E178EE92000DC95C6 /* top_bar_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +924,12 @@
 				44A6BDCC178DFC8400DC95C6 /* MWAboutViewController.m in Sources */,
 				44A6BDEA178E06F800DC95C6 /* MWAUXCheckBoxCell.m in Sources */,
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
+				44A6BDF9178EBB6C00DC95C6 /* MWAuxSelectViewController.m in Sources */,
+				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
+				44A6BE08178EDC0C00DC95C6 /* MWBaseButton.m in Sources */,
+				44A6BE0B178EDC4000DC95C6 /* MWIconBaseButton.m in Sources */,
+				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
+				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
