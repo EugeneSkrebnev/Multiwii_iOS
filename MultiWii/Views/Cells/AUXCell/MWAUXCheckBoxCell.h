@@ -10,6 +10,7 @@
 #import "MACheckBox.h"
 
 @interface MWAUXCheckBoxCell : MWBaseTableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet MACheckBox *checkBox1;
 @property (weak, nonatomic) IBOutlet MACheckBox *checkBox2;

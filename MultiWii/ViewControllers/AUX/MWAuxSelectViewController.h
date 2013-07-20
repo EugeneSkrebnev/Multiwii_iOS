@@ -8,7 +8,7 @@
 
 #import "MWBaseViewController.h"
 
-@interface MWAuxSelectViewController : MWBaseViewController
+@interface MWAuxSelectViewController : MWBaseViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControlForAuxChannel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

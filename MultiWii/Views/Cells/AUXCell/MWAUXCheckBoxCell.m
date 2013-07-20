@@ -13,8 +13,12 @@
 -(void)makeInit
 {
     [super makeInit];
-    self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:13];
+    self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
     self.titleLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient_title-text@2x"]];
+
+    
+    self.backgroundImageView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.png"]];
+    self.backgroundImageView.image = [UIImage imageNamed:@"cell@2x"];
 }
 
 @end

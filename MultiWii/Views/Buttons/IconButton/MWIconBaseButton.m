@@ -13,13 +13,15 @@
 -(void) makeInit
 {
     [super makeInit];
-    UIImage* buttonImageHighlighted = [UIImage imageNamed:@"icon_button.png"];
+    UIImage* buttonImageHighlighted = [UIImage imageNamed:@"icon_button_pressed.png"];
     UIImage* buttonImage = [UIImage imageNamed:@"icon_button.png"];
     self.width  =  buttonImage.size.width;
     self.height =  buttonImage.size.height;
     [self setBackgroundImage:buttonImageHighlighted forState:UIControlStateHighlighted];
     [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
+    self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:16];
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (id)init

@@ -7,7 +7,8 @@
 //
 
 #import "MWAuxSelectViewController.h"
-
+#import "MWHeader3LabelView.h"
+#import "MWAUXCheckBoxCell.h"
 @interface MWAuxSelectViewController ()
 
 @end
@@ -24,7 +25,9 @@
     {
         [self.segmentControlForAuxChannel setTitle:[NSString stringWithFormat:@"AUX %d", i] forSegmentAtIndex:i - 1];
     }
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 60;
 }
 
 - (void)viewDidUnload {
@@ -32,4 +35,26 @@
     [self setTableView:nil];
     [super viewDidUnload];
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    MWHeader3LabelView* headerView = [[MWHeader3LabelView alloc] init];
+    
+    return headerView;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MWAUXCheckBoxCell* cell = (MWAUXCheckBoxCell*)[MWAUXCheckBoxCell loadView];
+    
+    return cell;
+}
+
+
 @end

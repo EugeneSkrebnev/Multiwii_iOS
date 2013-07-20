@@ -13,8 +13,9 @@
 -(void) makeInit
 {
     [super makeInit];
-    UIImage* visitSiteIcon = [UIImage imageNamed:@""];
+    UIImage* visitSiteIcon = [UIImage imageNamed:@"site.png"];
     [self setImage:visitSiteIcon forState:UIControlStateNormal];
+    [self setTitle:@"VISIT SITE / DONATE" forState:UIControlStateNormal];
 }
 
 @end

@@ -41,7 +41,10 @@ static BOOL firstTimeShow = YES;
         });
     }
     else
+    {
         self.tableViewForMenu.top = 0; //bad dirty fix
+        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count;
+    }
 }
 
 -(NSArray*) titlesForMenu

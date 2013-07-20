@@ -118,6 +118,7 @@
 								<string key="NSFrame">{{277, 18}, {36, 36}}</string>
 								<reference key="NSSuperview" ref="74929716"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="1054961251"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -164,6 +165,21 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+							<object class="IBUIImageView" id="1054961251">
+								<reference key="NSNextResponder" ref="74929716"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{0, 58}, {320, 2}}</string>
+								<reference key="NSSuperview" ref="74929716"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">separator.png</string>
+								</object>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 59}</string>
@@ -256,6 +272,14 @@
 					</object>
 					<int key="connectionID">16</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">backgroundImageView</string>
+						<reference key="source" ref="32771727"/>
+						<reference key="destination" ref="782445158"/>
+					</object>
+					<int key="connectionID">17</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -285,6 +309,7 @@
 							<reference ref="80950186"/>
 							<reference ref="123338614"/>
 							<reference ref="692366477"/>
+							<reference ref="1054961251"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -313,12 +338,18 @@
 						<reference key="object" ref="692366477"/>
 						<reference key="parent" ref="32771727"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">18</int>
+						<reference key="object" ref="1054961251"/>
+						<reference key="parent" ref="32771727"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">MWAUXCheckBoxCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -334,7 +365,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">16</int>
+			<int key="maxID">18</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -350,12 +381,17 @@
 					<string key="className">MWAUXCheckBoxCell</string>
 					<string key="superclassName">MWBaseTableViewCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="backgroundImageView">UIImageView</string>
 						<string key="checkBox1">MACheckBox</string>
 						<string key="checkBox2">MACheckBox</string>
 						<string key="checkBox3">MACheckBox</string>
 						<string key="titleLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="backgroundImageView">
+							<string key="name">backgroundImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="checkBox1">
 							<string key="name">checkBox1</string>
 							<string key="candidateClassName">MACheckBox</string>
@@ -400,10 +436,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">aux_check@2x.png</string>
-			<string key="NS.object.0">{72, 72}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="aux_check@2x.png">{72, 72}</string>
+			<string key="separator.png">{315, 2}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

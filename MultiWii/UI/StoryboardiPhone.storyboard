@@ -12,12 +12,24 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rtj-Ao-gng">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rtj-Ao-gng">
                                 <rect key="frame" x="2" y="0.0" width="316" height="274"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bhq-ok-V15" customClass="MWBuyButton">
+                                <rect key="frame" x="20" y="340" width="280" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -58,7 +70,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" id="2WR-X0-GS7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="2WR-X0-GS7">
                                 <rect key="frame" x="2" y="0.0" width="316" height="274"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -89,12 +101,24 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" id="RhR-cZ-WOm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="RhR-cZ-WOm">
                                 <rect key="frame" x="2" y="0.0" width="316" height="349"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="384-KY-cUd" customClass="MWVisitSiteButton">
+                                <rect key="frame" x="20" y="340" width="280" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SITE">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -220,10 +244,11 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vab-u3-exW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vab-u3-exW">
                                 <rect key="frame" x="2" y="57" width="316" height="359"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -340,8 +365,17 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="MWBaseButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseButton.h"/>
+        </class>
         <class className="MWBaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseViewController.h"/>
+        </class>
+        <class className="MWBuyButton" superclassName="MWIconBaseButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBuyButton.h"/>
+        </class>
+        <class className="MWIconBaseButton" superclassName="MWBaseButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWIconBaseButton.h"/>
         </class>
         <class className="MWMainViewController" superclassName="MWMenuViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWMainViewController.h"/>
@@ -354,6 +388,9 @@
         </class>
         <class className="MWSettingsViewController" superclassName="MWMenuViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MWSettingsViewController.h"/>
+        </class>
+        <class className="MWVisitSiteButton" superclassName="MWIconBaseButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWVisitSiteButton.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
