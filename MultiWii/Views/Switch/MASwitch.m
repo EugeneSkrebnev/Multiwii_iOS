@@ -22,9 +22,10 @@
     float _distanceBetweenStartFinish;
     CGPoint _startPoint;
     CGPoint _finishPoint;
+    BOOL wasInited;
 }
 
-static BOOL wasInited = NO;
+
 
 -(CGPoint) sliderPointForPosition:(float) position //[0..1]
 {

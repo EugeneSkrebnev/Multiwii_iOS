@@ -7,7 +7,13 @@
 //
 
 #import "MWBaseTableViewCell.h"
+#import "MAKnobContainerLabeledView.h"
 
 @interface MWPidAdjustCell : MWBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet MAKnobContainerLabeledView *leftKnobContainerView;
+@property (weak, nonatomic) IBOutlet MAKnobContainerLabeledView *middleKnobContainerView;
+@property (weak, nonatomic) IBOutlet MAKnobContainerLabeledView *rightKnobContainerView;
 @end

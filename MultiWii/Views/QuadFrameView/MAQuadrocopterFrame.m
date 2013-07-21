@@ -9,8 +9,9 @@
 #import "MAQuadrocopterFrame.h"
 
 @implementation MAQuadrocopterFrame
-
-static BOOL wasInited = NO;
+{
+    BOOL wasInited;
+}
 
 -(void) makeInit
 {

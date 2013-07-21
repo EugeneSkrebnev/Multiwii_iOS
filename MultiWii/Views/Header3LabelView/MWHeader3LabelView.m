@@ -16,7 +16,7 @@
 
 -(void) calculateSizes
 {
-    int width = self.width;
+    int width = self.width - self.leftCap;
     for (int x = 0; x < 20; x++) //20 too much but nobody care
     {
         int y = (width - (2 * x)) / 3;
@@ -54,7 +54,7 @@
         lbl.text = defaultTitles[i];
         
         [labels addObject:lbl];
-        lbl.frame = CGRectMake(_capFromLeft + (i * _labelWidth), 0, _labelWidth, self.height);
+        lbl.frame = CGRectMake(self.leftCap + _capFromLeft + (i * _labelWidth), 0, _labelWidth, self.height);
         [self initLabel:lbl];
     }
     
@@ -72,9 +72,15 @@
         for (int i = 0; i < 3; i++)
         {
             UILabel* lbl = self.labels[i];
-            lbl.frame = CGRectMake(_capFromLeft + (i * _labelWidth), 0, _labelWidth, self.height);
+            lbl.frame = CGRectMake(self.leftCap + _capFromLeft + (i * _labelWidth), 0, _labelWidth, self.height);
         }
     
+}
+
+-(void)setLeftCap:(int)leftCap
+{
+    _leftCap = leftCap;
+    [self setNeedsLayout];
 }
 
 - (id)init

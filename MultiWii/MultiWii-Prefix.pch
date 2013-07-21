@@ -14,3 +14,5 @@
 #endif
 
 #import "UIViewAdditions.h"
+#import "MWDefines.h"
+#import "CBUUID+StringValue.h"

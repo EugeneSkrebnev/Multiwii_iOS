@@ -9,8 +9,9 @@
 #import "MACheckBox.h"
 
 @implementation MACheckBox
-
-static BOOL wasInited = NO;
+{
+    BOOL wasInited;
+}
 
 -(void) makeInit
 {
@@ -19,14 +20,20 @@ static BOOL wasInited = NO;
         wasInited = YES;
         
         UIImage* selectedImage = [UIImage imageNamed:@"aux_check.png"];
-        UIImage* unSelectedImage = [UIImage imageNamed:@"aux_check.png"];
+        UIImage* unSelectedImage = [UIImage imageNamed:@"aux_uncheck.png"];
         
         self.width = selectedImage.size.width;
         self.height = selectedImage.size.height;
         
         [self setImage:selectedImage forState:(UIControlStateSelected)];
         [self setImage:unSelectedImage forState:(UIControlStateNormal)];
+        [self addTarget:self action:@selector(tapped) forControlEvents:(UIControlEventTouchUpInside)];
     }
+}
+
+-(void) tapped
+{
+    self.selected = !self.selected;
 }
 
 - (id)init

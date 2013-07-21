@@ -39,7 +39,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     MWHeader3LabelView* headerView = [[MWHeader3LabelView alloc] init];
-    
+    headerView.leftCap = 20;
     return headerView;
 }
 

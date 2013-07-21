@@ -14,5 +14,5 @@
 @property (nonatomic, strong) UILabel* label1;
 @property (nonatomic, strong) UILabel* label2;
 @property (nonatomic, strong) UILabel* label3;
-
+@property (nonatomic, assign) int leftCap;
 @end

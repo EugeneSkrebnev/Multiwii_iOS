@@ -55,7 +55,7 @@
 							<object class="IBUIButton" id="487325694">
 								<reference key="NSNextResponder" ref="74929716"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{40, 18}, {36, 36}}</string>
+								<string key="NSFrame">{{53, 18}, {36, 36}}</string>
 								<reference key="NSSuperview" ref="74929716"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="123338614"/>
@@ -93,7 +93,7 @@
 							<object class="IBUIButton" id="123338614">
 								<reference key="NSNextResponder" ref="74929716"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{154, 18}, {36, 36}}</string>
+								<string key="NSFrame">{{152, 18}, {36, 36}}</string>
 								<reference key="NSSuperview" ref="74929716"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="80950186"/>
@@ -115,10 +115,10 @@
 							<object class="IBUIButton" id="80950186">
 								<reference key="NSNextResponder" ref="74929716"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{277, 18}, {36, 36}}</string>
+								<string key="NSFrame">{{249, 18}, {36, 36}}</string>
 								<reference key="NSSuperview" ref="74929716"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1054961251"/>
+								<reference key="NSNextKeyView" ref="647359823"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -166,7 +166,7 @@
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUIImageView" id="1054961251">
+							<object class="IBUIImageView" id="647359823">
 								<reference key="NSNextResponder" ref="74929716"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{0, 58}, {320, 2}}</string>
@@ -307,9 +307,9 @@
 							<reference ref="782445158"/>
 							<reference ref="487325694"/>
 							<reference ref="80950186"/>
-							<reference ref="123338614"/>
 							<reference ref="692366477"/>
-							<reference ref="1054961251"/>
+							<reference ref="647359823"/>
+							<reference ref="123338614"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -340,7 +340,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
-						<reference key="object" ref="1054961251"/>
+						<reference key="object" ref="647359823"/>
 						<reference key="parent" ref="32771727"/>
 					</object>
 				</array>

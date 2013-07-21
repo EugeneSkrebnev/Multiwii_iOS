@@ -20,9 +20,9 @@
 @implementation MWSplashView
 {
     MAQuadrocopterFrame* frame;
+    BOOL wasInited;
 }
 
-static BOOL wasInited = NO;
 
 -(void) makeInit
 {

@@ -7,15 +7,16 @@
 //
 
 #import "MAKnobView.h"
-#define HANDLE_OVERLAP 15
+#define HANDLE_OVERLAP 22
 @implementation MAKnobView
 {
     float _internalValue;
     float _internalMax;
     float _internalMin;
+    BOOL wasInited;
 }
 
-static BOOL wasInited = NO;
+
 
 -(void)setSpinCount:(float)spinCount
 {
@@ -33,8 +34,8 @@ static BOOL wasInited = NO;
         UIImage* knobActive = [UIImage imageNamed:@"knob_active.png"];
         UIImage* knobHandle = [UIImage imageNamed:@"knob_handle.png"];
         
-        self.width  = 100;
-        self.height = 100;
+        self.width  = 90;
+        self.height = 80;
         
 
         _backgroundView = [[UIView alloc] initWithFrame:self.bounds];
@@ -73,6 +74,12 @@ static BOOL wasInited = NO;
         
         self.animateOnActivate = YES;
         
+        
+        //default settings
+        self.step = 0.1;
+        self.minValue = 0;
+        self.maxValue = 10;
+        self.spinCount = 2;
     }
 }
 
