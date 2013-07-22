@@ -16,3 +16,5 @@
 #import "UIViewAdditions.h"
 #import "MWDefines.h"
 #import "CBUUID+StringValue.h"
+#import "MWBluetoothManager.h"
+#import "MWPidSettingsManager.h"

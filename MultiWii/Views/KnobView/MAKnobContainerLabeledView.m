@@ -43,14 +43,12 @@
 -(void) valueChanged:(id) sender
 {
     int digitStep = 0;
-    self.knobView.step = 0.005;
     float fraq = self.knobView.step - (int)self.knobView.step;
-    while (fraq > 0.00000001)
+    while (fraq > 0.000001)
     {
         fraq *= 10;
         fraq = fraq - roundf(fraq);
         digitStep++;
-        NSLog(@"%f", fraq);
     }
     
     NSString* format = [NSString stringWithFormat:@"%@.%df", @"%", digitStep];

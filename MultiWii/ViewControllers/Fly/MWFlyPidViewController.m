@@ -1,22 +1,22 @@
 //
-//  MWSensorsPidViewController.m
+//  MWFlyPidViewController.m
 //  MultiWii
 //
 //  Created by Eugene Skrebnev on 7/21/13.
 //  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
 //
 
-#import "MWSensorsPidViewController.h"
-#import "MWPidAdjustCell.h"
+#import "MWFlyPidViewController.h"
 #import "MWHeader3LabelView.h"
-#import "MWSensorsPidSettings.h"
-@interface MWSensorsPidViewController ()
+#import "MWFlyPidSettings.h"
+#import "MWPidAdjustCell.h"
+
+@interface MWFlyPidViewController ()
 
 @end
 
-@implementation MWSensorsPidViewController
+@implementation MWFlyPidViewController
 {
-    NSArray* _iconFiles;
     NSArray* _titles;
     NSArray* _pids;
 }
@@ -24,18 +24,16 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- SENSORS -";
+    self.viewControllerTitle = @"- PID FLY -";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 98;
     
-    _titles = @[@"BARO", @"MAG"];
-    MWSensorsPidSettings* sensorsPid = [MWPidSettingsManager sharedInstance].sensorsPid;
-    _pids = @[sensorsPid.baro, sensorsPid.mag];
-
-    self.calibrateAccButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
-    self.calibrateMagButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
+    _titles = @[@"ROLL", @"PITCH", @"YAW", @"LEVEL"];
+    MWFlyPidSettings* flyPid = [MWPidSettingsManager sharedInstance].flyPid;
+    _pids = @[flyPid.roll, flyPid.pitch, flyPid.yaw, flyPid.level];
+    
 }
 
 
@@ -65,8 +63,6 @@
 
 - (void)viewDidUnload {
     [self setTableView:nil];
-    [self setCalibrateAccButton:nil];
-    [self setCalibrateMagButton:nil];
     [super viewDidUnload];
 }
 @end

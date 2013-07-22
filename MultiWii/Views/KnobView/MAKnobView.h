@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWSettingsEntity.h"
 
 typedef enum {
     MAKnobControlTypePanX,
@@ -35,7 +36,7 @@ typedef enum {
 @property (nonatomic, assign) float step;
 @property (nonatomic, assign) float spinCount;
 
-
+@property (nonatomic, strong) MWSettingsEntity* settingEntity;
 
 @property (nonatomic, assign) MAKnobControlType controlType;
 @end

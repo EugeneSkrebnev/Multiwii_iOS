@@ -75,11 +75,7 @@
         self.animateOnActivate = YES;
         
         
-        //default settings
-        self.step = 0.1;
-        self.minValue = 0;
-        self.maxValue = 10;
-        self.spinCount = 2;
+
     }
 }
 
@@ -171,6 +167,7 @@
         _savedTranslation.y += _currentTranslation.y;
         _currentTranslation = CGPointMake(0, 0);
         [self setInternalValue:_currentTranslation.x + _currentTranslation.y + _savedTranslation.x + _savedTranslation.y ];
+
         [self finishValueChanging];
     }
     
@@ -179,8 +176,28 @@
 
 -(void)setValue:(float)value
 {
+    [self setValue:value animated:NO];
+}
+
+-(void)setValue:(float)value animated:(BOOL)animated
+{
     [self willChangeValueForKey:@"value"];
     _value = value;
+    _internalValue = [self mapValue:_value
+                           inputMin:self.minValue
+                           inputMax:self.maxValue
+                          outputMin:_internalMin
+                          outputMax:_internalMax];
+
+    if (!self.active)//сплошные костыли(
+    {
+        _savedTranslation.x = _internalValue;
+        _savedTranslation.y = 0;
+        [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
+            [self setTransformForInternalValue];
+        }];
+    }
+    
     [self didChangeValueForKey:@"value"];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
@@ -226,8 +243,16 @@
         [self setTransformForInternalValue];
     }];
     [self mapValueFromInternal];
+}
 
-    
+-(void)setSettingEntity:(MWSettingsEntity *)settingEntity
+{
+    _settingEntity = settingEntity;
+    self.minValue = settingEntity.minValue;
+    self.maxValue = settingEntity.maxValue;
+    self.step = settingEntity.step;
+    self.spinCount = ((self.maxValue - self.minValue) / self.step) / 90;
+    self.value = settingEntity.value;
 }
 
 - (id)init
