@@ -14,4 +14,5 @@
 @property (nonatomic, assign)  float  maxValue;
 @property (nonatomic, assign)  float  step;
 @property (nonatomic, assign)  float  value;
+-(void) setValueWithoutNotification:(float)value;
 @end

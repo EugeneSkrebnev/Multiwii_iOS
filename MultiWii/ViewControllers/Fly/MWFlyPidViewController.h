@@ -7,8 +7,9 @@
 //
 
 #import "MWBaseViewController.h"
+#import "MASwitch.h"
 
 @interface MWFlyPidViewController : MWBaseViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) MASwitch* rollPitchLockSwitch;
 @end

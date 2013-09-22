@@ -66,11 +66,11 @@ static BOOL firstTimeShow = YES;
     {
 
         firstTimeShow = NO;
-        if (!YES)
+        if (!YES) // uncomment for enable splash
         {
             self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];
-            [self.view addSubview:_splash];  // uncomment for enable splash
+            [self.view addSubview:_splash];
         
             self.navigationController.navigationBar.alpha = 0;
             [self.navigationController setNavigationBarHidden:NO animated:NO]; //Animated must be NO!

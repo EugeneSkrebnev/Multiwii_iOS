@@ -9,6 +9,9 @@
 #import "MWBaseTableViewCell.h"
 
 @interface MWDevicePreviewCell : MWBaseTableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 +(MWDevicePreviewCell *)loadView;
+
 @end

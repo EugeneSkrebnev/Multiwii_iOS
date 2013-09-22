@@ -10,4 +10,5 @@
 
 @interface MASwitch : UIControl<UIGestureRecognizerDelegate>
 @property (nonatomic, assign) BOOL locked;
+@property (nonatomic, assign) float scale;
 @end

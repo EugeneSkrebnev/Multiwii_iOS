@@ -28,13 +28,7 @@
         [self.scanButton setHidden:scanModeOn animated:YES];
         [self.activityIndicator setHidden:!scanModeOn animated:YES];
 
-        if (scanModeOn)
-        {
-        }
-        else
-        {
-            
-        }
+
         
     };
     
@@ -44,6 +38,20 @@
     [MWBluetoothManager sharedInstance].didConnectBlock = ^(CBPeripheral* connectedDevice)
     {
         NSLog(@"connected device: %@", [[CBUUID UUIDWithCFUUID:connectedDevice.UUID] stringValue]);
+//        int connectedIndex = [[MWBluetoothManager sharedInstance].deviceList indexOfObject:[MWBluetoothManager sharedInstance].currentConnectedDevice];
+//        MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
+//        
+    };
+    
+    [MWBluetoothManager sharedInstance].didFailToConnectBlock = ^(NSError* err, CBPeripheral* per)
+    {
+        NSLog(@"%@", err);
+        if (err.code == 1002)
+        {
+            int connectedIndex = [[MWBluetoothManager sharedInstance].deviceList indexOfObject:[MWBluetoothManager sharedInstance].currentConnectedDevice];
+            [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
+
+        }
     };
     
     [MWBluetoothManager sharedInstance].didDiscoverCharacteristics = ^(CBPeripheral* connectedDevice)
@@ -52,17 +60,38 @@
             NSLog(@"Service ID: %@", id_.UUID.stringValue);
     };
     
-    [MWBluetoothManager sharedInstance].didRecieveData = ^(CBPeripheral* connectedDevice, NSData* incomingData)
+
+    
+    [MWBluetoothManager sharedInstance].readyForReadWriteBlock = ^
     {
-        NSLog(@"receive data with length : %d", incomingData.length);
-        for (int i = 0; i < incomingData.length; i++)
-        {
-            unsigned char *x = (unsigned char*)incomingData.bytes;
-            NSLog(@"%d", x[i]);
-        }
-        NSLog(@"receive data end batch");
-        
+        [self didConnectBluetoothUart];
     };
+}
+
+-(void) didConnectBluetoothUart
+{
+    int connectedIndex = [[MWBluetoothManager sharedInstance].deviceList indexOfObject:[MWBluetoothManager sharedInstance].currentConnectedDevice];
+    [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
+    MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
+    cell.titleLabel.textColor = [UIColor greenColor];
+    
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
+            NSLog(@"message recieve");
+            NSLog(@"%@", recieveData);
+        }];
+        
+    });
+}
+
+-(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
+{
+    MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    [cell.activityIndicator setHidden:hidden animated:animated];
+//    if (!hidden)
+//        [cell.activityIndicator startAnimating];
 }
 
 -(void) removeCallbackBlocksFromBluetoothManager
@@ -75,12 +104,13 @@
     [MWBluetoothManager sharedInstance].didConnectBlock = nil;
     [MWBluetoothManager sharedInstance].didDiscoverCharacteristics = nil;
     [MWBluetoothManager sharedInstance].didRecieveData = nil;
+    [MWBluetoothManager sharedInstance].readyForReadWriteBlock = nil;
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- PID FLY -";
+    self.viewControllerTitle = @"- CONNECT -";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -115,7 +145,10 @@
     [[MWBluetoothManager sharedInstance] stopScan];
     CBPeripheral* device = [MWBluetoothManager sharedInstance].deviceList[indexPath.row];
     
+    
+    [self setSpinnerHidden:NO forDeviceAtIndex:indexPath.row animated:YES];
     [[MWBluetoothManager sharedInstance] connectToDevice:device];
+
     
 }
 
@@ -133,8 +166,12 @@
         cell = [MWDevicePreviewCell loadView];
     
     CBPeripheral* device = [MWBluetoothManager sharedInstance].deviceList[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"name : %@", device.name];
-    cell.textLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor redColor];
+    NSLog(@"%@", [[MWBluetoothManager sharedInstance] metaDataForDevice:device]);
+    NSString* deviceName = device.name;
+    if (!deviceName)
+        deviceName = [[MWBluetoothManager sharedInstance] metaDataForDevice:device][@"kCBAdvDataLocalName"];
+    cell.titleLabel.text = [NSString stringWithFormat:@"name : %@", deviceName];
+    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor redColor];
     
     
     return cell;

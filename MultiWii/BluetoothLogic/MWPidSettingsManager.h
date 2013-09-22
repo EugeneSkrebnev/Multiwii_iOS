@@ -18,4 +18,5 @@
 @property (nonatomic, strong) MWSensorsPidSettings* sensorsPid;
 
 
+-(void) fillPidFromPayload:(NSData*) payload;
 @end

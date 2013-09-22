@@ -116,7 +116,6 @@
         
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
     }
-    
 }
 
 - (void)viewDidUnload {

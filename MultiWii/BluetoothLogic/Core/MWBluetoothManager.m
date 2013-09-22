@@ -262,6 +262,12 @@ characteristicUUID:(CBUUID *)characteristicUUID
     [self stopScan]; //work only with one at time.
     if (!device.isConnected)
         [_centralManager connectPeripheral:device options:nil];
+    else
+    {
+        NSError* err;
+        err = [NSError errorWithDomain:@"MW.already connected" code:1002 userInfo:nil];
+        [self centralManager:_centralManager didFailToConnectPeripheral:device error:err];
+    }
 }
 
 -(void) disconnectFromDevice:(CBPeripheral*) device

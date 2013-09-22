@@ -76,8 +76,29 @@
         
         
 
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnob) name:@"MAKnobViewUpdateNotification" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnobAnimated) name:@"MAKnobViewUpdateAnimatedNotification" object:nil];
     }
 }
+
+-(void) updateKnobAnimated
+{
+    if (self.settingEntity)
+        if (! (fabsf(self.value - self.settingEntity.value) < self.step / 5))
+        {
+            [self setValue:self.settingEntity.value animated:YES];
+        }
+}
+
+-(void) updateKnob
+{
+    if (self.settingEntity)
+        if (! (fabsf(self.value - self.settingEntity.value) < self.step / 5))
+        {
+            [self setValue:self.settingEntity.value animated:NO];
+        }
+}
+
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
@@ -243,6 +264,13 @@
         [self setTransformForInternalValue];
     }];
     [self mapValueFromInternal];
+    
+    if (self.settingEntity)
+    {
+        if (!(fabsf(self.value - self.settingEntity.value) < self.step / 2))
+            self.settingEntity.value = self.value;
+    }
+
 }
 
 -(void)setSettingEntity:(MWSettingsEntity *)settingEntity
@@ -253,6 +281,14 @@
     self.step = settingEntity.step;
     self.spinCount = ((self.maxValue - self.minValue) / self.step) / 90;
     self.value = settingEntity.value;
+    [settingEntity addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew) context:nil];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (self.settingEntity)
+        if (! (fabsf(self.value - self.settingEntity.value) < self.step / 5))
+            self.value = self.settingEntity.value;
 }
 
 - (id)init
@@ -283,6 +319,12 @@
         [self makeInit];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [self.settingEntity removeObserver:self forKeyPath:@"value"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

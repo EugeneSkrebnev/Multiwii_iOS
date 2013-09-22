@@ -35,6 +35,8 @@
 		44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D6A179D5223006E4EB7 /* MWConnectViewController.m */; };
 		44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D6E179D83C5006E4EB7 /* MWDevicePreviewCell.m */; };
 		44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */; };
+		44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */; };
+		44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D77179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -187,6 +189,10 @@
 		44519D6D179D83C5006E4EB7 /* MWDevicePreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDevicePreviewCell.h; sourceTree = "<group>"; };
 		44519D6E179D83C5006E4EB7 /* MWDevicePreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWDevicePreviewCell.m; sourceTree = "<group>"; };
 		44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWDevicePreviewCell.xib; sourceTree = "<group>"; };
+		44519D73179DCDA8006E4EB7 /* MWGlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGlobalManager.h; sourceTree = "<group>"; };
+		44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGlobalManager.m; sourceTree = "<group>"; };
+		44519D76179DCF88006E4EB7 /* MWMultiwiiProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMultiwiiProtocolManager.h; sourceTree = "<group>"; };
+		44519D77179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMultiwiiProtocolManager.m; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -366,6 +372,7 @@
 				44B4BB631780D3EB00CE91A8 /* Views */,
 				44B4BB641780D3EB00CE91A8 /* ViewControllers */,
 				44B4BB651780D3EB00CE91A8 /* BluetoothLogic */,
+				44519D72179DCD79006E4EB7 /* Business */,
 				44453CAE17518F6900929EC8 /* MWAppDelegate.h */,
 				44453CAF17518F6900929EC8 /* MWAppDelegate.m */,
 				44A6BDBE178DA6AD00DC95C6 /* UI */,
@@ -461,6 +468,17 @@
 				44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */,
 			);
 			path = DevicePreviewCell;
+			sourceTree = "<group>";
+		};
+		44519D72179DCD79006E4EB7 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				44519D73179DCDA8006E4EB7 /* MWGlobalManager.h */,
+				44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */,
+				44519D76179DCF88006E4EB7 /* MWMultiwiiProtocolManager.h */,
+				44519D77179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
@@ -1116,6 +1134,8 @@
 				44519D67179C7050006E4EB7 /* MWFlyPidViewController.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
+				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
+				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

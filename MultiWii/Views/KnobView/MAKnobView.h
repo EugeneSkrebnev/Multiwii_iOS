@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MWSettingsEntity.h"
 
+
 typedef enum {
     MAKnobControlTypePanX,
     MAKnobControlTypePanY,

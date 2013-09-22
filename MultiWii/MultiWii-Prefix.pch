@@ -18,3 +18,5 @@
 #import "CBUUID+StringValue.h"
 #import "MWBluetoothManager.h"
 #import "MWPidSettingsManager.h"
+#import "MWMultiwiiProtocolManager.h"
+#import "MWGlobalManager.h"

@@ -59,11 +59,27 @@
     [self setLockIconForPosition:sliderPosition];
 }
 
+//-(void)setNeedsLayout
+//{
+//    [super setNeedsLayout];
+//    _startPoint = [self sliderPointForPosition:0];
+//    _finishPoint = [self sliderPointForPosition:1];
+//
+//    
+//}
+
+-(void)setScale:(float)scale
+{
+    _scale = scale;
+    self.transform = CGAffineTransformMakeScale(scale, scale);
+}
+
 -(void) makeInit
 {
     if (!wasInited)
     {
         wasInited = YES;
+        self.scale = 0.8;
         self.backgroundColor = [UIColor clearColor];
         
         UIImage* backUnlock = [UIImage imageNamed:@"switch_unlocked.png"];
@@ -103,6 +119,7 @@
         
         [_slider addGestureRecognizer:panGesture];
         _slider.userInteractionEnabled = YES;
+
     }
 }
 
@@ -169,6 +186,11 @@
             [self setSliderPosition:1];
         }];
     }
+}
+
+-(BOOL)locked
+{
+    return _sliderPosition > 0.5;
 }
 
 - (id)init
