@@ -14,6 +14,6 @@
 @property (nonatomic, strong) MWPIDSettingsEntity* pitch;
 @property (nonatomic, strong) MWPIDSettingsEntity* yaw;
 @property (nonatomic, strong) MWPIDSettingsEntity* level;
-
+@property (nonatomic, strong) NSArray* allSettings;
 
 @end
