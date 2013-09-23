@@ -29,25 +29,11 @@
     {
         self.flyPid = [[MWFlyPidSettings alloc] init];
         self.sensorsPid = [[MWSensorsPidSettings alloc] init];
-
+        [self makePidsIndexInit];
+        [self makeDivedersInit];
     }
     return self;
 }
-
--(int) indexForPidObject
-{
-    return 1;
-}
-
-//-(NSData*) payloadFromPid
-//{
-//    
-//}
-
-//-(int) deviderForPidIndex:(int) index
-//{
-//}
-
 
 -(void) makePidsIndexInit
 {
@@ -119,33 +105,35 @@
     for (int i = 1; i <= 30; i++)
     {
         MWSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
-        NSNumber* divider = _dividersForIndexes[@(i)];
-        if (divider)
+        if (pid)
         {
-            pid.value = x[i] / divider.floatValue;
+            NSNumber* divider = _dividersForIndexes[@(i)];
+            if (divider)
+            {
+                pid.value = x[i] / divider.floatValue;
+            }
+        }
+        else
+        {
+//            NSLog(@"LOGIC ERROR %@", NSStringFromSelector(_cmd));
         }
     }
-//    self.flyPid.roll.p.value = x[1] / 10.;
-//    self.flyPid.roll.i.value = x[2] / 1000.;
-//    self.flyPid.roll.d.value = x[3];
-//    
-//    self.flyPid.pitch.p.value = x[4] / 10.;
-//    self.flyPid.pitch.i.value = x[5] / 1000.;
-//    self.flyPid.pitch.d.value = x[6];
-//    
-//    self.flyPid.yaw.p.value = x[7] / 10.;
-//    self.flyPid.yaw.i.value = x[8] / 1000.;
-//    self.flyPid.yaw.d.value = x[9];
-//    
-//    self.flyPid.level.p.value = x[22] / 10.;
-//    self.flyPid.level.i.value = x[23] / 100.;
-//    self.flyPid.level.d.value = x[24];
-//    
-//    self.sensorsPid.mag.p.value = x[25] / 10.;
-//    
-//    self.sensorsPid.baro.p.value = x[10] / 10.;
-//    self.sensorsPid.baro.i.value = x[11] / 1000.;
-//    self.sensorsPid.baro.d.value = x[12];
+}
 
+-(NSData*) payloadFromPids
+{
+    unsigned char bytes[30]; // 30 is 112 request size
+    for (int i = 0; i < 30; i++)
+    {
+        bytes[i] = 0;
+    }
+    for (NSNumber* key in _pidsPayloadIndexes)
+    {
+        MWSettingsEntity* pid = _pidsPayloadIndexes[key];
+        int pidIndex = key.intValue;
+        NSNumber* divider = _dividersForIndexes[key];
+        bytes[pidIndex - 1] = (char)(pid.value * divider.floatValue);
+    }
+    return [NSData dataWithBytes:bytes length:sizeof(bytes)];
 }
 @end

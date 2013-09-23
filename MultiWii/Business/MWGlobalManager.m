@@ -47,29 +47,29 @@
     self.version = x[1];
     int copterType = x[2];
     
-    self.copterType = -1;
+    _copterType = -1;
     if (copterType == 1)
-        self.copterType = MWGlobalManagerQuadTypeTricopter;
+        _copterType = MWGlobalManagerQuadTypeTricopter;
     if (copterType == 2)
-        self.copterType = MWGlobalManagerQuadTypePlus;
+        _copterType = MWGlobalManagerQuadTypePlus;
     if (copterType == 3)
-        self.copterType = MWGlobalManagerQuadTypeX;
+        _copterType = MWGlobalManagerQuadTypeX;
     if (copterType == 4)
-        self.copterType = MWGlobalManagerQuadTypeBicopter;
+        _copterType = MWGlobalManagerQuadTypeBicopter;
     if (copterType == 5)
-        self.copterType = MWGlobalManagerQuadTypeGimbal;
+        _copterType = MWGlobalManagerQuadTypeGimbal;
     if (copterType == 6)
-        self.copterType = MWGlobalManagerQuadTypeY6;
+        _copterType = MWGlobalManagerQuadTypeY6;
     if (copterType == 7)
-        self.copterType = MWGlobalManagerQuadTypeHexPlus;
+        _copterType = MWGlobalManagerQuadTypeHexPlus;
     if (copterType == 8)
-        self.copterType = MWGlobalManagerQuadTypeFlyingWing;
+        _copterType = MWGlobalManagerQuadTypeFlyingWing;
     if (copterType == 9)
-        self.copterType = MWGlobalManagerQuadTypeY4;
+        _copterType = MWGlobalManagerQuadTypeY4;
     if (copterType == 10)
-        self.copterType = MWGlobalManagerQuadTypeHexX;
+        _copterType = MWGlobalManagerQuadTypeHexX;
     if (self.copterType == -1)
-        self.copterType = MWGlobalManagerQuadTypeUnknown;
+        _copterType = MWGlobalManagerQuadTypeUnknown;
 
     self.mspVersion = x[3];
     

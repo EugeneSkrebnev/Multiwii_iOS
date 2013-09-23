@@ -19,4 +19,5 @@
 
 
 -(void) fillPidFromPayload:(NSData*) payload;
+-(NSData*) payloadFromPids;
 @end

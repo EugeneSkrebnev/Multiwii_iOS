@@ -37,7 +37,7 @@ typedef enum {
 @property (nonatomic, strong) MWPidSettingsManager* pidManager;
 @property (nonatomic, strong) MWBluetoothManager* bluetoothManager;
 
-@property (nonatomic, assign) MWGlobalManagerQuadType copterType;
+@property (nonatomic, readonly) MWGlobalManagerQuadType copterType;
 @property (nonatomic, assign) MWGlobalManagerQuadType copterCapabilities;
 
 @property (nonatomic, assign) int version;

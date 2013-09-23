@@ -192,7 +192,14 @@
 {
     return _sliderPosition > 0.5;
 }
-
+-(void)setLocked:(BOOL)locked
+{
+    if (locked)
+        [self setSliderPosition:1];
+    else
+        [self setSliderPosition:0];
+        
+}
 - (id)init
 {
     self = [super init];

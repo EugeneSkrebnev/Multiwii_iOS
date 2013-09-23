@@ -288,7 +288,10 @@
 {
     if (self.settingEntity)
         if (! (fabsf(self.value - self.settingEntity.value) < self.step / 5))
-            self.value = self.settingEntity.value;
+        {
+            [self updateKnobAnimated];
+        }
+//            self.value = self.settingEntity.value;
 }
 
 - (id)init

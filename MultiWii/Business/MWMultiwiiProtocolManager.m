@@ -118,6 +118,7 @@
         if (callback)
         {
             callback(payload);
+            [_callbacks removeObjectForKey:@(identifier)];
         }
         if (!handler)
         {
@@ -187,11 +188,13 @@
     
     unsigned char crc[1];
     crc[0] = [self crcForPayload:payload andId:identifier];
-    
+//    if (payload.length > 0)
+//        crc[0] = crc[0] ^ bytes[3] ^ bytes[4];
     [messageToSend appendData:[NSData dataWithBytes:crc length:sizeof(crc)]];
     
     [self writeMessageDebug:messageToSend];
-    [_callbacks setObject:callBackBlock forKey:@(identifier)];
+    if (callBackBlock)
+        [_callbacks setObject:callBackBlock forKey:@(identifier)];
     [[MWBluetoothManager sharedInstance] sendData:messageToSend];
 }
 

@@ -11,7 +11,7 @@
 @interface MWConnectViewController : MWBaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *scanButton;
+@property (strong, nonatomic) UIButton *scanButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

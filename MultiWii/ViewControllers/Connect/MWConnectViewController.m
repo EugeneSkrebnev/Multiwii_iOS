@@ -8,6 +8,8 @@
 
 #import "MWConnectViewController.h"
 #import "MWDevicePreviewCell.h"
+#import "MWTopbarButton.h"
+#import "MWBluetoothManager.h"
 
 @interface MWConnectViewController ()
 
@@ -27,9 +29,6 @@
         BOOL scanModeOn = [MWBluetoothManager sharedInstance].isInScanMode;
         [self.scanButton setHidden:scanModeOn animated:YES];
         [self.activityIndicator setHidden:!scanModeOn animated:YES];
-
-
-        
     };
     
     [MWBluetoothManager sharedInstance].didStartScan = statusUpdate;
@@ -67,23 +66,26 @@
         [self didConnectBluetoothUart];
     };
 }
+-(void)sendsend
+{
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+        [self sendsend];
+        NSString* dt = @"aaaaa aaaaa aaaaa aa ";
+        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
+    });
 
+}
 -(void) didConnectBluetoothUart
 {
     int connectedIndex = [[MWBluetoothManager sharedInstance].deviceList indexOfObject:[MWBluetoothManager sharedInstance].currentConnectedDevice];
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
-    
-    double delayInSeconds = 1.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
-            NSLog(@"message recieve");
-            NSLog(@"%@", recieveData);
-        }];
-        
-    });
+//    [self sendsend];
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
@@ -117,6 +119,11 @@
     
     [self initBluetoothManager];
     
+    MWTopbarButton* scanButton = [[MWTopbarButton alloc] init];
+    self.scanButton = scanButton;
+    [scanButton setTitle:@"SCAN" forState:(UIControlStateNormal)];
+    [scanButton addTarget:self action:@selector(scanButtonTapped:) forControlEvents:(UIControlEventTouchUpInside)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
 }
 
 - (IBAction)scanButtonTapped:(id)sender
