@@ -30,7 +30,9 @@
 
 
 @implementation MWBluetoothManager
-
+{
+    NSMutableData* _sendBuffer;
+}
 #pragma mark - init section
 
 + (MWBluetoothManager *)sharedInstance {
@@ -48,6 +50,8 @@
         _metaDataForDevices = [[NSMutableDictionary alloc] init];
 //        _vendor_name = {0};
         _libver = 0;
+        _sendBuffer = [[NSMutableData alloc] init];
+        
     }
     return self;
 }
@@ -119,7 +123,8 @@ characteristicUUID:(CBUUID *)characteristicUUID
     if (!characteristic)
         return;
     
-    [device writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
+    [device writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+//    [device writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
 }
 
 -(void) readValueFromDevice:(CBPeripheral *)device
@@ -346,6 +351,13 @@ characteristicUUID:(CBUUID *)characteristicUUID
 
 #pragma mark - CBPeripheralDelegate
 
+-(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
+{
+    if (error)
+        NSLog(@"send error - %@", error);
+    [self performSendData];
+}
+
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
     if (error)
@@ -474,8 +486,45 @@ characteristicUUID:(CBUUID *)characteristicUUID
   characteristicUUID:characteristicUUID];    
 }
 
+-(void) performSendData
+{
+
+    if (_sendBuffer.length > 0)
+    {
+        if (_sendBuffer.length > 20)
+        {
+            NSData* dataToSend = [_sendBuffer subdataWithRange:NSMakeRange(0, 20)];
+            [_sendBuffer replaceBytesInRange:NSMakeRange(0, 20) withBytes:NULL length:0];
+            [self write:dataToSend];
+        }
+        else
+        {
+            NSData* dataToSend = [NSData dataWithData:_sendBuffer];
+
+            [self write:dataToSend];
+            [_sendBuffer replaceBytesInRange:NSMakeRange(0, _sendBuffer.length) withBytes:NULL length:0];
+
+        }
+//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
+//        [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
+    }
+}
+
 -(void) sendData:(NSData*) dataToSend
 {
-    [self write:dataToSend];
+    //check for sending on main only thread in future, or on separate thread
+    //
+    BOOL needToSend = YES;
+    if (_sendBuffer.length > 0)
+        needToSend = NO;
+    
+    [_sendBuffer appendData:dataToSend];
+    
+    if (needToSend)
+        [self performSendData];
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];    
+//    [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
+//    [self write:dataToSend];
 }
+
 @end

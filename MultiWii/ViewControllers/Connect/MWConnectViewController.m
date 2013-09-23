@@ -68,13 +68,20 @@
 }
 -(void)sendsend
 {
-    double delayInSeconds = 2.0;
+    double delayInSeconds = 0.7;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 //        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
         [self sendsend];
-        NSString* dt = @"aaaaa aaaaa aaaaa aa ";
+        NSString* dt = @"aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbb ccccccccccccccccccc ddddddddddddddddddd ";
         [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
+//        dt = @"bbbbbbbbbbbbbbbbbbb ";
+//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
+//        dt = @"ccccccccccccccccccc ";
+//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
+//        dt = @"ddddddddddddddddddd ";
+//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
+        
     });
 
 }
@@ -84,8 +91,8 @@
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
-//    [self sendsend];
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+    [self sendsend];
+//    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
