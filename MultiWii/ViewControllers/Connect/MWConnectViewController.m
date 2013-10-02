@@ -66,6 +66,7 @@
         [self didConnectBluetoothUart];
     };
 }
+
 -(void)sendsend
 {
     double delayInSeconds = 0.7;
@@ -91,8 +92,8 @@
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
-    [self sendsend];
-//    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+//    [self sendsend]; // test
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
@@ -119,7 +120,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- CONNECT -";
+    self.viewControllerTitle = @" CONNECT ";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -191,4 +192,15 @@
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[MWBluetoothManager sharedInstance] startScan];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[MWBluetoothManager sharedInstance] stopScan];
+}
 @end

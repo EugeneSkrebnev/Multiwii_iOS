@@ -61,7 +61,7 @@ static BOOL firstTimeShow = YES;
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- MAIN MENU -";
+    self.viewControllerTitle = @" MAIN MENU ";
     if (firstTimeShow)
     {
 
@@ -75,7 +75,7 @@ static BOOL firstTimeShow = YES;
             self.navigationController.navigationBar.alpha = 0;
             [self.navigationController setNavigationBarHidden:NO animated:NO]; //Animated must be NO!
             [UINavigationBar setAnimationCurve:UIViewAnimationCurveEaseIn];
-            [UINavigationBar setAnimationDuration:1.5];
+            [UINavigationBar setAnimationDuration:1.5]; //1.5
             self.navigationController.navigationBar.alpha = 0;
             [UINavigationBar commitAnimations];
         }

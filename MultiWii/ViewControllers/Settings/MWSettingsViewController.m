@@ -17,7 +17,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- SETTINGS -";
+    self.viewControllerTitle = @" SETTINGS ";
 }
 
 -(NSArray*) titlesForMenu

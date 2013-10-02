@@ -24,7 +24,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- SENSORS -";
+    self.viewControllerTitle = @" SENSORS ";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

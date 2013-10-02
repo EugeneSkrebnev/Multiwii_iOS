@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
+		<string key="IBDocument.SystemVersion">12F37</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.39</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
@@ -9922,7 +9922,7 @@ AAEAAQABA</bytes>
 							<object class="IBUIImageView" id="358834574">
 								<reference key="NSNextResponder" ref="840327337"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{0, 25}, {50, 50}}</string>
+								<string key="NSFrame">{{4, 22}, {50, 50}}</string>
 								<reference key="NSSuperview" ref="840327337"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1055409187"/>
@@ -10071,11 +10071,11 @@ AAEAAQABA</bytes>
 						<reference key="object" ref="355469303"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1055409187"/>
-							<reference ref="358834574"/>
 							<reference ref="733462495"/>
 							<reference ref="907226490"/>
 							<reference ref="251141933"/>
 							<reference ref="996726584"/>
+							<reference ref="358834574"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

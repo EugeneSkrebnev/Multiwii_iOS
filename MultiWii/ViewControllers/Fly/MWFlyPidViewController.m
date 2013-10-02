@@ -26,7 +26,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @"- PID FLY -";
+    self.viewControllerTitle = @" PID FLY ";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

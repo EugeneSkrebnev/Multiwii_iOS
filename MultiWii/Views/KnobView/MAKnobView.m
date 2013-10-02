@@ -78,6 +78,8 @@
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnob) name:@"MAKnobViewUpdateNotification" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnobAnimated) name:@"MAKnobViewUpdateAnimatedNotification" object:nil];
+//        self.active = YES;
+        self.controlType = MAKnobControlTypePanSpin;
     }
 }
 
