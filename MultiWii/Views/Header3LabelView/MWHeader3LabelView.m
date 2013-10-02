@@ -44,7 +44,7 @@
 -(void) makeInit
 {
     [self calculateSizes];
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.png"]];
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern_100.png"]];
     
     NSMutableArray* labels = [NSMutableArray arrayWithCapacity:3];
     NSArray* defaultTitles = @[@"LOW", @"MIDDLE", @"HIGH"];

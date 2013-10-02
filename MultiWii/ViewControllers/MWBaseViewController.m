@@ -67,7 +67,16 @@
             }
         }
         
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern.png"]];
+        self.view.backgroundColor = [UIColor blackColor];
+        UIView* bgView = [[UIView alloc] initWithFrame:CGRectInset(self.view.bounds, 2, 0)];
+        UIView* blackDim = [[UIView alloc] initWithFrame:bgView.bounds];
+        blackDim.backgroundColor = [UIColor blackColor];
+        blackDim.alpha = 0.;
+        [bgView addSubview:blackDim];
+//        bgView.height -= 47;
+        bgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern_100.png"]];
+        [self.view insertSubview:bgView atIndex:0];
+
         
     }
 }
