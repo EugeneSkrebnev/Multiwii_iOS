@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MWFlyPidSettings.h"
 #import "MWSensorsPidSettings.h"
+#import "MWGPSPidSettings.h"
 
 @interface MWPidSettingsManager : NSObject
 
@@ -16,7 +17,7 @@
 
 @property (nonatomic, strong) MWFlyPidSettings* flyPid;
 @property (nonatomic, strong) MWSensorsPidSettings* sensorsPid;
-
+@property (nonatomic, strong) MWGPSPidSettings* gpsPid;
 
 -(void) fillPidFromPayload:(NSData*) payload;
 -(NSData*) payloadFromPids;

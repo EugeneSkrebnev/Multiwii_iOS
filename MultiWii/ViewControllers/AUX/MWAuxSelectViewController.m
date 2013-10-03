@@ -15,6 +15,10 @@
 
 @implementation MWAuxSelectViewController
 
+-(void) customizeSegmentControl
+{
+    
+}
 
 -(void)viewDidLoad
 {

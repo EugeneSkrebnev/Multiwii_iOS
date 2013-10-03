@@ -85,7 +85,7 @@
     for (int i = 0; i < message.length; i++)
     {
         unsigned char *x = (unsigned char*)message.bytes;
-        NSLog(@"%d - %d", i, x[i]);
+        NSLog(@"%d - %d - %c", i, x[i], (char)x[i]);
     }
     NSLog(@"end message");
     

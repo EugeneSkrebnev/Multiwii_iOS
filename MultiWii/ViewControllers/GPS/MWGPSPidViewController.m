@@ -1,45 +1,43 @@
 //
-//  MWSensorsPidViewController.m
+//  MWFlyPidViewController.m
 //  MultiWii
 //
 //  Created by Eugene Skrebnev on 7/21/13.
 //  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
 //
 
-#import "MWSensorsPidViewController.h"
-#import "MWPidAdjustCell.h"
+#import "MWGPSPidViewController.h"
 #import "MWHeader3LabelView.h"
-#import "MWSensorsPidSettings.h"
+#import "MWGPSPidSettings.h"
+#import "MWPidAdjustCell.h"
 #import "MWTopbarButton.h"
 
-@interface MWSensorsPidViewController ()
+@interface MWGPSPidViewController ()
 
 @end
 
-@implementation MWSensorsPidViewController
+@implementation MWGPSPidViewController
 {
-    NSArray* _iconsTitles;
     NSArray* _titles;
+    NSArray* _iconsTitles;
     NSArray* _pids;
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @" SENSORS ";
+    self.viewControllerTitle = @" GPS PID ";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 98;
     
-    _titles = @[@"BARO", @"MAG"];
-    _iconsTitles = @[@"baro", @"mag.png"];
-    MWSensorsPidSettings* sensorsPid = [MWPidSettingsManager sharedInstance].sensorsPid;
-    _pids = @[sensorsPid.baro, sensorsPid.mag];
-
-    self.calibrateAccButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
-    self.calibrateMagButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
+    _titles = @[@"POS HOLD", @"POS HOLD RATE", @"NAVIGATION RATE"];
+    _iconsTitles = @[@"roll.png", @"roll.png", @"roll.png"];
     
+    MWGPSPidSettings* gpsPid = [MWPidSettingsManager sharedInstance].gpsPid;
+    _pids = @[gpsPid.posHold, gpsPid.posHoldRate, gpsPid.navigationRate];
+
     MWTopbarButton* readTopButton = [[MWTopbarButton alloc] init];
     MWTopbarButton* writeTopButton = [[MWTopbarButton alloc] init];
     int spaceBetweenbtns = 2;
@@ -55,7 +53,6 @@
     [container addSubview:writeTopButton];
     UIBarButtonItem* rightBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:container];
     self.navigationItem.rightBarButtonItem = rightBarBtnItem;
-
 }
 
 -(void) readPidButtonTapped
@@ -63,7 +60,7 @@
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"read success");
     }];
-    
+
 }
 
 -(void) writePidButtonTapped
@@ -71,9 +68,11 @@
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
                                                        andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
                                                     responseBlock:^(NSData *recieveData) {
-                                                        NSLog(@"write success");
-                                                    }];
+        NSLog(@"write success");
+    }];
 }
+
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -94,16 +93,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MWPidAdjustCell* cell = (MWPidAdjustCell*)[MWPidAdjustCell loadView];
+    cell.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:11];
+    cell.titleLabel.numberOfLines = 2;
+    cell.iconImageView.hidden = YES;
     cell.titleLabel.text = _titles[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:_iconsTitles[indexPath.row]];
     cell.pid = _pids[indexPath.row];
     return cell;
+
 }
 
 - (void)viewDidUnload {
     [self setTableView:nil];
-    [self setCalibrateAccButton:nil];
-    [self setCalibrateMagButton:nil];
     [super viewDidUnload];
 }
 @end

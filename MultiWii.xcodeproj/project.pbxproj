@@ -111,6 +111,9 @@
 		44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A8F17FC231400AAAC30 /* title_element@2x.png */; };
 		44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */; };
 		44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */; };
+		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
+		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
+		44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -291,6 +294,10 @@
 		44AE5A8F17FC231400AAAC30 /* title_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_element@2x.png"; sourceTree = "<group>"; };
 		44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_v2@2x.png"; sourceTree = "<group>"; };
 		44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_100@2x.png"; sourceTree = "<group>"; };
+		44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baro@2x.png"; sourceTree = "<group>"; };
+		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
+		44AE5A9A17FCCDB600AAAC30 /* MWGPSPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidViewController.h; sourceTree = "<group>"; };
+		44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidViewController.m; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
@@ -366,6 +373,8 @@
 		4403BCB517EF7ABC00B5A4E1 /* SettingsIcons */ = {
 			isa = PBXGroup;
 			children = (
+				44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */,
+				44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */,
 				4403BCB617EF7ABC00B5A4E1 /* level@2x.png */,
 				4403BCB717EF7ABC00B5A4E1 /* pitch@2x.png */,
 				4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */,
@@ -749,6 +758,15 @@
 			path = Header3LabelView;
 			sourceTree = "<group>";
 		};
+		44AE5A9917FCCDB600AAAC30 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				44AE5A9A17FCCDB600AAAC30 /* MWGPSPidViewController.h */,
+				44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */,
+			);
+			path = GPS;
+			sourceTree = "<group>";
+		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +790,7 @@
 				44519D68179D51FF006E4EB7 /* Connect */,
 				44519D64179C7034006E4EB7 /* Fly */,
 				44519D37179B5BE5006E4EB7 /* Sensors */,
+				44AE5A9917FCCDB600AAAC30 /* GPS */,
 				44A6BD9A178D88F400DC95C6 /* MenuBase */,
 				44C7CA591789CE2D0059C199 /* Main */,
 				44A6BDA1178D937C00DC95C6 /* Settings */,
@@ -1136,6 +1155,8 @@
 				44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */,
 				44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */,
 				44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */,
+				44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */,
+				44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,6 +1207,7 @@
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
+				44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

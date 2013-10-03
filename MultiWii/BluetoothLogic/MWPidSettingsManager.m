@@ -29,6 +29,7 @@
     {
         self.flyPid = [[MWFlyPidSettings alloc] init];
         self.sensorsPid = [[MWSensorsPidSettings alloc] init];
+        self.gpsPid = [[MWGPSPidSettings alloc] init];
         [self makePidsIndexInit];
         [self makeDivedersInit];
     }
@@ -65,6 +66,19 @@
     
     tmp[@25] = self.sensorsPid.mag.p;
     
+    
+    tmp[@13] = self.gpsPid.posHold.p;
+    tmp[@14] = self.gpsPid.posHold.i;
+//    tmp[@15] = NO value for pos hold d
+    
+    tmp[@16] = self.gpsPid.posHoldRate.p;
+    tmp[@17] = self.gpsPid.posHoldRate.i;
+    tmp[@18] = self.gpsPid.posHoldRate.d;
+    
+    tmp[@19] = self.gpsPid.navigationRate.p;
+    tmp[@20] = self.gpsPid.navigationRate.i;
+    tmp[@21] = self.gpsPid.navigationRate.d;
+    
     _pidsPayloadIndexes = [tmp copy];
 }
 
@@ -93,6 +107,21 @@
     tmp[@12] = @1;
 
     tmp[@25] = @10;
+    
+    
+    tmp[@13] = @100;
+    tmp[@14] = @100;
+    //    tmp[@15] = NO value for pos hold d
+    
+    tmp[@16] = @10;
+    tmp[@17] = @100;
+    tmp[@18] = @1000;
+    
+    tmp[@19] = @10;
+    tmp[@20] = @100;
+    tmp[@21] = @1000;
+    
+    
     _dividersForIndexes = [tmp copy];
     
 }

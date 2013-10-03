@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MWPIDSettingsEntity.h"
 
 @interface MWGPSPidSettings : NSObject
-
+@property (nonatomic, strong) MWPIDSettingsEntity* posHold;
+@property (nonatomic, strong) MWPIDSettingsEntity* posHoldRate;
+@property (nonatomic, strong) MWPIDSettingsEntity* navigationRate;
 @end
