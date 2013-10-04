@@ -51,11 +51,16 @@
             [self writeMessageDebug:_buffer];
 
             int fullLength = 3/* "$M>" */ + 3 /* lenght crc messagetype*/ + messageLength;
-            if (_buffer.length <= fullLength)
+            if (_buffer.length >= fullLength)
             {
                 NSData* message = [_buffer subdataWithRange:NSMakeRange(0, fullLength)];
                 [_buffer replaceBytesInRange:NSMakeRange(0, fullLength) withBytes:NULL length:0];
-                [self processMessage:message];
+                dispatch_async(dispatch_get_current_queue(), ^{
+                    [self processMessage:message];
+                });
+
+                if (_buffer.length > 0)
+                    [self didReceiveDataFromBluetooth:[NSData data]];
             }
             else
             {

@@ -24,4 +24,12 @@
 {
     
 }
+
+-(void) fillbitMaskFromLowBits:(int) lowbits andHighBits:(int) highBits
+{
+    NSLog(@"%d %d", lowbits, highBits);
+    self.bitMask = lowbits || highBits >> 8;
+    NSLog(@"%d", self.bitMask);
+}
+
 @end

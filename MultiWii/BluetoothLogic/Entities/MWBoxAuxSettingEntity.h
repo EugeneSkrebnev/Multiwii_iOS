@@ -17,5 +17,5 @@
 -(BOOL) isCheckedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
 -(BOOL) isSavedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
 -(void) setValue:(BOOL) value forAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
--(void) fillbitMaskFromValue1:(int) lowbits andValue2:(int) highBits;
+-(void) fillbitMaskFromLowBits:(int) lowbits andHighBits:(int) highBits;
 @end

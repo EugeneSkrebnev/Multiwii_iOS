@@ -428,6 +428,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_RX_UUID]])
         {
             data_len = characteristic.value.length;
+            NSLog(@"%d bits of new data", data_len);
             [characteristic.value getBytes:data length:data_len];
             
             if (data_len == 20)

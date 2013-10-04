@@ -85,15 +85,15 @@
         self.copterCapabilities |= MWGlobalManagerQuadBoardCapability4;
 }
 
--(void) copterPidDataRecieved:(NSData*) pidData
-{
-    [self.pidManager fillPidFromPayload:pidData];
-}
-
--(void) copterBoxNamesDataRecieved:(NSData*) boxNames
-{
-    [self.boxManager fillBoxesNamesFromPayload:boxNames];
-}
+//-(void) copterPidDataRecieved:(NSData*) pidData
+//{
+//    [self.pidManager fillPidFromPayload:pidData];
+//}
+//
+//-(void) copterBoxNamesDataRecieved:(NSData*) boxNames
+//{
+//    [self.boxManager fillBoxesNamesFromPayload:boxNames];
+//}
 
 -(void) initDefaultHandlers
 {
@@ -104,13 +104,17 @@
     } forRequestWith:MWI_BLE_MESSAGE_IDENT];
     
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
-        [selfWeak copterPidDataRecieved:recieveData];
+        [selfWeak.pidManager fillPidFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_PID];
     
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
-        [selfWeak copterBoxNamesDataRecieved:recieveData];
+        [selfWeak.boxManager fillBoxesNamesFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_BOX_NAMES];
-    
+
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.boxManager fillBoxesValuesFromPayload:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_BOXES];
+
 
 }
 

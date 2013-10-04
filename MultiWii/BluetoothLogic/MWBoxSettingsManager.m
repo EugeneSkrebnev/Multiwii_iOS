@@ -38,10 +38,10 @@
 
 -(void) fillBoxesNamesFromPayload:(NSData*) payload
 {
-    NSLog(@"%@", payload);
+    //payload[0] == code 116 MWI_BLE_MESSAGE_GET_BOX_NAMES
     payload = [payload subdataWithRange:NSMakeRange(1, payload.length - 1)];
     NSString* boxes = [NSString stringWithCString:payload.bytes encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", boxes);
+
     NSArray* boxesNames = [boxes componentsSeparatedByString:@";"];
     for (int i = 0; i < boxesNames.count; i++)
     {
@@ -52,12 +52,28 @@
         MWBoxAuxSettingEntity* boxItem = _boxEntities[i];
         boxItem.name = boxesNames[i];
     }
+    
+    while (_boxEntities.count > boxesNames.count)
+        [_boxEntities removeObject:_boxEntities.lastObject];
+
 }
 
 
 -(void) fillBoxesValuesFromPayload:(NSData*) payload
 {
-    
+    //payload[0] == code 113 MWI_BLE_MESSAGE_GET_BOXES
+    payload = [payload subdataWithRange:NSMakeRange(1, payload.length - 1)];
+    unsigned char *bytes = (unsigned char*)payload.bytes;
+    if (payload.length >= _boxEntities.count * 2)
+    {
+        for (int i = 0; i < _boxEntities.count; i++)
+        {
+            int lowBits  = bytes[i * 2];
+            int highBits = bytes[i * 2 + 1];
+            MWBoxAuxSettingEntity* boxItem = _boxEntities[i];
+            [boxItem fillbitMaskFromLowBits:lowBits andHighBits:highBits];
+        }
+    }
 }
 
 
