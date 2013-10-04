@@ -114,6 +114,8 @@
 		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
 		44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */; };
+		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
+		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5.png */; };
@@ -298,6 +300,10 @@
 		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
 		44AE5A9A17FCCDB600AAAC30 /* MWGPSPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidViewController.h; sourceTree = "<group>"; };
 		44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidViewController.m; sourceTree = "<group>"; };
+		44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxAuxSettingEntity.h; sourceTree = "<group>"; };
+		44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
+		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
+		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
@@ -484,6 +490,8 @@
 				44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */,
 				44519D61179C0509006E4EB7 /* MWGPSPidSettings.h */,
 				44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */,
+				44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */,
+				44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -803,6 +811,8 @@
 		44B4BB651780D3EB00CE91A8 /* BluetoothLogic */ = {
 			isa = PBXGroup;
 			children = (
+				44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */,
+				44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */,
 				44519D5B179C04D0006E4EB7 /* MWPidSettingsManager.h */,
 				44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */,
 				44519D4E179BFAB8006E4EB7 /* Entities */,
@@ -1208,6 +1218,8 @@
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */,
+				44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */,
+				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
