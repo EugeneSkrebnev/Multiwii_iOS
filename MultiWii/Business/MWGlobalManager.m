@@ -25,6 +25,7 @@
         self.bluetoothManager = [MWBluetoothManager sharedInstance];
         self.pidManager = [MWPidSettingsManager sharedInstance];
         self.protocolManager = [MWMultiwiiProtocolManager sharedInstance];
+        self.boxManager = [MWBoxSettingsManager sharedInstance];
         [self initDefaultHandlers];
     }
     return self;
@@ -87,9 +88,11 @@
 -(void) copterPidDataRecieved:(NSData*) pidData
 {
     [self.pidManager fillPidFromPayload:pidData];
-    
+}
 
-    
+-(void) copterBoxNamesDataRecieved:(NSData*) boxNames
+{
+    [self.boxManager fillBoxesNamesFromPayload:boxNames];
 }
 
 -(void) initDefaultHandlers
@@ -103,6 +106,11 @@
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak copterPidDataRecieved:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_PID];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak copterBoxNamesDataRecieved:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_BOX_NAMES];
+    
 
 }
 

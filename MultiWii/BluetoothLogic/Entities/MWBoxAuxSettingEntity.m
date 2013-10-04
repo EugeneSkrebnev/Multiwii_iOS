@@ -10,4 +10,18 @@
 
 @implementation MWBoxAuxSettingEntity
 
+
+-(BOOL) isCheckedForAux:(int) auxIndex andPosition:(int) position // 0 - low 1 - mid 2 - high
+{
+    return YES;
+}
+-(BOOL) isSavedForAux:(int) auxIndex andPosition:(int) position// 0 - low 1 - mid 2 - high
+{
+    return YES;
+}
+
+-(void) setValue:(BOOL) value forAux:(int) auxIndex andPosition:(int) position // 0 - low 1 - mid 2 - high
+{
+    
+}
 @end

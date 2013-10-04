@@ -399,12 +399,13 @@ characteristicUUID:(CBUUID *)characteristicUUID
             [self enableReadNotification:_currentConnectedDevice];
             [self readLibVerFromPeripheral];
             [self readVendorNameFromPeripheral];
+                        
+            if (self.didDiscoverCharacteristics)
+                self.didDiscoverCharacteristics(self.currentConnectedDevice);
             
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
-            
-            if (self.didDiscoverCharacteristics)
-                self.didDiscoverCharacteristics(self.currentConnectedDevice);
+
         }
     }
     else

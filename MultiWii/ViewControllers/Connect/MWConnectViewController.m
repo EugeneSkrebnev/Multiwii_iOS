@@ -89,7 +89,7 @@
 
 -(void) testBoxNames
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOXES andPayload:nil responseBlock:nil];
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:nil];
 }
 
 -(void) didConnectBluetoothUart

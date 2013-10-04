@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MWFlyPidSettings.h"
-#import "MWSensorsPidSettings.h"
-#import "MWGPSPidSettings.h"
+#import "MWBoxAuxSettingEntity.h"
 
 @interface MWBoxSettingsManager : NSObject
 
-+ (MWPidSettingsManager *)sharedInstance;
++ (MWBoxSettingsManager *)sharedInstance;
+
+- (MWBoxAuxSettingEntity*) boxEntityForIndex:(int) index;
+
+-(void) fillBoxesNamesFromPayload:(NSData*) payload;
+-(void) fillBoxesValuesFromPayload:(NSData*) payload;
+-(NSData*) payloadFromBoxes;
 
 @end

@@ -11,11 +11,11 @@
 @interface MWBoxAuxSettingEntity : NSObject
 @property (nonatomic, assign) int bitMask;
 @property (nonatomic, assign) int savedBitMask;
-@property (nonatomic, strong) NSString* functionName;
+@property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) BOOL checked;
 
 -(BOOL) isCheckedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
 -(BOOL) isSavedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
 -(void) setValue:(BOOL) value forAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
-
+-(void) fillbitMaskFromValue1:(int) lowbits andValue2:(int) highBits;
 @end
