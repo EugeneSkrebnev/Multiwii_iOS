@@ -22,7 +22,6 @@
 		44519D32179B1BD7006E4EB7 /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519D30179B1BD7006E4EB7 /* separator@2x.png */; };
 		44519D34179B4ACD006E4EB7 /* aux_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519D33179B4ACD006E4EB7 /* aux_pressed@2x.png */; };
 		44519D36179B4B7F006E4EB7 /* MWPidAdjustCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44519D35179B4B7F006E4EB7 /* MWPidAdjustCell.xib */; };
-		44519D3A179B5C7C006E4EB7 /* MWSensorsPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D39179B5C7C006E4EB7 /* MWSensorsPidViewController.m */; };
 		44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519D3C179B6A30006E4EB7 /* calibrate_acc@2x.png */; };
 		44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519D3D179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png */; };
 		44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44519D3E179B6A30006E4EB7 /* calibrate_mag@2x.png */; };
@@ -36,7 +35,6 @@
 		44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */; };
 		44519D60179C04F2006E4EB7 /* MWSensorsPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */; };
 		44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */; };
-		44519D67179C7050006E4EB7 /* MWFlyPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D66179C7050006E4EB7 /* MWFlyPidViewController.m */; };
 		44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D6A179D5223006E4EB7 /* MWConnectViewController.m */; };
 		44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D6E179D83C5006E4EB7 /* MWDevicePreviewCell.m */; };
 		44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */; };
@@ -117,12 +115,15 @@
 		44AD4A8F180018350088760D /* separator_normal_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AD4A86180018350088760D /* separator_normal_normal@2x.png */; };
 		44AD4A90180018350088760D /* separator_left_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AD4A87180018350088760D /* separator_left_pressed@2x.png */; };
 		44AD4A91180018350088760D /* separator_right_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AD4A88180018350088760D /* separator_right_pressed@2x.png */; };
+		44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A95180047410088760D /* MWFlyPidViewController.m */; };
+		44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A98180047410088760D /* MWGPSPidViewController.m */; };
+		44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A9B180047410088760D /* MWSensorsPidViewController.m */; };
+		44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4AA0180047FF0088760D /* MWBasePidSettingsViewController.m */; };
 		44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A8F17FC231400AAAC30 /* title_element@2x.png */; };
 		44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */; };
 		44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */; };
 		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
-		44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */; };
 		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
@@ -186,8 +187,6 @@
 		44519D30179B1BD7006E4EB7 /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
 		44519D33179B4ACD006E4EB7 /* aux_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_pressed@2x.png"; sourceTree = "<group>"; };
 		44519D35179B4B7F006E4EB7 /* MWPidAdjustCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWPidAdjustCell.xib; sourceTree = "<group>"; };
-		44519D38179B5C7C006E4EB7 /* MWSensorsPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSensorsPidViewController.h; sourceTree = "<group>"; };
-		44519D39179B5C7C006E4EB7 /* MWSensorsPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidViewController.m; sourceTree = "<group>"; };
 		44519D3C179B6A30006E4EB7 /* calibrate_acc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calibrate_acc@2x.png"; sourceTree = "<group>"; };
 		44519D3D179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calibrate_acc_pressed@2x.png"; sourceTree = "<group>"; };
 		44519D3E179B6A30006E4EB7 /* calibrate_mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calibrate_mag@2x.png"; sourceTree = "<group>"; };
@@ -210,8 +209,6 @@
 		44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidSettings.m; sourceTree = "<group>"; };
 		44519D61179C0509006E4EB7 /* MWGPSPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidSettings.h; sourceTree = "<group>"; };
 		44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidSettings.m; sourceTree = "<group>"; };
-		44519D65179C7050006E4EB7 /* MWFlyPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidViewController.h; sourceTree = "<group>"; };
-		44519D66179C7050006E4EB7 /* MWFlyPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidViewController.m; sourceTree = "<group>"; };
 		44519D69179D5223006E4EB7 /* MWConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWConnectViewController.h; sourceTree = "<group>"; };
 		44519D6A179D5223006E4EB7 /* MWConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWConnectViewController.m; sourceTree = "<group>"; };
 		44519D6D179D83C5006E4EB7 /* MWDevicePreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDevicePreviewCell.h; sourceTree = "<group>"; };
@@ -311,13 +308,19 @@
 		44AD4A86180018350088760D /* separator_normal_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_normal_normal@2x.png"; sourceTree = "<group>"; };
 		44AD4A87180018350088760D /* separator_left_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_left_pressed@2x.png"; sourceTree = "<group>"; };
 		44AD4A88180018350088760D /* separator_right_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_right_pressed@2x.png"; sourceTree = "<group>"; };
+		44AD4A94180047410088760D /* MWFlyPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidViewController.h; sourceTree = "<group>"; };
+		44AD4A95180047410088760D /* MWFlyPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidViewController.m; sourceTree = "<group>"; };
+		44AD4A97180047410088760D /* MWGPSPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidViewController.h; sourceTree = "<group>"; };
+		44AD4A98180047410088760D /* MWGPSPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidViewController.m; sourceTree = "<group>"; };
+		44AD4A9A180047410088760D /* MWSensorsPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSensorsPidViewController.h; sourceTree = "<group>"; };
+		44AD4A9B180047410088760D /* MWSensorsPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidViewController.m; sourceTree = "<group>"; };
+		44AD4A9F180047FF0088760D /* MWBasePidSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBasePidSettingsViewController.h; sourceTree = "<group>"; };
+		44AD4AA0180047FF0088760D /* MWBasePidSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBasePidSettingsViewController.m; sourceTree = "<group>"; };
 		44AE5A8F17FC231400AAAC30 /* title_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_element@2x.png"; sourceTree = "<group>"; };
 		44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_v2@2x.png"; sourceTree = "<group>"; };
 		44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_100@2x.png"; sourceTree = "<group>"; };
 		44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baro@2x.png"; sourceTree = "<group>"; };
 		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
-		44AE5A9A17FCCDB600AAAC30 /* MWGPSPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidViewController.h; sourceTree = "<group>"; };
-		44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidViewController.m; sourceTree = "<group>"; };
 		44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxAuxSettingEntity.h; sourceTree = "<group>"; };
 		44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
@@ -463,15 +466,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		44519D37179B5BE5006E4EB7 /* Sensors */ = {
-			isa = PBXGroup;
-			children = (
-				44519D38179B5C7C006E4EB7 /* MWSensorsPidViewController.h */,
-				44519D39179B5C7C006E4EB7 /* MWSensorsPidViewController.m */,
-			);
-			path = Sensors;
-			sourceTree = "<group>";
-		};
 		44519D3B179B6A30006E4EB7 /* calibrate */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,15 +506,6 @@
 				44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		44519D64179C7034006E4EB7 /* Fly */ = {
-			isa = PBXGroup;
-			children = (
-				44519D65179C7050006E4EB7 /* MWFlyPidViewController.h */,
-				44519D66179C7050006E4EB7 /* MWFlyPidViewController.m */,
-			);
-			path = Fly;
 			sourceTree = "<group>";
 		};
 		44519D68179D51FF006E4EB7 /* Connect */ = {
@@ -801,13 +786,43 @@
 			path = MultiWii/SegmentControl;
 			sourceTree = SOURCE_ROOT;
 		};
-		44AE5A9917FCCDB600AAAC30 /* GPS */ = {
+		44AD4A92180047410088760D /* PID */ = {
 			isa = PBXGroup;
 			children = (
-				44AE5A9A17FCCDB600AAAC30 /* MWGPSPidViewController.h */,
-				44AE5A9B17FCCDB600AAAC30 /* MWGPSPidViewController.m */,
+				44AD4A9F180047FF0088760D /* MWBasePidSettingsViewController.h */,
+				44AD4AA0180047FF0088760D /* MWBasePidSettingsViewController.m */,
+				44AD4A93180047410088760D /* Fly */,
+				44AD4A96180047410088760D /* GPS */,
+				44AD4A99180047410088760D /* Sensors */,
+			);
+			path = PID;
+			sourceTree = "<group>";
+		};
+		44AD4A93180047410088760D /* Fly */ = {
+			isa = PBXGroup;
+			children = (
+				44AD4A94180047410088760D /* MWFlyPidViewController.h */,
+				44AD4A95180047410088760D /* MWFlyPidViewController.m */,
+			);
+			path = Fly;
+			sourceTree = "<group>";
+		};
+		44AD4A96180047410088760D /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				44AD4A97180047410088760D /* MWGPSPidViewController.h */,
+				44AD4A98180047410088760D /* MWGPSPidViewController.m */,
 			);
 			path = GPS;
+			sourceTree = "<group>";
+		};
+		44AD4A99180047410088760D /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				44AD4A9A180047410088760D /* MWSensorsPidViewController.h */,
+				44AD4A9B180047410088760D /* MWSensorsPidViewController.m */,
+			);
+			path = Sensors;
 			sourceTree = "<group>";
 		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
@@ -830,10 +845,8 @@
 			children = (
 				44C7CA5A1789CE480059C199 /* MWBaseViewController.h */,
 				44C7CA5B1789CE480059C199 /* MWBaseViewController.m */,
+				44AD4A92180047410088760D /* PID */,
 				44519D68179D51FF006E4EB7 /* Connect */,
-				44519D64179C7034006E4EB7 /* Fly */,
-				44519D37179B5BE5006E4EB7 /* Sensors */,
-				44AE5A9917FCCDB600AAAC30 /* GPS */,
 				44A6BD9A178D88F400DC95C6 /* MenuBase */,
 				44C7CA591789CE2D0059C199 /* Main */,
 				44A6BDA1178D937C00DC95C6 /* Settings */,
@@ -1247,7 +1260,6 @@
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */,
 				44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */,
-				44519D3A179B5C7C006E4EB7 /* MWSensorsPidViewController.m in Sources */,
 				44519D4A179BF655006E4EB7 /* CBUUID+StringValue.m in Sources */,
 				44519D4B179BF655006E4EB7 /* MWBluetoothManager.m in Sources */,
 				44519D51179BFB72006E4EB7 /* MWSettingsEntity.m in Sources */,
@@ -1256,15 +1268,17 @@
 				44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */,
 				44519D60179C04F2006E4EB7 /* MWSensorsPidSettings.m in Sources */,
 				44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */,
-				44519D67179C7050006E4EB7 /* MWFlyPidViewController.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
-				44AE5A9C17FCCDB600AAAC30 /* MWGPSPidViewController.m in Sources */,
 				44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
+				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
+				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
+				44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */,
+				44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

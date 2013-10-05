@@ -7,9 +7,9 @@
 //
 
 #import "MWBaseViewController.h"
+#import "MWBasePidSettingsViewController.h"
+@interface MWSensorsPidViewController : MWBasePidSettingsViewController
 
-@interface MWSensorsPidViewController : MWBaseViewController<UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *calibrateAccButton;
 @property (weak, nonatomic) IBOutlet UIButton *calibrateMagButton;
 

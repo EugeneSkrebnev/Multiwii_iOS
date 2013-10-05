@@ -7,9 +7,7 @@
 //
 
 #import "MWBaseViewController.h"
-#import "MASwitch.h"
+#import "MWBasePidSettingsViewController.h"
 
-@interface MWGPSPidViewController : MWBaseViewController<UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@interface MWGPSPidViewController : MWBasePidSettingsViewController
 @end
