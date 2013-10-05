@@ -405,7 +405,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
             
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
-
+            [self enableWrite];
         }
     }
     else
