@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MWGlobalManager sharedInstance]; //init all systems
+//    int lowbits = 1;
+//    int highBits = 1 << 2;
+//    NSLog(@"%d %d", lowbits, highBits);
+//    int bitMask = lowbits | highBits << 8;
+//    NSLog(@"%d", bitMask);
     return YES;
 
 }

@@ -198,7 +198,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 {
     CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
     CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_RX_UUID];
-    
+//    [self notificationForService:serviceUUID characteristicUUID:characteristicUUID device:device enabled:NO];
     [self notificationForService:serviceUUID characteristicUUID:characteristicUUID device:device enabled:YES];
 }
 

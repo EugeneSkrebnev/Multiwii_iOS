@@ -45,12 +45,17 @@
     NSArray* boxesNames = [boxes componentsSeparatedByString:@";"];
     for (int i = 0; i < boxesNames.count; i++)
     {
-        if (_boxEntities.count <= i)
+        NSString* boxName = boxesNames[i];
+        boxName = [boxName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        if (boxName.length > 0)
         {
-            [_boxEntities addObject:[[MWBoxAuxSettingEntity alloc] init]];
+            if (_boxEntities.count <= i)
+            {
+                [_boxEntities addObject:[[MWBoxAuxSettingEntity alloc] init]];
+            }
+            MWBoxAuxSettingEntity* boxItem = _boxEntities[i];
+            boxItem.name = boxesNames[i];
         }
-        MWBoxAuxSettingEntity* boxItem = _boxEntities[i];
-        boxItem.name = boxesNames[i];
     }
     
     while (_boxEntities.count > boxesNames.count)
