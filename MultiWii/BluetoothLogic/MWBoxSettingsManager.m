@@ -84,7 +84,29 @@
 
 -(NSData*) payloadFromBoxes
 {
-    return [NSData data];
+    int size = _boxEntities.count * 2;
+    unsigned char bytes[100]; // 100 is magic number
+    for (int i = 0; i < 100; i++)
+        bytes[i] = 0;
+
+    for (int i = 0; i < _boxEntities.count; i++)
+    {
+        MWBoxAuxSettingEntity* box = _boxEntities[i];
+        int fullbitmask = box.bitMask;
+        char lowBits = (char)((int)(fullbitmask & ((1 << 9) - 1))); //i'm sorry
+        fullbitmask = fullbitmask >> 8;
+        char highBits = (char)((int)(fullbitmask & ((1 << 9) - 1))); //i'm sorry
+        bytes[i * 2] = lowBits;
+        bytes[i * 2 + 1] = highBits;
+    }
+    NSData* data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    return [data subdataWithRange:NSMakeRange(0, size)];
+
+    
 }
 
+- (int) boxesCount
+{
+    return _boxEntities.count;
+}
 @end

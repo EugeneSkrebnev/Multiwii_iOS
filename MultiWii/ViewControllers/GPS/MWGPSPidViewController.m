@@ -23,21 +23,8 @@
     NSArray* _pids;
 }
 
--(void)viewDidLoad
+-(void) createReadWriteBtns
 {
-    [super viewDidLoad];
-    self.viewControllerTitle = @" GPS PID ";
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = 98;
-    
-    _titles = @[@"POS HOLD", @"POS HOLD RATE", @"NAVIGATION RATE"];
-    _iconsTitles = @[@"roll.png", @"roll.png", @"roll.png"];
-    
-    MWGPSPidSettings* gpsPid = [MWPidSettingsManager sharedInstance].gpsPid;
-    _pids = @[gpsPid.posHold, gpsPid.posHoldRate, gpsPid.navigationRate];
-
     MWTopbarButton* readTopButton = [[MWTopbarButton alloc] init];
     MWTopbarButton* writeTopButton = [[MWTopbarButton alloc] init];
     int spaceBetweenbtns = 2;
@@ -54,13 +41,12 @@
     UIBarButtonItem* rightBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:container];
     self.navigationItem.rightBarButtonItem = rightBarBtnItem;
 }
-
 -(void) readPidButtonTapped
 {
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"read success");
     }];
-
+    
 }
 
 -(void) writePidButtonTapped
@@ -68,9 +54,28 @@
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
                                                        andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
                                                     responseBlock:^(NSData *recieveData) {
-        NSLog(@"write success");
-    }];
+                                                        NSLog(@"write success");
+                                                    }];
 }
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.viewControllerTitle = @" GPS PID ";
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 98;
+    
+    _titles = @[@"POS HOLD", @"POS HOLD RATE", @"NAVIGATION RATE"];
+    _iconsTitles = @[@"roll.png", @"roll.png", @"roll.png"];
+    
+    MWGPSPidSettings* gpsPid = [MWPidSettingsManager sharedInstance].gpsPid;
+    _pids = @[gpsPid.posHold, gpsPid.posHoldRate, gpsPid.navigationRate];
+    [self createReadWriteBtns];
+}
+
+
 
 
 

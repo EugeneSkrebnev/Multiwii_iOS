@@ -14,7 +14,7 @@
 + (MWBoxSettingsManager *)sharedInstance;
 
 - (MWBoxAuxSettingEntity*) boxEntityForIndex:(int) index;
-
+- (int) boxesCount;
 -(void) fillBoxesNamesFromPayload:(NSData*) payload;
 -(void) fillBoxesValuesFromPayload:(NSData*) payload;
 -(NSData*) payloadFromBoxes;

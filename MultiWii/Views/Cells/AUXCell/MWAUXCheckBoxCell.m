@@ -15,10 +15,35 @@
     [super makeInit];
     self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
     self.titleLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient_title-text@2x"]];
-
+    for (MACheckBox* checkBox in self.checkBoxes)
+    {
+        [checkBox addTarget:self action:@selector(checkBoxChange:) forControlEvents:(UIControlEventTouchUpInside)];
+    }
     
     self.backgroundImageView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_pattern_100.png"]];
     self.backgroundImageView.image = [UIImage imageNamed:@"cell@2x"];
 }
 
+-(void)setData:(MWBoxAuxSettingEntity *)data
+{
+    _data = data;
+    self.titleLabel.text = data.name;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        MACheckBox* checkBox = self.checkBoxes[i];
+        checkBox.selected = [data isCheckedForAux:self.selectedAuxChannel andPosition:i];
+    }
+}
+
+-(void)setSelectedAuxChannel:(int)selectedAuxChannel
+{
+    _selectedAuxChannel = selectedAuxChannel;
+    [self setData:self.data]; //refresh
+}
+
+-(void) checkBoxChange:(MACheckBox*) checkBox
+{
+    [self.data setValue:checkBox.selected forAux:self.selectedAuxChannel andPosition:checkBox.tag];
+}
 @end
