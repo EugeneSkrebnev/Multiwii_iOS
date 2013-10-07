@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -9,25 +10,22 @@
             <objects>
                 <viewController id="LUe-j4-AVi" customClass="MWMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0vd-uI-HGP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rtj-Ao-gng">
-                                <rect key="frame" x="2" y="0.0" width="316" height="274"/>
+                                <rect key="frame" x="2" y="0.0" width="316" height="338"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bhq-ok-V15" customClass="MWBuyButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bhq-ok-V15" customClass="MWBuyButton">
                                 <rect key="frame" x="20" y="340" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
@@ -52,7 +50,7 @@
             <objects>
                 <viewController id="jWZ-1Y-4yK" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbb-tS-hkp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -67,11 +65,11 @@
             <objects>
                 <viewController id="Tln-hl-f3a" customClass="MWSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MiG-gv-AcI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="2WR-X0-GS7">
-                                <rect key="frame" x="2" y="0.0" width="316" height="274"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="2WR-X0-GS7">
+                                <rect key="frame" x="2" y="0.0" width="316" height="338"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,25 +96,21 @@
             <objects>
                 <viewController id="XS1-hN-AIa" customClass="MWAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lhj-vp-4Bb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="RhR-cZ-WOm">
-                                <rect key="frame" x="2" y="0.0" width="316" height="349"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="RhR-cZ-WOm">
+                                <rect key="frame" x="2" y="0.0" width="316" height="413"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="384-KY-cUd" customClass="MWVisitSiteButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="384-KY-cUd" customClass="MWVisitSiteButton">
                                 <rect key="frame" x="20" y="340" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="SITE">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
@@ -141,7 +135,7 @@
             <objects>
                 <viewController id="Rd9-TW-Kbu" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x3G-Sj-jYq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -156,11 +150,11 @@
             <objects>
                 <viewController id="Bkt-Qy-xV2" customClass="MWConnectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oab-SA-KAP">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pGI-Ds-2Ut">
-                                <rect key="frame" x="2" y="9" width="316" height="300"/>
+                                <rect key="frame" x="2" y="9" width="316" height="364"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -202,11 +196,11 @@
             <objects>
                 <viewController id="a1v-iV-PXr" customClass="MWSensorsPidViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jNH-H1-O2T">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u3L-V1-EVC">
-                                <rect key="frame" x="2" y="0.0" width="316" height="238"/>
+                                <rect key="frame" x="2" y="0.0" width="316" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -216,11 +210,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="4"/>
-                                <state key="normal" title="CALIBRATE ACC" backgroundImage="calibrate_acc@2x.png">
+                                <state key="normal" title="CALIBRATE ACC" backgroundImage="calibrate_acc.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" backgroundImage="calibrate_acc_pressed@2x.png">
+                                <state key="highlighted" backgroundImage="calibrate_acc_pressed.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -229,11 +223,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="4"/>
-                                <state key="normal" title="CALIBRATE MAG" backgroundImage="calibrate_mag@2x.png">
+                                <state key="normal" title="CALIBRATE MAG" backgroundImage="calibrate_mag.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" backgroundImage="calibrate_mag_pressed@2x.png">
+                                <state key="highlighted" backgroundImage="calibrate_mag_pressed.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -256,11 +250,11 @@
             <objects>
                 <viewController id="UFf-dw-qUe" customClass="MWGPSPidViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jQG-FT-T9G">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ThD-aM-Znt">
-                                <rect key="frame" x="2" y="0.0" width="316" height="416"/>
+                                <rect key="frame" x="2" y="0.0" width="316" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -282,7 +276,7 @@
             <objects>
                 <viewController id="f3F-Os-iHK" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1y-JX-yTt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -297,11 +291,11 @@
             <objects>
                 <viewController id="1bx-sV-tU9" customClass="MWAuxSelectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4VE-Yk-lnn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vab-u3-exW">
-                                <rect key="frame" x="2" y="50" width="316" height="366"/>
+                                <rect key="frame" x="2" y="50" width="316" height="430"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -312,7 +306,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Bl0-KV-fyj">
-                                <rect key="frame" x="9" y="2" width="302" height="44"/>
+                                <rect key="frame" x="9" y="2" width="302" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -339,11 +333,11 @@
             <objects>
                 <viewController id="dgM-vo-cVr" customClass="MWFlyPidViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PEk-tc-shS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hkw-Hk-Njv">
-                                <rect key="frame" x="2" y="0.0" width="316" height="416"/>
+                                <rect key="frame" x="2" y="0.0" width="316" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -365,7 +359,7 @@
             <objects>
                 <viewController id="oGW-rT-LvP" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jNx-4w-tLb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -380,7 +374,7 @@
             <objects>
                 <viewController id="aSy-2e-4N7" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ujb-cy-NZV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -395,7 +389,7 @@
             <objects>
                 <viewController id="haE-pm-wwz" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tSG-Zj-HJo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -410,7 +404,7 @@
             <objects>
                 <viewController id="MMU-vj-5fN" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9p8-Tp-n96">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -425,7 +419,7 @@
             <objects>
                 <viewController id="zCt-Gx-Mgn" customClass="MWBaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nOn-7j-VAo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -437,78 +431,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calibrate_acc@2x.png" width="576" height="106"/>
-        <image name="calibrate_acc_pressed@2x.png" width="576" height="106"/>
-        <image name="calibrate_mag@2x.png" width="576" height="106"/>
-        <image name="calibrate_mag_pressed@2x.png" width="576" height="106"/>
+        <image name="calibrate_acc.png" width="288" height="53"/>
+        <image name="calibrate_acc_pressed.png" width="288" height="53"/>
+        <image name="calibrate_mag.png" width="288" height="53"/>
+        <image name="calibrate_mag_pressed.png" width="288" height="53"/>
     </resources>
-    <classes>
-        <class className="MWAboutViewController" superclassName="MWMenuViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWAboutViewController.h"/>
-        </class>
-        <class className="MWAuxSelectViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWAuxSelectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="segmentControlForAuxChannel" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWBaseButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseButton.h"/>
-        </class>
-        <class className="MWBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBaseViewController.h"/>
-        </class>
-        <class className="MWBuyButton" superclassName="MWIconBaseButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWBuyButton.h"/>
-        </class>
-        <class className="MWConnectViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWConnectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="scanButtonTapped:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWFlyPidViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWFlyPidViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWGPSPidViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWGPSPidViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWIconBaseButton" superclassName="MWBaseButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWIconBaseButton.h"/>
-        </class>
-        <class className="MWMainViewController" superclassName="MWMenuViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWMainViewController.h"/>
-        </class>
-        <class className="MWMenuViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWMenuViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewForMenu" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWSensorsPidViewController" superclassName="MWBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWSensorsPidViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calibrateAccButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="calibrateMagButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MWSettingsViewController" superclassName="MWMenuViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWSettingsViewController.h"/>
-        </class>
-        <class className="MWVisitSiteButton" superclassName="MWIconBaseButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MWVisitSiteButton.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

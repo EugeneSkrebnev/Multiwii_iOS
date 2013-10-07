@@ -48,7 +48,7 @@
     self.version = x[1];
     int copterType = x[2];
     
-    _copterType = -1;
+    _copterType = MWGlobalManagerQuadTypeUnknown;
     if (copterType == 1)
         _copterType = MWGlobalManagerQuadTypeTricopter;
     if (copterType == 2)
@@ -69,8 +69,7 @@
         _copterType = MWGlobalManagerQuadTypeY4;
     if (copterType == 10)
         _copterType = MWGlobalManagerQuadTypeHexX;
-    if (self.copterType == -1)
-        _copterType = MWGlobalManagerQuadTypeUnknown;
+
 
     self.mspVersion = x[3];
     

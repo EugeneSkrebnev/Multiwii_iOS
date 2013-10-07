@@ -19,6 +19,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([UIViewController instancesRespondToSelector:@selector(edgesForExtendedLayout)]) {
+        [(UIViewController*)self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
     if (self.navigationController)
     {
         if (self.navigationController.navigationBar)

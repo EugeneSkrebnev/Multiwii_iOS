@@ -39,7 +39,6 @@
     cell.titleLabel.numberOfLines = 2;
     cell.iconImageView.hidden = YES;
     return cell;
-
 }
 
 @end
