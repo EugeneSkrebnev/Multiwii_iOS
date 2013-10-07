@@ -21,5 +21,5 @@
 @property (nonatomic, strong) MWSettingsEntity* yawRate; //[0..1.00] 0.01
 @property (nonatomic, strong) MWSettingsEntity* throttlePidAttenuationRate; //[0..1.00] 0.01
 
-
+@property (nonatomic, strong) NSArray* allSettings;
 @end

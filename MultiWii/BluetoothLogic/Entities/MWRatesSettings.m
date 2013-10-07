@@ -25,8 +25,9 @@
         self.yawRate = [[MWSettingsEntity alloc] init];
         self.throttlePidAttenuationRate = [[MWSettingsEntity alloc] init];
         
-        NSArray* allrates = @[self.rcExpo, self.rcRate, self.throttleMiddle, self.throttleExpo, self.rollPitchRate, self.yawRate, self.throttlePidAttenuationRate];
-        for (MWSettingsEntity* rate in allrates)
+        self.allSettings = @[self.rcRate, self.rcExpo, self.rollPitchRate, self.yawRate, self.throttlePidAttenuationRate, self.throttleMiddle, self.throttleExpo];
+        
+        for (MWSettingsEntity* rate in self.allSettings)
         {
             rate.step = 0.01;
             rate.minValue = 0;

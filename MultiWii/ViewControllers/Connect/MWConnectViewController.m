@@ -87,9 +87,10 @@
 
 }
 
--(void) testBoxNames
+-(void) testRCTunning
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:nil];
+    NSLog(@"");
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_RC_TUNNING andPayload:nil responseBlock:nil];
     
 }
 
@@ -101,7 +102,7 @@
     cell.titleLabel.textColor = [UIColor greenColor];
 //    [self sendsend]; // test
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
-//    [self testBoxNames];
+    [self testRCTunning];
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated

@@ -85,7 +85,7 @@
 -(void) makeDivedersInit
 {
     NSMutableDictionary* tmp = [NSMutableDictionary dictionaryWithCapacity:32];
-    
+    // fill diveders using 1 / step ... no hard code //refactor
     tmp[@1] = @10;
     tmp[@2] = @1000;
     tmp[@3] = @1;
@@ -165,4 +165,28 @@
     }
     return [NSData dataWithBytes:bytes length:sizeof(bytes)];
 }
+
+-(void) fillRcTunningFromPayload:(NSData*) payload
+{
+    unsigned char *bytes = (unsigned char*)payload.bytes;
+    for (int i = 1; i < payload.length; i++)
+    {
+        MWSettingsEntity* rateEntity = self.RCRates.allSettings[i - 1];
+        rateEntity.value = (float)bytes[i] / 100.;
+    }
+}
+
+-(NSData*) payloadFromRcTunning
+{
+    unsigned char bytes[7]; // 30 is 204 request size
+    
+    for (int i = 0; i < 7; i++)
+    {
+        MWSettingsEntity* rateEntity = self.RCRates.allSettings[i];
+        bytes[i] = rateEntity.value * 100;   //100 because 0.01 step  = 1 / self.RCRates.rcRate.step
+    }
+
+    return [NSData dataWithBytes:bytes length:sizeof(bytes)];
+}
+
 @end

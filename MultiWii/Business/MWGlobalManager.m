@@ -114,6 +114,9 @@
         [selfWeak.boxManager fillBoxesValuesFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_BOXES];
 
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.pidManager fillRcTunningFromPayload:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_RC_TUNNING];
 
 }
 
