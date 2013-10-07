@@ -30,6 +30,8 @@
         self.flyPid = [[MWFlyPidSettings alloc] init];
         self.sensorsPid = [[MWSensorsPidSettings alloc] init];
         self.gpsPid = [[MWGPSPidSettings alloc] init];
+        
+        self.RCRates = [[MWRatesSettings alloc] init];
         [self makePidsIndexInit];
         [self makeDivedersInit];
     }

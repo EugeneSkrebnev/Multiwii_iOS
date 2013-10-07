@@ -9,6 +9,7 @@
 #import "MWRatesTuningViewController.h"
 #import "MWTopbarButton.h"
 #import "MWPidSettingsManager.h"
+#import "MWRateAdjustCell.h"
 
 @interface MWRatesTuningViewController ()
 
@@ -21,7 +22,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @" AUX ";
+    self.viewControllerTitle = @" RATES ";
     
 
     self.tableView.delegate = self;
@@ -75,14 +76,25 @@
     [super viewDidUnload];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    MWRateAdjustCell* cell = (MWRateAdjustCell*)[MWRateAdjustCell loadView];
+    
+    cell.knobEntities = @[[MWGlobalManager sharedInstance].pidManager.RCRates.rollPitchRate,
+                          [MWGlobalManager sharedInstance].pidManager.RCRates.yawRate,
+                          [MWGlobalManager sharedInstance].pidManager.RCRates.throttlePidAttenuationRate];
+    
+    return cell;
 }
 
 

@@ -15,6 +15,10 @@
 		44068B891802B92700E8ABCC /* separator_two_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */; };
 		44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */; };
 		44068B901802E9DC00E8ABCC /* MWRatesTuningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B8F1802E9DC00E8ABCC /* MWRatesTuningViewController.m */; };
+		44068B941802EDC100E8ABCC /* MWRateAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B931802EDC100E8ABCC /* MWRateAdjustCell.m */; };
+		44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44068B951802EDD900E8ABCC /* MWRateAdjustCell.xib */; };
+		44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B991802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m */; };
+		44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44068B9D1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -181,6 +185,12 @@
 		44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesSettings.m; sourceTree = "<group>"; };
 		44068B8E1802E9DC00E8ABCC /* MWRatesTuningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesTuningViewController.h; sourceTree = "<group>"; };
 		44068B8F1802E9DC00E8ABCC /* MWRatesTuningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesTuningViewController.m; sourceTree = "<group>"; };
+		44068B921802EDC100E8ABCC /* MWRateAdjustCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRateAdjustCell.h; sourceTree = "<group>"; };
+		44068B931802EDC100E8ABCC /* MWRateAdjustCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRateAdjustCell.m; sourceTree = "<group>"; };
+		44068B951802EDD900E8ABCC /* MWRateAdjustCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWRateAdjustCell.xib; sourceTree = "<group>"; };
+		44068B981802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesGraphicAdjustCell.h; sourceTree = "<group>"; };
+		44068B991802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesGraphicAdjustCell.m; sourceTree = "<group>"; };
+		44068B9D1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWRatesGraphicAdjustCell.xib; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -425,6 +435,26 @@
 				44068B8F1802E9DC00E8ABCC /* MWRatesTuningViewController.m */,
 			);
 			path = Rates;
+			sourceTree = "<group>";
+		};
+		44068B911802EC7900E8ABCC /* RatesAdjustCell */ = {
+			isa = PBXGroup;
+			children = (
+				44068B921802EDC100E8ABCC /* MWRateAdjustCell.h */,
+				44068B931802EDC100E8ABCC /* MWRateAdjustCell.m */,
+				44068B951802EDD900E8ABCC /* MWRateAdjustCell.xib */,
+			);
+			path = RatesAdjustCell;
+			sourceTree = "<group>";
+		};
+		44068B971802FCC000E8ABCC /* RatesGraphicAdjustCell */ = {
+			isa = PBXGroup;
+			children = (
+				44068B981802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.h */,
+				44068B991802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m */,
+				44068B9D1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib */,
+			);
+			path = RatesGraphicAdjustCell;
 			sourceTree = "<group>";
 		};
 		44453C9317518F6900929EC8 = {
@@ -1056,6 +1086,8 @@
 		44C7CA98178A1C250059C199 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				44068B971802FCC000E8ABCC /* RatesGraphicAdjustCell */,
+				44068B911802EC7900E8ABCC /* RatesAdjustCell */,
 				44519D6C179D7FB7006E4EB7 /* DevicePreviewCell */,
 				44A6BDE6178E05C400DC95C6 /* AUXCell */,
 				44A6BDE7178E05C400DC95C6 /* PIDAdjustCell */,
@@ -1162,6 +1194,7 @@
 				44C7CA84178A0BF20059C199 /* gradient_title-text@2x.png in Resources */,
 				44C7CA8C178A0D610059C199 /* Montserrat-Bold.ttf in Resources */,
 				44C7CA8D178A0D610059C199 /* Montserrat-Regular.ttf in Resources */,
+				44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */,
 				44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */,
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
 				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
@@ -1215,6 +1248,7 @@
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
 				44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */,
+				44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */,
 				44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */,
 				44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */,
 				44A6BE1C178EE92000DC95C6 /* site@2x.png in Resources */,
@@ -1258,6 +1292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44453CAC17518F6900929EC8 /* main.m in Sources */,
+				44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */,
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
 				44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */,
 				44C7CA4B1789CCEC0059C199 /* MWSplashView.m in Sources */,
@@ -1286,6 +1321,7 @@
 				44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */,
 				44519D4A179BF655006E4EB7 /* CBUUID+StringValue.m in Sources */,
 				44519D4B179BF655006E4EB7 /* MWBluetoothManager.m in Sources */,
+				44068B941802EDC100E8ABCC /* MWRateAdjustCell.m in Sources */,
 				44519D51179BFB72006E4EB7 /* MWSettingsEntity.m in Sources */,
 				44519D54179BFE9C006E4EB7 /* MWPIDSettingsEntity.m in Sources */,
 				44519D57179BFF27006E4EB7 /* MWFlyPidSettings.m in Sources */,

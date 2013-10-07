@@ -271,16 +271,27 @@
             </objects>
             <point key="canvasLocation" x="-44" y="2301"/>
         </scene>
-        <!--Base View Controller-->
+        <!--Rates Tuning View Controller-->
         <scene sceneID="s1f-XY-aNd">
             <objects>
-                <viewController id="f3F-Os-iHK" customClass="MWBaseViewController" sceneMemberID="viewController">
+                <viewController id="f3F-Os-iHK" customClass="MWRatesTuningViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1y-JX-yTt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8sI-I2-TvA">
+                                <rect key="frame" x="2" y="0.0" width="316" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="UlV-Vj-giw"/>
+                    <connections>
+                        <outlet property="tableView" destination="8sI-I2-TvA" id="j7X-Rs-og3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RjY-eg-UeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
