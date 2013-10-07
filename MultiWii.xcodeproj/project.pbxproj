@@ -12,6 +12,7 @@
 		4403BCBB17EF7ABC00B5A4E1 /* pitch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB717EF7ABC00B5A4E1 /* pitch@2x.png */; };
 		4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */; };
 		4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */; };
+		44068B891802B92700E8ABCC /* separator_two_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -173,6 +174,7 @@
 		4403BCB717EF7ABC00B5A4E1 /* pitch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pitch@2x.png"; sourceTree = "<group>"; };
 		4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roll@2x.png"; sourceTree = "<group>"; };
 		4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yaw@2x.png"; sourceTree = "<group>"; };
+		44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_two_pressed@2x.png"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -772,6 +774,7 @@
 		44AD4A7F180018350088760D /* SegmentControl */ = {
 			isa = PBXGroup;
 			children = (
+				44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */,
 				44AD4A80180018350088760D /* center_normal@2x.png */,
 				44AD4A81180018350088760D /* center_pressed@2x.png */,
 				44AD4A82180018350088760D /* left_normal@2x.png */,
@@ -1186,6 +1189,7 @@
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,
 				44A6BDE1178E020300DC95C6 /* bug_pressed@2x.png in Resources */,
 				44A6BDE2178E020300DC95C6 /* feedback@2x.png in Resources */,
+				44068B891802B92700E8ABCC /* separator_two_pressed@2x.png in Resources */,
 				44A6BDE3178E020300DC95C6 /* feedback_pressed@2x.png in Resources */,
 				44A6BDE4178E020300DC95C6 /* how_to_connect@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
