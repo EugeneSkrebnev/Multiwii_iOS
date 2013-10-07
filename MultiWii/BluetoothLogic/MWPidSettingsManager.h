@@ -19,6 +19,8 @@
 @property (nonatomic, strong) MWSensorsPidSettings* sensorsPid;
 @property (nonatomic, strong) MWGPSPidSettings* gpsPid;
 
+
 -(void) fillPidFromPayload:(NSData*) payload;
 -(NSData*) payloadFromPids;
+
 @end

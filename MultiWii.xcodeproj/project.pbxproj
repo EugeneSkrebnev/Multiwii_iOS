@@ -13,6 +13,7 @@
 		4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */; };
 		4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */; };
 		44068B891802B92700E8ABCC /* separator_two_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */; };
+		44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -175,6 +176,8 @@
 		4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roll@2x.png"; sourceTree = "<group>"; };
 		4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yaw@2x.png"; sourceTree = "<group>"; };
 		44068B881802B92700E8ABCC /* separator_two_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_two_pressed@2x.png"; sourceTree = "<group>"; };
+		44068B8A1802C1D600E8ABCC /* MWRatesSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesSettings.h; sourceTree = "<group>"; };
+		44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesSettings.m; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -506,6 +509,8 @@
 				44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */,
 				44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */,
 				44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */,
+				44068B8A1802C1D600E8ABCC /* MWRatesSettings.h */,
+				44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1260,6 +1265,7 @@
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
 				44A6BE08178EDC0C00DC95C6 /* MWBaseButton.m in Sources */,
 				44A6BE0B178EDC4000DC95C6 /* MWIconBaseButton.m in Sources */,
+				44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */,
 				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */,

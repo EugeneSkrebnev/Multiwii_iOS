@@ -1,0 +1,40 @@
+//
+//  MWRatesSettings.m
+//  MultiWii
+//
+//  Created by Eugene Skrebnev on 10/7/13.
+//  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
+//
+
+#import "MWRatesSettings.h"
+
+@implementation MWRatesSettings
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.rcExpo = [[MWSettingsEntity alloc] init];
+        self.rcRate = [[MWSettingsEntity alloc] init];
+        
+        self.throttleMiddle = [[MWSettingsEntity alloc] init];
+        self.throttleExpo = [[MWSettingsEntity alloc] init];
+        
+        self.rollPitchRate = [[MWSettingsEntity alloc] init];
+        self.yawRate = [[MWSettingsEntity alloc] init];
+        self.throttlePidAttenuationRate = [[MWSettingsEntity alloc] init];
+        
+        NSArray* allrates = @[self.rcExpo, self.rcRate, self.throttleMiddle, self.throttleExpo, self.rollPitchRate, self.yawRate, self.throttlePidAttenuationRate];
+        for (MWSettingsEntity* rate in allrates)
+        {
+            rate.step = 0.01;
+            rate.minValue = 0;
+            rate.maxValue = 1;
+        }
+        
+        self.rcRate.maxValue = 2.5;
+    }
+    return self;
+}
+@end
