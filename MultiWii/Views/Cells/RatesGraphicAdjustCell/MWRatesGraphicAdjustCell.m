@@ -10,22 +10,16 @@
 
 @implementation MWRatesGraphicAdjustCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void) makeInit
 {
-    // Drawing code
+    self.sliderRight.transform = CGAffineTransformMakeRotation(M_PI * -0.5);
+    for (UILabel* lbl in self.slidersTitleLabels)
+    {
+        lbl.font = [UIFont fontWithName:@"Montserrat-Regular" size:10];
+        lbl.textColor = [UIColor colorWithRed:252./255 green:36./255 blue:8./255 alpha:1];        
+    }
+
 }
-*/
 
 @end

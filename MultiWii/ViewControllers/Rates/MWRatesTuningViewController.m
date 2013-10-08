@@ -10,6 +10,7 @@
 #import "MWTopbarButton.h"
 #import "MWPidSettingsManager.h"
 #import "MWRateAdjustCell.h"
+#import "MWRatesGraphicAdjustCell.h"
 
 @interface MWRatesTuningViewController ()
 
@@ -56,9 +57,6 @@
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_RC_TUNNING andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"RCRates read success");
     }];
-    
-
-   
 }
 
 -(void) writeRCRatesButtonTapped
@@ -78,23 +76,35 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    return indexPath.row > 1 ? 120 : 148;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MWRateAdjustCell* cell = (MWRateAdjustCell*)[MWRateAdjustCell loadView];
+    UITableViewCell* result;
     
-    cell.knobEntities = @[[MWGlobalManager sharedInstance].pidManager.RCRates.rollPitchRate,
-                          [MWGlobalManager sharedInstance].pidManager.RCRates.yawRate,
-                          [MWGlobalManager sharedInstance].pidManager.RCRates.throttlePidAttenuationRate];
     
-    return cell;
+    if (indexPath.row == 2)
+    {
+        MWRateAdjustCell* cell = (MWRateAdjustCell*)[MWRateAdjustCell loadView];
+    
+        cell.knobEntities = @[[MWGlobalManager sharedInstance].pidManager.RCRates.rollPitchRate,
+                              [MWGlobalManager sharedInstance].pidManager.RCRates.yawRate,
+                              [MWGlobalManager sharedInstance].pidManager.RCRates.throttlePidAttenuationRate];
+        result = cell;
+    }
+    else
+    {
+        MWRatesGraphicAdjustCell* cell = (MWRatesGraphicAdjustCell*)[MWRatesGraphicAdjustCell loadView];
+        result = cell;
+    }
+
+    return result;
 }
 
 

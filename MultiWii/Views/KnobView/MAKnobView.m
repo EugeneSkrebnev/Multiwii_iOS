@@ -269,7 +269,7 @@
     
     if (self.settingEntity)
     {
-        if (!(fabsf(self.value - self.settingEntity.value) < self.step / 2))
+        if (!(fabsf(self.value - self.settingEntity.value) < self.step / 5))
             self.settingEntity.value = self.value;
     }
 
