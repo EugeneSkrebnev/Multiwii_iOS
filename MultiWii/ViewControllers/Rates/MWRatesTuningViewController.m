@@ -101,6 +101,32 @@
     else
     {
         MWRatesGraphicAdjustCell* cell = (MWRatesGraphicAdjustCell*)[MWRatesGraphicAdjustCell loadView];
+        if (indexPath.row == 0)
+        {
+            cell.titleLabelForTopValueContainer.text = @"RC Expo";
+            cell.titleLabelForBottomValueContainer.text = @"RC Rate";
+            cell.titleLabelForRightSlider.text = @"RC Rate";
+            cell.titleLabelForBottomSlider.text = @"RC Expo";
+            
+            cell.sliderRight.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+            cell.sliderBottom.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
+            
+            cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
+            cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+        }
+        else
+        {
+            cell.titleLabelForTopValueContainer.text = @"Thr. Mid.";
+            cell.titleLabelForBottomValueContainer.text = @"Thr. Expo";
+            cell.titleLabelForRightSlider.text = @"Thr. Expo";
+            cell.titleLabelForBottomSlider.text = @"Thr. Mid.";
+            
+            cell.sliderRight.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+            cell.sliderBottom.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
+            
+            cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
+            cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+        }
         result = cell;
     }
 

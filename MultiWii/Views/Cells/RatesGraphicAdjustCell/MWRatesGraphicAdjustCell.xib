@@ -15,16 +15,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="grayLine.png" id="arA-5i-xyr">
-                        <rect key="frame" x="0.0" y="14" width="316" height="147"/>
+                        <rect key="frame" x="0.0" y="0.0" width="316" height="147"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell.png" id="3V9-9i-KWK">
-                        <rect key="frame" x="0.0" y="14" width="316" height="147"/>
+                        <rect key="frame" x="0.0" y="0.0" width="316" height="147"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" id="WP8-5J-e2R">
                         <rect key="frame" x="0.0" y="146" width="316" height="1"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     </imageView>
                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ecf-9o-4lH" customClass="MWSliderView">
                         <rect key="frame" x="53" y="116" width="204" height="34"/>
@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </slider>
                     <view contentMode="scaleToFill" id="5DP-Ra-Q2h" customClass="MWGraphicView">
-                        <rect key="frame" x="50" y="17" width="210" height="100"/>
+                        <rect key="frame" x="52" y="17" width="206" height="100"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -53,16 +53,45 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" id="Z4e-Xr-Vls" customClass="MWSettingValueContainer">
+                        <rect key="frame" x="5" y="32" width="42" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.1764705882" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cx0-lh-Eqb">
+                        <rect key="frame" x="4" y="13" width="44" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" id="c9W-es-TjQ" customClass="MWSettingValueContainer">
+                        <rect key="frame" x="5" y="86" width="42" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.1764705882" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pqR-tj-EeC">
+                        <rect key="frame" x="4" y="67" width="44" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="graphicView" destination="5DP-Ra-Q2h" id="O25-RR-OxO"/>
+                <outlet property="settingsValueContainerBottom" destination="c9W-es-TjQ" id="bQD-4i-2C6"/>
+                <outlet property="settingsValueContainerTop" destination="Z4e-Xr-Vls" id="zYd-lN-pU8"/>
                 <outlet property="sliderBottom" destination="ecf-9o-4lH" id="qmd-nB-m57"/>
                 <outlet property="sliderRight" destination="CU2-iD-7IG" id="3nW-Fy-CCS"/>
                 <outlet property="titleLabelForBottomSlider" destination="ptV-qV-s3u" id="Kjg-VP-dOO"/>
+                <outlet property="titleLabelForBottomValueContainer" destination="pqR-tj-EeC" id="vpF-yF-trD"/>
                 <outlet property="titleLabelForRightSlider" destination="Pyc-o2-gRM" id="7nx-Cn-oyT"/>
+                <outlet property="titleLabelForTopValueContainer" destination="cx0-lh-Eqb" id="fZq-aj-hRh"/>
                 <outletCollection property="slidersTitleLabels" destination="ptV-qV-s3u" id="pKd-jF-CbX"/>
                 <outletCollection property="slidersTitleLabels" destination="Pyc-o2-gRM" id="eZr-Yt-Rus"/>
+                <outletCollection property="valueContainersTitleLabels" destination="pqR-tj-EeC" id="g3H-dU-Agm"/>
+                <outletCollection property="valueContainersTitleLabels" destination="cx0-lh-Eqb" id="4RR-HD-klM"/>
             </connections>
         </tableViewCell>
     </objects>

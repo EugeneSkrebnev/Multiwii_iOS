@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWRatesGraphicView.h"
+#import "MWThrottleGraphicView.h"
 
 @interface MWGraphicView : UIView
 

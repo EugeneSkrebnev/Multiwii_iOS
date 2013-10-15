@@ -9,6 +9,7 @@
 #import "MWBaseTableViewCell.h"
 #import "MWGraphicView.h"
 #import "MWSliderView.h"
+#import "MWSettingValueContainer.h"
 
 @interface MWRatesGraphicAdjustCell : MWBaseTableViewCell
 
@@ -19,4 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelForRightSlider;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabelForBottomSlider;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *slidersTitleLabels;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabelForTopValueContainer;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabelForBottomValueContainer;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *valueContainersTitleLabels;
+
+@property (weak, nonatomic) IBOutlet MWSettingValueContainer *settingsValueContainerTop;
+@property (weak, nonatomic) IBOutlet MWSettingValueContainer *settingsValueContainerBottom;
+
 @end

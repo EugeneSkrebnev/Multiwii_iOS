@@ -29,10 +29,15 @@
 		44068BB7180409EB00E8ABCC /* separator_normal_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BAD180409EB00E8ABCC /* separator_normal_normal@2x.png */; };
 		44068BB8180409EB00E8ABCC /* separator_right_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BAE180409EB00E8ABCC /* separator_right_pressed@2x.png */; };
 		44068BB9180409EB00E8ABCC /* separator_two_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BAF180409EB00E8ABCC /* separator_two_pressed@2x.png */; };
-		44068BBE18040A4900E8ABCC /* slider_maximum.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BBB18040A4900E8ABCC /* slider_maximum.png */; };
-		44068BBF18040A4900E8ABCC /* slider_minimum.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BBC18040A4900E8ABCC /* slider_minimum.png */; };
-		44068BC018040A4900E8ABCC /* slider_tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 44068BBD18040A4900E8ABCC /* slider_tab.png */; };
 		44068BC318040AF700E8ABCC /* MWGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068BC218040AF700E8ABCC /* MWGraphicView.m */; };
+		44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068BC51804210D00E8ABCC /* MWSettingValueContainer.m */; };
+		44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222593180D45BD00D53DE3 /* slider_maximum@2x.png */; };
+		44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222594180D45BD00D53DE3 /* slider_minimum@2x.png */; };
+		44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222595180D45BD00D53DE3 /* slider_tab@2x.png */; };
+		4422259C180D4B2000D53DE3 /* field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4422259A180D4B2000D53DE3 /* field@2x.png */; };
+		4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4422259B180D4B2000D53DE3 /* field_active@2x.png */; };
+		442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422259F180D613F00D53DE3 /* MWThrottleGraphicView.m */; };
+		442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -207,11 +212,19 @@
 		44068BAD180409EB00E8ABCC /* separator_normal_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_normal_normal@2x.png"; sourceTree = "<group>"; };
 		44068BAE180409EB00E8ABCC /* separator_right_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_right_pressed@2x.png"; sourceTree = "<group>"; };
 		44068BAF180409EB00E8ABCC /* separator_two_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator_two_pressed@2x.png"; sourceTree = "<group>"; };
-		44068BBB18040A4900E8ABCC /* slider_maximum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_maximum.png; sourceTree = "<group>"; };
-		44068BBC18040A4900E8ABCC /* slider_minimum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_minimum.png; sourceTree = "<group>"; };
-		44068BBD18040A4900E8ABCC /* slider_tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_tab.png; sourceTree = "<group>"; };
 		44068BC118040AF700E8ABCC /* MWGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGraphicView.h; sourceTree = "<group>"; };
 		44068BC218040AF700E8ABCC /* MWGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGraphicView.m; sourceTree = "<group>"; };
+		44068BC41804210D00E8ABCC /* MWSettingValueContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSettingValueContainer.h; sourceTree = "<group>"; };
+		44068BC51804210D00E8ABCC /* MWSettingValueContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSettingValueContainer.m; sourceTree = "<group>"; };
+		44222593180D45BD00D53DE3 /* slider_maximum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum@2x.png"; sourceTree = "<group>"; };
+		44222594180D45BD00D53DE3 /* slider_minimum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum@2x.png"; sourceTree = "<group>"; };
+		44222595180D45BD00D53DE3 /* slider_tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab@2x.png"; sourceTree = "<group>"; };
+		4422259A180D4B2000D53DE3 /* field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field@2x.png"; sourceTree = "<group>"; };
+		4422259B180D4B2000D53DE3 /* field_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field_active@2x.png"; sourceTree = "<group>"; };
+		4422259E180D613F00D53DE3 /* MWThrottleGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWThrottleGraphicView.h; sourceTree = "<group>"; };
+		4422259F180D613F00D53DE3 /* MWThrottleGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWThrottleGraphicView.m; sourceTree = "<group>"; };
+		442225A1180D62CB00D53DE3 /* MWRatesGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesGraphicView.h; sourceTree = "<group>"; };
+		442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesGraphicView.m; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -474,6 +487,10 @@
 			children = (
 				44068BC118040AF700E8ABCC /* MWGraphicView.h */,
 				44068BC218040AF700E8ABCC /* MWGraphicView.m */,
+				4422259E180D613F00D53DE3 /* MWThrottleGraphicView.h */,
+				4422259F180D613F00D53DE3 /* MWThrottleGraphicView.m */,
+				442225A1180D62CB00D53DE3 /* MWRatesGraphicView.h */,
+				442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */,
 			);
 			name = GraphicView;
 			path = MultiWii/Views/GraphicView;
@@ -482,6 +499,8 @@
 		44068BA01803027400E8ABCC /* SettingsValueView */ = {
 			isa = PBXGroup;
 			children = (
+				44068BC41804210D00E8ABCC /* MWSettingValueContainer.h */,
+				44068BC51804210D00E8ABCC /* MWSettingValueContainer.m */,
 			);
 			name = SettingsValueView;
 			path = MultiWii/Views/SettingsValueView;
@@ -517,11 +536,20 @@
 		44068BBA18040A4900E8ABCC /* Slider */ = {
 			isa = PBXGroup;
 			children = (
-				44068BBB18040A4900E8ABCC /* slider_maximum.png */,
-				44068BBC18040A4900E8ABCC /* slider_minimum.png */,
-				44068BBD18040A4900E8ABCC /* slider_tab.png */,
+				44222593180D45BD00D53DE3 /* slider_maximum@2x.png */,
+				44222594180D45BD00D53DE3 /* slider_minimum@2x.png */,
+				44222595180D45BD00D53DE3 /* slider_tab@2x.png */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		44222599180D4B2000D53DE3 /* RatesCell */ = {
+			isa = PBXGroup;
+			children = (
+				4422259A180D4B2000D53DE3 /* field@2x.png */,
+				4422259B180D4B2000D53DE3 /* field_active@2x.png */,
+			);
+			path = RatesCell;
 			sourceTree = "<group>";
 		};
 		44453C9317518F6900929EC8 = {
@@ -984,6 +1012,7 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44222599180D4B2000D53DE3 /* RatesCell */,
 				44068BBA18040A4900E8ABCC /* Slider */,
 				44068BA5180409EB00E8ABCC /* SegmentControl */,
 				4403BCB517EF7ABC00B5A4E1 /* SettingsIcons */,
@@ -1199,6 +1228,11 @@
 				CLASSPREFIX = MW;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = EugeneSkrebnev;
+				TargetAttributes = {
+					44453C9B17518F6900929EC8 = {
+						DevelopmentTeam = 5U67EGLCUP;
+					};
+				};
 			};
 			buildConfigurationList = 44453C9717518F6900929EC8 /* Build configuration list for PBXProject "MultiWii" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1223,7 +1257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44453CAA17518F6900929EC8 /* InfoPlist.strings in Resources */,
-				44068BBE18040A4900E8ABCC /* slider_maximum.png in Resources */,
 				44C7CA3F1789C5520059C199 /* Splash.png in Resources */,
 				44C7CA401789C5520059C199 /* Splash5.png in Resources */,
 				44068BB4180409EB00E8ABCC /* right_normal@2x.png in Resources */,
@@ -1251,11 +1284,12 @@
 				44C7CA82178A02640059C199 /* top_bar@2x.png in Resources */,
 				44C7CA84178A0BF20059C199 /* gradient_title-text@2x.png in Resources */,
 				44C7CA8C178A0D610059C199 /* Montserrat-Bold.ttf in Resources */,
-				44068BBF18040A4900E8ABCC /* slider_minimum.png in Resources */,
 				44068BB8180409EB00E8ABCC /* separator_right_pressed@2x.png in Resources */,
 				44C7CA8D178A0D610059C199 /* Montserrat-Regular.ttf in Resources */,
+				44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */,
 				44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */,
 				44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */,
+				44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */,
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
 				44068BB7180409EB00E8ABCC /* separator_normal_normal@2x.png in Resources */,
 				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
@@ -1272,6 +1306,7 @@
 				44A6BD81178D5C3700DC95C6 /* control_pressed@2x.png in Resources */,
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
 				44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */,
+				4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */,
 				44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */,
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
 				44A6BD8B178D744B00DC95C6 /* circle@2x.png in Resources */,
@@ -1280,7 +1315,6 @@
 				44A6BD91178D7DE000DC95C6 /* grayLine.png in Resources */,
 				44A6BD94178D82E200DC95C6 /* back_button_press@2x.png in Resources */,
 				44068BB0180409EB00E8ABCC /* center_normal@2x.png in Resources */,
-				44068BC018040A4900E8ABCC /* slider_tab.png in Resources */,
 				44068BB9180409EB00E8ABCC /* separator_two_pressed@2x.png in Resources */,
 				44A6BD95178D82E200DC95C6 /* back_button@2x.png in Resources */,
 				44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */,
@@ -1308,6 +1342,7 @@
 				44A6BDE2178E020300DC95C6 /* feedback@2x.png in Resources */,
 				44A6BDE3178E020300DC95C6 /* feedback_pressed@2x.png in Resources */,
 				44A6BDE4178E020300DC95C6 /* how_to_connect@2x.png in Resources */,
+				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
@@ -1331,6 +1366,7 @@
 				4403BCBA17EF7ABC00B5A4E1 /* level@2x.png in Resources */,
 				4403BCBB17EF7ABC00B5A4E1 /* pitch@2x.png in Resources */,
 				4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */,
+				4422259C180D4B2000D53DE3 /* field@2x.png in Resources */,
 				4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */,
 				44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */,
 				44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */,
@@ -1374,6 +1410,7 @@
 				44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */,
 				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
+				44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */,
 				44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */,
 				44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */,
 				44519D4A179BF655006E4EB7 /* CBUUID+StringValue.m in Sources */,
@@ -1383,6 +1420,7 @@
 				44519D54179BFE9C006E4EB7 /* MWPIDSettingsEntity.m in Sources */,
 				44519D57179BFF27006E4EB7 /* MWFlyPidSettings.m in Sources */,
 				44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */,
+				442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */,
 				44519D60179C04F2006E4EB7 /* MWSensorsPidSettings.m in Sources */,
 				44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
@@ -1392,6 +1430,7 @@
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
+				442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */,
 				44068BC318040AF700E8ABCC /* MWGraphicView.m in Sources */,
 				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
 				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
@@ -1473,12 +1512,15 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BB1F5ECA-1CCE-4DF9-83BA-5A446F8A3095";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1486,12 +1528,15 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BB1F5ECA-1CCE-4DF9-83BA-5A446F8A3095";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

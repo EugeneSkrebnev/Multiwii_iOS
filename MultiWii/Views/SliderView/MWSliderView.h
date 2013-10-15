@@ -10,6 +10,6 @@
 #import "MWSettingsEntity.h"
 @interface MWSliderView : UISlider
 
-@property (nonatomic, strong) MWSettingsEntity* associatedSettingValue;
+@property (nonatomic, strong) MWSettingsEntity* settingsEntity;
 
 @end

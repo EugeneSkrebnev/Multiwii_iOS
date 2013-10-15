@@ -29,12 +29,24 @@
     _value = value;
 }
 
+
 -(void)setValueWithoutKVO:(float)value
+{
+    [self setValueWithoutKVO:value withStepping:NO];
+}
+
+-(void)setValueWithoutKVO:(float)value withStepping:(BOOL) stepping
 {
     float step = self.step;
     if (step < 0.000001)
         step = 0.000001;
-    if (!(fabsf(value - self.value) < (step / 5)))
+    if (stepping)
+    {
+        float newStep = roundf((value) / self.step);
+        value = newStep * self.step;
+    }
+
+    if ((!(fabsf(value - self.value) < (step / 5)))/*||(stepping)*/)
     {
         [self willChangeValueForKey:@"value"];
         _value = value;

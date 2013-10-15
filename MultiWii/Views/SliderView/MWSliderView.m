@@ -9,19 +9,21 @@
 #import "MWSliderView.h"
 
 @implementation MWSliderView
-
+{
+    BOOL _wasInit;
+}
 
 -(void) makeInit
 {
-    if (self.tag == 0)
+    if (!_wasInit)
     {
-        self.tag = 1;
+        _wasInit = YES;
         [self addTarget:self action:@selector(valueChanged) forControlEvents:(UIControlEventValueChanged)];
-        
+        [self addTarget:self action:@selector(valueDidChanged) forControlEvents:((UIControlEventTouchUpInside | UIControlEventTouchUpOutside))];
         [self setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateNormal];
         [self setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateHighlighted];
-        [self setMinimumTrackImage:[UIImage imageNamed:@"slider_minimum.png"] forState:UIControlStateNormal];
-        [self setMaximumTrackImage:[UIImage imageNamed:@"slider_maximum.png"] forState:UIControlStateNormal];
+        [self setMinimumTrackImage:[[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:0] forState:UIControlStateNormal];
+        [self setMaximumTrackImage:[[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:0] forState:UIControlStateNormal];
     }
 }
 
@@ -58,17 +60,30 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 //    if (fabs(self.value - _associatedSettingValue.value) < (_associatedSettingValue.step / 5))
-    self.value = _associatedSettingValue.value;
+
+//    [UIView animateWithDuration:0.3 animations:^{
+//        self.value = _settingsEntity.value;        
+//    }];
+    [UIView animateWithDuration:.3 animations:^{
+        [self setValue:_settingsEntity.value animated:YES];
+    }];
+
 }
 
--(void)setAssociatedSettingValue:(MWSettingsEntity *)associatedSettingValue
+-(void)setSettingsEntity:(MWSettingsEntity *)associatedSettingValue
 {
-    _associatedSettingValue = associatedSettingValue;
+    if (_settingsEntity)
+    {
+        [_settingsEntity removeObserver:self forKeyPath:@"value"];
+    }
+    _settingsEntity = associatedSettingValue;
     
-    self.minimumValue = _associatedSettingValue.minValue;
-    self.maximumValue = _associatedSettingValue.maxValue;
-
-    [_associatedSettingValue addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:nil];
+    self.minimumValue = _settingsEntity.minValue;
+    self.maximumValue = _settingsEntity.maxValue;
+    if (_settingsEntity)
+    {
+        [_settingsEntity addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
+    }
     
 }
 
@@ -78,7 +93,26 @@
 //    // Convert "steps" back to the context of the sliders values.
 //    self.questionSlider.value = newStep * _associatedSettingValue.step;
     
-    [_associatedSettingValue setValueWithoutKVO:self.value];
+    [_settingsEntity setValueWithoutKVO:self.value];
 }
 
+-(void) valueDidChanged
+{
+    //    float newStep = roundf((self.value) / _associatedSettingValue.step);
+    //    // Convert "steps" back to the context of the sliders values.
+    //    self.questionSlider.value = newStep * _associatedSettingValue.step;
+    
+    [_settingsEntity setValueWithoutKVO:self.value withStepping:YES];
+}
+//-(void)setValue:(float)value
+//{
+//    [super setValue:value];
+//}
+-(void)dealloc
+{
+    if (_settingsEntity)
+    {
+        [_settingsEntity removeObserver:self forKeyPath:@"value"];
+    }
+}
 @end
