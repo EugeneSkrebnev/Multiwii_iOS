@@ -19,4 +19,5 @@
 -(void) setValueWithoutNotification:(float)value;
 -(void)setValueWithoutKVO:(float)value;
 -(void)setValueWithoutKVO:(float)value withStepping:(BOOL) stepping;
+-(BOOL) willChangeValueToValue:(float) newValue;
 @end

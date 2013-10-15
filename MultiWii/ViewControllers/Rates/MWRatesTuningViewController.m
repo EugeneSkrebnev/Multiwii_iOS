@@ -113,6 +113,12 @@
             
             cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
             cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+            
+            cell.graphicView.entityX = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
+            cell.graphicView.entityY = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+            
+            cell.graphicView.graphicType = MWGraphicViewTypeRates;
+            
         }
         else
         {
@@ -126,6 +132,12 @@
             
             cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
             cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+            
+            cell.graphicView.entityX = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
+            cell.graphicView.entityY = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+            
+            cell.graphicView.graphicType = MWGraphicViewTypeThrottle;
+
         }
         result = cell;
     }

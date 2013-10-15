@@ -9,14 +9,27 @@
 #import "MWSettingsEntity.h"
 
 @implementation MWSettingsEntity
+
 @synthesize value = _value;
 
--(void)setValue:(float)value
+
+-(BOOL) willChangeValueToValue:(float) newValue
 {
     float step = self.step;
     if (step < 0.000001)
         step = 0.000001;
-    if (!(fabsf(value - self.value) < (step / 5)))
+    return !((fabsf(newValue - self.value) < (step / 5)));
+}
+
+-(void)setValue:(float)value
+{
+    if (value > self.maxValue)
+        value = self.maxValue;
+    if (value < self.minValue)
+        value = self.minValue;
+    
+
+    if ([self willChangeValueToValue:value])
     {
         [self willChangeValueForKey:@"value"];
         _value = value;
@@ -29,7 +42,6 @@
     _value = value;
 }
 
-
 -(void)setValueWithoutKVO:(float)value
 {
     [self setValueWithoutKVO:value withStepping:NO];
@@ -37,16 +49,14 @@
 
 -(void)setValueWithoutKVO:(float)value withStepping:(BOOL) stepping
 {
-    float step = self.step;
-    if (step < 0.000001)
-        step = 0.000001;
+
     if (stepping)
     {
         float newStep = roundf((value) / self.step);
         value = newStep * self.step;
     }
 
-    if ((!(fabsf(value - self.value) < (step / 5)))/*||(stepping)*/)
+    if ([self willChangeValueToValue:value])
     {
         [self willChangeValueForKey:@"value"];
         _value = value;

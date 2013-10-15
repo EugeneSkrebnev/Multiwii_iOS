@@ -19,6 +19,7 @@
     if (!_wasInited)
     {
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+        [self addGestureRecognizer:_panGesture];
     }
 }
 
@@ -58,10 +59,9 @@
 //    map [0..1] to [0 .. width and height]
     return CGPointMake(inputPoint.x * self.width, self.height - (inputPoint.y * self.height));
 }
+
 -(UIBezierPath*) bezierLineForSettings
 {
-    self.rcRate = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
-    self.rcExpo = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
     CGPoint x0 = CGPointMake(0, 0);
     CGPoint x2 = CGPointMake(1, self.rcRate.value);
     
@@ -92,6 +92,11 @@
     [ratePath stroke];
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self setNeedsDisplay];
+}
+
 -(void)setRcExpo:(MWSettingsEntity *)rcExpo
 {
     if (_rcExpo)
@@ -106,11 +111,6 @@
         [_rcExpo addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial) context:nil];
     }
 
-}
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    [self setNeedsDisplay];
 }
 
 -(void)setRcRate:(MWSettingsEntity *)rcRate
@@ -130,7 +130,42 @@
 
 - (void)handlePan:(UIPanGestureRecognizer*)recognizer
 {
+    UIView* viewForTranslation = recognizer.view;
     
+    CGPoint translation = [recognizer translationInView:viewForTranslation];
+    translation.y = -translation.y;
+    
+
+    if (recognizer.state == UIGestureRecognizerStateChanged)
+    {
+        float dRcExpo = (translation.x / self.width) * self.rcExpo.maxValue;
+        float dRcRate = (translation.y / self.height) * self.rcRate.maxValue;
+        
+        if ([self.rcExpo willChangeValueToValue:self.rcExpo.value + dRcExpo])
+        {
+            translation.x = 0;
+            [recognizer setTranslation:CGPointMake(0, translation.y) inView:viewForTranslation];
+            self.rcExpo.value = self.rcExpo.value + dRcExpo;
+        }
+
+        if ([self.rcRate willChangeValueToValue:self.rcRate.value + dRcRate])
+        {
+            [recognizer setTranslation:CGPointMake(translation.x, 0) inView:viewForTranslation];
+            self.rcRate.value = self.rcRate.value + dRcRate;
+        }
+    }
+}
+
+-(void)dealloc
+{
+    if (_rcRate)
+    {
+        [_rcRate removeObserver:self forKeyPath:@"value"];
+    }
+    if (_rcExpo)
+    {
+        [_rcExpo removeObserver:self forKeyPath:@"value"];
+    }
 }
 
 @end

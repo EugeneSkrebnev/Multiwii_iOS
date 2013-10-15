@@ -10,6 +10,6 @@
 #import "MWSettingsEntity.h"
 
 @interface MWRatesGraphicView : UIView
-@property (nonatomic, strong) MWSettingsEntity* rcExpo;
-@property (nonatomic, strong) MWSettingsEntity* rcRate;
+@property (nonatomic, strong) MWSettingsEntity* rcExpo; //x
+@property (nonatomic, strong) MWSettingsEntity* rcRate; //y
 @end
