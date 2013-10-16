@@ -12,6 +12,8 @@
 {
     UIPanGestureRecognizer* _panGesture;
     UIRotationGestureRecognizer* _rotateGesture;
+    UIImageView* _middlePointView;
+    CGPoint _midPoint;
     BOOL _wasInited;
 }
 
@@ -29,7 +31,10 @@
         _rotateGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
         _rotateGesture.delegate = self;
         [self addGestureRecognizer:_rotateGesture];
-
+        _middlePointView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 11, 11)];
+        _middlePointView.image = [UIImage imageNamed:@"point.png"];
+        [self addSubview:_middlePointView];
+        _middlePointView.hidden = YES;
     }
 }
 
@@ -88,6 +93,7 @@
     UIBezierPath* bezierLine = [[UIBezierPath alloc] init];
     
     [bezierLine moveToPoint:[self normalizePoint:x0]];
+    _midPoint = [self normalizePoint:midPoint];
 //    [bezierLine addCurveToPoint:[self normalizePoint:x2] controlPoint1:[self normalizePoint:controlPoint1] controlPoint2:[self normalizePoint:controlPoint2]];
     [bezierLine addQuadCurveToPoint:[self normalizePoint:midPoint] controlPoint:[self normalizePoint:controlPoint1]];
     [bezierLine addQuadCurveToPoint:[self normalizePoint:x2] controlPoint:[self normalizePoint:controlPoint2]];
@@ -98,7 +104,7 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
-    CGContextSetStrokeColorWithColor(context, [UIColor orangeColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:28./255 green:152./255 blue:253./255 alpha:1].CGColor);
     CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);
     
     UIBezierPath* ratePath = [self bezierLineForSettings];
@@ -106,6 +112,9 @@
     [ratePath setLineJoinStyle:kCGLineJoinBevel];
     [ratePath fill];
     [ratePath stroke];
+    
+    _middlePointView.center = _midPoint;
+    _middlePointView.hidden = NO;
 }
 
 
@@ -156,10 +165,12 @@
         [_thrExpo removeObserver:self forKeyPath:@"value"];
     }
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
 }
+
 - (void)handleRotate:(UIRotationGestureRecognizer*)recognizer
 {
     float rotation = recognizer.rotation;

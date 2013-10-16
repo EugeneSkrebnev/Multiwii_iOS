@@ -21,9 +21,10 @@
         [self addTarget:self action:@selector(valueChanged) forControlEvents:(UIControlEventValueChanged)];
         [self addTarget:self action:@selector(valueDidChanged) forControlEvents:((UIControlEventTouchUpInside | UIControlEventTouchUpOutside))];
         [self setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateNormal];
-        [self setThumbImage:[UIImage imageNamed:@"slider_tab.png"] forState:UIControlStateHighlighted];
+        [self setThumbImage:[UIImage imageNamed:@"slider_tab_active.png"] forState:UIControlStateHighlighted];
         [self setMinimumTrackImage:[[UIImage imageNamed:@"slider_minimum.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:0] forState:UIControlStateNormal];
         [self setMaximumTrackImage:[[UIImage imageNamed:@"slider_maximum.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:0] forState:UIControlStateNormal];
+
     }
 }
 

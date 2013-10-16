@@ -49,7 +49,6 @@
 
 -(void)setValueWithoutKVO:(float)value withStepping:(BOOL) stepping
 {
-
     if (stepping)
     {
         float newStep = roundf((value) / self.step);
@@ -62,5 +61,26 @@
         _value = value;
         [self didChangeValueForKey:@"value"];
     }
+}
+
+-(BOOL)saved
+{
+    return ![self willChangeValueToValue:self.savedValue];
+}
+
+-(void)setSaved:(BOOL)saved
+{
+    self.savedValue = self.value;
+}
+
+-(void)setSavedValue:(float)savedValue
+{
+    BOOL willChangeSavedParam = [self willChangeValueToValue:savedValue];
+    if (willChangeSavedParam)
+        [self willChangeValueForKey:@"saved"];
+    _savedValue = savedValue;
+    if (willChangeSavedParam)
+        [self didChangeValueForKey:@"saved"];
+
 }
 @end

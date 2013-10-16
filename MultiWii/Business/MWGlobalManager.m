@@ -98,13 +98,20 @@
 {
     __weak MWGlobalManager* selfWeak = self;
     
+    //ident
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak copterIdentInfoRecieved:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_IDENT];
     
+    //pid section
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.pidManager fillPidFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_PID];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.pidManager savePids];
+    } forRequestWith:MWI_BLE_MESSAGE_SET_PID];
+    
     
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.boxManager fillBoxesNamesFromPayload:recieveData];

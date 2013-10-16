@@ -19,13 +19,13 @@
     {
         _wasInited = YES;
 
-//        self.backgroundImage = [[UIImageView alloc] initWithFrame:self.bounds];
-//        self.backgroundImage.image = [[UIImage imageNamed:@"field.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+        self.backgroundImage = [[UIImageView alloc] initWithFrame:self.bounds];
+        self.backgroundImage.image = [[UIImage imageNamed:@"field.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
 
         
         self.backgroundActiveImage = [[UIImageView alloc] initWithFrame:self.bounds];
         self.backgroundActiveImage.image = [[UIImage imageNamed:@"field_active.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
-//        self.backgroundActiveImage.hidden = YES;
+        self.backgroundActiveImage.hidden = YES;
         self.valueLabel = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, 2, 2)];
         
         self.valueLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
@@ -37,7 +37,7 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-//        [self addSubview:self.backgroundImage];
+        [self addSubview:self.backgroundImage];
         [self addSubview:self.backgroundActiveImage];
         
         [self addSubview:self.valueLabel];

@@ -77,6 +77,7 @@
             int highBits = bytes[i * 2 + 1];
             MWBoxAuxSettingEntity* boxItem = _boxEntities[i];
             [boxItem fillbitMaskFromLowBits:lowBits andHighBits:highBits];
+            boxItem.savedBitMask = boxItem.bitMask;
         }
     }
 }

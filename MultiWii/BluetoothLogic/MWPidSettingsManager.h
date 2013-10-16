@@ -27,4 +27,5 @@
 -(void) fillRcTunningFromPayload:(NSData*) payload;
 -(NSData*) payloadFromRcTunning;
 
+-(void) savePids;
 @end

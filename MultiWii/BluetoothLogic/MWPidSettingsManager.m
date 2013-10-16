@@ -142,6 +142,7 @@
             if (divider)
             {
                 pid.value = x[i] / divider.floatValue;
+                pid.savedValue = pid.value;
             }
         }
         else
@@ -175,6 +176,7 @@
     {
         MWSettingsEntity* rateEntity = self.RCRates.allSettings[i - 1];
         rateEntity.value = (float)bytes[i] / 100.;
+        rateEntity.savedValue = rateEntity.value;
     }
 }
 
@@ -189,6 +191,28 @@
     }
 
     return [NSData dataWithBytes:bytes length:sizeof(bytes)];
+}
+
+-(void) savePids
+{
+    for (int i = 1; i <= 30; i++)
+    {
+        MWSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
+        if (pid)
+        {
+            NSNumber* divider = _dividersForIndexes[@(i)];
+            if (divider)
+            {
+                pid.savedValue = pid.value;
+            }
+        }
+        else
+        {
+            //            NSLog(@"LOGIC ERROR %@", NSStringFromSelector(_cmd));
+        }
+    }
+
+    
 }
 
 @end

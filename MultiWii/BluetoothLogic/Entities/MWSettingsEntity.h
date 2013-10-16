@@ -15,6 +15,7 @@
 @property (nonatomic, assign)  float  step;
 @property (nonatomic, assign)  float  value;
 @property (nonatomic, assign)  BOOL  saved;
+@property (nonatomic, assign)  float  savedValue;
 
 -(void) setValueWithoutNotification:(float)value;
 -(void)setValueWithoutKVO:(float)value;

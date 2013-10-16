@@ -38,6 +38,8 @@
 		4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4422259B180D4B2000D53DE3 /* field_active@2x.png */; };
 		442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422259F180D613F00D53DE3 /* MWThrottleGraphicView.m */; };
 		442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */; };
+		442225A5180DE8C300D53DE3 /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A4180DE8C300D53DE3 /* point@2x.png */; };
+		442225A7180DE8EF00D53DE3 /* slider_tab_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -225,6 +227,8 @@
 		4422259F180D613F00D53DE3 /* MWThrottleGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWThrottleGraphicView.m; sourceTree = "<group>"; };
 		442225A1180D62CB00D53DE3 /* MWRatesGraphicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesGraphicView.h; sourceTree = "<group>"; };
 		442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesGraphicView.m; sourceTree = "<group>"; };
+		442225A4180DE8C300D53DE3 /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
+		442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab_active@2x.png"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -536,9 +540,11 @@
 		44068BBA18040A4900E8ABCC /* Slider */ = {
 			isa = PBXGroup;
 			children = (
+				442225A4180DE8C300D53DE3 /* point@2x.png */,
 				44222593180D45BD00D53DE3 /* slider_maximum@2x.png */,
 				44222594180D45BD00D53DE3 /* slider_minimum@2x.png */,
 				44222595180D45BD00D53DE3 /* slider_tab@2x.png */,
+				442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */,
 			);
 			path = Slider;
 			sourceTree = "<group>";
@@ -1275,6 +1281,7 @@
 				44C7CA781789D9860059C199 /* frame@2x.png in Resources */,
 				44C7CA791789D9860059C199 /* propeller@2x.png in Resources */,
 				44C7CA7A1789D9860059C199 /* ring@2x.png in Resources */,
+				442225A7180DE8EF00D53DE3 /* slider_tab_active@2x.png in Resources */,
 				44068BB1180409EB00E8ABCC /* center_pressed@2x.png in Resources */,
 				44C7CA7B1789D9860059C199 /* locked_icon@2x.png in Resources */,
 				44C7CA7C1789D9860059C199 /* slider@2x.png in Resources */,
@@ -1335,6 +1342,7 @@
 				44A6BDDB178E020300DC95C6 /* about_author_pressed@2x.png in Resources */,
 				44A6BDDC178E020300DC95C6 /* about_program@2x.png in Resources */,
 				44A6BDDD178E020300DC95C6 /* about_program_pressed@2x.png in Resources */,
+				442225A5180DE8C300D53DE3 /* point@2x.png in Resources */,
 				44A6BDDE178E020300DC95C6 /* ask@2x.png in Resources */,
 				44A6BDDF178E020300DC95C6 /* ask_pressed@2x.png in Resources */,
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,

@@ -13,6 +13,7 @@
 @property (nonatomic, assign) int savedBitMask;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) BOOL checked;
+@property (nonatomic, assign) BOOL saved;
 
 -(BOOL) isCheckedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high
 -(BOOL) isSavedForAux:(int) auxIndex andPosition:(int) position; // 0 - low 1 - mid 2 - high

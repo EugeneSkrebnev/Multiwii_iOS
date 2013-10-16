@@ -20,6 +20,7 @@
     {
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
         [self addGestureRecognizer:_panGesture];
+        
     }
 }
 
@@ -82,8 +83,8 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:29./255 green:217./255 blue:50./255 alpha:1].CGColor);
     
     UIBezierPath* ratePath = [self bezierLineForSettings];
     [ratePath setLineWidth:3.0];
@@ -139,7 +140,7 @@
     if (recognizer.state == UIGestureRecognizerStateChanged)
     {
         float dRcExpo = (translation.x / self.width) * self.rcExpo.maxValue;
-        float dRcRate = (translation.y / self.height) * self.rcRate.maxValue;
+        float dRcRate = (translation.y / self.height) * self.rcRate.maxValue / 3;
         
         if ([self.rcExpo willChangeValueToValue:self.rcExpo.value + dRcExpo])
         {
