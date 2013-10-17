@@ -41,4 +41,10 @@
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self readPidButtonTapped];
+}
+
 @end

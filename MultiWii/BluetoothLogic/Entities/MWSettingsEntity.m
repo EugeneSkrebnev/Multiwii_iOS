@@ -80,7 +80,7 @@
 
 -(void)setSavedValue:(float)savedValue
 {
-    BOOL willChangeSavedParam = [self willChangeValueToValue:savedValue];
+    BOOL willChangeSavedParam = [self willChangeValueToValue:_savedValue];
     if (willChangeSavedParam)
         [self willChangeValueForKey:@"saved"];
     _savedValue = savedValue;

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface UIView (KalAdditions)
+@interface UIView (EugeneAdditions)
 
 @property(nonatomic) CGFloat left;
 @property(nonatomic) CGFloat right;

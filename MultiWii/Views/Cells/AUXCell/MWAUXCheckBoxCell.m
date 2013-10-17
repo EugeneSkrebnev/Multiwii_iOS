@@ -26,16 +26,45 @@
 
 -(void)setData:(MWBoxAuxSettingEntity *)data
 {
+    if (_data)
+    {
+        [_data removeObserver:self forKeyPath:@"saved"];
+    }
     _data = data;
+    if (_data)
+    {
+        [_data addObserver:self forKeyPath:@"saved" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+    }
     self.titleLabel.text = data.name;
     
     for (int i = 0; i < 3; i++)
     {
-        MACheckBox* checkBox = self.checkBoxes[i];
-        checkBox.selected = [data isCheckedForAux:self.selectedAuxChannel andPosition:i];
+        if (data)
+        {
+            MACheckBox* checkBox = self.checkBoxes[i];
+            checkBox.selected = [data isCheckedForAux:self.selectedAuxChannel andPosition:i];
+            checkBox.saved = [data isSavedForAux:self.selectedAuxChannel andPosition:i];
+        }
+        else
+        {
+            NSLog(@"no data");
+        }
     }
 }
 
+-(void) updateSavedValues
+{
+    for (int i = 0; i < 3; i++)
+    {
+        MACheckBox* checkBox = self.checkBoxes[i];
+        checkBox.saved = [self.data isSavedForAux:self.selectedAuxChannel andPosition:i];
+    }
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self updateSavedValues];
+}
 -(void)setSelectedAuxChannel:(int)selectedAuxChannel
 {
     _selectedAuxChannel = selectedAuxChannel;
@@ -45,5 +74,13 @@
 -(void) checkBoxChange:(MACheckBox*) checkBox
 {
     [self.data setValue:checkBox.selected forAux:self.selectedAuxChannel andPosition:checkBox.tag];
+}
+
+-(void)dealloc
+{
+    if (_data)
+    {
+        [_data removeObserver:self forKeyPath:@"saved"];
+    }
 }
 @end

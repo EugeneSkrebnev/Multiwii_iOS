@@ -106,6 +106,15 @@
     
 }
 
+-(void) saveBoxes
+{
+    for (int i = 0; i < _boxEntities.count; i++)
+    {
+        MWBoxAuxSettingEntity* box = _boxEntities[i];
+        box.savedBitMask = box.bitMask;
+    }
+}
+
 - (int) boxesCount
 {
     return _boxEntities.count;

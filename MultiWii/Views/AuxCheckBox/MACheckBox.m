@@ -11,6 +11,7 @@
 @implementation MACheckBox
 {
     BOOL wasInited;
+    UIImageView* _savedFrameImageView;
 }
 
 -(void) makeInit
@@ -18,6 +19,10 @@
     if (!wasInited)
     {
         wasInited = YES;
+        _savedFrameImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _savedFrameImageView.image = [UIImage imageNamed:@"aux_border.png"];
+        _savedFrameImageView.hidden = YES;
+        [self addSubview:_savedFrameImageView];
         
         UIImage* selectedImage = [UIImage imageNamed:@"aux_check.png"];
         UIImage* unSelectedImage = [UIImage imageNamed:@"aux_uncheck.png"];
@@ -66,4 +71,9 @@
     return self;
 }
 
+-(void)setSaved:(BOOL)saved
+{
+    _saved = saved;
+    [_savedFrameImageView setHidden:_saved animated:YES duration:0.5];
+}
 @end

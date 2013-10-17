@@ -32,6 +32,11 @@
     [self createReadWriteBtns];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self readRCRatesButtonTapped];
+}
 
 -(void) createReadWriteBtns
 {

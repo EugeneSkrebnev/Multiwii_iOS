@@ -18,5 +18,5 @@
 -(void) fillBoxesNamesFromPayload:(NSData*) payload;
 -(void) fillBoxesValuesFromPayload:(NSData*) payload;
 -(NSData*) payloadFromBoxes;
-
+-(void) saveBoxes;
 @end

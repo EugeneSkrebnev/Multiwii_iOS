@@ -51,6 +51,7 @@
     [flyPid.pitch.i addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.pitch)];
     [flyPid.pitch.d addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.pitch)];
     
+    [self readPidButtonTapped];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -64,7 +65,6 @@
     [flyPid.pitch.p removeObserver:self forKeyPath:@"value"];
     [flyPid.pitch.i removeObserver:self forKeyPath:@"value"];
     [flyPid.pitch.d removeObserver:self forKeyPath:@"value"];
-    
     
     
 }

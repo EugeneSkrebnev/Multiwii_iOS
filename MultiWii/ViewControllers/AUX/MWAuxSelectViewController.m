@@ -94,6 +94,12 @@
     self.navigationItem.rightBarButtonItem = rightBarBtnItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self readBoxesButtonTapped];
+}
+
 -(void) readBoxesButtonTapped
 {
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:^(NSData *recieveData) {
@@ -140,8 +146,9 @@
 {
     MWAUXCheckBoxCell* cell = (MWAUXCheckBoxCell*)[MWAUXCheckBoxCell loadView];
     MWBoxAuxSettingEntity* box = [[MWGlobalManager sharedInstance].boxManager boxEntityForIndex:indexPath.row];
-    cell.selectedAuxChannel = self.segmentControlForAuxChannel.selectedSegmentIndex;
     cell.data = box;
+    cell.selectedAuxChannel = self.segmentControlForAuxChannel.selectedSegmentIndex;
+
     return cell;
 }
 

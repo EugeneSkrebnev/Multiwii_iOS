@@ -40,6 +40,7 @@
 		442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */; };
 		442225A5180DE8C300D53DE3 /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A4180DE8C300D53DE3 /* point@2x.png */; };
 		442225A7180DE8EF00D53DE3 /* slider_tab_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */; };
+		4422261F1810247100D53DE3 /* aux_border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4422261E1810247100D53DE3 /* aux_border@2x.png */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -227,6 +228,7 @@
 		442225A2180D62CB00D53DE3 /* MWRatesGraphicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesGraphicView.m; sourceTree = "<group>"; };
 		442225A4180DE8C300D53DE3 /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
 		442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab_active@2x.png"; sourceTree = "<group>"; };
+		4422261E1810247100D53DE3 /* aux_border@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_border@2x.png"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -812,6 +814,7 @@
 		44A6BDED178E089800DC95C6 /* AUXCheckBox */ = {
 			isa = PBXGroup;
 			children = (
+				4422261E1810247100D53DE3 /* aux_border@2x.png */,
 				44A6BDEE178E089900DC95C6 /* aux_check@2x.png */,
 				44A6BDEF178E089900DC95C6 /* aux_uncheck@2x.png */,
 			);
@@ -1253,6 +1256,7 @@
 				44C7CA401789C5520059C199 /* Splash5.png in Resources */,
 				44068BB4180409EB00E8ABCC /* right_normal@2x.png in Resources */,
 				44C7CA411789C5520059C199 /* Splash@2x.png in Resources */,
+				4422261F1810247100D53DE3 /* aux_border@2x.png in Resources */,
 				44C7CA431789C7700059C199 /* Default.png in Resources */,
 				44C7CA451789C77C0059C199 /* Default@2x.png in Resources */,
 				44C7CA471789C7880059C199 /* Default-568h@2x.png in Resources */,

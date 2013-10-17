@@ -211,8 +211,13 @@
             //            NSLog(@"LOGIC ERROR %@", NSStringFromSelector(_cmd));
         }
     }
-
-    
 }
 
+-(void) saveRCRates
+{
+    for (MWSettingsEntity* rcSetting in self.RCRates.allSettings)
+    {
+        rcSetting.savedValue = rcSetting.value;
+    }
+}
 @end

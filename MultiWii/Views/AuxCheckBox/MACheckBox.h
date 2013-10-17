@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MACheckBox : UIButton
-
+@property (nonatomic, assign) BOOL saved;
 @end

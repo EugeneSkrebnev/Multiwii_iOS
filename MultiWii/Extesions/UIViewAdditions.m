@@ -1,6 +1,6 @@
 #import "UIViewAdditions.h"
 
-@implementation UIView (KalAdditions)
+@implementation UIView (EugeneAdditions)
 
 - (CGFloat)left
 {

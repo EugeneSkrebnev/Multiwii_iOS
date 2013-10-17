@@ -36,7 +36,12 @@
     [self.calibrateMagButton addTarget:self action:@selector(calibrateMagButtonTapped) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.tableView reloadData];
+}
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self readPidButtonTapped];
 }
 
 -(void) calibrateAccButtonTapped

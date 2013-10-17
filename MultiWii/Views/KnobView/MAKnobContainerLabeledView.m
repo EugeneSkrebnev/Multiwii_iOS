@@ -97,7 +97,7 @@
         }
         else
         {
-            self.valueLabel.textColor =  [UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1];
+            self.valueLabel.textColor =  [UIColor colorWithRed:255./255 green:71./255 blue:0./255 alpha:1];
         }
         
     }

@@ -28,4 +28,5 @@
 -(NSData*) payloadFromRcTunning;
 
 -(void) savePids;
+-(void) saveRCRates;
 @end
