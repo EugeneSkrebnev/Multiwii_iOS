@@ -77,6 +77,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     self.valueLabel.text = [NSString stringWithFormat:@"%.2f", _settingEntity.value];
+    [self.backgroundActiveImage setHidden:_settingEntity.saved animated:YES duration:0.6];
 }
 
 -(void)setSettingEntity:(MWSettingsEntity *)settingEntity
@@ -84,6 +85,7 @@
     if (_settingEntity)
     {
         [_settingEntity removeObserver:self forKeyPath:@"value"];
+        [_settingEntity removeObserver:self forKeyPath:@"saved"];
     }
     
     _settingEntity = settingEntity;
@@ -91,7 +93,17 @@
     if (_settingEntity)
     {
         [_settingEntity addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
+        [_settingEntity addObserver:self forKeyPath:@"saved" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     }else
         self.valueLabel.text = @"-";
+}
+
+-(void)dealloc
+{
+    if (_settingEntity)
+    {
+        [_settingEntity removeObserver:self forKeyPath:@"value"];
+        [_settingEntity removeObserver:self forKeyPath:@"saved"];
+    }
 }
 @end

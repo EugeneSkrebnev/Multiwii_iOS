@@ -27,8 +27,8 @@
 {
     for (int i = 0; i < MIN(knobEntities.count, self.knobContainers.count); i++)
     {
-        MAKnobView* knob = [self.knobContainers[i] knobView];
-        knob.settingEntity = knobEntities[i];
+        MAKnobContainerLabeledView* knobContainer = self.knobContainers[i];
+        knobContainer.settingEntity = knobEntities[i];
     }
 }
 @end

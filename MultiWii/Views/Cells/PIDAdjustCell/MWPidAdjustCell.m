@@ -23,17 +23,17 @@
     _pid = pid;
     
     if (pid.p)
-        self.leftKnobContainerView.knobView.settingEntity = pid.p;
+        self.leftKnobContainerView.settingEntity = pid.p;
     else
         self.leftKnobContainerView.hidden = YES;
     
     if (pid.i)
-        self.middleKnobContainerView.knobView.settingEntity = pid.i;
+        self.middleKnobContainerView.settingEntity = pid.i;
     else
         self.middleKnobContainerView.hidden = YES;
     
     if (pid.d)
-        self.rightKnobContainerView.knobView.settingEntity = pid.d;
+        self.rightKnobContainerView.settingEntity = pid.d;
     else
         self.rightKnobContainerView.hidden = YES;
     

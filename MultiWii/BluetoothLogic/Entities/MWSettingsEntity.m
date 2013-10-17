@@ -32,8 +32,11 @@
     if ([self willChangeValueToValue:value])
     {
         [self willChangeValueForKey:@"value"];
+        [self willChangeValueForKey:@"saved"];
         _value = value;
+        [self didChangeValueForKey:@"saved"];
         [self didChangeValueForKey:@"value"];
+        
     }
 }
 
@@ -58,7 +61,9 @@
     if ([self willChangeValueToValue:value])
     {
         [self willChangeValueForKey:@"value"];
+        [self willChangeValueForKey:@"saved"];
         _value = value;
+        [self didChangeValueForKey:@"saved"];
         [self didChangeValueForKey:@"value"];
     }
 }

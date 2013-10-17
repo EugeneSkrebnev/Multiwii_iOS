@@ -28,7 +28,7 @@
         self.valueLabel.backgroundColor = [UIColor clearColor];
         self.valueLabel.textAlignment = NSTextAlignmentCenter;
         self.valueLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
-        UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"];// stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+        UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
         self.valueLabel.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
 
         [self addSubview:self.valueLabel];
@@ -53,6 +53,7 @@
     
     NSString* format = [NSString stringWithFormat:@"%@.%df", @"%", digitStep];
     self.valueLabel.text = [NSString stringWithFormat:format, self.knobView.value];
+    [self updateSavedState];
 }
 
 - (id)init
@@ -85,4 +86,48 @@
     return self;
 }
 
+-(void) updateSavedState
+{
+    if (_settingEntity)
+    {
+        if (_settingEntity.saved)
+        {
+            UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+            self.valueLabel.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
+        }
+        else
+        {
+            self.valueLabel.textColor =  [UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1];
+        }
+        
+    }
+    
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self updateSavedState];
+}
+
+-(void)setSettingEntity:(MWSettingsEntity *)settingEntity
+{
+    if (_settingEntity)
+    {
+        [_settingEntity removeObserver:self forKeyPath:@"saved"];
+    }
+    _settingEntity = settingEntity;
+    self.knobView.settingEntity = settingEntity;
+    if (_settingEntity)
+    {
+        [_settingEntity addObserver:self forKeyPath:@"saved" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+    }
+}
+
+-(void)dealloc
+{
+    if (_settingEntity)
+    {
+        [_settingEntity removeObserver:self forKeyPath:@"saved"];
+    }
+}
 @end

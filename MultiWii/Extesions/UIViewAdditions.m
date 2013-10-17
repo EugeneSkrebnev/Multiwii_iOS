@@ -104,7 +104,8 @@
             [UIView animateWithDuration:duration animations:^{
                 self.alpha = 0;
             } completion:^(BOOL finished) {
-                self.hidden = YES;
+                if (self.layer.animationKeys.count == 0)
+                    self.hidden = YES;
                 self.alpha = savedAlpha;
                 if (completionBlock)
                     completionBlock();

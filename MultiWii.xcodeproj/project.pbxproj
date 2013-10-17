@@ -157,8 +157,6 @@
 		44C7CA551789CDA40059C199 /* MAKnobView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA511789CDA40059C199 /* MAKnobView.m */; };
 		44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA531789CDA40059C199 /* MAKnobContainerLabeledView.m */; };
 		44C7CA5C1789CE480059C199 /* MWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA5B1789CE480059C199 /* MWBaseViewController.m */; };
-		44C7CA721789D9860059C199 /* aux_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA611789D9850059C199 /* aux_check@2x.png */; };
-		44C7CA731789D9860059C199 /* aux_uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA621789D9850059C199 /* aux_uncheck@2x.png */; };
 		44C7CA741789D9860059C199 /* knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA641789D9860059C199 /* knob@2x.png */; };
 		44C7CA751789D9860059C199 /* knob_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA651789D9860059C199 /* knob_active@2x.png */; };
 		44C7CA761789D9860059C199 /* knob_handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA661789D9860059C199 /* knob_handle@2x.png */; };
@@ -390,8 +388,6 @@
 		44C7CA531789CDA40059C199 /* MAKnobContainerLabeledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKnobContainerLabeledView.m; sourceTree = "<group>"; };
 		44C7CA5A1789CE480059C199 /* MWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBaseViewController.h; sourceTree = "<group>"; };
 		44C7CA5B1789CE480059C199 /* MWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseViewController.m; sourceTree = "<group>"; };
-		44C7CA611789D9850059C199 /* aux_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_check@2x.png"; sourceTree = "<group>"; };
-		44C7CA621789D9850059C199 /* aux_uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_uncheck@2x.png"; sourceTree = "<group>"; };
 		44C7CA641789D9860059C199 /* knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob@2x.png"; sourceTree = "<group>"; };
 		44C7CA651789D9860059C199 /* knob_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob_active@2x.png"; sourceTree = "<group>"; };
 		44C7CA661789D9860059C199 /* knob_handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob_handle@2x.png"; sourceTree = "<group>"; };
@@ -1031,7 +1027,6 @@
 				44C7CA92178A192F0059C199 /* Common */,
 				44C7CA85178A0D610059C199 /* Fonts */,
 				44C7CA80178A02640059C199 /* NavigationBar */,
-				44C7CA601789D9850059C199 /* CheckBox */,
 				44C7CA631789D9850059C199 /* Knob */,
 				44C7CA671789D9860059C199 /* QuadFrame */,
 				44C7CA6C1789D9860059C199 /* Switch */,
@@ -1089,15 +1084,6 @@
 				44A6BD9E178D8AA000DC95C6 /* MWMainViewController.m */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		44C7CA601789D9850059C199 /* CheckBox */ = {
-			isa = PBXGroup;
-			children = (
-				44C7CA611789D9850059C199 /* aux_check@2x.png */,
-				44C7CA621789D9850059C199 /* aux_uncheck@2x.png */,
-			);
-			path = CheckBox;
 			sourceTree = "<group>";
 		};
 		44C7CA631789D9850059C199 /* Knob */ = {
@@ -1271,8 +1257,6 @@
 				44C7CA451789C77C0059C199 /* Default@2x.png in Resources */,
 				44C7CA471789C7880059C199 /* Default-568h@2x.png in Resources */,
 				44068BB2180409EB00E8ABCC /* left_normal@2x.png in Resources */,
-				44C7CA721789D9860059C199 /* aux_check@2x.png in Resources */,
-				44C7CA731789D9860059C199 /* aux_uncheck@2x.png in Resources */,
 				44C7CA741789D9860059C199 /* knob@2x.png in Resources */,
 				44C7CA751789D9860059C199 /* knob_active@2x.png in Resources */,
 				44068BB6180409EB00E8ABCC /* separator_left_pressed@2x.png in Resources */,
