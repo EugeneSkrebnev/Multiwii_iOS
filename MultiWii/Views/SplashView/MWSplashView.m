@@ -52,6 +52,8 @@
         self.frame = [UIScreen mainScreen].bounds;
         UIImage* spashImage = [UIImage imageNamed:spashImageName];
         _background = [[UIImageView alloc] initWithImage:spashImage];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7)
+            _background.top -= 20;
         [self addSubview:_background];
         frame = [[MAQuadrocopterFrame alloc] init];
         [self addSubview:frame];

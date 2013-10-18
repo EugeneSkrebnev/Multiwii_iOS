@@ -16,13 +16,25 @@ static BOOL firstTimeShow = YES;
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (_splash)
     {
+        self.navigationController.navigationBar.hidden = YES;
         [_splash makeFlyInAnimation];
         double delayInSeconds = _splash.animateInTime + 0.3;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            self.tableViewForMenu.top = 44; //bad dirty fix for top bar 
+            self.navigationController.navigationBar.hidden = NO;
+            if (systemVersion < 7)
+            {
+                self.tableViewForMenu.top = 44; //bad dirty fix for top bar
+            }
+            else
+            {
+                self.tableViewForMenu.top = 64; //bad dirty fix for top bar
+                self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count;
+            }
+  
             [UIView animateWithDuration:0.2 animations:^{
                 _splash.alpha = 0;
                 self.navigationController.navigationBar.alpha = 1;
@@ -66,14 +78,14 @@ static BOOL firstTimeShow = YES;
     {
 
         firstTimeShow = NO;
-        if (!YES) // uncomment for enable splash
+//        if (!YES) // uncomment for enable splash
         {
-            self.navigationController.navigationBarHidden = YES;
+//            self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];
             [self.view addSubview:_splash];
         
-            self.navigationController.navigationBar.alpha = 0;
-            [self.navigationController setNavigationBarHidden:NO animated:NO]; //Animated must be NO!
+//            self.navigationController.navigationBar.alpha = 0;
+//            [self.navigationController setNavigationBarHidden:NO animated:NO]; //Animated must be NO!
             [UINavigationBar setAnimationCurve:UIViewAnimationCurveEaseIn];
             [UINavigationBar setAnimationDuration:1.5]; //1.5
             self.navigationController.navigationBar.alpha = 0;
