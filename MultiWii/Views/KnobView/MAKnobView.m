@@ -14,6 +14,7 @@
     float _internalMax;
     float _internalMin;
     BOOL wasInited;
+    float _savedAngle;
 }
 
 
@@ -29,6 +30,7 @@
 {
     if (!wasInited)
     {
+        _savedAngle = -1000;
         wasInited = YES;
         UIImage* knob = [UIImage imageNamed:@"knob.png"];
         UIImage* knobActive = [UIImage imageNamed:@"knob_active.png"];
@@ -79,7 +81,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnob) name:@"MAKnobViewUpdateNotification" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKnobAnimated) name:@"MAKnobViewUpdateAnimatedNotification" object:nil];
 //        self.active = YES;
-        self.controlType = MAKnobControlTypePanSpin;
+//        self.controlType = MAKnobControlTypeAngleDetect;
     }
 }
 
@@ -153,49 +155,98 @@
 {
     _backgroundView.transform = CGAffineTransformMakeRotation(_internalValue / 180. * M_PI);
 }
-
 - (void)handlePan:(UIPanGestureRecognizer*)recognizer
 {
     UIView* viewForTranslation;
-    if (self.controlType == MAKnobControlTypePanSpin)
-        viewForTranslation = recognizer.view;
-    else
+//    if (self.controlType == MAKnobControlTypePanSpin)
+//        viewForTranslation = recognizer.view;
+//    else
         viewForTranslation = self.superview;
     
     CGPoint offset = [recognizer translationInView:viewForTranslation];
-
+    float minR = 15;
+    float currentAngle = atan2f(offset.y, offset.x) / M_PI * 180;
+    float deltaAngle = 0;
     if (recognizer.state == UIGestureRecognizerStateChanged)
     {
-        CGPoint currentTranslationNew = _currentTranslation;
-        if (self.controlType == MAKnobControlTypePanX || self.controlType == MAKnobControlTypePanXY || self.controlType == MAKnobControlTypePanSpin)
-            currentTranslationNew.x += offset.x;
-        
-        if (self.controlType == MAKnobControlTypePanY || self.controlType == MAKnobControlTypePanXY || self.controlType == MAKnobControlTypePanSpin)
-            currentTranslationNew.y += offset.y;
-        
-        
-        float internalValueNew = currentTranslationNew.x + currentTranslationNew.y + _savedTranslation.x + _savedTranslation.y;
-        if ((internalValueNew <= _internalMax) && (internalValueNew >= _internalMin))
+        if ((_savedAngle < -900) && ( (minR * minR) < (offset.x * offset.x) + (offset.y * offset.y) ))
+            _savedAngle = currentAngle;
+        deltaAngle = currentAngle - _savedAngle;
+        if (deltaAngle < -300)
+            deltaAngle += 360;
+        if (deltaAngle > 300)
+            deltaAngle -= 360;
+//        deltaAngle *= 1.2; //self.spinCount;
+        if (_savedAngle > -900)
         {
-            [self setInternalValue:internalValueNew];
-            _currentTranslation = currentTranslationNew;
+            NSLog(@"%f", deltaAngle);
+            [self setInternalValue:_internalValue + deltaAngle];
+            [self setTransformForInternalValue];
         }
-
-
-        [self setTransformForInternalValue];
+        
     }
+            
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
-        _savedTranslation.x += _currentTranslation.x;
-        _savedTranslation.y += _currentTranslation.y;
-        _currentTranslation = CGPointMake(0, 0);
-        [self setInternalValue:_currentTranslation.x + _currentTranslation.y + _savedTranslation.x + _savedTranslation.y ];
-
-        [self finishValueChanging];
+        _savedAngle = -1000;
+        [self finishValueChanging];        
+        
     }
     
-    [recognizer setTranslation:CGPointMake(0, 0) inView:viewForTranslation];
+    if (_savedAngle > -900)
+        _savedAngle = currentAngle;
 }
+//- (void)handlePan:(UIPanGestureRecognizer*)recognizer
+//{
+//    UIView* viewForTranslation;
+//    if (self.controlType == MAKnobControlTypePanSpin)
+//        viewForTranslation = recognizer.view;
+//    else
+//        viewForTranslation = self.superview;
+//    
+//    CGPoint offset = [recognizer translationInView:viewForTranslation];
+//
+//    float currentAngle = atan2f(offset.y, offset.x) / M_PI * 180;
+//    NSLog(@"%f", currentAngle);
+//    return;
+//    if (recognizer.state == UIGestureRecognizerStateChanged)
+//    {
+//        CGPoint currentTranslationNew = _currentTranslation;
+//        if (self.controlType == MAKnobControlTypePanX || self.controlType == MAKnobControlTypePanXY || self.controlType == MAKnobControlTypePanSpin)
+//            currentTranslationNew.x += offset.x;
+//        
+//        if (self.controlType == MAKnobControlTypePanY || self.controlType == MAKnobControlTypePanXY || self.controlType == MAKnobControlTypePanSpin)
+//            currentTranslationNew.y += offset.y;
+//        
+//        
+//        float internalValueNew = currentTranslationNew.x + currentTranslationNew.y + _savedTranslation.x + _savedTranslation.y;
+//        if ((internalValueNew <= _internalMax) && (internalValueNew >= _internalMin))
+//        {
+//            [self setInternalValue:internalValueNew];
+//            _currentTranslation = currentTranslationNew;
+//        }
+//
+//
+//        [self setTransformForInternalValue];
+//    }
+//    if (recognizer.state == UIGestureRecognizerStateEnded)
+//    {
+//        if (self.controlType != MAKnobControlTypeAngleDetect)
+//        {
+//            _savedTranslation.x += _currentTranslation.x;
+//            _savedTranslation.y += _currentTranslation.y;
+//            _currentTranslation = CGPointMake(0, 0);
+//            [self setInternalValue:_currentTranslation.x + _currentTranslation.y + _savedTranslation.x + _savedTranslation.y ];
+//        }
+//
+//        [self finishValueChanging];
+//    }
+//    
+//    if (self.controlType != MAKnobControlTypeAngleDetect)
+//    {
+//        [recognizer setTranslation:CGPointMake(0, 0) inView:viewForTranslation];
+//    }
+//}
 
 -(void)setValue:(float)value
 {
@@ -214,8 +265,8 @@
 
     if (!self.active)//сплошные костыли(
     {
-        _savedTranslation.x = _internalValue;
-        _savedTranslation.y = 0;
+//        _savedTranslation.x = _internalValue;
+//        _savedTranslation.y = 0;
         [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
             [self setTransformForInternalValue];
         }];
@@ -236,7 +287,14 @@
 
 -(void) setInternalValue:(float) internalVal
 {
+    if (internalVal < _internalMin)
+        internalVal = _internalMin;
+    
+    if (internalVal > _internalMax)
+        internalVal = _internalMax;
+    
     _internalValue = internalVal;
+    
     [self mapValueFromInternal];
     if (self.discreteChanging)
     {

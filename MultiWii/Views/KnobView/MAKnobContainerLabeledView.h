@@ -10,7 +10,7 @@
 #import "MAKnobView.h"
 #import "MWSettingsEntity.h"
 @interface MAKnobContainerLabeledView : UIView
-@property (nonatomic, strong) UILabel* valueLabel;
+
 @property (nonatomic, strong) MAKnobView* knobView;
 @property (nonatomic, strong) MWSettingsEntity* settingEntity;
 @end

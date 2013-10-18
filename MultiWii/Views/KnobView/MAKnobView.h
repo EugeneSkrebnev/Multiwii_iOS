@@ -10,12 +10,13 @@
 #import "MWSettingsEntity.h"
 
 
-typedef enum {
-    MAKnobControlTypePanX,
-    MAKnobControlTypePanY,
-    MAKnobControlTypePanXY,
-    MAKnobControlTypePanSpin,   
-} MAKnobControlType;
+//typedef enum {
+//    MAKnobControlTypePanX,
+//    MAKnobControlTypePanY,
+//    MAKnobControlTypePanXY,
+//    MAKnobControlTypePanSpin,
+//    MAKnobControlTypeAngleDetect
+//} MAKnobControlType;
 
 @interface MAKnobView : UIControl<UIGestureRecognizerDelegate>
 {
@@ -23,8 +24,8 @@ typedef enum {
     UIImageView* _knobView;
     UIImageView* _knobViewSelected;
     UIImageView* _knobHandleView;
-    CGPoint _savedTranslation;
-    CGPoint _currentTranslation;
+//    CGPoint _savedTranslation;
+//    CGPoint _currentTranslation;
     
 }
 @property (nonatomic, assign) BOOL active;
@@ -39,5 +40,5 @@ typedef enum {
 
 @property (nonatomic, strong) MWSettingsEntity* settingEntity;
 
-@property (nonatomic, assign) MAKnobControlType controlType;
+//@property (nonatomic, assign) MAKnobControlType controlType;
 @end
