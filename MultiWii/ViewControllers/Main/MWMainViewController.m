@@ -49,12 +49,12 @@ static BOOL firstTimeShow = YES;
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"CONTROL", @"ABOUT"];
+    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS"/*, @"CONTROL"*/, @"ABOUT"];
 }
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"connect", @"telemetry", @"settings", @"control", @"about"];
+    return @[@"connect", @"telemetry", @"settings"/*, @"control"*/, @"about"];
 }
 
 

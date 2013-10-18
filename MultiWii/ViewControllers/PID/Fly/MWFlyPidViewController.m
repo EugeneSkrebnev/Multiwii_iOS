@@ -18,9 +18,6 @@
 
 @implementation MWFlyPidViewController
 
-
-
-
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -65,9 +62,8 @@
     [flyPid.pitch.p removeObserver:self forKeyPath:@"value"];
     [flyPid.pitch.i removeObserver:self forKeyPath:@"value"];
     [flyPid.pitch.d removeObserver:self forKeyPath:@"value"];
-    
-    
 }
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (self.rollPitchLockSwitch.locked)
@@ -90,8 +86,6 @@
         }
     }
 }
-
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
