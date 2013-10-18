@@ -81,7 +81,8 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return indexPath.row > 1 ? 120 : 148;
+    int inc = IS_IPHONE_5 ? 22 : 0;
+    return indexPath.row > 1 ? 120 + inc : 148 + inc;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

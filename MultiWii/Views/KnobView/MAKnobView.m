@@ -179,7 +179,7 @@
 //        deltaAngle *= 1.2; //self.spinCount;
         if (_savedAngle > -900)
         {
-            NSLog(@"%f", deltaAngle);
+//            NSLog(@"%f", deltaAngle);
             [self setInternalValue:_internalValue + deltaAngle];
             [self setTransformForInternalValue];
         }

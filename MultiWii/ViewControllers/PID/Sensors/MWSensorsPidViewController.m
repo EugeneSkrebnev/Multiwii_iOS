@@ -36,6 +36,14 @@
     [self.calibrateMagButton addTarget:self action:@selector(calibrateMagButtonTapped) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.tableView reloadData];
+    
+    if (IS_IPHONE_5)
+    {
+        for (UIView* btn in @[self.calibrateAccButton, self.calibrateMagButton])
+        {
+            btn.top += 35;
+        }
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

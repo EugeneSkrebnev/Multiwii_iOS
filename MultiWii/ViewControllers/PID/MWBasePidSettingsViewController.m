@@ -58,7 +58,10 @@
     [self createReadWriteBtns];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 98;
+    if (IS_IPHONE_5)
+        self.tableView.rowHeight = 98 + 22;
+    else
+        self.tableView.rowHeight = 98;
 
 }
 

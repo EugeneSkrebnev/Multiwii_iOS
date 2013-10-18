@@ -27,14 +27,14 @@
         
         self.allSettings = @[self.rcRate, self.rcExpo, self.rollPitchRate, self.yawRate, self.throttlePidAttenuationRate, self.throttleMiddle, self.throttleExpo];
         
-        float i = 0.1;
+//        float i = 0.1;
         for (MWSettingsEntity* rate in self.allSettings)
         {
             rate.step = 0.01;
             rate.minValue = 0;
             rate.maxValue = 1;
-            rate.value = i;
-            i += 0.1;
+//            rate.value = i;
+//            i += 0.1;
         }
         
         self.rcRate.maxValue = 2.5;

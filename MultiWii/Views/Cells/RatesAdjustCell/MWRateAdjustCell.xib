@@ -20,7 +20,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell.png" id="6Ee-Kh-SFc">
                         <rect key="frame" x="0.0" y="0.0" width="316" height="119"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <view contentMode="scaleToFill" id="vKt-q2-Aks" customClass="MAKnobContainerLabeledView">
                         <rect key="frame" x="16" y="24" width="90" height="96"/>
@@ -63,8 +63,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" id="ock-Dr-l86">
-                        <rect key="frame" x="0.0" y="117" width="316" height="1"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <rect key="frame" x="0.0" y="117" width="316" height="2"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
