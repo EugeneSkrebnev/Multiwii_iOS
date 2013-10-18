@@ -36,8 +36,7 @@
                         <outlet property="tableViewForMenu" destination="Rtj-Ao-gng" id="akL-Zo-m0F"/>
                         <segue destination="jWZ-1Y-4yK" kind="push" identifier="1" id="1dN-04-JXm"/>
                         <segue destination="Tln-hl-f3a" kind="push" identifier="2" id="TVP-0U-m06"/>
-                        <segue destination="Rd9-TW-Kbu" kind="push" identifier="3" id="5Ne-qN-1Uz"/>
-                        <segue destination="XS1-hN-AIa" kind="push" identifier="4" id="E2J-80-hwP"/>
+                        <segue destination="XS1-hN-AIa" kind="push" identifier="3" id="E2J-80-hwP"/>
                         <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="eG4-Pe-ZE6"/>
                     </connections>
                 </viewController>
@@ -130,21 +129,6 @@
             </objects>
             <point key="canvasLocation" x="1380" y="1473"/>
         </scene>
-        <!--Base View Controller-->
-        <scene sceneID="RKp-fR-deB">
-            <objects>
-                <viewController id="Rd9-TW-Kbu" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x3G-Sj-jYq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2vg-dc-9IT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ju1-Pi-toO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="825"/>
-        </scene>
         <!--Connect View Controller-->
         <scene sceneID="3CW-kE-Gsq">
             <objects>
@@ -154,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pGI-Ds-2Ut">
-                                <rect key="frame" x="2" y="9" width="316" height="364"/>
+                                <rect key="frame" x="2" y="0.0" width="316" height="373"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

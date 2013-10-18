@@ -244,6 +244,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 {
     if (self.isReadyToUse)
     {
+        [_deviceList removeAllObjects];
         [_centralManager scanForPeripheralsWithServices:nil options:nil];
         _isInScanMode = YES;
         if (self.didStartScan)

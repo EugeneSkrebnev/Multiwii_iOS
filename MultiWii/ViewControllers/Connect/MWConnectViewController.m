@@ -102,7 +102,7 @@
     cell.titleLabel.textColor = [UIColor greenColor];
 //    [self sendsend]; // test
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
-    [self testRCTunning];
+//    [self testRCTunning]; test
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
@@ -133,7 +133,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    self.tableView.rowHeight = 50;
+
     [self initBluetoothManager];
     
     MWTopbarButton* scanButton = [[MWTopbarButton alloc] init];
@@ -145,12 +146,14 @@
 
 - (IBAction)scanButtonTapped:(id)sender
 {
+
     [[MWBluetoothManager sharedInstance] startScan];
     double delayInSeconds = 10.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [[MWBluetoothManager sharedInstance] stopScan];
     });
+    [self.tableView reloadData];    
 }
 
 - (void)viewDidUnload {
@@ -184,7 +187,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* cellID = @"MWDevicePreviewCell_ID";
-    
+    //молодец думал головой, можно и в других местах тоже так сделать.
     MWDevicePreviewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellID];;
     if (!cell)
         cell = [MWDevicePreviewCell loadView];
@@ -194,8 +197,8 @@
     NSString* deviceName = device.name;
     if (!deviceName)
         deviceName = [[MWBluetoothManager sharedInstance] metaDataForDevice:device][@"kCBAdvDataLocalName"];
-    cell.titleLabel.text = [NSString stringWithFormat:@"name : %@", deviceName];
-    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor redColor];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", deviceName];
+    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor whiteColor];
     
     
     return cell;

@@ -14,8 +14,17 @@
 {
     return @"MWDevicePreviewCell_ID";
 }
+
 +(MWDevicePreviewCell *)loadView
 {
     return (MWDevicePreviewCell*) [super loadView];
+}
+
+-(void)makeInit
+{
+    [super makeInit];
+    self.nameLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
 }
 @end
