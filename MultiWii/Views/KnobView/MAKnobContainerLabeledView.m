@@ -81,6 +81,7 @@
     NSString* format = [NSString stringWithFormat:@"%@.%df", @"%", digitStep];
     self.valueLabel.text = [NSString stringWithFormat:format, self.knobView.value];
     _valueLabelSelected.text = self.valueLabel.text;
+
     [self updateSavedState];
 }
 
@@ -121,12 +122,9 @@
     {
         if (_settingEntity.saved)
         {
-            [UIView animateWithDuration:0.2 animations:^{
-                weakSelf.valueLabel.alpha = 1;
-            }];
+            [self bringSubviewToFront:_valueLabelSelected];
+            weakSelf.valueLabel.alpha = 1;
             [_valueLabelSelected setHidden:YES animated:YES duration:0.4];
-
-
 
 //            UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
 //            self.valueLabel.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
@@ -134,12 +132,14 @@
         else
         {
 
+                [self bringSubviewToFront:_valueLabel];
+                _valueLabelSelected.hidden = NO;
 
-            [_valueLabelSelected setHidden:NO animated:YES duration:0.4 onCompletion:^{
-                [UIView animateWithDuration:0.2 animations:^{
+                [UIView animateWithDuration:0.4 animations:^{
                     weakSelf.valueLabel.alpha = 0;
                 }];
-            }];
+
+
 
 
 //            self.valueLabel.textColor =  [UIColor colorWithRed:255./255 green:71./255 blue:0./255 alpha:1];

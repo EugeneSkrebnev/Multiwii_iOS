@@ -32,7 +32,7 @@
 
 -(NSArray*) subtitlesForMenu
 {
-    return @[@"Roll/Pitch/Yaw", @"Baro/Mag/Acc+Calibrate", @"", @"Roll", @""];
+    return @[@"Roll / Pitch / Yaw / Level", @"Baro / Mag / Acc+Calibrate", @"", @"", @""];
 }
 
 @end
