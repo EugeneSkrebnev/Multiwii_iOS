@@ -41,12 +41,20 @@
 // #define kConsumableFeatureBId @"com.mycompany.myapp.005"
 // #define FishBasket @"FishBasket"
 
+#define kFeatureAId @"com.multiwii.fullversion.low"
+#define kFeatureBId @"com.multiwii.fullversion.middle"
+#define kFeatureCId @"com.multiwii.fullversion.high"
+#define kItemAAppleId @"123"
+#define kItemBAppleId @"234"
+#define kItemCAppleId @"345"
+//-n http://gyazo.com/5ff037b3950297e212a48d1b6b0a07f0
+
 #ifndef SERVER_PRODUCT_MODEL
-    #define SERVER_PRODUCT_MODEL 0
+    #define SERVER_PRODUCT_MODEL 1
 #endif
 
 #ifndef OWN_SERVER
-    #define OWN_SERVER nil
+    #define OWN_SERVER 1
 #endif
 
 #ifndef REVIEW_ALLOWED

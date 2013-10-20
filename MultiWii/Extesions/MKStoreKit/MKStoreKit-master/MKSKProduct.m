@@ -30,7 +30,7 @@
 //	4) A paypal donation to mugunth.kumar@gmail.com
 
 #import "MKSKProduct.h"
-
+#import "MKStoreManager.h"
 #import "NSData+MKBase64.h"
 
 #if ! __has_feature(objc_arc)
@@ -168,32 +168,99 @@ static NSMutableData *sDataFromConnection;
   }
 }
 
+- (BOOL)verifyReceipt:(NSData*)receiptData
+{
+    
+    NSString *urlsting = kReceiptValidationURL;
+//#define kReceiptValidationURL @"https://sandbox.itunes.apple.com/verifyReceipt"
+//#define kReceiptValidationURL @"https://buy.itunes.apple.com/verifyReceipt"
+//375 29 2388672
+    NSURL *url = [NSURL URLWithString:urlsting];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    NSString *st =  [receiptData base64EncodedString];
+    NSString *json = [NSString stringWithFormat:@"{\"receipt-data\":\"%@\"}", st];
+    
+    [theRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *length = [NSString stringWithFormat:@"%d", [json length]];
+    [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];
+    NSHTTPURLResponse* urlResponse = nil;
+    NSError *error = [[NSError alloc] init];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:theRequest
+                                                 returningResponse:&urlResponse
+                                                             error:&error];
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSDictionary *dic = [responseString JSONValue];
+    NSInteger status = [[dic objectForKey:@"status"] intValue];
+    NSDictionary *receiptDic = [dic objectForKey:@"receipt"];
+    BOOL retVal = NO;
+    if (status == 0 && receiptDic) {
+        NSString *itemId = [receiptDic objectForKey:@"item_id"];
+        NSString *productId = [receiptDic objectForKey:@"product_id"];
+        
+        if (productId && ([productId isEqualToString:kFeatureAId]  ||
+                          [productId isEqualToString:kFeatureBId]  ||
+                          [productId isEqualToString:kFeatureCId]   )) {
+            if (itemId && ( [itemId isEqualToString:kItemAAppleId] ||
+                           [itemId isEqualToString:kItemBAppleId] ||
+                           [itemId isEqualToString:kItemCAppleId] )) {
+                retVal = YES;
+            }
+            
+        }
+    }
+    return retVal;
+}
+
+-(void) startVerifing
+{
+    BOOL res = [self verifyReceipt:self.receipt];
+    if(res)
+    {
+        if(onReviewRequestVerificationSucceeded)
+        {
+            onReviewRequestVerificationSucceeded();
+            onReviewRequestVerificationFailed = nil;
+        }
+    }
+    else
+    {
+        if(onReviewRequestVerificationFailed)
+            onReviewRequestVerificationFailed(nil);
+        
+        onReviewRequestVerificationFailed = nil;
+    }
+
+        
+}
+
 - (void) verifyReceiptOnComplete:(void (^)(void)) completionBlock
                          onError:(void (^)(NSError*)) errorBlock
 {
-  self.onReceiptVerificationSucceeded = completionBlock;
-  self.onReceiptVerificationFailed = errorBlock;
-  
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"verifyProduct.php"]];
-	
-	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
-                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData 
-                                                        timeoutInterval:60];
-	
-	[theRequest setHTTPMethod:@"POST"];		
-	[theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-	
-	NSString *receiptDataString = [self.receipt base64EncodedString];
-  
-	NSString *postData = [NSString stringWithFormat:@"receiptdata=%@", receiptDataString];
-	
-	NSString *length = [NSString stringWithFormat:@"%d", [postData length]];	
-	[theRequest setValue:length forHTTPHeaderField:@"Content-Length"];	
-	
-	[theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
-	
-  self.theConnection = [NSURLConnection connectionWithRequest:theRequest delegate:self];    
-  [self.theConnection start];	
+    self.onReceiptVerificationSucceeded = completionBlock;
+    self.onReceiptVerificationFailed = errorBlock;
+    [self performSelectorInBackground:@selector(startVerifing) withObject:nil];
+//  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"verifyProduct.php"]];
+//	
+//	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
+//                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData 
+//                                                        timeoutInterval:60];
+//	
+//	[theRequest setHTTPMethod:@"POST"];		
+//	[theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//	
+//	NSString *receiptDataString = [self.receipt base64EncodedString];
+//  
+//	NSString *postData = [NSString stringWithFormat:@"receiptdata=%@", receiptDataString];
+//	
+//	NSString *length = [NSString stringWithFormat:@"%d", [postData length]];	
+//	[theRequest setValue:length forHTTPHeaderField:@"Content-Length"];	
+//	
+//	[theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
+//	
+//  self.theConnection = [NSURLConnection connectionWithRequest:theRequest delegate:self];    
+//  [self.theConnection start];	
 }
 
 
