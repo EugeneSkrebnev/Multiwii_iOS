@@ -44,7 +44,13 @@
     [self.view insertSubview:bgView atIndex:0];
     UIImage* barImage = [UIImage imageNamed:@"top_bar.png"];
     [self.navigationBar setBackgroundImage:barImage forBarMetrics:(UIBarMetricsDefault)];
-    
+}
+
+-(void) setBuyBtns
+{
+    self.buy5.costInBucks = 5;
+    self.buy7.costInBucks = 7;
+    self.buy10.costInBucks = 10;
 }
 
 -(void)viewDidLoad
@@ -52,7 +58,25 @@
     [super viewDidLoad];
     [self setControllerView];
     [self createBackBtn];
+    [self setBuyBtns];
+    
     self.navigationBar.topItem.titleView = [self viewForTitle: @"BUY FULL VERSION"];
+    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    self.aboutTextView.scrollEnabled = NO;
+//    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+//    self.aboutTextView.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
+    self.aboutTextView.textColor = [UIColor grayColor];
+    self.aboutTextView.layer.shadowColor = [[UIColor whiteColor] CGColor];
+    self.aboutTextView.layer.shadowOffset = CGSizeMake(1.f, 1.0f);
+    self.aboutTextView.layer.shadowOpacity = .0f;
+    self.aboutTextView.layer.shadowRadius = .0f;
+    
+    if (!IS_IOS7)
+    {
+        self.navigationBar.top -= 20;
+        self.aboutTextView.top -= 20;
+    }
+    
 }
 
 -(void) backButtonTapped:(id) sender

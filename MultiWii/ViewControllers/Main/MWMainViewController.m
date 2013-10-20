@@ -32,7 +32,7 @@ static BOOL firstTimeShow = YES;
             else
             {
                 self.tableViewForMenu.top = 64; //bad dirty fix for top bar
-                self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count;
+                self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * ([self titlesForMenu].count+2);//bad dirty fix for top bar
             }
   
             [UIView animateWithDuration:0.2 animations:^{
@@ -54,11 +54,40 @@ static BOOL firstTimeShow = YES;
     }
     else
     {
+        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * ([self titlesForMenu].count+2);//bad dirty fix for top bar
         self.tableViewForMenu.top = 0; //bad dirty fix
-        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count;
+
     }
 }
-
+//-(void)viewDidDisappear:(BOOL)animated
+//{
+//    [super viewDidDisappear:animated];
+//    if (_splash)
+//    {
+//        
+//    }
+//    else
+//    {
+//        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count+2;
+//        self.tableViewForMenu.top = 0; //bad dirty fix
+//        
+//    }
+//    
+//}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    if (_splash)
+//    {
+//        
+//    }
+//    else
+//    {
+//        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count+1;
+//        self.tableViewForMenu.top = 0; //bad dirty fix
+//
+//    }
+//}
 -(NSArray*) titlesForMenu
 {
     return @[@"CONNECT", @"TELEMETRY", @"SETTINGS"/*, @"CONTROL"*/, @"ABOUT"];

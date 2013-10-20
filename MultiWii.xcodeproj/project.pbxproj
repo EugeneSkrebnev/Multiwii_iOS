@@ -205,6 +205,9 @@
 		44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BB81814133C00417C79 /* SBJsonUTF8Stream.m */; };
 		44FC0BC61814133C00417C79 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BBA1814133C00417C79 /* SBJsonWriter.m */; };
 		44FC0BCA181421A200417C79 /* MWBuyFullVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BC9181421A200417C79 /* MWBuyFullVersionViewController.m */; };
+		44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0BCB1814842700417C79 /* MessageUI.framework */; };
+		44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		44FC0BD31814943500417C79 /* MWInAppButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BD21814943500417C79 /* MWInAppButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -483,6 +486,11 @@
 		44FC0BBA1814133C00417C79 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		44FC0BC8181421A200417C79 /* MWBuyFullVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBuyFullVersionViewController.h; sourceTree = "<group>"; };
 		44FC0BC9181421A200417C79 /* MWBuyFullVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBuyFullVersionViewController.m; sourceTree = "<group>"; };
+		44FC0BCB1814842700417C79 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		44FC0BCD18148F3600417C79 /* UIAlertView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Alert.h"; sourceTree = "<group>"; };
+		44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Alert.m"; sourceTree = "<group>"; };
+		44FC0BD11814943500417C79 /* MWInAppButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWInAppButton.h; sourceTree = "<group>"; };
+		44FC0BD21814943500417C79 /* MWInAppButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWInAppButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +498,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
 				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
 				4422268D181407CB00D53DE3 /* Security.framework in Frameworks */,
 				44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */,
@@ -683,6 +692,7 @@
 		44453C9E17518F6900929EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44FC0BCB1814842700417C79 /* MessageUI.framework */,
 				44FC0B9C1814083600417C79 /* StoreKit.framework */,
 				4422268C181407CB00D53DE3 /* Security.framework */,
 				44519D4C179BF749006E4EB7 /* CoreBluetooth.framework */,
@@ -979,6 +989,7 @@
 		44A6BE03178EDB8200DC95C6 /* IconButton */ = {
 			isa = PBXGroup;
 			children = (
+				44FC0BD01814941700417C79 /* InAppButton */,
 				44A6BE04178EDB8200DC95C6 /* Buy */,
 				44A6BE05178EDB8200DC95C6 /* Site */,
 				44A6BE09178EDC4000DC95C6 /* MWIconBaseButton.h */,
@@ -1122,6 +1133,8 @@
 				442226451814059100D53DE3 /* MKStoreKit */,
 				44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */,
 				44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */,
+				44FC0BCD18148F3600417C79 /* UIAlertView+Alert.h */,
+				44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */,
 			);
 			path = Extesions;
 			sourceTree = "<group>";
@@ -1355,6 +1368,15 @@
 			path = BuyFullVersion;
 			sourceTree = "<group>";
 		};
+		44FC0BD01814941700417C79 /* InAppButton */ = {
+			isa = PBXGroup;
+			children = (
+				44FC0BD11814943500417C79 /* MWInAppButton.h */,
+				44FC0BD21814943500417C79 /* MWInAppButton.m */,
+			);
+			path = InAppButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1582,6 +1604,7 @@
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */,
 				44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */,
+				44FC0BD31814943500417C79 /* MWInAppButton.m in Sources */,
 				44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */,
 				44519D4A179BF655006E4EB7 /* CBUUID+StringValue.m in Sources */,
 				44519D4B179BF655006E4EB7 /* MWBluetoothManager.m in Sources */,
@@ -1614,6 +1637,7 @@
 				44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */,
 				44FC0BBF1814133C00417C79 /* SBJsonStreamParserAdapter.m in Sources */,
 				44FC0BC61814133C00417C79 /* SBJsonWriter.m in Sources */,
+				44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

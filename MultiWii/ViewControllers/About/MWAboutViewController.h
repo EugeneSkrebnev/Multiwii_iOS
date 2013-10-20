@@ -7,7 +7,9 @@
 //
 
 #import "MWMenuViewController.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MWAboutViewController : MWMenuViewController
+@interface MWAboutViewController : MWMenuViewController<MFMailComposeViewControllerDelegate>
 
 @end
