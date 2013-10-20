@@ -41,6 +41,15 @@
 		442225A5180DE8C300D53DE3 /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A4180DE8C300D53DE3 /* point@2x.png */; };
 		442225A7180DE8EF00D53DE3 /* slider_tab_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */; };
 		4422261F1810247100D53DE3 /* aux_border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4422261E1810247100D53DE3 /* aux_border@2x.png */; };
+		4422265D1814059100D53DE3 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 442226491814059100D53DE3 /* NSData+MKBase64.m */; };
+		4422265E1814059100D53DE3 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422264B1814059100D53DE3 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422264D1814059100D53DE3 /* MKSKProduct.m */; };
+		442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422264F1814059100D53DE3 /* MKSKSubscriptionProduct.m */; };
+		442226611814059100D53DE3 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 442226511814059100D53DE3 /* MKStoreKitConfigs.plist */; };
+		442226621814059100D53DE3 /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 442226531814059100D53DE3 /* MKStoreManager.m */; };
+		442226631814059100D53DE3 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 442226541814059100D53DE3 /* README.mdown */; };
+		442226691814059100D53DE3 /* VerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422265C1814059100D53DE3 /* VerificationController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4422268D181407CB00D53DE3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4422268C181407CB00D53DE3 /* Security.framework */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -182,6 +191,7 @@
 		44C7CA96178A19300059C199 /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA94178A19300059C199 /* cell@2x.png */; };
 		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
 		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
+		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -229,6 +239,22 @@
 		442225A4180DE8C300D53DE3 /* point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point@2x.png"; sourceTree = "<group>"; };
 		442225A6180DE8EF00D53DE3 /* slider_tab_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab_active@2x.png"; sourceTree = "<group>"; };
 		4422261E1810247100D53DE3 /* aux_border@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aux_border@2x.png"; sourceTree = "<group>"; };
+		442226481814059100D53DE3 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
+		442226491814059100D53DE3 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
+		4422264A1814059100D53DE3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		4422264B1814059100D53DE3 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		4422264C1814059100D53DE3 /* MKSKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKProduct.h; sourceTree = "<group>"; };
+		4422264D1814059100D53DE3 /* MKSKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKProduct.m; sourceTree = "<group>"; };
+		4422264E1814059100D53DE3 /* MKSKSubscriptionProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKSubscriptionProduct.h; sourceTree = "<group>"; };
+		4422264F1814059100D53DE3 /* MKSKSubscriptionProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKSubscriptionProduct.m; sourceTree = "<group>"; };
+		442226501814059100D53DE3 /* MKStoreKitConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKitConfigs.h; sourceTree = "<group>"; };
+		442226511814059100D53DE3 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		442226521814059100D53DE3 /* MKStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreManager.h; sourceTree = "<group>"; };
+		442226531814059100D53DE3 /* MKStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreManager.m; sourceTree = "<group>"; };
+		442226541814059100D53DE3 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		4422265B1814059100D53DE3 /* VerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationController.h; sourceTree = "<group>"; };
+		4422265C1814059100D53DE3 /* VerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationController.m; sourceTree = "<group>"; };
+		4422268C181407CB00D53DE3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -416,6 +442,7 @@
 		44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseTableViewCell.m; sourceTree = "<group>"; };
 		44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainMenuCell.h; sourceTree = "<group>"; };
 		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
+		44FC0B9C1814083600417C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +450,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
+				4422268D181407CB00D53DE3 /* Security.framework in Frameworks */,
 				44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */,
 				44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */,
 				44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */,
@@ -556,6 +585,44 @@
 			path = RatesCell;
 			sourceTree = "<group>";
 		};
+		442226451814059100D53DE3 /* MKStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				442226461814059100D53DE3 /* MKStoreKit-master */,
+			);
+			path = MKStoreKit;
+			sourceTree = "<group>";
+		};
+		442226461814059100D53DE3 /* MKStoreKit-master */ = {
+			isa = PBXGroup;
+			children = (
+				442226471814059100D53DE3 /* Externals */,
+				4422264C1814059100D53DE3 /* MKSKProduct.h */,
+				4422264D1814059100D53DE3 /* MKSKProduct.m */,
+				4422264E1814059100D53DE3 /* MKSKSubscriptionProduct.h */,
+				4422264F1814059100D53DE3 /* MKSKSubscriptionProduct.m */,
+				442226501814059100D53DE3 /* MKStoreKitConfigs.h */,
+				442226511814059100D53DE3 /* MKStoreKitConfigs.plist */,
+				442226521814059100D53DE3 /* MKStoreManager.h */,
+				442226531814059100D53DE3 /* MKStoreManager.m */,
+				442226541814059100D53DE3 /* README.mdown */,
+				4422265B1814059100D53DE3 /* VerificationController.h */,
+				4422265C1814059100D53DE3 /* VerificationController.m */,
+			);
+			path = "MKStoreKit-master";
+			sourceTree = "<group>";
+		};
+		442226471814059100D53DE3 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				442226481814059100D53DE3 /* NSData+MKBase64.h */,
+				442226491814059100D53DE3 /* NSData+MKBase64.m */,
+				4422264A1814059100D53DE3 /* SFHFKeychainUtils.h */,
+				4422264B1814059100D53DE3 /* SFHFKeychainUtils.m */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +643,8 @@
 		44453C9E17518F6900929EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44FC0B9C1814083600417C79 /* StoreKit.framework */,
+				4422268C181407CB00D53DE3 /* Security.framework */,
 				44519D4C179BF749006E4EB7 /* CoreBluetooth.framework */,
 				44453C9F17518F6900929EC8 /* UIKit.framework */,
 				44453CA117518F6900929EC8 /* Foundation.framework */,
@@ -1008,6 +1077,7 @@
 		44B4BB691780E09700CE91A8 /* Extesions */ = {
 			isa = PBXGroup;
 			children = (
+				442226451814059100D53DE3 /* MKStoreKit */,
 				44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */,
 				44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */,
 			);
@@ -1313,12 +1383,14 @@
 				44068BB9180409EB00E8ABCC /* separator_two_pressed@2x.png in Resources */,
 				44A6BD95178D82E200DC95C6 /* back_button@2x.png in Resources */,
 				44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */,
+				442226611814059100D53DE3 /* MKStoreKitConfigs.plist in Resources */,
 				44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */,
 				44A6BDB0178D9B0B00DC95C6 /* aux@2x.png in Resources */,
 				44A6BDB2178D9B0B00DC95C6 /* exponents@2x.png in Resources */,
 				44A6BDB3178D9B0B00DC95C6 /* exponents_pressed@2x.png in Resources */,
 				44A6BDB4178D9B0B00DC95C6 /* pid_fly@2x.png in Resources */,
 				44A6BDB5178D9B0B00DC95C6 /* pid_fly_pressed@2x.png in Resources */,
+				442226631814059100D53DE3 /* README.mdown in Resources */,
 				44A6BDB6178D9B0B00DC95C6 /* pid_gps@2x.png in Resources */,
 				44A6BDB7178D9B0B00DC95C6 /* pid_gps_pressed@2x.png in Resources */,
 				44A6BDB8178D9B0B00DC95C6 /* pid_sensors@2x.png in Resources */,
@@ -1384,13 +1456,17 @@
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
 				44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */,
 				44C7CA4B1789CCEC0059C199 /* MWSplashView.m in Sources */,
+				442226621814059100D53DE3 /* MKStoreManager.m in Sources */,
 				44C7CA541789CDA40059C199 /* MAQuadrocopterFrame.m in Sources */,
 				44C7CA551789CDA40059C199 /* MAKnobView.m in Sources */,
+				4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */,
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
 				44C7CA5C1789CE480059C199 /* MWBaseViewController.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
+				4422265D1814059100D53DE3 /* NSData+MKBase64.m in Sources */,
 				44A6BD9F178D8AA000DC95C6 /* MWMainViewController.m in Sources */,
+				4422265E1814059100D53DE3 /* SFHFKeychainUtils.m in Sources */,
 				44A6BDA0178D8B1C00DC95C6 /* MWMenuViewController.m in Sources */,
 				44A6BDA4178D994F00DC95C6 /* MWSettingsViewController.m in Sources */,
 				44A6BDBD178D9EC900DC95C6 /* MWMenuSubtitleCell.m in Sources */,
@@ -1398,6 +1474,7 @@
 				44A6BDEA178E06F800DC95C6 /* MWAUXCheckBoxCell.m in Sources */,
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
 				44068B901802E9DC00E8ABCC /* MWRatesTuningViewController.m in Sources */,
+				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
 				44A6BDF9178EBB6C00DC95C6 /* MWAuxSelectViewController.m in Sources */,
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
 				44A6BE08178EDC0C00DC95C6 /* MWBaseButton.m in Sources */,
@@ -1421,6 +1498,7 @@
 				44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
+				442226691814059100D53DE3 /* VerificationController.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,

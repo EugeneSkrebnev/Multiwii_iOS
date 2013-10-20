@@ -41,7 +41,7 @@
     {
         for (UIView* btn in @[self.calibrateAccButton, self.calibrateMagButton])
         {
-            btn.top += 35;
+            btn.top -= 15;
         }
     }
 }
