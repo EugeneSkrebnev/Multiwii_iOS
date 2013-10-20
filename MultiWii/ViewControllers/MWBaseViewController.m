@@ -88,17 +88,15 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
--(void)setViewControllerTitle:(NSString *)viewControllerTitle
+-(UIView*) viewForTitle:(NSString*) title
 {
-    _viewControllerTitle = viewControllerTitle;
     UIView* containerTitleView = [[UIView alloc] init];
     UIImageView* leftDash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_element.png"]];
     UIImageView* rightDash = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_element.png"]];
     leftDash.width = 13;
     rightDash.width = 13;
     UILabel* lbl = [[UILabel alloc] init];
-    lbl.text = viewControllerTitle;
+    lbl.text = title;
     lbl.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient_title-text.png"]];
     lbl.font = [UIFont fontWithName:@"Montserrat-Bold" size:16];
     [lbl sizeToFit];
@@ -115,7 +113,14 @@
     [containerTitleView addSubview:leftDash];
     [containerTitleView addSubview:rightDash];
     [containerTitleView addSubview:lbl];
-    self.navigationItem.titleView = containerTitleView;
+    return containerTitleView;
+
+}
+
+-(void)setViewControllerTitle:(NSString *)viewControllerTitle
+{
+    _viewControllerTitle = viewControllerTitle;
+    self.navigationItem.titleView = [self viewForTitle:_viewControllerTitle];
 }
 
 @end

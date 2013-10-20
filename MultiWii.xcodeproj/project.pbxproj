@@ -204,6 +204,7 @@
 		44FC0BC41814133C00417C79 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BB61814133C00417C79 /* SBJsonTokeniser.m */; };
 		44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BB81814133C00417C79 /* SBJsonUTF8Stream.m */; };
 		44FC0BC61814133C00417C79 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BBA1814133C00417C79 /* SBJsonWriter.m */; };
+		44FC0BCA181421A200417C79 /* MWBuyFullVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BC9181421A200417C79 /* MWBuyFullVersionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -480,6 +481,8 @@
 		44FC0BB81814133C00417C79 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		44FC0BB91814133C00417C79 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		44FC0BBA1814133C00417C79 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		44FC0BC8181421A200417C79 /* MWBuyFullVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBuyFullVersionViewController.h; sourceTree = "<group>"; };
+		44FC0BC9181421A200417C79 /* MWBuyFullVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBuyFullVersionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1086,6 +1089,7 @@
 			children = (
 				44C7CA5A1789CE480059C199 /* MWBaseViewController.h */,
 				44C7CA5B1789CE480059C199 /* MWBaseViewController.m */,
+				44FC0BC71814217E00417C79 /* BuyFullVersion */,
 				44AD4A92180047410088760D /* PID */,
 				44519D68179D51FF006E4EB7 /* Connect */,
 				44A6BD9A178D88F400DC95C6 /* MenuBase */,
@@ -1342,6 +1346,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		44FC0BC71814217E00417C79 /* BuyFullVersion */ = {
+			isa = PBXGroup;
+			children = (
+				44FC0BC8181421A200417C79 /* MWBuyFullVersionViewController.h */,
+				44FC0BC9181421A200417C79 /* MWBuyFullVersionViewController.m */,
+			);
+			path = BuyFullVersion;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1583,6 +1596,7 @@
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
+				44FC0BCA181421A200417C79 /* MWBuyFullVersionViewController.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
 				442226691814059100D53DE3 /* VerificationController.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,

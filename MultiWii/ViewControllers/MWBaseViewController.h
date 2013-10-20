@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MWBaseViewController : UIViewController
-
+-(UIView*) viewForTitle:(NSString*) title;
 @property (nonatomic, strong) NSString* viewControllerTitle;
 @end

@@ -139,28 +139,28 @@ static NSMutableData *sDataFromConnection;
   {
     onReviewRequestVerificationSucceeded = [completionBlock copy];
     onReviewRequestVerificationFailed = [errorBlock copy];
-    
-    NSString *uniqueID = [self deviceId];
-    // check udid and featureid with developer's server
-		
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"featureCheck.php"]];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
-                                                              cachePolicy:NSURLRequestReloadIgnoringCacheData 
-                                                          timeoutInterval:60];
-    
-    [theRequest setHTTPMethod:@"POST"];		
-    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
-    NSString *postData = [NSString stringWithFormat:@"productid=%@&udid=%@", productId, uniqueID];
-    
-    NSString *length = [NSString stringWithFormat:@"%d", [postData length]];	
-    [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];	
-    
-    [theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
-    
-    sConnection = [NSURLConnection connectionWithRequest:theRequest delegate:self];    
-    [sConnection start];	
+    [self performSelectorInBackground:@selector(startVerifing) withObject:nil];
+//    NSString *uniqueID = [self deviceId];
+//    // check udid and featureid with developer's server
+//		
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"featureCheck.php"]];
+//    
+//    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
+//                                                              cachePolicy:NSURLRequestReloadIgnoringCacheData 
+//                                                          timeoutInterval:60];
+//    
+//    [theRequest setHTTPMethod:@"POST"];		
+//    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//    
+//    NSString *postData = [NSString stringWithFormat:@"productid=%@&udid=%@", productId, uniqueID];
+//    
+//    NSString *length = [NSString stringWithFormat:@"%d", [postData length]];	
+//    [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];	
+//    
+//    [theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
+//    
+//    sConnection = [NSURLConnection connectionWithRequest:theRequest delegate:self];    
+//    [sConnection start];	
   }
   else
   {
@@ -241,6 +241,7 @@ static NSMutableData *sDataFromConnection;
     self.onReceiptVerificationSucceeded = completionBlock;
     self.onReceiptVerificationFailed = errorBlock;
     [self performSelectorInBackground:@selector(startVerifing) withObject:nil];
+    
 //  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"verifyProduct.php"]];
 //	
 //	NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url 
