@@ -59,35 +59,7 @@ static BOOL firstTimeShow = YES;
 
     }
 }
-//-(void)viewDidDisappear:(BOOL)animated
-//{
-//    [super viewDidDisappear:animated];
-//    if (_splash)
-//    {
-//        
-//    }
-//    else
-//    {
-//        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count+2;
-//        self.tableViewForMenu.top = 0; //bad dirty fix
-//        
-//    }
-//    
-//}
-//-(void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    if (_splash)
-//    {
-//        
-//    }
-//    else
-//    {
-//        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * [self titlesForMenu].count+1;
-//        self.tableViewForMenu.top = 0; //bad dirty fix
-//
-//    }
-//}
+
 -(NSArray*) titlesForMenu
 {
     return @[@"CONNECT", @"TELEMETRY", @"SETTINGS"/*, @"CONTROL"*/, @"ABOUT"];

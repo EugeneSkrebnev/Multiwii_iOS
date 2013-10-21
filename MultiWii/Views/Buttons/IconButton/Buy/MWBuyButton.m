@@ -16,7 +16,7 @@
     [super makeInit];
     UIImage* buyFullVersionIcon = [UIImage imageNamed:@"buy.png"];
     [self setImage:buyFullVersionIcon forState:UIControlStateNormal];
-    [self setTitle:@"BUY FULL VERSION" forState:UIControlStateNormal];
+    [self setTitle:@"GET FULL VERSION" forState:UIControlStateNormal];
     UIImage* hg = [self backgroundImageForState:UIControlStateHighlighted];
     UIImage* norm = [self backgroundImageForState:UIControlStateNormal];
     

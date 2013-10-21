@@ -51,6 +51,7 @@
     self.buy5.costInBucks = 5;
     self.buy7.costInBucks = 7;
     self.buy10.costInBucks = 10;
+    [self.restoreBtn setTitle:@"RESTORE PURCHASE" forState:(UIControlStateNormal)];
 }
 
 -(void)viewDidLoad
