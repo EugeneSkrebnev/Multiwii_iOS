@@ -84,6 +84,7 @@
 		448ABAA118168D260056DD4A /* MWRadarActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 448ABAA018168D260056DD4A /* MWRadarActivityIndicator.m */; };
 		448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448ABAA21816A0AB0056DD4A /* QuartzCore.framework */; };
 		448ABAA8181719510056DD4A /* buck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAA7181719510056DD4A /* buck@2x.png */; };
+		448ABAAA181726B90056DD4A /* radar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAA9181726B90056DD4A /* radar2@2x.png */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -327,6 +328,7 @@
 		448ABAA018168D260056DD4A /* MWRadarActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadarActivityIndicator.m; sourceTree = "<group>"; };
 		448ABAA21816A0AB0056DD4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		448ABAA7181719510056DD4A /* buck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buck@2x.png"; sourceTree = "<group>"; };
+		448ABAA9181726B90056DD4A /* radar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radar2@2x.png"; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -830,6 +832,7 @@
 			children = (
 				448ABA9A18168C580056DD4A /* radar@2x.png */,
 				448ABA9B18168C580056DD4A /* radar_bg@2x.png */,
+				448ABAA9181726B90056DD4A /* radar2@2x.png */,
 			);
 			path = RadarActivityIndicator;
 			sourceTree = "<group>";
@@ -1486,6 +1489,7 @@
 			files = (
 				44453CAA17518F6900929EC8 /* InfoPlist.strings in Resources */,
 				44C7CA3F1789C5520059C199 /* Splash.png in Resources */,
+				448ABAAA181726B90056DD4A /* radar2@2x.png in Resources */,
 				44C7CA401789C5520059C199 /* Splash5@2x.png in Resources */,
 				44068BB4180409EB00E8ABCC /* right_normal@2x.png in Resources */,
 				44C7CA411789C5520059C199 /* Splash@2x.png in Resources */,

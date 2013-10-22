@@ -67,7 +67,11 @@
 //        self.value = _settingsEntity.value;        
 //    }];
     [UIView animateWithDuration:.3 animations:^{
-        [self setValue:_settingsEntity.value animated:YES];
+//        if (IOS_VER
+        if ((IOS_VER - 5) < 0.01)
+            [self setValue:_settingsEntity.value animated:NO];
+        else
+            [self setValue:_settingsEntity.value animated:YES];
     }];
 
 }
