@@ -53,6 +53,10 @@
         else
         {
             [self.radar setHidden:YES animated:YES];
+            if ([MWBluetoothManager sharedInstance].deviceList.count == 0)
+            {
+                [UIAlertView alertWithTitle:@"" message:@"No devices found. Go to \"About\" - \"How to connect\" section for instructions."];
+            }
         }
 //        [self.activityIndicator setHidden:!scanModeOn animated:YES];
     };

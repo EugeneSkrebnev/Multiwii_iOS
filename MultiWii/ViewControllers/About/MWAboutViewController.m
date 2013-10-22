@@ -23,12 +23,12 @@
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"ABOUT PROGRAM", @"HOW TO CONNECT", @"ASK QUESTION", @"SUBMIT BUG", @"ABOUT AUTHOR"];
+    return @[@"ABOUT PROGRAM", @"HOW TO CONNECT", @"ASK QUESTION", @"SUBMIT BUG", @"LEAVE FEEDBACK", @"ABOUT AUTHOR", ];
 }
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"about_program", @"how_to_connect", @"ask", @"bug", @"about_author"];
+    return @[@"about_program", @"how_to_connect", @"ask", @"bug", @"feedback", @"about_author"];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

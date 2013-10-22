@@ -178,7 +178,7 @@
                                 <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="384-KY-cUd" customClass="MWVisitSiteButton">
-                                <rect key="frame" x="20" y="369" width="280" height="57"/>
+                                <rect key="frame" x="20" y="401" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="SITE">
