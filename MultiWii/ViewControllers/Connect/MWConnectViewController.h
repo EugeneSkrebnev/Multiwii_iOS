@@ -7,11 +7,11 @@
 //
 
 #import "MWBaseViewController.h"
-
+#import "MWRadarActivityIndicator.h"
 @interface MWConnectViewController : MWBaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIButton *scanButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
+@property (nonatomic, strong) MWRadarActivityIndicator* radar;
 @end

@@ -22,7 +22,13 @@
     [[MWBluetoothManager sharedInstance] centralManager]; //init
     [MWBluetoothManager sharedInstance].didAddDeviceToListBlock =
     ^{
-        [self.tableView reloadData];
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.tableView reloadData];
+            //move it down and make smaller
+            
+        });
     };
     
     dispatch_block_t statusUpdate = ^{
@@ -142,6 +148,11 @@
     [scanButton setTitle:@"SCAN" forState:(UIControlStateNormal)];
     [scanButton addTarget:self action:@selector(scanButtonTapped:) forControlEvents:(UIControlEventTouchUpInside)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
+    self.radar = [[MWRadarActivityIndicator alloc] init];
+    self.radar.center = CGPointMake(self.view.width / 2, self.view.height / 2);
+//    self.radar.hidden = YES;
+    [self.view addSubview:self.radar];
+    [self.radar startSpin];
 }
 
 - (IBAction)scanButtonTapped:(id)sender
