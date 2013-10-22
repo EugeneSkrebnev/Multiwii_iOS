@@ -78,5 +78,13 @@
 {
     [_radar.layer removeAnimationForKey:@"Spin"];
 }
-
+-(void)setHidden:(BOOL)hidden
+{
+    [super setHidden:hidden];
+    if (hidden)
+        [self stopSpin];
+    else
+        [self startSpin];
+    
+}
 @end

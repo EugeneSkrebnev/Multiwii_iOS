@@ -104,6 +104,11 @@
 
 }
 
+-(void) cantSelectRowAtIndexPath:(NSIndexPath*) indexPath
+{
+    
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     @try
@@ -115,6 +120,7 @@
         NSLog(@"NSException !!! : %@", exception);
         
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+        [self cantSelectRowAtIndexPath:indexPath];
     }
 }
 

@@ -79,7 +79,7 @@ static BOOL firstTimeShow = YES;
     {
 
         firstTimeShow = NO;
-//        if (!YES) // uncomment for enable splash
+        if (!YES) // uncomment for enable splash
         {
 //            self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];
@@ -93,7 +93,24 @@ static BOOL firstTimeShow = YES;
             [UINavigationBar commitAnimations];
         }
     }
-    
-    
+}
+
+-(void) cantSelectRowAtIndexPath:(NSIndexPath*) indexPath
+{
+    [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.row == 1)
+    {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIView* blackView = [[UIView alloc] initWithFrame:cell.bounds];
+        blackView.backgroundColor = [UIColor blackColor];
+        blackView.alpha = 0.2;
+        [cell addSubview:blackView];
+    }
+    return cell;
 }
 @end

@@ -35,15 +35,33 @@
 {
     if (indexPath.row == 2 ||indexPath.row == 3)
     {
-        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-        NSString* subject = indexPath.row == 2 ? @"Got some question" : @"!!!BUG!!!";
-        mailViewController.mailComposeDelegate = self;
-        [mailViewController setSubject:subject];
-        [mailViewController setToRecipients:@[@"multiwii.for.ios@gmail.com"]];
-        [mailViewController setMessageBody:@"" isHTML:NO];
-        mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+        if ([MFMailComposeViewController canSendMail])
+        {
+            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+            NSString* subject = indexPath.row == 2 ? @"Got some question" : @"!!!BUG!!!";
+            mailViewController.mailComposeDelegate = self;
+            [mailViewController setSubject:subject];
+            [mailViewController setToRecipients:@[@"multiwii.for.ios@gmail.com"]];
+            [mailViewController setMessageBody:@"" isHTML:NO];
+            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
 
-        [self presentModalViewController:mailViewController animated:YES];
+            [self presentModalViewController:mailViewController animated:YES];
+        }
+        else
+        {
+            [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+            [UIAlertView alertResultWithTitle:@"Error" message:@"No mail account setup on device. Go to Settings -> Mail." buttonNames:@[/*@"Go to settings",*/ @"Cancel"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
+//                if (buttonIndex == 0)
+//                {
+////                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=ACCOUNT_SETTINGS"]];
+//                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root"]];
+//                }
+//                else
+//                {
+//                    
+//                }
+            }];
+        }
     }
 }
 

@@ -52,6 +52,12 @@
     self.buy7.costInBucks = 7;
     self.buy10.costInBucks = 10;
     [self.restoreBtn setTitle:@"RESTORE PURCHASE" forState:(UIControlStateNormal)];
+    UIImage* imgH = [self.restoreBtn backgroundImageForState:(UIControlStateHighlighted)];
+    [self.restoreBtn setBackgroundImage:[self.restoreBtn backgroundImageForState:(UIControlStateNormal)] forState:(UIControlStateHighlighted)];
+    [self.restoreBtn setBackgroundImage:imgH forState:(UIControlStateNormal)];
+    UIImage* restoreIcon = [UIImage imageNamed:@"buy.png"];
+    [self.restoreBtn setImage:restoreIcon forState:(UIControlStateNormal)];
+    
 }
 
 -(void)viewDidLoad

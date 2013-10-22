@@ -16,7 +16,9 @@
 @end
 
 @implementation MWConnectViewController
-
+{
+    CGPoint _radarCenter;
+}
 -(void) initBluetoothManager
 {
     [[MWBluetoothManager sharedInstance] centralManager]; //init
@@ -25,7 +27,14 @@
         double delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self.tableView reloadData];
+            [UIView animateWithDuration:0.5 animations:^{
+                self.radar.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                self.radar.center = CGPointMake(self.view.width / 2, self.view.height - 40);
+            } completion:^(BOOL finished) {
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationLeft)];
+            }];
+
+
             //move it down and make smaller
             
         });
@@ -34,7 +43,18 @@
     dispatch_block_t statusUpdate = ^{
         BOOL scanModeOn = [MWBluetoothManager sharedInstance].isInScanMode;
         [self.scanButton setHidden:scanModeOn animated:YES];
-        [self.activityIndicator setHidden:!scanModeOn animated:YES];
+        
+        if (scanModeOn)
+        {
+            self.radar.transform = CGAffineTransformIdentity;
+            self.radar.center = _radarCenter;
+            [self.radar setHidden:NO animated:YES];
+        }
+        else
+        {
+            [self.radar setHidden:YES animated:YES];
+        }
+//        [self.activityIndicator setHidden:!scanModeOn animated:YES];
     };
     
     [MWBluetoothManager sharedInstance].didStartScan = statusUpdate;
@@ -149,10 +169,11 @@
     [scanButton addTarget:self action:@selector(scanButtonTapped:) forControlEvents:(UIControlEventTouchUpInside)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:scanButton];
     self.radar = [[MWRadarActivityIndicator alloc] init];
-    self.radar.center = CGPointMake(self.view.width / 2, self.view.height / 2);
-//    self.radar.hidden = YES;
+    _radarCenter = CGPointMake(self.view.width / 2, self.view.height / 2 - 80);
+    self.radar.center = _radarCenter;
+    self.radar.hidden = YES;
     [self.view addSubview:self.radar];
-    [self.radar startSpin];
+
 }
 
 - (IBAction)scanButtonTapped:(id)sender
