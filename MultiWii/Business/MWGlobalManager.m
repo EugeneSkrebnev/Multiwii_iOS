@@ -33,6 +33,7 @@
 
 -(void) copterIdentInfoRecieved:(NSData*) copterInfo
 {
+    self.multiwiiSuccesConnect = YES;
     unsigned char *x = (unsigned char*)copterInfo.bytes;
     for (int i = 0; i < copterInfo.length; i++)
     {
@@ -133,5 +134,30 @@
         [selfWeak.boxManager saveBoxes];
     } forRequestWith:MWI_BLE_MESSAGE_SET_BOXES];
 }
-
+-(NSString *)copterTypeString
+{
+    NSString* result = @"Unknown copter type";
+    //refactor to array and indexes
+    if (self.copterType == MWGlobalManagerQuadTypeTricopter)
+        result = @"Tricopter";
+    if (self.copterType == MWGlobalManagerQuadTypePlus)
+        result = @"Quadrocopter +";
+    if (self.copterType == MWGlobalManagerQuadTypeX)
+        result = @"Quadrocopter X";
+    if (self.copterType == MWGlobalManagerQuadTypeBicopter)
+        result = @"Bicopter";
+    if (self.copterType == MWGlobalManagerQuadTypeGimbal)
+        result = @"Gimbal";
+    if (self.copterType == MWGlobalManagerQuadTypeY6)
+        result = @"Y6 Copter";
+    if (self.copterType == MWGlobalManagerQuadTypeHexPlus)
+        result = @"Hexacopter +";
+    if (self.copterType == MWGlobalManagerQuadTypeFlyingWing)
+        result = @"Flying wing";
+    if (self.copterType == MWGlobalManagerQuadTypeY4)
+        result = @"Y4 Copter";
+    if (self.copterType == MWGlobalManagerQuadTypeHexX)
+        result = @"Hexacopter X";
+    return result;
+}
 @end

@@ -146,11 +146,23 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q35-fP-feQ" customClass="MWSaveEpromButton">
+                                <rect key="frame" x="20" y="389" width="280" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Tln-hl-f3a" eventType="touchUpInside" id="ffq-5U-YdQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7gC-wV-mUg"/>
                     <connections>
+                        <outlet property="saveButton" destination="q35-fP-feQ" id="PJX-hG-2hv"/>
                         <outlet property="tableViewForMenu" destination="2WR-X0-GS7" id="iZ4-D7-u4M"/>
                         <segue destination="dgM-vo-cVr" kind="push" identifier="0" id="kmd-Yn-nXO"/>
                         <segue destination="a1v-iV-PXr" kind="push" identifier="1" id="J21-NU-dIt"/>

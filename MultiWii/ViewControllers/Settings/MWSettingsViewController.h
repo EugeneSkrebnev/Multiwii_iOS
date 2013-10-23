@@ -7,7 +7,8 @@
 //
 
 #import "MWMenuViewController.h"
-
+#import "MWSaveEpromButton.h"
 @interface MWSettingsViewController : MWMenuViewController
+@property (weak, nonatomic) IBOutlet MWSaveEpromButton *saveButton;
 
 @end

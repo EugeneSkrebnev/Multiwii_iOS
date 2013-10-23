@@ -24,6 +24,9 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 #define MWI_BLE_MESSAGE_ACC_CALIBRATION 205
 #define MWI_BLE_MESSAGE_MAG_CALIBRATION 206
 
+#define MWI_BLE_MESSAGE_SET_SAVE_EPROM 250
+
+
 @interface MWMultiwiiProtocolManager : NSObject
 + (MWMultiwiiProtocolManager *)sharedInstance;
 

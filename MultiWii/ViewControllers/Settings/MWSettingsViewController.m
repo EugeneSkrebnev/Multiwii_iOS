@@ -20,6 +20,7 @@
     self.viewControllerTitle = @" SETTINGS ";
 }
 
+
 -(NSArray*) titlesForMenu
 {
     return @[@"PID FLY", @"PID SENSORS", @"PID GPS", @"EXPONENTS/RATE", @"BOXES/AUX"];
@@ -33,6 +34,21 @@
 -(NSArray*) subtitlesForMenu
 {
     return @[@"Roll / Pitch / Yaw / Level", @"Baro / Mag / Acc+Calibrate", @"", @"", @""];
+}
+
+- (IBAction)saveButtonTapped:(id)sender
+{
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_SAVE_EPROM
+                                                       andPayload:nil
+                                                    responseBlock:^(NSData *recieveData) {
+                                                        [self.saveButton setTitle:@"SAVED" forState:(UIControlStateNormal)];
+                                                        double delayInSeconds = 2.0;
+                                                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                                            [self.saveButton setTitle:@"SAVE TO EPROM" forState:(UIControlStateNormal)];
+                                                        });
+                                                    }];
+
 }
 
 @end

@@ -9,16 +9,39 @@
 #import "MWIconBaseButton.h"
 
 @implementation MWIconBaseButton
+@synthesize orangeButton = _orangeButton;
 
+-(BOOL)orangeButton
+{
+    return _orangeButton;
+}
+
+-(void)setOrangeButton:(BOOL)orangeButton
+{
+    _orangeButton = orangeButton;
+    UIImage* buttonImageHighlighted = [UIImage imageNamed:@"icon_button_pressed.png"];
+    UIImage* buttonImage = [UIImage imageNamed:@"icon_button.png"];
+
+    if (orangeButton)
+    {
+        [self setBackgroundImage:buttonImageHighlighted forState:UIControlStateNormal];
+        [self setBackgroundImage:buttonImage forState:UIControlStateHighlighted];
+    }
+    else
+    {
+        [self setBackgroundImage:buttonImageHighlighted forState:UIControlStateHighlighted];
+        [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    }
+}
 -(void) makeInit
 {
     [super makeInit];
-    UIImage* buttonImageHighlighted = [UIImage imageNamed:@"icon_button_pressed.png"];
     UIImage* buttonImage = [UIImage imageNamed:@"icon_button.png"];
     self.width  =  buttonImage.size.width;
     self.height =  buttonImage.size.height;
-    [self setBackgroundImage:buttonImageHighlighted forState:UIControlStateHighlighted];
-    [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    
+    self.orangeButton = NO;
+    
     self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50);
     self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:16];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

@@ -85,6 +85,8 @@
 		448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448ABAA21816A0AB0056DD4A /* QuartzCore.framework */; };
 		448ABAA8181719510056DD4A /* buck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAA7181719510056DD4A /* buck@2x.png */; };
 		448ABAAA181726B90056DD4A /* radar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAA9181726B90056DD4A /* radar2@2x.png */; };
+		448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 448ABAB418180DF90056DD4A /* MWSaveEpromButton.m */; };
+		448ABAB7181839CC0056DD4A /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAB6181839CC0056DD4A /* save@2x.png */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -329,6 +331,9 @@
 		448ABAA21816A0AB0056DD4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		448ABAA7181719510056DD4A /* buck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buck@2x.png"; sourceTree = "<group>"; };
 		448ABAA9181726B90056DD4A /* radar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radar2@2x.png"; sourceTree = "<group>"; };
+		448ABAB318180DF90056DD4A /* MWSaveEpromButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSaveEpromButton.h; sourceTree = "<group>"; };
+		448ABAB418180DF90056DD4A /* MWSaveEpromButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSaveEpromButton.m; sourceTree = "<group>"; };
+		448ABAB6181839CC0056DD4A /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -854,6 +859,15 @@
 			path = BuyIcons;
 			sourceTree = "<group>";
 		};
+		448ABAB218180C1E0056DD4A /* SaveEpromButton */ = {
+			isa = PBXGroup;
+			children = (
+				448ABAB318180DF90056DD4A /* MWSaveEpromButton.h */,
+				448ABAB418180DF90056DD4A /* MWSaveEpromButton.m */,
+			);
+			path = SaveEpromButton;
+			sourceTree = "<group>";
+		};
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1052,7 @@
 		44A6BE03178EDB8200DC95C6 /* IconButton */ = {
 			isa = PBXGroup;
 			children = (
+				448ABAB218180C1E0056DD4A /* SaveEpromButton */,
 				44606B951815718700E9F213 /* RestoreButton */,
 				44FC0BD01814941700417C79 /* InAppButton */,
 				44A6BE04178EDB8200DC95C6 /* Buy */,
@@ -1069,6 +1084,7 @@
 		44A6BE0C178EDDBE00DC95C6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				448ABAB6181839CC0056DD4A /* save@2x.png */,
 				44A6BE17178EE92000DC95C6 /* buy@2x.png */,
 				44A6BE18178EE92000DC95C6 /* site@2x.png */,
 				44A6BE19178EE92000DC95C6 /* top_bar_button_pressed@2x.png */,
@@ -1525,6 +1541,7 @@
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
 				44068BB7180409EB00E8ABCC /* separator_normal_normal@2x.png in Resources */,
 				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
+				448ABAB7181839CC0056DD4A /* save@2x.png in Resources */,
 				44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */,
 				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
 				44C7CA96178A19300059C199 /* cell@2x.png in Resources */,
@@ -1677,6 +1694,7 @@
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44606B84181547CF00E9F213 /* MWMainViewController.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
+				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
 				44FC0BCA181421A200417C79 /* MWBuyFullVersionViewController.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
 				442226691814059100D53DE3 /* VerificationController.m in Sources */,
@@ -1772,15 +1790,14 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BB1F5ECA-1CCE-4DF9-83BA-5A446F8A3095";
+				PROVISIONING_PROFILE = "D2CBF228-2DFC-4DDC-9280-E7D07355A5A7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1788,15 +1805,14 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BB1F5ECA-1CCE-4DF9-83BA-5A446F8A3095";
+				PROVISIONING_PROFILE = "D2CBF228-2DFC-4DDC-9280-E7D07355A5A7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

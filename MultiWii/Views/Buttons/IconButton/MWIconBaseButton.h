@@ -9,5 +9,5 @@
 #import "MWBaseButton.h"
 
 @interface MWIconBaseButton : MWBaseButton
-
+@property (nonatomic, assign) BOOL orangeButton;
 @end

@@ -16,12 +16,7 @@
     [super makeInit];
     UIImage* buyFullVersionIcon = [UIImage imageNamed:@"buck.png"];
     [self setImage:buyFullVersionIcon forState:UIControlStateNormal];
-    UIImage* hg = [self backgroundImageForState:UIControlStateHighlighted];
-    UIImage* norm = [self backgroundImageForState:UIControlStateNormal];
-    
-    [self setBackgroundImage:hg forState:(UIControlStateNormal)];
-    [self setBackgroundImage:norm forState:(UIControlStateHighlighted)];
-    [self setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    self.orangeButton = YES;
 }
 
 -(void)setCostInBucks:(int)costInBucks

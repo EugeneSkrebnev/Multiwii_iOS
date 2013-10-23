@@ -131,7 +131,20 @@
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
 //    [self sendsend]; // test
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+    [MWGlobalManager sharedInstance].multiwiiSuccesConnect = NO;
+    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
+        
+        cell.titleLabel.text = [MWGlobalManager sharedInstance].copterTypeString;
+        
+    }];
+    double delayInSeconds = 5.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if (![MWGlobalManager sharedInstance].multiwiiSuccesConnect)
+        {
+            [UIAlertView alertWithTitle:@"Error" message:@"Can't detect multiwii board, please check your rx-tx connections, and serial0 speed. Use 57600 baud rate for correct work"];
+        }
+    });
 //    [self testRCTunning]; test
 }
 

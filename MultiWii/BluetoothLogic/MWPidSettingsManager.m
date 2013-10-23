@@ -150,6 +150,7 @@
 //            NSLog(@"LOGIC ERROR %@", NSStringFromSelector(_cmd));
         }
     }
+
 }
 
 -(NSData*) payloadFromPids
@@ -178,6 +179,7 @@
         rateEntity.value = (float)bytes[i] / 100.;
         rateEntity.savedValue = rateEntity.value;
     }
+
 }
 
 -(NSData*) payloadFromRcTunning
@@ -211,6 +213,7 @@
             //            NSLog(@"LOGIC ERROR %@", NSStringFromSelector(_cmd));
         }
     }
+
 }
 
 -(void) saveRCRates
@@ -220,4 +223,10 @@
         rcSetting.savedValue = rcSetting.value;
     }
 }
+
+//-(BOOL)saved
+//{
+//    return _ratesWasSavedToEprom && _pidWasSavedToEprom;
+//}
+
 @end

@@ -40,8 +40,9 @@ typedef enum {
 @property (nonatomic, strong) MWBluetoothManager* bluetoothManager;
 
 @property (nonatomic, readonly) MWGlobalManagerQuadType copterType;
+@property (nonatomic, readonly) NSString* copterTypeString;
 @property (nonatomic, assign) MWGlobalManagerQuadType copterCapabilities;
-
+@property (nonatomic, assign) BOOL multiwiiSuccesConnect;
 @property (nonatomic, assign) int version;
 @property (nonatomic, assign) int mspVersion;
 
