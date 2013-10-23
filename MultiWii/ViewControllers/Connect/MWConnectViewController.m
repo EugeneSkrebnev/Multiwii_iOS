@@ -261,13 +261,19 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self scanButtonTapped:nil];
     });
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectError) name:kDidDisconnectWithErrorNotification object:nil];
+}
 
-
+-(void) connectError
+{
+    [[MWBluetoothManager sharedInstance] clearSearchList];
+    [self.tableView reloadData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [[MWBluetoothManager sharedInstance] stopScan];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end
