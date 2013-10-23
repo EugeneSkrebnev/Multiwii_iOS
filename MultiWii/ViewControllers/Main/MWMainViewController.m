@@ -108,7 +108,7 @@ static BOOL firstTimeShow = YES;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UIView* blackView = [[UIView alloc] initWithFrame:cell.bounds];
         blackView.backgroundColor = [UIColor blackColor];
-        blackView.alpha = 0.2;
+        blackView.alpha = 0.4;
         [cell addSubview:blackView];
     }
     return cell;
