@@ -20,6 +20,13 @@
         [UIAlertView alertErrorWithMessage:[NSString stringWithFormat:@"%@ Please reconnect.", err.localizedDescription]];
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidDisconnectWithErrorNotification object:nil];
     };
+    
+    [MWBluetoothManager sharedInstance].didUpdateStateBlock = ^{
+        if (![MWBluetoothManager sharedInstance].isReadyToUse)
+        {
+            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
+        }
+    };
     return YES;
 
 }

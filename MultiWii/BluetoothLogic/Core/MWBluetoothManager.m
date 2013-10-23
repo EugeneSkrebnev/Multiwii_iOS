@@ -319,6 +319,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     {
         _isReadyToUse = NO;
         NSLog(@"Something wrong");
+        [_deviceList removeAllObjects];
     }
     if (self.didUpdateStateBlock)
         self.didUpdateStateBlock();
