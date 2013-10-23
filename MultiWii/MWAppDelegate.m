@@ -13,11 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MWGlobalManager sharedInstance]; //init all systems
-//    int lowbits = 1;
-//    int highBits = 1 << 2;
-//    NSLog(@"%d %d", lowbits, highBits);
-//    int bitMask = lowbits | highBits << 8;
-//    NSLog(@"%d", bitMask);
+
+    
+    [MWBluetoothManager sharedInstance].didDisconnectWithErrorBlock =
+    ^(NSError* err, CBPeripheral* device){
+        [UIAlertView alertErrorWithMessage:[NSString stringWithFormat:@"%@ Please reconnect.", err.localizedDescription]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDidDisconnectWithErrorNotification object:nil];
+    };
     return YES;
 
 }

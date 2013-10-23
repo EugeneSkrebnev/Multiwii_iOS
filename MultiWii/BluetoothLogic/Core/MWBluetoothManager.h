@@ -45,6 +45,9 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didConnectBlock;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailToConnectBlock;
 
+@property (nonatomic, strong) MWBluetoothManagerConnectBlock didDisconnectBlock;
+@property (nonatomic, strong) MWBluetoothManagerErrorBlock didDisconnectWithErrorBlock;
+
 
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didDiscoverServices;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailToDiscoverServices;
@@ -65,4 +68,6 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 -(NSDictionary*) metaDataForDevice:(CBPeripheral*) device;
 
 -(void) sendData:(NSData*) dataToSend;
+
+-(void) clearSearchList;
 @end

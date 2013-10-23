@@ -351,6 +351,19 @@ characteristicUUID:(CBUUID *)characteristicUUID
 }
 
 #pragma mark - CBPeripheralDelegate
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    if (error)
+    {
+        if (self.didDisconnectWithErrorBlock)
+            self.didDisconnectWithErrorBlock(error, peripheral);
+    }
+    else
+    {
+        if (self.didDisconnectBlock)
+            self.didDisconnectBlock(peripheral);
+    }
+}
 
 -(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
@@ -530,4 +543,8 @@ characteristicUUID:(CBUUID *)characteristicUUID
 //    [self write:dataToSend];
 }
 
+-(void) clearSearchList
+{
+    [_deviceList removeAllObjects];
+}
 @end
