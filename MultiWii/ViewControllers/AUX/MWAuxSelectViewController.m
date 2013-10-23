@@ -16,7 +16,9 @@
 @end
 
 @implementation MWAuxSelectViewController
-
+{
+    int _savedSelectedSegmentIndex;
+}
 -(void) customizeSegmentControl
 {
     self.segmentControlForAuxChannel.height = 45;
@@ -53,6 +55,31 @@
 //
 }
 
+-(void) initSwipeGR
+{
+    UISwipeGestureRecognizer* swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    UISwipeGestureRecognizer* swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+    
+}
+
+-(void) didSwipe:(UISwipeGestureRecognizer*) swipeGR
+{
+    if (swipeGR.direction == UISwipeGestureRecognizerDirectionRight)
+    {
+        if (self.segmentControlForAuxChannel.selectedSegmentIndex != 0)
+            [self.segmentControlForAuxChannel setSelectedSegmentIndex:self.segmentControlForAuxChannel.selectedSegmentIndex - 1];
+    }
+    if (swipeGR.direction == UISwipeGestureRecognizerDirectionLeft)
+    {
+        if (self.segmentControlForAuxChannel.selectedSegmentIndex != self.segmentControlForAuxChannel.numberOfSegments - 1)
+            [self.segmentControlForAuxChannel setSelectedSegmentIndex:self.segmentControlForAuxChannel.selectedSegmentIndex + 1];
+    }
+    [self auxChannelChanged];
+}
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -68,11 +95,22 @@
     self.tableView.rowHeight = 60;
     [self customizeSegmentControl];
     [self createReadWriteBtns];
+    [self initSwipeGR];
 }
+
 
 -(void) auxChannelChanged
 {
-    [self.tableView reloadData];    
+//    [self.tableView reloadData];
+    UITableViewRowAnimation  rowAnimation = UITableViewRowAnimationNone;
+
+    if (_savedSelectedSegmentIndex < self.segmentControlForAuxChannel.selectedSegmentIndex)
+        rowAnimation = UITableViewRowAnimationLeft;
+    if (_savedSelectedSegmentIndex > self.segmentControlForAuxChannel.selectedSegmentIndex)
+        rowAnimation = UITableViewRowAnimationRight;
+    if (rowAnimation != UITableViewRowAnimationNone)
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:rowAnimation];
+    
 }
 
 -(void) createReadWriteBtns
@@ -138,6 +176,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    _savedSelectedSegmentIndex = self.segmentControlForAuxChannel.selectedSegmentIndex;
     return [[MWGlobalManager sharedInstance].boxManager boxesCount];
 }
 
