@@ -88,4 +88,10 @@
         [self didChangeValueForKey:@"saved"];
 
 }
+
+-(BOOL)isEqual:(MWSettingsEntity*)object;
+{
+    return fabsf(self.value - object.value) < (self.step / 5);
+}
+
 @end

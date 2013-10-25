@@ -102,11 +102,12 @@
                 (copterType == MWGlobalManagerQuadTypeHexPlus) ||
                 (copterType == MWGlobalManagerQuadTypeHexX))
             {
-                self.rollPitchLockSwitch.locked = YES;
+                if ([_pids[0] isEqual:_pids[1]]) //(MWPIDSettingsEntity*)
+                    self.rollPitchLockSwitch.locked = YES;
             }
 
         }
-        self.rollPitchLockSwitch.center = CGPointMake(42, 67);
+        self.rollPitchLockSwitch.center = CGPointMake(44, 67);
 
         [cell addSubview:self.rollPitchLockSwitch];
     }

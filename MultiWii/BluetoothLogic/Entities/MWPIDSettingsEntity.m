@@ -22,4 +22,10 @@
     }
     return self;
 }
+
+-(BOOL)isEqual:(MWPIDSettingsEntity*)object
+{
+    return [object.p isEqual:self.p] && [object.i isEqual:self.i] && [object.d isEqual:self.d];
+}
+
 @end

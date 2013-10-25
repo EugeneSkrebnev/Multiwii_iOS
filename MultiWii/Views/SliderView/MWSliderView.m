@@ -61,13 +61,8 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-//    if (fabs(self.value - _associatedSettingValue.value) < (_associatedSettingValue.step / 5))
 
-//    [UIView animateWithDuration:0.3 animations:^{
-//        self.value = _settingsEntity.value;        
-//    }];
     [UIView animateWithDuration:.3 animations:^{
-//        if (IOS_VER
         if ((IOS_VER - 5) < 0.01)
             [self setValue:_settingsEntity.value animated:NO];
         else
