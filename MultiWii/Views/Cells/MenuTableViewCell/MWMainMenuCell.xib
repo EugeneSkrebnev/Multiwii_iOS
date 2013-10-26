@@ -79,7 +79,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="arrowImageView" destination="11" id="dyM-at-O8N"/>
                 <outlet property="backgroundView" destination="4" id="15"/>
+                <outlet property="circleImageView" destination="14" id="BWQ-Vn-Pc8"/>
                 <outlet property="imageViewForIcon" destination="13" id="16"/>
                 <outlet property="labelForTitle" destination="12" id="17"/>
                 <outlet property="selectedBackgroundView" destination="5" id="18"/>

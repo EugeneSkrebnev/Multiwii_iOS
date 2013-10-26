@@ -16,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *selectedLabelForTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImageViewForIcon;
 
+@property (weak, nonatomic) IBOutlet UIImageView *circleImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
+
 @property (nonatomic, strong) NSString* title;
 @end

@@ -20,22 +20,6 @@
                                     <navigationItem title="Title" id="95i-o7-gIN"/>
                                 </items>
                             </navigationBar>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TvF-JB-st0" customClass="MWInAppButton">
-                                <rect key="frame" x="20" y="291" width="280" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0SE-WJ-B6i" customClass="MWInAppButton">
-                                <rect key="frame" x="20" y="229" width="280" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="38X-A4-8gI" customClass="MWInAppButton">
                                 <rect key="frame" x="20" y="418" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -56,7 +40,7 @@
                                 <rect key="frame" x="20" y="69" width="280" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">You can get the full version for any of the prices below. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</string>
+                                <mutableString key="text">You can get the full version for any of the prices from $5 to $20. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -72,8 +56,6 @@
                     <connections>
                         <outlet property="aboutTextView" destination="J4s-CF-rx2" id="RzA-Cj-4cp"/>
                         <outlet property="buy10" destination="wqY-Gn-w5A" id="cyd-qT-rdp"/>
-                        <outlet property="buy5" destination="0SE-WJ-B6i" id="06g-Dm-NBQ"/>
-                        <outlet property="buy7" destination="TvF-JB-st0" id="0i4-uR-LRb"/>
                         <outlet property="navigationBar" destination="bKn-8W-Vki" id="ygh-zU-b6R"/>
                         <outlet property="priceSelectKnobView" destination="gVg-vy-mmo" id="uNc-Px-QgC"/>
                         <outlet property="restoreBtn" destination="38X-A4-8gI" id="P1Z-7N-VjQ"/>

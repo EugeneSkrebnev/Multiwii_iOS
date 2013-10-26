@@ -48,10 +48,11 @@
 
 -(void) setBuyBtns
 {
-    self.buy5.costInBucks = 5;
-    self.buy7.costInBucks = 7;
     self.buy10.costInBucks = 10;
+    [self.buy10 setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 115)];
+    [self.buy10 setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 60)];
     [self.restoreBtn setTitle:@"RESTORE PURCHASE" forState:(UIControlStateNormal)];
+
     UIImage* imgH = [self.restoreBtn backgroundImageForState:(UIControlStateHighlighted)];
     [self.restoreBtn setBackgroundImage:[self.restoreBtn backgroundImageForState:(UIControlStateNormal)] forState:(UIControlStateHighlighted)];
     [self.restoreBtn setBackgroundImage:imgH forState:(UIControlStateNormal)];
@@ -82,6 +83,12 @@
     {
         self.navigationBar.top -= 20;
         self.aboutTextView.top -= 20;
+    }
+    if (IS_IPHONE_5)
+    {
+        self.restoreBtn.top -= 25;
+        self.buy10.top -= 30;
+        self.priceSelectKnobView.top -= 30;
     }
     MWSettingsEntity* priceDescriptor = [[MWSettingsEntity alloc] init];
     priceDescriptor.minValue = 5;

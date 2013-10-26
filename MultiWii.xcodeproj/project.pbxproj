@@ -50,6 +50,9 @@
 		442226631814059100D53DE3 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 442226541814059100D53DE3 /* README.mdown */; };
 		442226691814059100D53DE3 /* VerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422265C1814059100D53DE3 /* VerificationController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4422268D181407CB00D53DE3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4422268C181407CB00D53DE3 /* Security.framework */; };
+		4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */; };
+		4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B3181C7069008B0260 /* ribbon_green@2x.png */; };
+		4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -279,6 +282,9 @@
 		4422265B1814059100D53DE3 /* VerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationController.h; sourceTree = "<group>"; };
 		4422265C1814059100D53DE3 /* VerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationController.m; sourceTree = "<group>"; };
 		4422268C181407CB00D53DE3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telemetry_gray@2x.png"; sourceTree = "<group>"; };
+		4423F1B3181C7069008B0260 /* ribbon_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_green@2x.png"; sourceTree = "<group>"; };
+		4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_blue@2x.png"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -871,6 +877,9 @@
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				4423F1B3181C7069008B0260 /* ribbon_green@2x.png */,
+				4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */,
+				4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */,
 				44A6BD96178D86B300DC95C6 /* gradient_menu-text.png */,
 				44A6BD97178D86B300DC95C6 /* gradient_menu-text@2x.png */,
 				44A6BD8C178D7DE000DC95C6 /* arrow_press@2x.png */,
@@ -1526,6 +1535,7 @@
 				44068BB1180409EB00E8ABCC /* center_pressed@2x.png in Resources */,
 				44C7CA7B1789D9860059C199 /* locked_icon@2x.png in Resources */,
 				44C7CA7C1789D9860059C199 /* slider@2x.png in Resources */,
+				4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */,
 				44C7CA7D1789D9860059C199 /* switch_locked@2x.png in Resources */,
 				44C7CA7E1789D9860059C199 /* switch_unlocked@2x.png in Resources */,
 				44C7CA7F1789D9860059C199 /* unlocked_icon@2x.png in Resources */,
@@ -1616,12 +1626,14 @@
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
+				4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */,
 				44519D43179B6A30006E4EB7 /* calibrate_mag_pressed@2x.png in Resources */,
 				44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */,
 				4403BCBA17EF7ABC00B5A4E1 /* level@2x.png in Resources */,
 				4403BCBB17EF7ABC00B5A4E1 /* pitch@2x.png in Resources */,
 				4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */,
 				4422259C180D4B2000D53DE3 /* field@2x.png in Resources */,
+				4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */,
 				4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */,
 				44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */,
 				44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */,

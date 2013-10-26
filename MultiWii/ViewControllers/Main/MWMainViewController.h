@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MWMenuViewController.h"
+#import "MWMainMenuCell.h"
 @interface MWMainViewController : MWMenuViewController
 
 @end

@@ -12,8 +12,6 @@
 
 @interface MWBuyFullVersionViewController : MWBaseViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (weak, nonatomic) IBOutlet MWInAppButton *buy5;
-@property (weak, nonatomic) IBOutlet MWInAppButton *buy7;
 @property (weak, nonatomic) IBOutlet MWInAppButton *buy10;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
 @property (weak, nonatomic) IBOutlet MWInAppButton *restoreBtn;
