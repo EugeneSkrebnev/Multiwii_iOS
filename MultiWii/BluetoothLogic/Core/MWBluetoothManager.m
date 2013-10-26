@@ -85,7 +85,8 @@
 //        if ([self compareCBUUID:s.UUID UUID2:UUID]) return s;
 //    }
 //
-    self.didFailToFindService([NSError errorWithDomain:@"com.multiwi" code:404 userInfo:nil], device);
+    if (self.didFailToFindService)
+        self.didFailToFindService([NSError errorWithDomain:@"com.multiwi" code:404 userInfo:nil], device);
     NSLog(@"Could not find service with UUID : %@ on device : %@", UUID.stringValue, [self metaDataForDevice:device]);
     return nil; //Service not found on this peripheral
 }

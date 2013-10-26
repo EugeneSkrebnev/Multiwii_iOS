@@ -24,7 +24,9 @@
     self.segmentControlForAuxChannel.height = 45;
     [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    if (IOS_VER > 5)
+        [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
     [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_normal_normal.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_left_pressed.png"] forLeftSegmentState:UIControlStateHighlighted rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_right_pressed.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];

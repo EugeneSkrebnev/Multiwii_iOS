@@ -53,6 +53,10 @@
 		4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */; };
 		4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B3181C7069008B0260 /* ribbon_green@2x.png */; };
 		4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */; };
+		4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B7181C825F008B0260 /* feedback2@2x.png */; };
+		4423F225181C8757008B0260 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4423F200181C8757008B0260 /* iRate.bundle */; };
+		4423F226181C8757008B0260 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423F202181C8757008B0260 /* iRate.m */; };
+		4423F227181C8757008B0260 /* iRate.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4423F203181C8757008B0260 /* iRate.podspec */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -285,6 +289,14 @@
 		4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telemetry_gray@2x.png"; sourceTree = "<group>"; };
 		4423F1B3181C7069008B0260 /* ribbon_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_green@2x.png"; sourceTree = "<group>"; };
 		4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_blue@2x.png"; sourceTree = "<group>"; };
+		4423F1B7181C825F008B0260 /* feedback2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback2@2x.png"; sourceTree = "<group>"; };
+		4423F200181C8757008B0260 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		4423F201181C8757008B0260 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		4423F202181C8757008B0260 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		4423F203181C8757008B0260 /* iRate.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iRate.podspec; sourceTree = "<group>"; };
+		4423F204181C8757008B0260 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.md; sourceTree = "<group>"; };
+		4423F205181C8757008B0260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		4423F206181C8757008B0260 /* RELEASE NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RELEASE NOTES.md"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -697,6 +709,28 @@
 			path = Externals;
 			sourceTree = "<group>";
 		};
+		4423F1B9181C8756008B0260 /* iRate-master */ = {
+			isa = PBXGroup;
+			children = (
+				4423F1FF181C8757008B0260 /* iRate */,
+				4423F203181C8757008B0260 /* iRate.podspec */,
+				4423F204181C8757008B0260 /* LICENCE.md */,
+				4423F205181C8757008B0260 /* README.md */,
+				4423F206181C8757008B0260 /* RELEASE NOTES.md */,
+			);
+			path = "iRate-master";
+			sourceTree = "<group>";
+		};
+		4423F1FF181C8757008B0260 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				4423F200181C8757008B0260 /* iRate.bundle */,
+				4423F201181C8757008B0260 /* iRate.h */,
+				4423F202181C8757008B0260 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -975,6 +1009,7 @@
 				44A6BDD4178E020300DC95C6 /* bug@2x.png */,
 				44A6BDD5178E020300DC95C6 /* bug_pressed@2x.png */,
 				44A6BDD6178E020300DC95C6 /* feedback@2x.png */,
+				4423F1B7181C825F008B0260 /* feedback2@2x.png */,
 				44A6BDD7178E020300DC95C6 /* feedback_pressed@2x.png */,
 				44A6BDD8178E020300DC95C6 /* how_to_connect@2x.png */,
 				44A6BDD9178E020300DC95C6 /* how_to_connect_pressed@2x.png */,
@@ -1205,6 +1240,7 @@
 		44B4BB691780E09700CE91A8 /* Extesions */ = {
 			isa = PBXGroup;
 			children = (
+				4423F1B9181C8756008B0260 /* iRate-master */,
 				44FC0BA01814133C00417C79 /* SBJson */,
 				442226451814059100D53DE3 /* MKStoreKit */,
 				44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */,
@@ -1496,6 +1532,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 44453C9317518F6900929EC8;
 			productRefGroup = 44453C9D17518F6900929EC8 /* Products */;
@@ -1566,6 +1603,7 @@
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
 				44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */,
 				4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */,
+				4423F225181C8757008B0260 /* iRate.bundle in Resources */,
 				44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */,
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
 				44A6BD8B178D744B00DC95C6 /* circle@2x.png in Resources */,
@@ -1600,12 +1638,14 @@
 				44A6BDDD178E020300DC95C6 /* about_program_pressed@2x.png in Resources */,
 				442225A5180DE8C300D53DE3 /* point@2x.png in Resources */,
 				44A6BDDE178E020300DC95C6 /* ask@2x.png in Resources */,
+				4423F227181C8757008B0260 /* iRate.podspec in Resources */,
 				44A6BDDF178E020300DC95C6 /* ask_pressed@2x.png in Resources */,
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,
 				44A6BDE1178E020300DC95C6 /* bug_pressed@2x.png in Resources */,
 				44A6BDE2178E020300DC95C6 /* feedback@2x.png in Resources */,
 				44A6BDE3178E020300DC95C6 /* feedback_pressed@2x.png in Resources */,
 				44A6BDE4178E020300DC95C6 /* how_to_connect@2x.png in Resources */,
+				4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */,
 				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
@@ -1720,6 +1760,7 @@
 				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
 				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
 				44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */,
+				4423F226181C8757008B0260 /* iRate.m in Sources */,
 				44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */,
 				44FC0BC21814133C00417C79 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */,
