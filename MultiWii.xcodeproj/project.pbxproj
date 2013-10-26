@@ -1790,14 +1790,14 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Pupkin (H36A84TWVC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D2CBF228-2DFC-4DDC-9280-E7D07355A5A7";
+				PROVISIONING_PROFILE = "5114378E-71C1-4611-95CE-577FC7015FB1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1805,14 +1805,14 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Intellectsoft LLC";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D2CBF228-2DFC-4DDC-9280-E7D07355A5A7";
+				PROVISIONING_PROFILE = "E95CCFCA-B139-4381-BC8B-8AC0BD65E2A6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
