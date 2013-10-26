@@ -51,6 +51,7 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didDiscoverServices;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailToDiscoverServices;
+@property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailToFindService;
 
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didDiscoverCharacteristics;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailToDiscoverCharacteristics;

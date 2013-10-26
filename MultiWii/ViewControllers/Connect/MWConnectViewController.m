@@ -22,9 +22,14 @@
 -(void) initBluetoothManager
 {
     [[MWBluetoothManager sharedInstance] centralManager]; //init
+    [MWBluetoothManager sharedInstance].didDisconnectBlock = ^(CBPeripheral* device)
+    {
+        [self.tableView reloadData];
+    };
+    
     [MWBluetoothManager sharedInstance].didAddDeviceToListBlock =
     ^{
-        double delayInSeconds = 1.0;
+        double delayInSeconds = .7;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [UIView animateWithDuration:0.5 animations:^{
@@ -197,7 +202,7 @@
 {
 
     [[MWBluetoothManager sharedInstance] startScan];
-    double delayInSeconds = 10.0;
+    double delayInSeconds = 6.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [[MWBluetoothManager sharedInstance] stopScan];
@@ -221,9 +226,16 @@
     [[MWBluetoothManager sharedInstance] stopScan];
     CBPeripheral* device = [MWBluetoothManager sharedInstance].deviceList[indexPath.row];
     
-    
-    [self setSpinnerHidden:NO forDeviceAtIndex:indexPath.row animated:YES];
-    [[MWBluetoothManager sharedInstance] connectToDevice:device];
+    if (!device.isConnected)
+    {
+        [self setSpinnerHidden:NO forDeviceAtIndex:indexPath.row animated:YES];
+        [[MWBluetoothManager sharedInstance] connectToDevice:device];
+    }
+    else
+    {
+        [[MWBluetoothManager sharedInstance] disconnectFromDevice:device];
+    }
+
 
     
 }

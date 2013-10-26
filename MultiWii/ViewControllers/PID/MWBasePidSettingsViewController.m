@@ -94,4 +94,22 @@
     [self setTableView:nil];
     [super viewDidUnload];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MWBluetoothManager sharedInstance].didFailToFindService = ^(NSError* err, CBPeripheral* device)
+    {
+        if (!device)
+        {
+            [UIAlertView alertErrorWithMessage:@"No connected device. Please connect first."];
+        }
+    };
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MWBluetoothManager sharedInstance].didFailToFindService = nil;
+}
 @end

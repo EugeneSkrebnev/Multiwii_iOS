@@ -85,7 +85,7 @@
 //        if ([self compareCBUUID:s.UUID UUID2:UUID]) return s;
 //    }
 //
-    
+    self.didFailToFindService([NSError errorWithDomain:@"com.multiwi" code:404 userInfo:nil], device);
     NSLog(@"Could not find service with UUID : %@ on device : %@", UUID.stringValue, [self metaDataForDevice:device]);
     return nil; //Service not found on this peripheral
 }
@@ -245,6 +245,8 @@ characteristicUUID:(CBUUID *)characteristicUUID
     if (self.isReadyToUse)
     {
         [_deviceList removeAllObjects];
+        if (self.currentConnectedDevice)
+            [_deviceList addObject:self.currentConnectedDevice];
         [_centralManager scanForPeripheralsWithServices:nil options:nil];
         _isInScanMode = YES;
         if (self.didStartScan)
@@ -354,6 +356,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 #pragma mark - CBPeripheralDelegate
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
+    _currentConnectedDevice = nil;
     if (error)
     {
         if (self.didDisconnectWithErrorBlock)
