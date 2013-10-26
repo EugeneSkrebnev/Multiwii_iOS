@@ -45,7 +45,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wqY-Gn-w5A" customClass="MWInAppButton">
-                                <rect key="frame" x="20" y="353" width="280" height="57"/>
+                                <rect key="frame" x="20" y="353" width="174" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -56,10 +56,15 @@
                                 <rect key="frame" x="20" y="69" width="280" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">You can get the full version for any of the prices below. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</mutableString>
+                                <string key="text">You can get the full version for any of the prices below. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
+                            <view contentMode="scaleToFill" id="gVg-vy-mmo" customClass="MAKnobView">
+                                <rect key="frame" x="225" y="342" width="90" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -70,6 +75,7 @@
                         <outlet property="buy5" destination="0SE-WJ-B6i" id="06g-Dm-NBQ"/>
                         <outlet property="buy7" destination="TvF-JB-st0" id="0i4-uR-LRb"/>
                         <outlet property="navigationBar" destination="bKn-8W-Vki" id="ygh-zU-b6R"/>
+                        <outlet property="priceSelectKnobView" destination="gVg-vy-mmo" id="uNc-Px-QgC"/>
                         <outlet property="restoreBtn" destination="38X-A4-8gI" id="P1Z-7N-VjQ"/>
                     </connections>
                 </viewController>
@@ -197,12 +203,16 @@
                                 <state key="normal" title="SITE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="siteButtonTapped:" destination="XS1-hN-AIa" eventType="touchUpInside" id="nq3-dT-E9q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2tX-YD-f2Y"/>
                     <connections>
+                        <outlet property="siteButton" destination="384-KY-cUd" id="jFm-iV-1OI"/>
                         <outlet property="tableViewForMenu" destination="RhR-cZ-WOm" id="s3i-Yt-acq"/>
                         <segue destination="oGW-rT-LvP" kind="push" id="JCT-Hw-jRx"/>
                         <segue destination="zCt-Gx-Mgn" kind="push" id="4Zw-Cq-11g"/>

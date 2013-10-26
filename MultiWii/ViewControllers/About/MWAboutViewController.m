@@ -95,5 +95,9 @@
     
 
 }
+- (IBAction)siteButtonTapped:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwiiForiOS.com"]];
+}
 
 @end

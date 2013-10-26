@@ -9,7 +9,8 @@
 #import "MWMenuViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-
+#import "MWVisitSiteButton.h"
 @interface MWAboutViewController : MWMenuViewController<MFMailComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet MWVisitSiteButton *siteButton;
 
 @end
