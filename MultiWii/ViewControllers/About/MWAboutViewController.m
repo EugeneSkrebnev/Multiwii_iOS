@@ -7,7 +7,7 @@
 //
 
 #import "MWAboutViewController.h"
-
+#import "MWAboutDetailViewController.h"
 @interface MWAboutViewController ()
 
 @end
@@ -33,10 +33,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     if (indexPath.row == 4)
     {
         [[iRate sharedInstance] promptForRating];
-        [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];        
+        [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+        return;
     }
     if (indexPath.row == 2 ||indexPath.row == 3)
     {
@@ -67,7 +69,9 @@
 //                }
             }];
         }
+        return;
     }
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -99,6 +103,28 @@
     }
     
 
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    int segueId = segue.identifier.intValue;
+    if ((segueId < 2) || (segueId == 5))
+    {
+        NSArray* titles = @[@"ABOUT PROGRAM", @"HOW TO CONNECT", @"", @"", @"", @"ABOUT AUTHOR"];
+        NSArray* contentTextFilenames = @[
+                                          @"about_program",
+                                          @"how_to_connect",
+                                          @"",
+                                          @"",
+                                          @"",
+                                          @"about_author"
+                                          ];
+        NSError* err;
+        NSString *path = [[NSBundle mainBundle] pathForResource:contentTextFilenames[segueId] ofType:@"txt"];
+        NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&err];
+        MWAboutDetailViewController* destinationVC = (MWAboutDetailViewController*)segue.destinationViewController;
+        destinationVC.viewControllerTitle = titles[segueId];
+        destinationVC.text = contents;
+    }
 }
 - (IBAction)siteButtonTapped:(id)sender
 {

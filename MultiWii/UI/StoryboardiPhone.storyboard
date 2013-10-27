@@ -232,11 +232,9 @@
                     <connections>
                         <outlet property="siteButton" destination="384-KY-cUd" id="jFm-iV-1OI"/>
                         <outlet property="tableViewForMenu" destination="RhR-cZ-WOm" id="s3i-Yt-acq"/>
-                        <segue destination="oGW-rT-LvP" kind="push" id="JCT-Hw-jRx"/>
-                        <segue destination="zCt-Gx-Mgn" kind="push" id="4Zw-Cq-11g"/>
-                        <segue destination="haE-pm-wwz" kind="push" id="Ysb-AC-jnd"/>
-                        <segue destination="MMU-vj-5fN" kind="push" id="WEO-BT-q0X"/>
-                        <segue destination="aSy-2e-4N7" kind="push" id="ui1-VN-GCf"/>
+                        <segue destination="oGW-rT-LvP" kind="push" identifier="0" id="JCT-Hw-jRx"/>
+                        <segue destination="oGW-rT-LvP" kind="push" identifier="1" id="RJ6-0y-P6D"/>
+                        <segue destination="oGW-rT-LvP" kind="push" identifier="5" id="RBP-WU-6fC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85p-Qh-OYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -463,80 +461,33 @@
             </objects>
             <point key="canvasLocation" x="-1196" y="2301"/>
         </scene>
-        <!--Base View Controller-->
+        <!--About Detail View Controller-->
         <scene sceneID="9ah-Dw-lKD">
             <objects>
-                <viewController id="oGW-rT-LvP" customClass="MWBaseViewController" sceneMemberID="viewController">
+                <viewController id="oGW-rT-LvP" customClass="MWAboutDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jNx-4w-tLb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="UeV-II-aBH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EFf-4G-c14"/>
+                    <connections>
+                        <outlet property="textView" destination="UeV-II-aBH" id="YES-jE-fK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBP-dK-27y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="2185"/>
-        </scene>
-        <!--Base View Controller-->
-        <scene sceneID="8RB-zg-MFq">
-            <objects>
-                <viewController id="aSy-2e-4N7" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ujb-cy-NZV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="brK-MC-dfd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sKB-b9-Yso" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3376" y="2185"/>
-        </scene>
-        <!--Base View Controller-->
-        <scene sceneID="zpN-Vx-9U7">
-            <objects>
-                <viewController id="haE-pm-wwz" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tSG-Zj-HJo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="d1N-Z0-Jtr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKw-qD-Ujk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2636" y="2185"/>
-        </scene>
-        <!--Base View Controller-->
-        <scene sceneID="wvL-iA-ZP3">
-            <objects>
-                <viewController id="MMU-vj-5fN" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9p8-Tp-n96">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vBC-An-Ac0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bdk-0O-BbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3004" y="2185"/>
-        </scene>
-        <!--Base View Controller-->
-        <scene sceneID="9JF-I3-Phx">
-            <objects>
-                <viewController id="zCt-Gx-Mgn" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nOn-7j-VAo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="igP-UP-i0K"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dy8-YI-6E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2260" y="2185"/>
+            <point key="canvasLocation" x="2235" y="1929"/>
         </scene>
     </scenes>
     <resources>
@@ -550,4 +501,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="RBP-WU-6fC"/>
+    </inferredMetricsTieBreakers>
 </document>

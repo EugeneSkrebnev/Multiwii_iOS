@@ -172,6 +172,10 @@
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB92181D32E3005E511F /* MWFindMultiwiiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */; };
+		44B9AB95181DBAD1005E511F /* MWAboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB94181DBAD1005E511F /* MWAboutDetailViewController.m */; };
+		44B9AB99181DC784005E511F /* about_author.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB98181DC784005E511F /* about_author.txt */; };
+		44B9AB9B181DC7B6005E511F /* how_to_connect.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB9A181DC7B6005E511F /* how_to_connect.txt */; };
+		44B9AB9D181DC7C4005E511F /* about_program.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB9C181DC7C4005E511F /* about_program.txt */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5@2x.png */; };
 		44C7CA411789C5520059C199 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3E1789C5520059C199 /* Splash@2x.png */; };
@@ -455,6 +459,11 @@
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44B9AB90181D32E3005E511F /* MWFindMultiwiiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFindMultiwiiViewController.h; sourceTree = "<group>"; };
 		44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFindMultiwiiViewController.m; sourceTree = "<group>"; };
+		44B9AB93181DBAD1005E511F /* MWAboutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAboutDetailViewController.h; sourceTree = "<group>"; };
+		44B9AB94181DBAD1005E511F /* MWAboutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAboutDetailViewController.m; sourceTree = "<group>"; };
+		44B9AB98181DC784005E511F /* about_author.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = about_author.txt; sourceTree = "<group>"; };
+		44B9AB9A181DC7B6005E511F /* how_to_connect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = how_to_connect.txt; sourceTree = "<group>"; };
+		44B9AB9C181DC7C4005E511F /* about_program.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = about_program.txt; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		44C7CA3D1789C5520059C199 /* Splash5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash5@2x.png"; sourceTree = "<group>"; };
 		44C7CA3E1789C5520059C199 /* Splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash@2x.png"; sourceTree = "<group>"; };
@@ -996,6 +1005,8 @@
 			children = (
 				44A6BDCA178DFC8400DC95C6 /* MWAboutViewController.h */,
 				44A6BDCB178DFC8400DC95C6 /* MWAboutViewController.m */,
+				44B9AB93181DBAD1005E511F /* MWAboutDetailViewController.h */,
+				44B9AB94181DBAD1005E511F /* MWAboutDetailViewController.m */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1264,9 +1275,20 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
+		44B9AB97181DC765005E511F /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				44B9AB98181DC784005E511F /* about_author.txt */,
+				44B9AB9A181DC7B6005E511F /* how_to_connect.txt */,
+				44B9AB9C181DC7C4005E511F /* about_program.txt */,
+			);
+			path = Texts;
+			sourceTree = "<group>";
+		};
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44B9AB97181DC765005E511F /* Texts */,
 				448ABAA6181719510056DD4A /* BuyIcons */,
 				448ABA9918168C580056DD4A /* RadarActivityIndicator */,
 				44222599180D4B2000D53DE3 /* RatesCell */,
@@ -1573,6 +1595,7 @@
 				44C7CA451789C77C0059C199 /* Default@2x.png in Resources */,
 				44C7CA471789C7880059C199 /* Default-568h@2x.png in Resources */,
 				44068BB2180409EB00E8ABCC /* left_normal@2x.png in Resources */,
+				44B9AB9D181DC7C4005E511F /* about_program.txt in Resources */,
 				44C7CA741789D9860059C199 /* knob@2x.png in Resources */,
 				44C7CA751789D9860059C199 /* knob_active@2x.png in Resources */,
 				44068BB6180409EB00E8ABCC /* separator_left_pressed@2x.png in Resources */,
@@ -1661,6 +1684,7 @@
 				4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */,
 				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
+				44B9AB99181DC784005E511F /* about_author.txt in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
@@ -1678,6 +1702,7 @@
 				44519D36179B4B7F006E4EB7 /* MWPidAdjustCell.xib in Resources */,
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
+				44B9AB9B181DC7B6005E511F /* how_to_connect.txt in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
 				4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */,
 				44519D43179B6A30006E4EB7 /* calibrate_mag_pressed@2x.png in Resources */,
@@ -1771,6 +1796,7 @@
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 				442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */,
 				44068BC318040AF700E8ABCC /* MWGraphicView.m in Sources */,
+				44B9AB95181DBAD1005E511F /* MWAboutDetailViewController.m in Sources */,
 				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
 				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
 				44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */,
