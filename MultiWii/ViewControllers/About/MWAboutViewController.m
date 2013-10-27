@@ -33,6 +33,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 4)
+    {
+        [[iRate sharedInstance] promptForRating];
+        [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];        
+    }
     if (indexPath.row == 2 ||indexPath.row == 3)
     {
         if ([MFMailComposeViewController canSendMail])

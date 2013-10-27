@@ -22,3 +22,4 @@
 #import "MWPidSettingsManager.h"
 #import "MWMultiwiiProtocolManager.h"
 #import "MWGlobalManager.h"
+#import "iRate.h"
