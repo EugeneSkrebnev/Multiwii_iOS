@@ -70,6 +70,12 @@
     return [_deviceList copy];
 }
 
+-(void)setRssiNotificationOn:(BOOL)rssiNotificationOn
+{
+    _rssiNotificationOn = rssiNotificationOn;
+    if (_rssiNotificationOn)
+        [_currentConnectedDevice readRSSI];
+}
 #pragma mark - methods copy/paste from BLE framework and refactor
 -(CBService *) findServiceForUUID:(CBUUID *)UUID onDevice:(CBPeripheral *)device
 {
@@ -236,6 +242,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     _currentConnectedDevice = device;
     _currentConnectedDevice.delegate = self;
     [_currentConnectedDevice discoverServices:nil];
+    self.rssiNotificationOn = NO;
 
 }
 
@@ -289,7 +296,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 {
     if (device.isConnected)
         return device.RSSI;
-    
+
     id res = _metaDataForDevices[@(device.hash)][RSSI_KEY];
     if (!res)
     {
@@ -431,6 +438,26 @@ characteristicUUID:(CBUUID *)characteristicUUID
     {
         if (self.didFailToDiscoverCharacteristics)
             self.didFailToDiscoverCharacteristics(error, peripheral);
+    }
+}
+
+-(void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    if (error)
+    {
+        if (self.didFailUpdateRssi)
+            self.didFailUpdateRssi(error, peripheral);
+    }
+    else
+    {
+        if (self.didUpdateRssi)
+        {
+            self.didUpdateRssi(peripheral);
+        }
+    }
+    if (self.rssiNotificationOn)
+    {
+        [_currentConnectedDevice readRSSI];
     }
 }
 

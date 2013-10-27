@@ -40,7 +40,7 @@
                                 <rect key="frame" x="20" y="69" width="280" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">You can get the full version for any of the prices from $5 to $20. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</mutableString>
+                                <string key="text">You can get the full version for any of the prices from $5 to $20. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -98,8 +98,9 @@
                     <connections>
                         <outlet property="tableViewForMenu" destination="Rtj-Ao-gng" id="akL-Zo-m0F"/>
                         <segue destination="Tln-hl-f3a" kind="push" identifier="2" id="TVP-0U-m06"/>
-                        <segue destination="XS1-hN-AIa" kind="push" identifier="3" id="E2J-80-hwP"/>
+                        <segue destination="XS1-hN-AIa" kind="push" identifier="4" id="E2J-80-hwP"/>
                         <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="eG4-Pe-ZE6"/>
+                        <segue destination="mIT-ch-HtJ" kind="push" identifier="3" id="L3S-Rw-mZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-iT-1P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,6 +121,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pes-h8-qLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1380" y="-399"/>
+        </scene>
+        <!--Find Multiwii View Controller-->
+        <scene sceneID="rpF-RM-vpg">
+            <objects>
+                <viewController id="mIT-ch-HtJ" customClass="MWFindMultiwiiViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9R-yP-JGY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eC5-Yg-hI9">
+                                <rect key="frame" x="34" y="121" width="252" height="268"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iey-RT-RCt">
+                                <rect key="frame" x="34" y="397" width="252" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mnX-Aw-9LM"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="Iey-RT-RCt" id="PCy-Ie-ZgY"/>
+                        <outlet property="rssiLabel" destination="eC5-Yg-hI9" id="RJ2-0w-JKn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNI-6f-TKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="461"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="IHH-7I-Jvd">

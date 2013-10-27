@@ -171,6 +171,7 @@
 		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
+		44B9AB92181D32E3005E511F /* MWFindMultiwiiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */; };
 		44C7CA3F1789C5520059C199 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3C1789C5520059C199 /* Splash.png */; };
 		44C7CA401789C5520059C199 /* Splash5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3D1789C5520059C199 /* Splash5@2x.png */; };
 		44C7CA411789C5520059C199 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA3E1789C5520059C199 /* Splash@2x.png */; };
@@ -452,6 +453,8 @@
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		44B9AB90181D32E3005E511F /* MWFindMultiwiiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFindMultiwiiViewController.h; sourceTree = "<group>"; };
+		44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFindMultiwiiViewController.m; sourceTree = "<group>"; };
 		44C7CA3C1789C5520059C199 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		44C7CA3D1789C5520059C199 /* Splash5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash5@2x.png"; sourceTree = "<group>"; };
 		44C7CA3E1789C5520059C199 /* Splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash@2x.png"; sourceTree = "<group>"; };
@@ -1211,6 +1214,7 @@
 			children = (
 				44C7CA5A1789CE480059C199 /* MWBaseViewController.h */,
 				44C7CA5B1789CE480059C199 /* MWBaseViewController.m */,
+				44B9AB8F181D32CA005E511F /* Find */,
 				44FC0BC71814217E00417C79 /* BuyFullVersion */,
 				44AD4A92180047410088760D /* PID */,
 				44519D68179D51FF006E4EB7 /* Connect */,
@@ -1249,6 +1253,15 @@
 				44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */,
 			);
 			path = Extesions;
+			sourceTree = "<group>";
+		};
+		44B9AB8F181D32CA005E511F /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				44B9AB90181D32E3005E511F /* MWFindMultiwiiViewController.h */,
+				44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 		44C7CA3A1789C5520059C199 /* Resources */ = {
@@ -1745,6 +1758,7 @@
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
 				44519D6B179D5223006E4EB7 /* MWConnectViewController.m in Sources */,
 				44606B84181547CF00E9F213 /* MWMainViewController.m in Sources */,
+				44B9AB92181D32E3005E511F /* MWFindMultiwiiViewController.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
 				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
 				44FC0BCA181421A200417C79 /* MWBuyFullVersionViewController.m in Sources */,

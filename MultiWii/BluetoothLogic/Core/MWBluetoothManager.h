@@ -28,6 +28,7 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 @property (nonatomic, readonly) CBCentralManager* centralManager;
 @property (nonatomic, readonly) NSArray* deviceList;
 @property (nonatomic, readonly) CBPeripheral* currentConnectedDevice; // work with only one at time
+@property (nonatomic, assign) BOOL rssiNotificationOn;
 
 //status
 @property (nonatomic, readonly) BOOL isReadyToUse;
@@ -59,6 +60,9 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 
 @property (nonatomic, strong) MWBluetoothManagerRecieveDataBlock didRecieveData;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailUpdateCharacteristic;
+
+@property (nonatomic, strong) MWBluetoothManagerConnectBlock didUpdateRssi;
+@property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailUpdateRssi;
 
 //methods
 -(void) startScan;
