@@ -7,7 +7,7 @@
 //
 
 #import "MWAppDelegate.h"
-
+#import "MKStoreManager.h"
 @implementation MWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -29,8 +29,41 @@
             [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
         }
     };
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"FULL_VERSION_UNLOCKED"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    double delayInSeconds = 10.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if ((self.paidAmount == 0) && [[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
+        {
+            [UIAlertView alertWithTitle:@"Ola ola" message:@"You are cool hacker! Are you? Of course you are."];
+            [self lalalaMessage];
+        }
+    });
     return YES;
 
+}
+
+-(void) lalalaMessage
+{
+    [UIAlertView alertWithTitle:@"lalala" message:@"la la La Hello from Belarus! Lukashenko, Vodka, Potatoes"];
+    double delayInSeconds = 10.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self lalalaMessage];
+    });
+}
+
+-(int)paidAmount
+{
+    for (int i = 5; i <= 20; i++)
+    {
+        NSString* featureID = [NSString stringWithFormat:kFeatureId, i]; // refactor
+        [MKStoreManager isFeaturePurchased:featureID];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

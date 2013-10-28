@@ -198,13 +198,11 @@ static NSMutableData *sDataFromConnection;
     if (status == 0 && receiptDic) {
         NSString *itemId = [receiptDic objectForKey:@"item_id"];
         NSString *productId = [receiptDic objectForKey:@"product_id"];
-        
-        if (productId && ([productId isEqualToString:kFeatureAId]  ||
-                          [productId isEqualToString:kFeatureBId]  ||
-                          [productId isEqualToString:kFeatureCId]   )) {
-            if (itemId && ( [itemId isEqualToString:kItemAAppleId] ||
-                           [itemId isEqualToString:kItemBAppleId] ||
-                           [itemId isEqualToString:kItemCAppleId] )) {
+        int price = productId.lastPathComponent.intValue;
+        if (productId && ([productId isEqualToString:[NSString stringWithFormat:kFeatureId, price]]))
+        {
+            if (itemId && ( [itemId isEqualToString:kFeatureItemAppleId[price]]))
+            {
                 retVal = YES;
             }
             

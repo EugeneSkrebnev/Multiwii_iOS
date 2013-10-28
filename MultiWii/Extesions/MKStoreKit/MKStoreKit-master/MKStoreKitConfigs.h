@@ -41,12 +41,8 @@
 // #define kConsumableFeatureBId @"com.mycompany.myapp.005"
 // #define FishBasket @"FishBasket"
 
-#define kFeatureAId @"com.multiwii.fullversion.low"
-#define kFeatureBId @"com.multiwii.fullversion.middle"
-#define kFeatureCId @"com.multiwii.fullversion.high"
-#define kItemAAppleId @"123"
-#define kItemBAppleId @"234"
-#define kItemCAppleId @"345"
+#define kFeatureId @"com.skrebnev.multiwii.fullversion.%d"
+#define kFeatureItemAppleId @[@(5), @(6), @(7), @(8), @(9), @(10), @(11), @(12), @(13), @(14), @(15), @(16), @(17), @(18), @(19), @(20)]
 //-n http://gyazo.com/5ff037b3950297e212a48d1b6b0a07f0
 
 #ifndef SERVER_PRODUCT_MODEL

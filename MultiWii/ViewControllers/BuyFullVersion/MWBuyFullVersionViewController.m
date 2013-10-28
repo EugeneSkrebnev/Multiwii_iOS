@@ -8,7 +8,8 @@
 
 #import "MWBuyFullVersionViewController.h"
 #import "MWTopbarButton.h"
-
+#import "MKStoreKitConfigs.h"
+#import "MKStoreManager.h"
 @interface MWBuyFullVersionViewController ()
 
 @end
@@ -113,6 +114,20 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)buyButtonTapped:(id)sender
+{
+    int price = (int)self.priceSelectKnobView.value;
+    NSString* featureID = [NSString stringWithFormat:kFeatureId, price];
+    [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
+        [UIAlertView alertWithTitle:@"SUCCES" message:featureID];
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"FULL_VERSION_UNLOCKED"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    } onCancelled:^{
+        [UIAlertView alertWithTitle:@"ERROR_OR_CANCEL" message:featureID];
+    }];
+}
+
 -(void)dealloc
 {
     [self.priceSelectKnobView removeObserver:self forKeyPath:@"value"];

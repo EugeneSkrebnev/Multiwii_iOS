@@ -12,4 +12,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, readonly) int paidAmount;
 @end

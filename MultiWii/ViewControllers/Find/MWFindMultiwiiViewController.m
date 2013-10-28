@@ -23,7 +23,7 @@
 -(float) distanceFromRSSI:(float) rssi
 {
     float result = rssi;
-    float A = 68;
+    float A = 67;
     float C = 2.;
     result = (result + A) / (-10 * C);
     
