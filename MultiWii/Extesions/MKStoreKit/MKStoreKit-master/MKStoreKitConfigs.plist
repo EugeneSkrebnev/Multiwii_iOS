@@ -6,9 +6,22 @@
 	<dict/>
 	<key>Non-Consumables</key>
 	<array>
-		<string>com.multiwii.fullversion.low</string>
-		<string>com.multiwii.fullversion.middle</string>
-		<string>com.multiwii.fullversion.high</string>
+		<string>com.skrebnev.multiwii.fullversion.17</string>
+		<string>com.skrebnev.multiwii.fullversion.18</string>
+		<string>com.skrebnev.multiwii.fullversion.19</string>
+		<string>com.skrebnev.multiwii.fullversion.20</string>
+		<string>com.skrebnev.multiwii.fullversion.8</string>
+		<string>com.skrebnev.multiwii.fullversion.9</string>
+		<string>com.skrebnev.multiwii.fullversion.10</string>
+		<string>com.skrebnev.multiwii.fullversion.11</string>
+		<string>com.skrebnev.multiwii.fullversion.12</string>
+		<string>com.skrebnev.multiwii.fullversion.13</string>
+		<string>com.skrebnev.multiwii.fullversion.14</string>
+		<string>com.skrebnev.multiwii.fullversion.15</string>
+		<string>com.skrebnev.multiwii.fullversion.16</string>
+		<string>com.skrebnev.multiwii.fullversion.5</string>
+		<string>com.skrebnev.multiwii.fullversion.6</string>
+		<string>com.skrebnev.multiwii.fullversion.7</string>
 	</array>
 	<key>Subscriptions</key>
 	<dict/>

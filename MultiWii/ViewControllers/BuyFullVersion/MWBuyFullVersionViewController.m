@@ -110,6 +110,15 @@
     [self.buy10 setTitle:[NSString stringWithFormat:@"BUY FOR $%.0f", self.priceSelectKnobView.value] forState:(UIControlStateNormal)];
 }
 
+- (IBAction)restorePurchaseBtnTapped:(id)sender
+{
+    [[MKStoreManager sharedManager] restorePreviousTransactionsOnComplete:^{
+        NSLog(@"%d", __delegate.paidAmount);
+    } onError:^(NSError *error) {
+        [UIAlertView alertErrorWithMessage:error.localizedDescription];
+    }];
+}
+
 -(void) backButtonTapped:(id) sender
 {
     [self dismissModalViewControllerAnimated:YES];

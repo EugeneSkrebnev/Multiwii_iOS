@@ -27,6 +27,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="restorePurchaseBtnTapped:" destination="rR1-I5-2tb" eventType="touchUpInside" id="8Rf-Yt-Bkh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wqY-Gn-w5A" customClass="MWInAppButton">
                                 <rect key="frame" x="20" y="353" width="174" height="57"/>
