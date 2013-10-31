@@ -751,7 +751,7 @@ static MKStoreManager* _sharedStoreManager;
   NSLog(@"Failed transaction: %@", [transaction description]);
   NSLog(@"error: %@", transaction.error);
 #endif
-	
+//    [[SKPaymentQueue defaultQueue] startDownloads:transaction.downloads];
   [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
   
   if(self.onTransactionCancelled)

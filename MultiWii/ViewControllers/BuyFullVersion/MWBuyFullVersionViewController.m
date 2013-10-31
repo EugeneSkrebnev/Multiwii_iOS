@@ -133,7 +133,8 @@
         [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"FULL_VERSION_UNLOCKED"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     } onCancelled:^{
-        [UIAlertView alertWithTitle:@"ERROR_OR_CANCEL" message:featureID];
+//        [UIAlertView alertWithTitle:@"ERROR_OR_CANCEL" message:featureID];
+        NSLog(@"purchase canceled");
     }];
 }
 

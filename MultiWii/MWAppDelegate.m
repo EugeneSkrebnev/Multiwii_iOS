@@ -8,12 +8,14 @@
 
 #import "MWAppDelegate.h"
 #import "MKStoreManager.h"
+#import "MKSKProduct.h"
 @implementation MWAppDelegate
 {
     int _paidAmount;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     [MWGlobalManager sharedInstance]; //init all systems
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].daysUntilPrompt = 10;
@@ -42,13 +44,27 @@
         if ((self.paidAmount == 0) && [[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
         {
             [UIAlertView alertWithTitle:@"Error use restore purchase!" message:@"You are cool hacker! Are you? Of course you are."];
-            [self lalalaMessage];
+//            [self lalalaMessage];
         }
     });
+    
+    
+    [self paymes];
+    [[MKStoreManager sharedManager] removeAllKeychainData];
+
     return YES;
 
 }
+-(void) paymes
+{
+    NSLog(@"pay = %d", self.paidAmount);
+    double delayInSeconds = 8.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self paymes];
+    });
 
+}
 -(void) lalalaMessage
 {
     [UIAlertView alertWithTitle:@"lalala" message:@"la la La Hello from Belarus! Lukashenko, Vodka, Potatoes"];

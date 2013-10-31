@@ -7,7 +7,7 @@
 //
 
 #import "MWGlobalManager.h"
-
+#import "MKStoreManager.h"
 @implementation MWGlobalManager
 
 + (MWGlobalManager *)sharedInstance
@@ -27,6 +27,7 @@
         self.protocolManager = [MWMultiwiiProtocolManager sharedInstance];
         self.boxManager = [MWBoxSettingsManager sharedInstance];
         [self initDefaultHandlers];
+        [MKStoreManager sharedManager];
     }
     return self;
 }

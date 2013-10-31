@@ -139,7 +139,7 @@ static NSMutableData *sDataFromConnection;
   {
     onReviewRequestVerificationSucceeded = [completionBlock copy];
     onReviewRequestVerificationFailed = [errorBlock copy];
-    [self performSelectorInBackground:@selector(startVerifing) withObject:nil];
+    [self performSelectorInBackground:@selector(startVerifingReview) withObject:nil];
 //    NSString *uniqueID = [self deviceId];
 //    // check udid and featureid with developer's server
 //		
@@ -198,7 +198,7 @@ static NSMutableData *sDataFromConnection;
     if (status == 0 && receiptDic) {
         NSString *itemId = [receiptDic objectForKey:@"item_id"];
         NSString *productId = [receiptDic objectForKey:@"product_id"];
-        int price = productId.lastPathComponent.intValue;
+        int price = productId.pathExtension.intValue;
         if (productId && ([productId isEqualToString:[NSString stringWithFormat:kFeatureId, price]]))
         {
             if (itemId && ( [itemId isEqualToString:kFeatureItemAppleId[price]]))
@@ -211,7 +211,7 @@ static NSMutableData *sDataFromConnection;
     return retVal;
 }
 
--(void) startVerifing
+-(void) startVerifingReview
 {
     BOOL res = [self verifyReceipt:self.receipt];
     if(res)
@@ -229,6 +229,25 @@ static NSMutableData *sDataFromConnection;
         
         onReviewRequestVerificationFailed = nil;
     }
+}
+-(void) startVerifingReceipt
+{
+    BOOL res = [self verifyReceipt:self.receipt];
+    if(res)
+    {
+        if(self.onReceiptVerificationSucceeded)
+        {
+            self.onReceiptVerificationSucceeded();
+            self.onReceiptVerificationSucceeded = nil;
+        }
+    }
+    else
+    {
+        if(self.onReceiptVerificationFailed)
+            self.onReceiptVerificationFailed(nil);
+
+        self.onReceiptVerificationFailed = nil;
+    }
 
         
 }
@@ -238,7 +257,7 @@ static NSMutableData *sDataFromConnection;
 {
     self.onReceiptVerificationSucceeded = completionBlock;
     self.onReceiptVerificationFailed = errorBlock;
-    [self performSelectorInBackground:@selector(startVerifing) withObject:nil];
+    [self performSelectorInBackground:@selector(startVerifingReceipt) withObject:nil];
     
 //  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", OWN_SERVER, @"verifyProduct.php"]];
 //	

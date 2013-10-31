@@ -1589,7 +1589,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 5U67EGLCUP;
+						DevelopmentTeam = 6A55FY4Q8A;
 					};
 				};
 			};
@@ -1923,14 +1923,14 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Pupkin (H36A84TWVC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5114378E-71C1-4611-95CE-577FC7015FB1";
+				PROVISIONING_PROFILE = "F116C8C4-2121-41B6-ACDA-E1AA19A8CE6D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1938,14 +1938,14 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intellectsoft LLC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YAUHEN SKRABNIOU (6A55FY4Q8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E95CCFCA-B139-4381-BC8B-8AC0BD65E2A6";
+				PROVISIONING_PROFILE = "52C65E68-45F8-4949-B748-974A1B2B6A69";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -42,7 +42,7 @@
 // #define FishBasket @"FishBasket"
 
 #define kFeatureId @"com.skrebnev.multiwii.fullversion.%d"
-#define kFeatureItemAppleId @[@(5), @(6), @(7), @(8), @(9), @(10), @(11), @(12), @(13), @(14), @(15), @(16), @(17), @(18), @(19), @(20)]
+#define kFeatureItemAppleId @[@"0", @"1", @"2", @"3", @"4", @"735317172", @"735369163", @"735369355", @"735369570", @"735402935", @"735403009", @"735403118", @"735428270", @"735434961", @"735439036", @"735439153", @"735444113", @"735444128", @"735450907", @"735450912", @"735450932"]
 //-n http://gyazo.com/5ff037b3950297e212a48d1b6b0a07f0
 
 #ifndef SERVER_PRODUCT_MODEL
