@@ -18,8 +18,14 @@
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" SETTINGS ";
+//    self.saveButton.hidden = !__delegate.isFullVersionUnlocked;
 }
 
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self.saveButton setHidden:!__delegate.isFullVersionUnlocked animated:YES];
+//}
 
 -(NSArray*) titlesForMenu
 {
@@ -38,17 +44,21 @@
 
 - (IBAction)saveButtonTapped:(id)sender
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_SAVE_EPROM
-                                                       andPayload:nil
-                                                    responseBlock:^(NSData *recieveData) {
-                                                        [self.saveButton setTitle:@"SAVED" forState:(UIControlStateNormal)];
-                                                        double delayInSeconds = 2.0;
-                                                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-                                                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                                                            [self.saveButton setTitle:@"SAVE TO EPROM" forState:(UIControlStateNormal)];
-                                                        });
-                                                    }];
-
+    if (__delegate.isFullVersionUnlocked)
+    {
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_SAVE_EPROM
+                                                           andPayload:nil
+                                                        responseBlock:^(NSData *recieveData) {
+                                                            [self.saveButton setTitle:@"SAVED" forState:(UIControlStateNormal)];
+                                                            double delayInSeconds = 2.0;
+                                                            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                                            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                                                [self.saveButton setTitle:@"SAVE TO EPROM" forState:(UIControlStateNormal)];
+                                                            });
+                                                        }];
+    }
+    else
+        [__delegate showBuyDialogFromVC:self];
 }
 
 @end

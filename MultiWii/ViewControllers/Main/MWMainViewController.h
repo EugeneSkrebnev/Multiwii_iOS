@@ -10,5 +10,6 @@
 #import "MWMenuViewController.h"
 #import "MWMainMenuCell.h"
 @interface MWMainViewController : MWMenuViewController
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
 @end

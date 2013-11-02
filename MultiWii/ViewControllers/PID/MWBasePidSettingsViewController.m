@@ -11,6 +11,7 @@
 #import "MWHeader3LabelView.h"
 #import "MWPidAdjustCell.h"
 
+
 @interface MWBasePidSettingsViewController ()
 
 @end
@@ -46,11 +47,18 @@
 
 -(void) writePidButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
-                                                       andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
-                                                    responseBlock:^(NSData *recieveData) {
-                                                        NSLog(@"write success");
-                                                    }];
+    if (__delegate.isFullVersionUnlocked)
+    {
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
+                                                           andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
+                                                        responseBlock:^(NSData *recieveData) {
+                                                            NSLog(@"write success");
+                                                        }];
+    }
+    else
+    {
+        [__delegate showBuyDialogFromVC:self];
+    }
 }
 -(void)viewDidLoad
 {

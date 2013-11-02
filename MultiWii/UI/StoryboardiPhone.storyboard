@@ -8,7 +8,7 @@
         <!--Buy Full Version View Controller-->
         <scene sceneID="nbF-s0-FlH">
             <objects>
-                <viewController id="rR1-I5-2tb" customClass="MWBuyFullVersionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MWBuyFullVersionViewControllerID" id="rR1-I5-2tb" customClass="MWBuyFullVersionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBT-XG-4Ha">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eYE-8z-O8m"/>
                     <connections>
+                        <outlet property="buyButton" destination="Bhq-ok-V15" id="3zB-0a-uLv"/>
                         <outlet property="tableViewForMenu" destination="Rtj-Ao-gng" id="akL-Zo-m0F"/>
                         <segue destination="Tln-hl-f3a" kind="push" identifier="2" id="TVP-0U-m06"/>
                         <segue destination="XS1-hN-AIa" kind="push" identifier="4" id="E2J-80-hwP"/>
@@ -136,18 +137,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eC5-Yg-hI9">
-                                <rect key="frame" x="34" y="121" width="252" height="268"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iey-RT-RCt">
+                                <rect key="frame" x="7" y="47" width="231" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="89"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iey-RT-RCt">
-                                <rect key="frame" x="34" y="397" width="252" height="21"/>
+                            <view contentMode="scaleToFill" id="ftH-gq-nwO" customClass="MWSignalIndicatorView">
+                                <rect key="frame" x="2" y="233" width="316" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UWA-RZ-VLi">
+                                <rect key="frame" x="258" y="104" width="42" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -156,7 +162,8 @@
                     <navigationItem key="navigationItem" id="mnX-Aw-9LM"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Iey-RT-RCt" id="PCy-Ie-ZgY"/>
-                        <outlet property="rssiLabel" destination="eC5-Yg-hI9" id="RJ2-0w-JKn"/>
+                        <outlet property="mLabel" destination="UWA-RZ-VLi" id="R8e-vo-LzC"/>
+                        <outlet property="signalIndicator" destination="ftH-gq-nwO" id="FTK-DH-ZxE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNI-6f-TKW" userLabel="First Responder" sceneMemberID="firstResponder"/>

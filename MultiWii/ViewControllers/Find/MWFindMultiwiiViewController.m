@@ -18,13 +18,15 @@
 @implementation MWFindMultiwiiViewController
 {
     float _rssi[FILTER_COUNT];
+//    float _val;
 }
 
 -(float) distanceFromRSSI:(float) rssi
 {
     float result = rssi;
-    float A = 67;
-    float C = 2.;
+    float A = 67; //RSSI IN ONE METR
+    float C = 2.; //signal loss constant
+    
     result = (result + A) / (-10 * C);
     
     result = powf(10, result);
@@ -52,6 +54,29 @@
     self.rssiLabel.textColor = [UIColor whiteColor];
     self.viewControllerTitle = @"FIND MY MULTIWII";
     self.rssiLabel.text = @"";
+    self.percentLabel = [[UILabel alloc] init];
+    self.percentLabel.text = @"%";
+    self.percentLabel.width  = 30;
+    self.percentLabel.height = 30;
+    self.percentLabel.left = 240;
+    self.percentLabel.top = self.signalIndicator.top + self.signalIndicator.height - 11;
+    
+    self.percentLabel.backgroundColor = [UIColor clearColor];
+    self.percentLabel.textAlignment = UITextAlignmentCenter;
+    self.percentLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:18];
+    self.percentLabel.textColor = RGB(165, 165, 165);
+    
+    
+    self.distanceLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:120];
+    self.distanceLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"text_finder_pattern@2x.png"]];
+    self.distanceLabel.textAlignment = UITextAlignmentCenter;
+    self.distanceLabel.width = 320 - (320 - self.mLabel.left);
+    self.distanceLabel.left = 0;
+    
+    self.mLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:30];
+    self.mLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"text_finder_pattern_m@2x.png"]];
+    self.mLabel.top += 3;
+    [self.view addSubview:self.percentLabel];
 }
 
 -(void) updateRssiLabelWithNewValue:(float) newRssi
@@ -76,8 +101,9 @@
     float distance = [self distanceFromRSSI:_rssi[FILTER_COUNT - 1]];
     float signalStrength = [self signalStrengthFromDistance:distance];
 
-    self.distanceLabel.text = @(distance).stringValue;
-    self.rssiLabel.text = [NSString stringWithFormat:@"%d%%", (int)(signalStrength * 100)];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.1f", distance];
+//    self.rssiLabel.text = [NSString stringWithFormat:@"%d%%", (int)(signalStrength * 100)];
+    [self.signalIndicator setValue:signalStrength animated:YES duration:1];
     
 }
 
@@ -90,8 +116,23 @@
     {
         [self updateRssiLabelWithNewValue:device.RSSI.floatValue];
     };
-    
+    self.signalIndicator.value = 0;
+//    _val = 0;
+//    [self testVal];
 }
+
+//-(void) testVal
+//{
+//    _val += 0.25;
+//    if (_val > 1.8)
+//        _val = 0;
+//    [self.signalIndicator setValue:_val animated:YES];
+//    double delayInSeconds = 1.7;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        [self testVal];
+//    });
+//}
 
 -(void)viewWillDisappear:(BOOL)animated
 {

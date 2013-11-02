@@ -7,9 +7,13 @@
 //
 
 #import "MWBaseViewController.h"
+#import "MWSignalIndicatorView.h"
 
 @interface MWFindMultiwiiViewController : MWBaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *rssiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (nonatomic, strong) UILabel* percentLabel;
+@property (weak, nonatomic) IBOutlet MWSignalIndicatorView *signalIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *mLabel;
 
 @end

@@ -13,4 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, readonly) int paidAmount;
+-(BOOL) isFullVersionUnlocked;
+-(void) showBuyDialogFromVC:(UIViewController*) vc;
 @end

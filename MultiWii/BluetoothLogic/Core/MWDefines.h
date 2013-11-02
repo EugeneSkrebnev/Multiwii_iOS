@@ -18,4 +18,8 @@ return _sharedObject; \
 #define IS_IOS7 !([[[UIDevice currentDevice] systemVersion] floatValue] < 7)
 #define IOS_VER ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define __delegate ((MWAppDelegate*)[[UIApplication sharedApplication] delegate])
+
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
 static NSString *const kDidDisconnectWithErrorNotification = @"__didDisconnectWithErrorNotification__";

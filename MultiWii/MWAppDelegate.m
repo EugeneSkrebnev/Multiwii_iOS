@@ -9,6 +9,8 @@
 #import "MWAppDelegate.h"
 #import "MKStoreManager.h"
 #import "MKSKProduct.h"
+#import "MWBuyFullVersionViewController.h"
+
 @implementation MWAppDelegate
 {
     int _paidAmount;
@@ -81,13 +83,32 @@
     _paidAmount = 0;
     for (int i = 5; i <= 20; i++)
     {
-        NSString* featureID = [NSString stringWithFormat:kFeatureId, i]; // refactor
+        NSString* featureID = [NSString stringWithFormat:kFeatureId, i]; // refactor to macros with param
         if ([MKStoreManager isFeaturePurchased:featureID])
         {
             _paidAmount += i;
         }
     }
+//    return 10;
     return _paidAmount;
+}
+-(void) showBuyDialogFromVC:(UIViewController*) vc
+{
+    NSString* message = @"This function is availiable only in full version. Buy it now?";
+    [UIAlertView alertResultWithTitle:@"Multiwii Configurator" message:message buttonNames:@[@"NO", @"YES"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
+        if (buttonIndex == 1)
+        {
+            NSString* buyVcId = @"MWBuyFullVersionViewControllerID";
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
+            MWBuyFullVersionViewController *buyVC = (MWBuyFullVersionViewController*)[storyboard instantiateViewControllerWithIdentifier:buyVcId];
+            [vc presentModalViewController:buyVC animated:YES];
+        }
+    }];
+
+}
+-(BOOL) isFullVersionUnlocked
+{
+    return self.paidAmount >= 5;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

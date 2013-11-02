@@ -155,11 +155,20 @@
 
 -(void) writeBoxesButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_BOXES
-                                                       andPayload:[[MWGlobalManager sharedInstance].boxManager payloadFromBoxes]
-                                                    responseBlock:^(NSData *recieveData) {
-                                                        NSLog(@"write success");
-                                                    }];
+    
+    if (__delegate.isFullVersionUnlocked)
+    {
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_BOXES
+                                                           andPayload:[[MWGlobalManager sharedInstance].boxManager payloadFromBoxes]
+                                                        responseBlock:^(NSData *recieveData) {
+                                                            NSLog(@"write success");
+                                                        }];
+    }
+    else
+    {
+        [__delegate showBuyDialogFromVC:self];
+    }
+
 }
 
 

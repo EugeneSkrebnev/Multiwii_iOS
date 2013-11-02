@@ -58,6 +58,8 @@ static BOOL firstTimeShow = YES;
         self.tableViewForMenu.top = 0; //bad dirty fix
 
     }
+    
+    [self.buyButton setHidden:__delegate.isFullVersionUnlocked animated:YES];
 }
 
 -(NSArray*) titlesForMenu
@@ -67,7 +69,7 @@ static BOOL firstTimeShow = YES;
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"connect", @"telemetry_gray", @"settings", @"telemetry"/*, @"control"*/, @"about"];
+    return @[@"connect", @"telemetry_gray", @"settings", @"finder"/*, @"control"*/, @"about"];
 }
 
 
@@ -75,6 +77,7 @@ static BOOL firstTimeShow = YES;
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" MAIN MENU ";
+    self.buyButton.hidden = __delegate.isFullVersionUnlocked;
     if (firstTimeShow)
     {
 

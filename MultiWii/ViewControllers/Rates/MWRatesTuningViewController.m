@@ -66,11 +66,18 @@
 
 -(void) writeRCRatesButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_RC_TUNNING
-                                                       andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromRcTunning]
-                                                    responseBlock:^(NSData *recieveData) {
-                                                        NSLog(@"write RCRates success");
-                                                    }];
+    if (__delegate.isFullVersionUnlocked)
+    {
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_RC_TUNNING
+                                                           andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromRcTunning]
+                                                        responseBlock:^(NSData *recieveData) {
+                                                            NSLog(@"write RCRates success");
+                                                        }];
+    }
+    else
+    {
+        [__delegate showBuyDialogFromVC:self];
+    }
 }
 
 
