@@ -59,8 +59,6 @@
     self.percentLabel.width  = 30;
     self.percentLabel.height = 30;
     self.percentLabel.left = 240;
-    self.percentLabel.top = self.signalIndicator.top + self.signalIndicator.height - 11;
-    
     self.percentLabel.backgroundColor = [UIColor clearColor];
     self.percentLabel.textAlignment = UITextAlignmentCenter;
     self.percentLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:18];
@@ -76,8 +74,49 @@
     self.mLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:30];
     self.mLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"text_finder_pattern_m@2x.png"]];
     self.mLabel.top += 3;
+    
+    if (IS_IPHONE_5)
+    {
+        self.percentLabel.top = 340;
+        self.signalIndicator.top = 260;
+        //        self.percentLabel.top = self.signalIndicator.top + self.signalIndicator.height - 11;
+    }
+    else
+    {
+        self.percentLabel.top = 285;
+        self.signalIndicator.top = 205;
+        self.mLabel.top -= 30;
+        self.distanceLabel.top -= 30;
+    }
+
+    
     [self.view addSubview:self.percentLabel];
+    
+    for (UILabel* lbl in @[self.infoLabel1, self.infoLabel2])
+    {
+        lbl.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
+        lbl.textColor = RGB(165, 165, 165);
+        lbl.numberOfLines = 0;
+    }
+    
+    self.infoLabel1.text = @"*To convert the distance to feet,\n tap the number.";
+    self.infoLabel2.text = @"**The locating accuracy depends on the radio interferences, weather conditions, and other environmental factors.";
 }
+
+- (IBAction)metrPoundsButtonTapped:(id)sender
+{
+    self.metrPoundsButton.selected = !self.metrPoundsButton.selected;
+    if (!self.metrPoundsButton.selected)
+    {
+        self.mLabel.text = @"M";
+    }
+    else
+    {
+        self.mLabel.text = @"FT";
+        
+    }
+}
+
 
 -(void) updateRssiLabelWithNewValue:(float) newRssi
 {
@@ -100,8 +139,17 @@
     }
     float distance = [self distanceFromRSSI:_rssi[FILTER_COUNT - 1]];
     float signalStrength = [self signalStrengthFromDistance:distance];
-
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.1f", distance];
+    if (!self.metrPoundsButton.selected)
+    {
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.1f", distance];
+        self.mLabel.text = @"M";
+    }
+    else
+    {
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.1f", distance * 3.2808399];
+        self.mLabel.text = @"FT";
+        
+    }
 //    self.rssiLabel.text = [NSString stringWithFormat:@"%d%%", (int)(signalStrength * 100)];
     [self.signalIndicator setValue:signalStrength animated:YES duration:1];
     

@@ -15,6 +15,7 @@
     UIImageView* _redsectorImageView;
     UIView* _dimView;
     UIView* _redView;
+    UIView* _grayView;
     UIImageView* _arrow;
     UIImageView* _arrowCircle;
     UILabel* _percentLabels[5];
@@ -32,8 +33,12 @@
     _backgroundImageView.frame = CGRectInset(self.bounds, -2, 0);
 
     int redSectorYoffset = 25;
-    _redView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - redSectorYoffset, self.width, redSectorYoffset)];
+    _redView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
     _redView.backgroundColor = RGB(255, 53, 0);
+
+    _grayView = [[UIView alloc] initWithFrame:CGRectMake(self.width / 2, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
+    _grayView.backgroundColor = RGB(37, 37, 37);
+
     
     _redsectorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_sector.png"]];
     _redsectorImageView.frame = CGRectMake((self.width - _redsectorImageView.width) / 2, self.height - (_redsectorImageView.height / 2) - redSectorYoffset, _redsectorImageView.width, _redsectorImageView.height);
@@ -50,6 +55,7 @@
     
     [self addSubview:_dimView];
     [self addSubview:_redsectorImageView];
+    [self addSubview:_grayView];
     [self addSubview:_redView];
     [self addSubview:_backgroundImageView];
     [self addSubview:_arrowCircle];

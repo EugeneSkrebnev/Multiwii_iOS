@@ -51,22 +51,21 @@
     });
     
     
-    [self paymes];
+//    [self paymes];
     [[MKStoreManager sharedManager] removeAllKeychainData];
 
     return YES;
 
 }
--(void) paymes
-{
-    NSLog(@"pay = %d", self.paidAmount);
-    double delayInSeconds = 8.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self paymes];
-    });
-
-}
+//-(void) paymes
+//{
+//    NSLog(@"pay = %d", self.paidAmount);
+//    double delayInSeconds = 8.0;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        [self paymes];
+//    });
+//}
 -(void) lalalaMessage
 {
     [UIAlertView alertWithTitle:@"lalala" message:@"la la La Hello from Belarus! Lukashenko, Vodka, Potatoes"];

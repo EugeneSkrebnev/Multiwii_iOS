@@ -46,7 +46,9 @@
                                 <rect key="frame" x="20" y="69" width="280" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">You can get the full version for any of the prices from $5 to $20. To support the project and make it better, please choose the $7 or $10 option. Now I spend all my free time to develop the code, analyze hardware options, and answer your feedback for the application. If you choose the $7 or $10 price, this will let me do it better. Also I would really appreciate your opinion and suggestions regarding my Multiwii application, critique especially. Please feel free to hit 'Ask question' or 'Submit bug', or give your comment and rating in AppStore.</string>
+                                <string key="text">You can buy this application for any price within $5-$20. The higher is your price, the more opportunities you are giving me to cover my operation expenses, research new hardware options, and in general improve this amazing application. To set your price, please use the knob to the right of the Buy button.
+
+Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedback’, or by posting on the Multiwii forum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -146,7 +148,7 @@
                             </label>
                             <view contentMode="scaleToFill" id="ftH-gq-nwO" customClass="MWSignalIndicatorView">
                                 <rect key="frame" x="2" y="233" width="316" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UWA-RZ-VLi">
@@ -156,13 +158,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eid-Aw-ECC">
+                                <rect key="frame" x="20" y="387" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F3k-XC-tFe">
+                                <rect key="frame" x="20" y="421" width="280" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JCX-fw-EjH">
+                                <rect key="frame" x="13" y="65" width="296" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="metrPoundsButtonTapped:" destination="mIT-ch-HtJ" eventType="touchUpInside" id="AZT-gS-vuW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mnX-Aw-9LM"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Iey-RT-RCt" id="PCy-Ie-ZgY"/>
+                        <outlet property="infoLabel1" destination="eid-Aw-ECC" id="V3h-LC-D6W"/>
+                        <outlet property="infoLabel2" destination="F3k-XC-tFe" id="RG0-ho-Uqd"/>
                         <outlet property="mLabel" destination="UWA-RZ-VLi" id="R8e-vo-LzC"/>
+                        <outlet property="metrPoundsButton" destination="JCX-fw-EjH" id="qz1-uj-nkl"/>
                         <outlet property="signalIndicator" destination="ftH-gq-nwO" id="FTK-DH-ZxE"/>
                     </connections>
                 </viewController>

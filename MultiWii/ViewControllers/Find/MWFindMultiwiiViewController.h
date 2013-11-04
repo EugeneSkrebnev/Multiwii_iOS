@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet MWSignalIndicatorView *signalIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *mLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel2;
+@property (weak, nonatomic) IBOutlet UIButton *metrPoundsButton;
 @end

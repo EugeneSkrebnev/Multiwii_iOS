@@ -147,7 +147,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if (![MWGlobalManager sharedInstance].multiwiiSuccesConnect)
         {
-            [UIAlertView alertWithTitle:@"Error" message:@"Can't detect multiwii board, please check your rx-tx connections, and serial0 speed. Use 57600 baud rate for correct work"];
+            [UIAlertView alertWithTitle:@"Error" message:@"Can't detect multiwii board, please check your rx-tx connections, and serial speed."];
         }
     });
 //    [self testRCTunning]; test
