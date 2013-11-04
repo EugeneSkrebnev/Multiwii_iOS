@@ -10,6 +10,8 @@
 
 @interface MWAboutDetailViewController : MWBaseViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @property (nonatomic, strong) NSString* text;
 @end

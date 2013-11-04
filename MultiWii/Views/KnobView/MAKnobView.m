@@ -164,7 +164,7 @@
         viewForTranslation = self.superview;
     
     CGPoint offset = [recognizer translationInView:viewForTranslation];
-    float minR = 15;
+    float minR = 1;
     float currentAngle = atan2f(offset.y, offset.x) / M_PI * 180;
     float deltaAngle = 0;
     if (recognizer.state == UIGestureRecognizerStateChanged)

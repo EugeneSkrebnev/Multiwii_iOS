@@ -70,7 +70,9 @@
     [self setBuyBtns];
     
     self.navigationBar.topItem.titleView = [self viewForTitle: @"BUY FULL VERSION"];
-    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+
+
+//    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
     self.aboutTextView.scrollEnabled = NO;
 //    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
 //    self.aboutTextView.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
@@ -102,7 +104,8 @@
     priceDescriptor.value = 10;
     
     [self.priceSelectKnobView addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial) context:nil];
-    
+    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    self.aboutTextView.text =     self.aboutTextView.text ;
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

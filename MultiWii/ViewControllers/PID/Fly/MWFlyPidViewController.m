@@ -102,8 +102,8 @@
                 (copterType == MWGlobalManagerQuadTypeHexPlus) ||
                 (copterType == MWGlobalManagerQuadTypeHexX))
             {
-                if ([_pids[0] isEqual:_pids[1]]) //(MWPIDSettingsEntity*)
-                    self.rollPitchLockSwitch.locked = YES;
+//                if ([_pids[0] isEqual:_pids[1]]) //(MWPIDSettingsEntity*)
+//                    self.rollPitchLockSwitch.locked = YES;
             }
 
         }

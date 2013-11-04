@@ -20,16 +20,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    self.textView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
-    self.textView.textColor = [UIColor grayColor];
-    self.textView.layer.shadowColor = [[UIColor whiteColor] CGColor];
-    self.textView.layer.shadowOffset = CGSizeMake(1.f, 1.0f);
-    self.textView.layer.shadowOpacity = .0f;
-    self.textView.layer.shadowRadius = .0f;
 
-    self.textView.backgroundColor = [UIColor clearColor];
-    self.textView.text = self.text;
+    [self.webView loadHTMLString:self.text baseURL:nil];
+    self.webView.backgroundColor = [UIColor clearColor];
+    self.webView.opaque = NO;
+    [self hideGradientBackground:self.webView];
 }
 
+- (void) hideGradientBackground:(UIView*)theView
+{
+    for (UIView * subview in theView.subviews)
+    {
+        if ([subview isKindOfClass:[UIImageView class]])
+            subview.hidden = YES;
+        
+        [self hideGradientBackground:subview];
+    }
+}
 
 @end

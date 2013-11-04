@@ -80,6 +80,12 @@
         self.percentLabel.top = 340;
         self.signalIndicator.top = 260;
         //        self.percentLabel.top = self.signalIndicator.top + self.signalIndicator.height - 11;
+        if (!IS_IOS7)
+        {
+            self.infoLabel1.top -= 15;
+            self.infoLabel2.top -= 10;
+            self.percentLabel.top += 12;
+        }
     }
     else
     {

@@ -119,7 +119,7 @@
                                           @"about_author"
                                           ];
         NSError* err;
-        NSString *path = [[NSBundle mainBundle] pathForResource:contentTextFilenames[segueId] ofType:@"txt"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:contentTextFilenames[segueId] ofType:@"html"];
         NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&err];
         MWAboutDetailViewController* destinationVC = (MWAboutDetailViewController*)segue.destinationViewController;
         destinationVC.viewControllerTitle = titles[segueId];
