@@ -10,7 +10,7 @@
 #import "MKStoreManager.h"
 #import "MKSKProduct.h"
 #import "MWBuyFullVersionViewController.h"
-
+#import "MWMainViewController.h"
 @implementation MWAppDelegate
 {
     int _paidAmount;
@@ -125,6 +125,15 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    if ([self.window.rootViewController isKindOfClass:[UINavigationController class]])
+        
+    {
+        UINavigationController* nvc = (UINavigationController*)self.window.rootViewController;
+        NSLog(@"%@", self.window.rootViewController.navigationController.topViewController);
+        if ([nvc.viewControllers.lastObject isKindOfClass:[MWMainViewController class]])
+            [nvc.viewControllers.lastObject viewWillAppear:NO];
+    }
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
