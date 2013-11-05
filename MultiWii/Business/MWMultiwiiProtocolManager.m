@@ -85,6 +85,7 @@
 
 -(void) writeMessageDebug:(NSData*) message
 {
+    return;
     NSLog(@"begin message");
     NSLog(@"message with length : %d", message.length);
     for (int i = 0; i < message.length; i++)
