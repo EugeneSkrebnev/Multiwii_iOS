@@ -32,7 +32,7 @@
 {
     if (!request.URL.path)
         return YES;
-
+    NSLog(@"%@", request.URL.path);
     if ([request.URL.path isEqualToString:@"/pub/eugene-skrebnev/49/b03/598"])
     {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.linkedin.com/pub/eugene-skrebnev/49/b03/598"]];
@@ -42,6 +42,16 @@
     {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://goo.gl/pTDiVU"]];
     }
+    
+    if ([request.URL.path isEqualToString:@"/forum/viewtopic.php"])
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwii.com/forum/viewtopic.php?f=8&t=3584"]];
+    }
+    if ([request.URL.path isEqualToString:@"/www.multiwiiforios.com/main"])
+    {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwiiforios.com"]];
+    }
+    
     return NO;
 }
 
