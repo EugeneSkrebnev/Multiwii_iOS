@@ -1637,7 +1637,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 6A55FY4Q8A;
+						DevelopmentTeam = 5U67EGLCUP;
 					};
 				};
 			};
@@ -1988,7 +1988,7 @@
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4BE82638-BAE8-457C-B5D9-778E7182A7DD";
+				PROVISIONING_PROFILE = "FE176940-8A93-4F45-9BD5-F71139A37722";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
