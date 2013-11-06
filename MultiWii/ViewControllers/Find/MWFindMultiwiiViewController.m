@@ -93,6 +93,10 @@
         self.signalIndicator.top = 205;
         self.mLabel.top -= 30;
         self.distanceLabel.top -= 30;
+        if (!IS_IOS7)
+        {
+            self.percentLabel.top += 12;
+        }
     }
 
     
@@ -152,7 +156,7 @@
     }
     else
     {
-        self.distanceLabel.text = [NSString stringWithFormat:@"%.1f", distance * 3.2808399];
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.0f", distance * 3.2808399];
         self.mLabel.text = @"FT";
         
     }

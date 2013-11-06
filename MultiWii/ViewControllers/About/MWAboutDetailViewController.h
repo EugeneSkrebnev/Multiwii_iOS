@@ -8,7 +8,7 @@
 
 #import "MWBaseViewController.h"
 
-@interface MWAboutDetailViewController : MWBaseViewController
+@interface MWAboutDetailViewController : MWBaseViewController<UIWebViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

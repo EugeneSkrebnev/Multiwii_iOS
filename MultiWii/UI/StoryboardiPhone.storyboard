@@ -303,12 +303,20 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 <rect key="frame" x="142" y="344" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JjW-1Q-8Xr">
+                                <rect key="frame" x="20" y="452" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LQx-Yo-wDc"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ue0-lZ-Hdu" id="TIw-aS-S7u"/>
+                        <outlet property="infoLabel" destination="JjW-1Q-8Xr" id="NfH-gw-EQh"/>
                         <outlet property="tableView" destination="pGI-Ds-2Ut" id="Y6k-sj-JGm"/>
                     </connections>
                 </viewController>

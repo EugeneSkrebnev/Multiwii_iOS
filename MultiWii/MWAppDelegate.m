@@ -32,7 +32,7 @@
     [MWBluetoothManager sharedInstance].didUpdateStateBlock = ^{
         if (![MWBluetoothManager sharedInstance].isReadyToUse)
         {
-            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
+//            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
         }
     };
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])

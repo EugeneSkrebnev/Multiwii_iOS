@@ -54,7 +54,7 @@ static BOOL firstTimeShow = YES;
     }
     else
     {
-        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * ([self titlesForMenu].count+2);//bad dirty fix for top bar
+        self.tableViewForMenu.height =  self.tableViewForMenu.rowHeight * ([self titlesForMenu].count+3);//bad dirty fix for top bar
         self.tableViewForMenu.top = 0; //bad dirty fix
 
     }

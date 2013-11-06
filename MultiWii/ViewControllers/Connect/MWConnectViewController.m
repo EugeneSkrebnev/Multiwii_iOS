@@ -34,7 +34,7 @@
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [UIView animateWithDuration:0.5 animations:^{
                 self.radar.transform = CGAffineTransformMakeScale(0.5, 0.5);
-                self.radar.center = CGPointMake(self.view.width / 2, self.view.height - 40);
+                self.radar.center = CGPointMake(self.view.width / 2, self.view.height - 60);
             } completion:^(BOOL finished) {
                 [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationLeft)];
             }];
@@ -102,32 +102,7 @@
     };
 }
 
--(void)sendsend
-{
-    double delayInSeconds = 0.7;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
-        [self sendsend];
-        NSString* dt = @"aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbb ccccccccccccccccccc ddddddddddddddddddd ";
-        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
-//        dt = @"bbbbbbbbbbbbbbbbbbb ";
-//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
-//        dt = @"ccccccccccccccccccc ";
-//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
-//        dt = @"ddddddddddddddddddd ";
-//        [[MWBluetoothManager sharedInstance] sendData:[dt dataUsingEncoding:(NSUTF8StringEncoding)]];
-        
-    });
 
-}
-
--(void) testRCTunning
-{
-    NSLog(@"");
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_RC_TUNNING andPayload:nil responseBlock:nil];
-    
-}
 
 -(void) didConnectBluetoothUart
 {
@@ -135,7 +110,7 @@
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
-//    [self sendsend]; // test
+
     [MWGlobalManager sharedInstance].multiwiiSuccesConnect = NO;
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
         
@@ -163,14 +138,16 @@
 
 -(void) removeCallbackBlocksFromBluetoothManager
 {
+    [MWBluetoothManager sharedInstance].didDisconnectBlock = nil;
+    
     [MWBluetoothManager sharedInstance].didAddDeviceToListBlock = nil;
     
     [MWBluetoothManager sharedInstance].didStartScan = nil;
     [MWBluetoothManager sharedInstance].didStopScan = nil;
-
+    
     [MWBluetoothManager sharedInstance].didConnectBlock = nil;
-    [MWBluetoothManager sharedInstance].didDiscoverCharacteristics = nil;
-    [MWBluetoothManager sharedInstance].didRecieveData = nil;
+    [MWBluetoothManager sharedInstance].didFailToConnectBlock = nil;
+    [MWBluetoothManager sharedInstance].didDiscoverCharacteristics =  nil;
     [MWBluetoothManager sharedInstance].readyForReadWriteBlock = nil;
 }
 
@@ -179,11 +156,15 @@
     [super viewDidLoad];
     self.viewControllerTitle = @" CONNECT ";
     
+    self.infoLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    self.infoLabel.textColor = [UIColor grayColor];
+    self.infoLabel.text = @"*Tap the item to connect";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
 
-    [self initBluetoothManager];
+
     
     MWTopbarButton* scanButton = [[MWTopbarButton alloc] init];
     self.scanButton = scanButton;
@@ -200,7 +181,10 @@
 
 - (IBAction)scanButtonTapped:(id)sender
 {
-
+    if (![MWBluetoothManager sharedInstance].isReadyToUse)
+    {
+        [UIAlertView alertErrorWithMessage:@"Please be sure your bluetooth is on. You can check it in device settings"];
+    }
     [[MWBluetoothManager sharedInstance] startScan];
     double delayInSeconds = 6.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -214,7 +198,7 @@
     [self setTableView:nil];
     [self setScanButton:nil];
     [self setActivityIndicator:nil];
-    [self removeCallbackBlocksFromBluetoothManager];
+
     [super viewDidUnload];
 }
 
@@ -268,6 +252,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self initBluetoothManager];
     double delayInSeconds = 0.1; //hack? or
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -285,6 +270,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self removeCallbackBlocksFromBluetoothManager];    
     [[MWBluetoothManager sharedInstance] stopScan];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

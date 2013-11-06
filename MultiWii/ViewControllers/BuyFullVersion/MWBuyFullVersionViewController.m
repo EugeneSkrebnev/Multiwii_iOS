@@ -76,7 +76,11 @@
     self.aboutTextView.scrollEnabled = NO;
 //    UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text.png"]; // stretchableImageWithLeftCapWidth:0 topCapHeight:0];
 //    self.aboutTextView.textColor = [UIColor colorWithPatternImage:patternColorForUnselectedMenuItem];
-    self.aboutTextView.textColor = [UIColor grayColor];
+
+    self.aboutTextView.text =     self.aboutTextView.text ;
+    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    self.aboutTextView.textAlignment = UITextAlignmentCenter;
+    self.aboutTextView.textColor = RGB(230, 230, 230);
     self.aboutTextView.layer.shadowColor = [[UIColor whiteColor] CGColor];
     self.aboutTextView.layer.shadowOffset = CGSizeMake(1.f, 1.0f);
     self.aboutTextView.layer.shadowOpacity = .0f;
@@ -104,8 +108,7 @@
     priceDescriptor.value = 10;
     
     [self.priceSelectKnobView addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial) context:nil];
-    self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
-    self.aboutTextView.text =     self.aboutTextView.text ;
+
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

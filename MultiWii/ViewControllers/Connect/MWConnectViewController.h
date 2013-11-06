@@ -14,4 +14,5 @@
 @property (strong, nonatomic) UIButton *scanButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) MWRadarActivityIndicator* radar;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @end
