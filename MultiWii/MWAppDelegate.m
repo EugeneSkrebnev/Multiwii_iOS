@@ -40,7 +40,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"FULL_VERSION_UNLOCKED"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    double delayInSeconds = 10.0;
+    double delayInSeconds = 30.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if ((self.paidAmount == 0) && [[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
@@ -52,7 +52,7 @@
     
     
 //    [self paymes];
-    [[MKStoreManager sharedManager] removeAllKeychainData];
+//    [[MKStoreManager sharedManager] removeAllKeychainData]; // TODO: remove on release
 
     return YES;
 
@@ -91,6 +91,7 @@
 //    return 10;
     return _paidAmount;
 }
+
 -(void) showBuyDialogFromVC:(UIViewController*) vc
 {
     NSString* message = @"This function is availiable only in full version. Buy it now?";

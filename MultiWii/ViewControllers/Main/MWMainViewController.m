@@ -60,6 +60,18 @@ static BOOL firstTimeShow = YES;
     }
     
     [self.buyButton setHidden:__delegate.isFullVersionUnlocked animated:YES];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.buyButton setHidden:__delegate.isFullVersionUnlocked animated:YES];
+        double delayInSeconds = 4.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.buyButton setHidden:__delegate.isFullVersionUnlocked animated:YES];
+        });
+
+    });
+
 }
 
 -(NSArray*) titlesForMenu
@@ -72,17 +84,32 @@ static BOOL firstTimeShow = YES;
     return @[@"connect", @"telemetry_gray", @"settings", @"finder"/*, @"control"*/, @"about"];
 }
 
+-(void) checkFullVersion
+{
+    self.buyButton.hidden = __delegate.isFullVersionUnlocked;
+}
+-(void) doubleCheckFullVersion
+{
+    [self checkFullVersion];
+    double delayInSeconds = 5.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self checkFullVersion];
+    });
 
+}
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" MAIN MENU ";
-    self.buyButton.hidden = __delegate.isFullVersionUnlocked;
+
+    [self doubleCheckFullVersion];
+    
     if (firstTimeShow)
     {
 
         firstTimeShow = NO;
-//        if (!YES) // uncomment for enable splash
+        if (!YES) // uncomment for enable splash
         {
 //            self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];

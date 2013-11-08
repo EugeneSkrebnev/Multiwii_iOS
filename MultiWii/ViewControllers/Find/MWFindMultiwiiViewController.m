@@ -111,6 +111,7 @@
     
     self.infoLabel1.text = @"*To convert the distance to feet,\n tap the number.";
     self.infoLabel2.text = @"**The locating accuracy depends on the radio interferences, weather conditions, and other environmental factors.";
+    self.metrPoundsButton.frame = CGRectMake(0, self.distanceLabel.top, 320, self.distanceLabel.height);
 }
 
 - (IBAction)metrPoundsButtonTapped:(id)sender

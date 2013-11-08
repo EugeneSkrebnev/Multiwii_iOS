@@ -31,6 +31,15 @@
     return @[@"about_program", @"how_to_connect", @"ask", @"bug", @"feedback", @"about_author"];
 }
 
+-(void)launchMailAppWithSubject:(NSString*)subject
+{
+    NSString *recipients = [NSString stringWithFormat:@"mailto:multiwii.for.ios@gmail.com?subject=%@", subject];;
+    
+    NSString *email = [recipients stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -44,15 +53,18 @@
     {
         if ([MFMailComposeViewController canSendMail])
         {
-            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-            NSString* subject = indexPath.row == 2 ? @"Got some question" : @"!!!BUG!!!";
-            mailViewController.mailComposeDelegate = self;
-            [mailViewController setSubject:subject];
-            [mailViewController setToRecipients:@[@"multiwii.for.ios@gmail.com"]];
-            [mailViewController setMessageBody:@"" isHTML:NO];
-            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+            [self launchMailAppWithSubject:indexPath.row == 2 ? @"Got some questions" : @"Submit a bug"];
 
-            [self presentModalViewController:mailViewController animated:YES];
+//            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+//            NSString* subject = indexPath.row == 2 ? @"Got some question" : @"!!!BUG!!!";
+//            mailViewController.mailComposeDelegate = self;
+//            [mailViewController setSubject:subject];
+//            [mailViewController setToRecipients:@[@"multiwii.for.ios@gmail.com"]];
+//            [mailViewController setMessageBody:@"" isHTML:NO];
+//            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+//
+//            [self presentModalViewController:mailViewController animated:YES];
         }
         else
         {

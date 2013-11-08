@@ -119,7 +119,14 @@
 - (IBAction)restorePurchaseBtnTapped:(id)sender
 {
     [[MKStoreManager sharedManager] restorePreviousTransactionsOnComplete:^{
-        NSLog(@"%d", __delegate.paidAmount);
+//        NSLog(@"%d", __delegate.paidAmount);
+        [UIAlertView alertWithTitle:@"Purchase restored" message:@"Thank you for your support."];
+        double delayInSeconds = .8;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self dismissModalViewControllerAnimated:YES];
+        });
+
     } onError:^(NSError *error) {
         [UIAlertView alertErrorWithMessage:error.localizedDescription];
     }];
@@ -135,9 +142,16 @@
     int price = (int)self.priceSelectKnobView.value;
     NSString* featureID = [NSString stringWithFormat:kFeatureId, price];
     [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
-        [UIAlertView alertWithTitle:@"SUCCES" message:featureID];
+//        [UIAlertView alertWithTitle:@"SUCCES" message:featureID];
+        [UIAlertView alertWithTitle:@"Success" message:@"Write and Save functions are now unlocked. Thank you for your support."];
         [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"FULL_VERSION_UNLOCKED"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        double delayInSeconds = .8;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self dismissModalViewControllerAnimated:YES];
+        });
+
     } onCancelled:^{
 //        [UIAlertView alertWithTitle:@"ERROR_OR_CANCEL" message:featureID];
         NSLog(@"purchase canceled");
