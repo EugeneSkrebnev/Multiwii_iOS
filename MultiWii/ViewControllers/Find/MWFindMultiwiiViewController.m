@@ -60,14 +60,14 @@
     self.percentLabel.height = 30;
     self.percentLabel.left = 240;
     self.percentLabel.backgroundColor = [UIColor clearColor];
-    self.percentLabel.textAlignment = UITextAlignmentCenter;
+    self.percentLabel.textAlignment = NSTextAlignmentCenter;// UITextAlignmentCenter;
     self.percentLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:18];
     self.percentLabel.textColor = RGB(165, 165, 165);
     
     
     self.distanceLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:120];
     self.distanceLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"text_finder_pattern@2x.png"]];
-    self.distanceLabel.textAlignment = UITextAlignmentCenter;
+    self.distanceLabel.textAlignment = NSTextAlignmentCenter;// UITextAlignmentCenter;
     self.distanceLabel.width = 320 - (320 - self.mLabel.left);
     self.distanceLabel.left = 0;
     

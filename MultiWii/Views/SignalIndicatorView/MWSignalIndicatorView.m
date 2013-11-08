@@ -87,7 +87,7 @@
         _percentLabels[i].text = @(i * 25).stringValue;
         _percentLabels[i].center = labelsCenter[i];
         _percentLabels[i].backgroundColor = [UIColor clearColor];
-        _percentLabels[i].textAlignment = UITextAlignmentCenter;
+        _percentLabels[i].textAlignment = NSTextAlignmentCenter;//UITextAlignmentCenter;
         _percentLabels[i].font = [UIFont fontWithName:@"Montserrat-Regular" size:18];
         _percentLabels[i].textColor = RGB(165, 165, 165);
         [self addSubview:_percentLabels[i]];

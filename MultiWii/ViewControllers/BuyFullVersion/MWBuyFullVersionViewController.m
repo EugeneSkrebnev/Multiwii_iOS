@@ -79,7 +79,7 @@
 
     self.aboutTextView.text =     self.aboutTextView.text ;
     self.aboutTextView.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
-    self.aboutTextView.textAlignment = UITextAlignmentCenter;
+    self.aboutTextView.textAlignment = NSTextAlignmentCenter;//UITextAlignmentCenter;
     self.aboutTextView.textColor = RGB(230, 230, 230);
     self.aboutTextView.layer.shadowColor = [[UIColor whiteColor] CGColor];
     self.aboutTextView.layer.shadowOffset = CGSizeMake(1.f, 1.0f);
@@ -124,7 +124,8 @@
         double delayInSeconds = .8;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self dismissModalViewControllerAnimated:YES];
+//            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         });
 
     } onError:^(NSError *error) {
@@ -134,7 +135,8 @@
 
 -(void) backButtonTapped:(id) sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+//    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)buyButtonTapped:(id)sender
@@ -149,7 +151,8 @@
         double delayInSeconds = .8;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self dismissModalViewControllerAnimated:YES];
+//            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         });
 
     } onCancelled:^{

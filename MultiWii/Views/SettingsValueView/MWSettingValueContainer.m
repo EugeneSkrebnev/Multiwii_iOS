@@ -33,7 +33,7 @@
         
         self.valueLabel.backgroundColor = [UIColor clearColor];
 //        self.valueLabel.backgroundColor = [UIColor blueColor];
-        self.valueLabel.textAlignment = UITextAlignmentCenter;
+        self.valueLabel.textAlignment = NSTextAlignmentCenter;// UITextAlignmentCenter;
         
         self.backgroundColor = [UIColor clearColor];
         

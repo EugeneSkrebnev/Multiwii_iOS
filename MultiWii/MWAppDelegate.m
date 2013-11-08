@@ -93,7 +93,10 @@
             NSString* buyVcId = @"MWBuyFullVersionViewControllerID";
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
             MWBuyFullVersionViewController *buyVC = (MWBuyFullVersionViewController*)[storyboard instantiateViewControllerWithIdentifier:buyVcId];
-            [vc presentModalViewController:buyVC animated:YES];
+//            [vc presentModalViewController:buyVC animated:YES];
+            [vc presentViewController:buyVC animated:YES completion:^{
+                
+            }];
         }
     }];
 

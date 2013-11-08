@@ -86,36 +86,38 @@
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    if (result == MFMailComposeResultCancelled)
-    {
-        [self dismissModalViewControllerAnimated:YES];
-    }
-    if (result == MFMailComposeResultSaved)
-    {
-        [self dismissModalViewControllerAnimated:YES];
-    }
-    if (result == MFMailComposeResultSent)
-    {
-        [self dismissModalViewControllerAnimated:YES];
-    }
-    if (result == MFMailComposeResultFailed)
-    {
-        [UIAlertView alertResultWithTitle:@"Failed" message:@"Something wrong, check your internet connection" buttonNames:@[@"Return to mail", @"Cancel"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
-            if (buttonIndex == 0)
-            {
-                
-            }
-            else
-            {
-                [self dismissModalViewControllerAnimated:YES];
-            }
-        }];
-    }
-    
-
-}
+//- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+//{
+//    if (result == MFMailComposeResultCancelled)
+//    {
+////        [self dismissModalViewControllerAnimated:YES];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    if (result == MFMailComposeResultSaved)
+//    {
+////        [self dismissModalViewControllerAnimated:YES];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    if (result == MFMailComposeResultSent)
+//    {
+//        [self dismissModalViewControllerAnimated:YES];
+//    }
+//    if (result == MFMailComposeResultFailed)
+//    {
+//        [UIAlertView alertResultWithTitle:@"Failed" message:@"Something wrong, check your internet connection" buttonNames:@[@"Return to mail", @"Cancel"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
+//            if (buttonIndex == 0)
+//            {
+//                
+//            }
+//            else
+//            {
+//                [self dismissModalViewControllerAnimated:YES];
+//            }
+//        }];
+//    }
+//    
+//
+//}
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     int segueId = segue.identifier.intValue;

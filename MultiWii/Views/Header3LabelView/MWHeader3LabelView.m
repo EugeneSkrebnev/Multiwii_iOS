@@ -31,7 +31,7 @@
 
 -(void) initLabel:(UILabel*) lbl
 {
-    lbl.textAlignment = UITextAlignmentCenter;
+    lbl.textAlignment = NSTextAlignmentCenter;// UITextAlignmentCenter;
     lbl.backgroundColor = [UIColor clearColor];
     lbl.font = [UIFont fontWithName:@"Montserrat-Bold" size:13];
     UIImage* patternColorForUnselectedMenuItem = [UIImage imageNamed:@"gradient_menu-text@2x.png"];// stretchableImageWithLeftCapWidth:0 topCapHeight:0];

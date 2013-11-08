@@ -59,6 +59,8 @@
 		<string>armv7</string>
 		<string>bluetooth-le</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
