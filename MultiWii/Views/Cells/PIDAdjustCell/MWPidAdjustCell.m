@@ -39,4 +39,12 @@
     
 }
 
+-(void) adjustForIphone5
+{
+    for (MAKnobContainerLabeledView* knobContainer in @[self.leftKnobContainerView, self.middleKnobContainerView, self.rightKnobContainerView])
+    {
+        if (knobContainer.top == 0)
+            knobContainer.top += 14;
+    }
+}
 @end

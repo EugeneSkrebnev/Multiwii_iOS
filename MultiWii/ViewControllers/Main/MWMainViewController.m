@@ -109,7 +109,8 @@ static BOOL firstTimeShow = YES;
     {
 
         firstTimeShow = NO;
-        if (!YES) // uncomment for enable splash
+//        TODO: remove on release
+//        if (!YES) // uncomment for enable splash
         {
 //            self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];

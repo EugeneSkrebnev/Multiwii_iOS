@@ -94,6 +94,8 @@
     cell.titleLabel.text = _titles[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:_iconsTitles[indexPath.row]];
     cell.pid = _pids[indexPath.row];
+    if (IS_IPHONE_5)
+        [cell adjustForIphone5];
     return cell;
     
 }

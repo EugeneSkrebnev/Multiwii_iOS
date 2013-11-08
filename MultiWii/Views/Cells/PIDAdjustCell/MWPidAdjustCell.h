@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet MAKnobContainerLabeledView *rightKnobContainerView;
 
 @property (nonatomic, strong) MWPIDSettingsEntity* pid;
+
+-(void) adjustForIphone5;
 @end

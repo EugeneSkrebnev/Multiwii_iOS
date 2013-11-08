@@ -133,24 +133,37 @@
     UIBarButtonItem* rightBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:container];
     self.navigationItem.rightBarButtonItem = rightBarBtnItem;
 }
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [MWBluetoothManager sharedInstance].didFailToFindService = ^(NSError* err, CBPeripheral* device)
+    {
+        if (!device)
+        {
+            [UIAlertView alertErrorWithMessage:@"No connected device. Please connect first."];
+        }
+    };
     [self readBoxesButtonTapped];
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MWBluetoothManager sharedInstance].didFailToFindService = nil;
+}
+
 
 -(void) readBoxesButtonTapped
 {
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"boxes names read success");
-    }];
     
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOXES andPayload:nil responseBlock:^(NSData *recieveData) {
-        NSLog(@"boxes values read success");
-        [self.tableView reloadData];
+        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOXES andPayload:nil responseBlock:^(NSData *recieveData) {
+            NSLog(@"boxes values read success");
+            [self.tableView reloadData];
+        }];
+        
     }];
-   
 }
 
 -(void) writeBoxesButtonTapped

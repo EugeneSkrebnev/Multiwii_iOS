@@ -12,7 +12,7 @@
 
 @end
 
-#define FILTER_COUNT 5
+#define FILTER_COUNT 4
 #define MAGICAL_INIT_VALUE 999
 
 @implementation MWFindMultiwiiViewController
