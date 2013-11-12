@@ -110,27 +110,12 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                         <segue destination="XS1-hN-AIa" kind="push" identifier="4" id="E2J-80-hwP"/>
                         <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="eG4-Pe-ZE6"/>
                         <segue destination="mIT-ch-HtJ" kind="push" identifier="3" id="L3S-Rw-mZp"/>
-                        <segue destination="jWZ-1Y-4yK" kind="push" identifier="1" id="kXg-EF-6wo"/>
+                        <segue destination="aqP-eS-ZHm" kind="push" identifier="1" id="GOQ-kO-EI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-iT-1P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="229"/>
-        </scene>
-        <!--Base View Controller-->
-        <scene sceneID="dgf-IU-RIO">
-            <objects>
-                <viewController id="jWZ-1Y-4yK" customClass="MWBaseViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jbb-tS-hkp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ETU-pN-bxr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pes-h8-qLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="-399"/>
         </scene>
         <!--Find Multiwii View Controller-->
         <scene sceneID="rpF-RM-vpg">
@@ -538,6 +523,60 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBP-dK-27y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2235" y="1929"/>
+        </scene>
+        <!--Telemetry Sub Menu View Controller-->
+        <scene sceneID="h8o-DG-0i5">
+            <objects>
+                <viewController id="aqP-eS-ZHm" customClass="MWTelemetrySubMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uGf-Df-z07">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="VFx-0C-e4k">
+                                <rect key="frame" x="2" y="0.0" width="316" height="338"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BH6-Sr-ggx"/>
+                    <connections>
+                        <outlet property="tableViewForMenu" destination="VFx-0C-e4k" id="oDv-xk-s3Z"/>
+                        <segue destination="Poq-n1-XKt" kind="push" identifier="1" id="BX2-ba-T0U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIu-KL-AOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2127" y="-507"/>
+        </scene>
+        <!--Orientation View Controller-->
+        <scene sceneID="8fP-4N-drR">
+            <objects>
+                <viewController id="Poq-n1-XKt" customClass="MWOrientationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6p-zW-0al">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="36G-aC-9pj">
+                                <rect key="frame" x="93" y="189" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uOw-IB-BdB"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="36G-aC-9pj" id="NOI-qt-XQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmK-da-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648" y="-575"/>
         </scene>
     </scenes>
     <resources>

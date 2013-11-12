@@ -30,6 +30,7 @@
         self.bluetoothManager = [[MWBluetoothManager alloc] init];
         self.pidManager = [[MWPidSettingsManager alloc] init];
         self.boxManager = [[MWBoxSettingsManager alloc] init];
+        self.telemetryManager = [MWTelemetryManager sharedInstance];
         [self initDefaultHandlers];
         [MKStoreManager sharedManager];
     }
@@ -138,6 +139,10 @@
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.boxManager saveBoxes];
     } forRequestWith:MWI_BLE_MESSAGE_SET_BOXES];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.telemetryManager.attitude fillValuesFromPayload:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_ATTITUDE];
 }
 
 -(NSString *)copterTypeString
