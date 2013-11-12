@@ -85,9 +85,13 @@
 
 -(void) writeMessageDebug:(NSData*) message
 {
-    return;
+    if (!WRITE_UART_MESSAGES)
+        return;
+    
     NSLog(@"begin message");
     NSLog(@"message with length : %d", message.length);
+    if (message.length == 13)
+        NSLog(@"something wrong");
     for (int i = 0; i < message.length; i++)
     {
         unsigned char *x = (unsigned char*)message.bytes;
@@ -200,7 +204,7 @@
     
     [self writeMessageDebug:messageToSend];
     if (callBackBlock)
-        [_callbacks setObject:callBackBlock forKey:@(identifier)];
+        [_callbacks setObject:[callBackBlock copy] forKey:@(identifier)];
     [[MWBluetoothManager sharedInstance] sendData:messageToSend];
 }
 
@@ -222,7 +226,7 @@
 
 -(void) setDefaultHandler:(MWMultiwiiProtocolManagerRecieveDataBlock) handler forRequestWith:(int) identifier
 {
-    [_defaultHandlers setObject:handler forKey:@(identifier)];
+    [_defaultHandlers setObject:[handler copy] forKey:@(identifier)];
 }
 
 @end

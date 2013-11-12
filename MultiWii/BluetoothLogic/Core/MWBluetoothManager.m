@@ -536,7 +536,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 
 -(void) performSendData
 {
-
+    NSLog(@"BUFFER L = %@", @(_sendBuffer.length));
     if (_sendBuffer.length > 0)
     {
         if (_sendBuffer.length > 20)

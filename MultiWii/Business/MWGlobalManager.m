@@ -26,6 +26,7 @@
         self.pidManager = [MWPidSettingsManager sharedInstance];
         self.protocolManager = [MWMultiwiiProtocolManager sharedInstance];
         self.boxManager = [MWBoxSettingsManager sharedInstance];
+        self.telemetryManager = [MWTelemetryManager sharedInstance];
         [self initDefaultHandlers];
         [MKStoreManager sharedManager];
     }
@@ -134,6 +135,10 @@
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.boxManager saveBoxes];
     } forRequestWith:MWI_BLE_MESSAGE_SET_BOXES];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.telemetryManager.attitude fillValuesFromPayload:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_ATTITUDE];
 }
 -(NSString *)copterTypeString
 {

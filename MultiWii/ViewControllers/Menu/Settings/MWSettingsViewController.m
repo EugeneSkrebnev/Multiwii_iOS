@@ -18,14 +18,7 @@
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" SETTINGS ";
-//    self.saveButton.hidden = !__delegate.isFullVersionUnlocked;
 }
-
-//-(void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    [self.saveButton setHidden:!__delegate.isFullVersionUnlocked animated:YES];
-//}
 
 -(NSArray*) titlesForMenu
 {

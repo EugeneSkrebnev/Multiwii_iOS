@@ -12,7 +12,6 @@
 		4403BCBB17EF7ABC00B5A4E1 /* pitch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB717EF7ABC00B5A4E1 /* pitch@2x.png */; };
 		4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */; };
 		4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */; };
-		44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */; };
 		44068B941802EDC100E8ABCC /* MWRateAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B931802EDC100E8ABCC /* MWRateAdjustCell.m */; };
 		44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44068B951802EDD900E8ABCC /* MWRateAdjustCell.xib */; };
 		44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44068B991802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m */; };
@@ -81,12 +80,7 @@
 		44519D4A179BF655006E4EB7 /* CBUUID+StringValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D46179BF655006E4EB7 /* CBUUID+StringValue.m */; };
 		44519D4B179BF655006E4EB7 /* MWBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D48179BF655006E4EB7 /* MWBluetoothManager.m */; };
 		44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44519D4C179BF749006E4EB7 /* CoreBluetooth.framework */; };
-		44519D51179BFB72006E4EB7 /* MWSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D50179BFB72006E4EB7 /* MWSettingsEntity.m */; };
-		44519D54179BFE9C006E4EB7 /* MWPIDSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D53179BFE9C006E4EB7 /* MWPIDSettingsEntity.m */; };
-		44519D57179BFF27006E4EB7 /* MWFlyPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D56179BFF26006E4EB7 /* MWFlyPidSettings.m */; };
 		44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */; };
-		44519D60179C04F2006E4EB7 /* MWSensorsPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */; };
-		44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */; };
 		44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D6E179D83C5006E4EB7 /* MWDevicePreviewCell.m */; };
 		44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */; };
 		44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */; };
@@ -175,7 +169,6 @@
 		44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */; };
 		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
-		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB99181DC784005E511F /* about_author.html in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB98181DC784005E511F /* about_author.html */; };
@@ -249,6 +242,21 @@
 		44DD955C1832C21800B82B24 /* MWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD954B1832C21800B82B24 /* MWSettingsViewController.m */; };
 		44DD955D1832C21800B82B24 /* MWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD954E1832C21800B82B24 /* MWBaseViewController.m */; };
 		44DD95601832C2BC00B82B24 /* MWMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD955F1832C2BC00B82B24 /* MWMenuViewController.m */; };
+		44DD95631832C4A800B82B24 /* MWTelemetrySubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95621832C4A800B82B24 /* MWTelemetrySubMenuViewController.m */; };
+		44DD95661832C8D400B82B24 /* MWTelemetryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95651832C8D400B82B24 /* MWTelemetryManager.m */; };
+		44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956A1832CABA00B82B24 /* MWBoxAuxSettingEntity.m */; };
+		44DD957A1832CABA00B82B24 /* MWSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */; };
+		44DD957B1832CABA00B82B24 /* MWFlyPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956F1832CABA00B82B24 /* MWFlyPidSettings.m */; };
+		44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95711832CABA00B82B24 /* MWGPSPidSettings.m */; };
+		44DD957D1832CABA00B82B24 /* MWPIDSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95731832CABA00B82B24 /* MWPIDSettingsEntity.m */; };
+		44DD957E1832CABA00B82B24 /* MWSensorsPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95751832CABA00B82B24 /* MWSensorsPidSettings.m */; };
+		44DD957F1832CABA00B82B24 /* MWRatesSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95781832CABA00B82B24 /* MWRatesSettings.m */; };
+		44DD95851832CCDF00B82B24 /* MWTelemetryBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95841832CCDF00B82B24 /* MWTelemetryBaseViewController.m */; };
+		44DD958C1832CF6500B82B24 /* MWOrientationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD958B1832CF6500B82B24 /* MWOrientationViewController.m */; };
+		44DD958F1832D3BF00B82B24 /* MWTelemetryRawImu.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD958E1832D3BF00B82B24 /* MWTelemetryRawImu.m */; };
+		44DD95921832D40600B82B24 /* MWRawImuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95911832D40600B82B24 /* MWRawImuEntity.m */; };
+		44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */; };
+		44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */; };
 		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 		44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA31814133C00417C79 /* NSObject+SBJson.m */; };
 		44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA61814133C00417C79 /* SBJsonParser.m */; };
@@ -274,8 +282,6 @@
 		4403BCB717EF7ABC00B5A4E1 /* pitch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pitch@2x.png"; sourceTree = "<group>"; };
 		4403BCB817EF7ABC00B5A4E1 /* roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roll@2x.png"; sourceTree = "<group>"; };
 		4403BCB917EF7ABC00B5A4E1 /* yaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yaw@2x.png"; sourceTree = "<group>"; };
-		44068B8A1802C1D600E8ABCC /* MWRatesSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesSettings.h; sourceTree = "<group>"; };
-		44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesSettings.m; sourceTree = "<group>"; };
 		44068B921802EDC100E8ABCC /* MWRateAdjustCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRateAdjustCell.h; sourceTree = "<group>"; };
 		44068B931802EDC100E8ABCC /* MWRateAdjustCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRateAdjustCell.m; sourceTree = "<group>"; };
 		44068B951802EDD900E8ABCC /* MWRateAdjustCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWRateAdjustCell.xib; sourceTree = "<group>"; };
@@ -369,18 +375,8 @@
 		44519D48179BF655006E4EB7 /* MWBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManager.m; sourceTree = "<group>"; };
 		44519D49179BF655006E4EB7 /* MWDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDefines.h; sourceTree = "<group>"; };
 		44519D4C179BF749006E4EB7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		44519D4F179BFB72006E4EB7 /* MWSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSettingsEntity.h; sourceTree = "<group>"; };
-		44519D50179BFB72006E4EB7 /* MWSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSettingsEntity.m; sourceTree = "<group>"; };
-		44519D52179BFE9C006E4EB7 /* MWPIDSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPIDSettingsEntity.h; sourceTree = "<group>"; };
-		44519D53179BFE9C006E4EB7 /* MWPIDSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPIDSettingsEntity.m; sourceTree = "<group>"; };
-		44519D55179BFF26006E4EB7 /* MWFlyPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidSettings.h; sourceTree = "<group>"; };
-		44519D56179BFF26006E4EB7 /* MWFlyPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidSettings.m; sourceTree = "<group>"; };
 		44519D5B179C04D0006E4EB7 /* MWPidSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPidSettingsManager.h; sourceTree = "<group>"; };
 		44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPidSettingsManager.m; sourceTree = "<group>"; };
-		44519D5E179C04F2006E4EB7 /* MWSensorsPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSensorsPidSettings.h; sourceTree = "<group>"; };
-		44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidSettings.m; sourceTree = "<group>"; };
-		44519D61179C0509006E4EB7 /* MWGPSPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidSettings.h; sourceTree = "<group>"; };
-		44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidSettings.m; sourceTree = "<group>"; };
 		44519D6D179D83C5006E4EB7 /* MWDevicePreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDevicePreviewCell.h; sourceTree = "<group>"; };
 		44519D6E179D83C5006E4EB7 /* MWDevicePreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWDevicePreviewCell.m; sourceTree = "<group>"; };
 		44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWDevicePreviewCell.xib; sourceTree = "<group>"; };
@@ -485,8 +481,6 @@
 		44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_100@2x.png"; sourceTree = "<group>"; };
 		44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baro@2x.png"; sourceTree = "<group>"; };
 		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
-		44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxAuxSettingEntity.h; sourceTree = "<group>"; };
-		44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
@@ -583,6 +577,36 @@
 		44DD954E1832C21800B82B24 /* MWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseViewController.m; sourceTree = "<group>"; };
 		44DD955E1832C2BC00B82B24 /* MWMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMenuViewController.h; sourceTree = "<group>"; };
 		44DD955F1832C2BC00B82B24 /* MWMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMenuViewController.m; sourceTree = "<group>"; };
+		44DD95611832C4A800B82B24 /* MWTelemetrySubMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetrySubMenuViewController.h; sourceTree = "<group>"; };
+		44DD95621832C4A800B82B24 /* MWTelemetrySubMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetrySubMenuViewController.m; sourceTree = "<group>"; };
+		44DD95641832C8D400B82B24 /* MWTelemetryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryManager.h; sourceTree = "<group>"; };
+		44DD95651832C8D400B82B24 /* MWTelemetryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryManager.m; sourceTree = "<group>"; };
+		44DD95691832CABA00B82B24 /* MWBoxAuxSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxAuxSettingEntity.h; sourceTree = "<group>"; };
+		44DD956A1832CABA00B82B24 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
+		44DD956B1832CABA00B82B24 /* MWSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSettingsEntity.h; sourceTree = "<group>"; };
+		44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSettingsEntity.m; sourceTree = "<group>"; };
+		44DD956E1832CABA00B82B24 /* MWFlyPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidSettings.h; sourceTree = "<group>"; };
+		44DD956F1832CABA00B82B24 /* MWFlyPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidSettings.m; sourceTree = "<group>"; };
+		44DD95701832CABA00B82B24 /* MWGPSPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidSettings.h; sourceTree = "<group>"; };
+		44DD95711832CABA00B82B24 /* MWGPSPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidSettings.m; sourceTree = "<group>"; };
+		44DD95721832CABA00B82B24 /* MWPIDSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPIDSettingsEntity.h; sourceTree = "<group>"; };
+		44DD95731832CABA00B82B24 /* MWPIDSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPIDSettingsEntity.m; sourceTree = "<group>"; };
+		44DD95741832CABA00B82B24 /* MWSensorsPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSensorsPidSettings.h; sourceTree = "<group>"; };
+		44DD95751832CABA00B82B24 /* MWSensorsPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidSettings.m; sourceTree = "<group>"; };
+		44DD95771832CABA00B82B24 /* MWRatesSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRatesSettings.h; sourceTree = "<group>"; };
+		44DD95781832CABA00B82B24 /* MWRatesSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRatesSettings.m; sourceTree = "<group>"; };
+		44DD95831832CCDF00B82B24 /* MWTelemetryBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryBaseViewController.h; sourceTree = "<group>"; };
+		44DD95841832CCDF00B82B24 /* MWTelemetryBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryBaseViewController.m; sourceTree = "<group>"; };
+		44DD958A1832CF6500B82B24 /* MWOrientationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWOrientationViewController.h; sourceTree = "<group>"; };
+		44DD958B1832CF6500B82B24 /* MWOrientationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWOrientationViewController.m; sourceTree = "<group>"; };
+		44DD958D1832D3BF00B82B24 /* MWTelemetryRawImu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryRawImu.h; sourceTree = "<group>"; };
+		44DD958E1832D3BF00B82B24 /* MWTelemetryRawImu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryRawImu.m; sourceTree = "<group>"; };
+		44DD95901832D40600B82B24 /* MWRawImuEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRawImuEntity.h; sourceTree = "<group>"; };
+		44DD95911832D40600B82B24 /* MWRawImuEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRawImuEntity.m; sourceTree = "<group>"; };
+		44DD95931832D8B300B82B24 /* MWTelemetryAttitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryAttitude.h; sourceTree = "<group>"; };
+		44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAttitude.m; sourceTree = "<group>"; };
+		44DD95961832DA0300B82B24 /* MWTelemetryAltitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryAltitude.h; sourceTree = "<group>"; };
+		44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAltitude.m; sourceTree = "<group>"; };
 		44FC0B9C1814083600417C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44FC0BA21814133C00417C79 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		44FC0BA31814133C00417C79 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -907,27 +931,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		44519D4E179BFAB8006E4EB7 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				44519D4F179BFB72006E4EB7 /* MWSettingsEntity.h */,
-				44519D50179BFB72006E4EB7 /* MWSettingsEntity.m */,
-				44519D52179BFE9C006E4EB7 /* MWPIDSettingsEntity.h */,
-				44519D53179BFE9C006E4EB7 /* MWPIDSettingsEntity.m */,
-				44519D55179BFF26006E4EB7 /* MWFlyPidSettings.h */,
-				44519D56179BFF26006E4EB7 /* MWFlyPidSettings.m */,
-				44519D5E179C04F2006E4EB7 /* MWSensorsPidSettings.h */,
-				44519D5F179C04F2006E4EB7 /* MWSensorsPidSettings.m */,
-				44519D61179C0509006E4EB7 /* MWGPSPidSettings.h */,
-				44519D62179C0509006E4EB7 /* MWGPSPidSettings.m */,
-				44AE5A9D17FF573D00AAAC30 /* MWBoxAuxSettingEntity.h */,
-				44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */,
-				44068B8A1802C1D600E8ABCC /* MWRatesSettings.h */,
-				44068B8B1802C1D600E8ABCC /* MWRatesSettings.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		44519D6C179D7FB7006E4EB7 /* DevicePreviewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1246,7 +1249,9 @@
 				44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */,
 				44519D5B179C04D0006E4EB7 /* MWPidSettingsManager.h */,
 				44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */,
-				44519D4E179BFAB8006E4EB7 /* Entities */,
+				44DD95641832C8D400B82B24 /* MWTelemetryManager.h */,
+				44DD95651832C8D400B82B24 /* MWTelemetryManager.m */,
+				44DD95671832CABA00B82B24 /* Entities */,
 				44519D44179BF655006E4EB7 /* Core */,
 			);
 			path = BluetoothLogic;
@@ -1503,6 +1508,7 @@
 		44DD95201832C21800B82B24 /* Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				44DD95811832CCBF00B82B24 /* Telemetry */,
 				44DD95211832C21800B82B24 /* About */,
 				44DD95241832C21800B82B24 /* AUX */,
 				44DD95271832C21800B82B24 /* BuyFullVersion */,
@@ -1650,8 +1656,90 @@
 		44DD954C1832C21800B82B24 /* Telemetry */ = {
 			isa = PBXGroup;
 			children = (
+				44DD95611832C4A800B82B24 /* MWTelemetrySubMenuViewController.h */,
+				44DD95621832C4A800B82B24 /* MWTelemetrySubMenuViewController.m */,
 			);
 			path = Telemetry;
+			sourceTree = "<group>";
+		};
+		44DD95671832CABA00B82B24 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				44DD956B1832CABA00B82B24 /* MWSettingsEntity.h */,
+				44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */,
+				44DD95801832CBE700B82B24 /* Telemetry */,
+				44DD95681832CABA00B82B24 /* AUX */,
+				44DD956D1832CABA00B82B24 /* PID */,
+				44DD95761832CABA00B82B24 /* Rates */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		44DD95681832CABA00B82B24 /* AUX */ = {
+			isa = PBXGroup;
+			children = (
+				44DD95691832CABA00B82B24 /* MWBoxAuxSettingEntity.h */,
+				44DD956A1832CABA00B82B24 /* MWBoxAuxSettingEntity.m */,
+			);
+			path = AUX;
+			sourceTree = "<group>";
+		};
+		44DD956D1832CABA00B82B24 /* PID */ = {
+			isa = PBXGroup;
+			children = (
+				44DD956E1832CABA00B82B24 /* MWFlyPidSettings.h */,
+				44DD956F1832CABA00B82B24 /* MWFlyPidSettings.m */,
+				44DD95701832CABA00B82B24 /* MWGPSPidSettings.h */,
+				44DD95711832CABA00B82B24 /* MWGPSPidSettings.m */,
+				44DD95721832CABA00B82B24 /* MWPIDSettingsEntity.h */,
+				44DD95731832CABA00B82B24 /* MWPIDSettingsEntity.m */,
+				44DD95741832CABA00B82B24 /* MWSensorsPidSettings.h */,
+				44DD95751832CABA00B82B24 /* MWSensorsPidSettings.m */,
+			);
+			path = PID;
+			sourceTree = "<group>";
+		};
+		44DD95761832CABA00B82B24 /* Rates */ = {
+			isa = PBXGroup;
+			children = (
+				44DD95771832CABA00B82B24 /* MWRatesSettings.h */,
+				44DD95781832CABA00B82B24 /* MWRatesSettings.m */,
+			);
+			path = Rates;
+			sourceTree = "<group>";
+		};
+		44DD95801832CBE700B82B24 /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				44DD958D1832D3BF00B82B24 /* MWTelemetryRawImu.h */,
+				44DD958E1832D3BF00B82B24 /* MWTelemetryRawImu.m */,
+				44DD95901832D40600B82B24 /* MWRawImuEntity.h */,
+				44DD95911832D40600B82B24 /* MWRawImuEntity.m */,
+				44DD95931832D8B300B82B24 /* MWTelemetryAttitude.h */,
+				44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */,
+				44DD95961832DA0300B82B24 /* MWTelemetryAltitude.h */,
+				44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */,
+			);
+			path = Telemetry;
+			sourceTree = "<group>";
+		};
+		44DD95811832CCBF00B82B24 /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				44DD95831832CCDF00B82B24 /* MWTelemetryBaseViewController.h */,
+				44DD95841832CCDF00B82B24 /* MWTelemetryBaseViewController.m */,
+				44DD95891832CF6500B82B24 /* Orientation */,
+			);
+			path = Telemetry;
+			sourceTree = "<group>";
+		};
+		44DD95891832CF6500B82B24 /* Orientation */ = {
+			isa = PBXGroup;
+			children = (
+				44DD958A1832CF6500B82B24 /* MWOrientationViewController.h */,
+				44DD958B1832CF6500B82B24 /* MWOrientationViewController.m */,
+			);
+			path = Orientation;
 			sourceTree = "<group>";
 		};
 		44FC0BA01814133C00417C79 /* SBJson */ = {
@@ -1944,6 +2032,7 @@
 				44453CAC17518F6900929EC8 /* main.m in Sources */,
 				44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */,
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
+				44DD958F1832D3BF00B82B24 /* MWTelemetryRawImu.m in Sources */,
 				44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */,
 				44C7CA4B1789CCEC0059C199 /* MWSplashView.m in Sources */,
 				442226621814059100D53DE3 /* MKStoreManager.m in Sources */,
@@ -1953,8 +2042,12 @@
 				44DD95601832C2BC00B82B24 /* MWMenuViewController.m in Sources */,
 				4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */,
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
+				44DD957A1832CABA00B82B24 /* MWSettingsEntity.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
+				44DD957F1832CABA00B82B24 /* MWRatesSettings.m in Sources */,
 				44DD95591832C21800B82B24 /* MWAboutViewController.m in Sources */,
+				44DD957D1832CABA00B82B24 /* MWPIDSettingsEntity.m in Sources */,
+				44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */,
 				44DD95541832C21800B82B24 /* MWFlyPidViewController.m in Sources */,
 				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
 				4422265D1814059100D53DE3 /* NSData+MKBase64.m in Sources */,
@@ -1966,11 +2059,15 @@
 				44FC0BC31814133C00417C79 /* SBJsonStreamWriterState.m in Sources */,
 				44A6BDBD178D9EC900DC95C6 /* MWMenuSubtitleCell.m in Sources */,
 				44A6BDEA178E06F800DC95C6 /* MWAUXCheckBoxCell.m in Sources */,
+				44DD95631832C4A800B82B24 /* MWTelemetrySubMenuViewController.m in Sources */,
 				448ABAA118168D260056DD4A /* MWRadarActivityIndicator.m in Sources */,
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
 				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
+				44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */,
 				44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */,
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
+				44DD958C1832CF6500B82B24 /* MWOrientationViewController.m in Sources */,
+				44DD95851832CCDF00B82B24 /* MWTelemetryBaseViewController.m in Sources */,
 				44FC0BC01814133C00417C79 /* SBJsonStreamParserState.m in Sources */,
 				44A6BE08178EDC0C00DC95C6 /* MWBaseButton.m in Sources */,
 				44068BA4180302B400E8ABCC /* MWSliderView.m in Sources */,
@@ -1978,7 +2075,6 @@
 				44A6BE0B178EDC4000DC95C6 /* MWIconBaseButton.m in Sources */,
 				44DD955A1832C21800B82B24 /* MWMainViewController.m in Sources */,
 				44DD95511832C21800B82B24 /* MWBuyFullVersionViewController.m in Sources */,
-				44068B8C1802C1D600E8ABCC /* MWRatesSettings.m in Sources */,
 				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */,
@@ -1991,32 +2087,32 @@
 				44DD955D1832C21800B82B24 /* MWBaseViewController.m in Sources */,
 				44068B941802EDC100E8ABCC /* MWRateAdjustCell.m in Sources */,
 				44DD954F1832C21800B82B24 /* MWAboutDetailViewController.m in Sources */,
-				44519D51179BFB72006E4EB7 /* MWSettingsEntity.m in Sources */,
-				44519D54179BFE9C006E4EB7 /* MWPIDSettingsEntity.m in Sources */,
-				44519D57179BFF27006E4EB7 /* MWFlyPidSettings.m in Sources */,
 				44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */,
 				44DD95571832C21800B82B24 /* MWSensorsPidViewController.m in Sources */,
 				442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */,
-				44519D60179C04F2006E4EB7 /* MWSensorsPidSettings.m in Sources */,
-				44519D63179C050A006E4EB7 /* MWGPSPidSettings.m in Sources */,
+				44DD957E1832CABA00B82B24 /* MWSensorsPidSettings.m in Sources */,
 				44DD95531832C21800B82B24 /* MWFindMultiwiiViewController.m in Sources */,
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
 				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
+				44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */,
 				447BD3141822F23600E27FA7 /* MWSignalIndicatorView.m in Sources */,
 				442226691814059100D53DE3 /* VerificationController.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
-				44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
+				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,
 				442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */,
 				44068BC318040AF700E8ABCC /* MWGraphicView.m in Sources */,
 				4423F226181C8757008B0260 /* iRate.m in Sources */,
 				44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */,
+				44DD957B1832CABA00B82B24 /* MWFlyPidSettings.m in Sources */,
+				44DD95661832C8D400B82B24 /* MWTelemetryManager.m in Sources */,
 				44FC0BC21814133C00417C79 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				44FC0BBF1814133C00417C79 /* SBJsonStreamParserAdapter.m in Sources */,
+				44DD95921832D40600B82B24 /* MWRawImuEntity.m in Sources */,
 				44DD95521832C21800B82B24 /* MWConnectViewController.m in Sources */,
 				44DD95551832C21800B82B24 /* MWGPSPidViewController.m in Sources */,
 				44FC0BC61814133C00417C79 /* SBJsonWriter.m in Sources */,
@@ -2098,13 +2194,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FE176940-8A93-4F45-9BD5-F71139A37722";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2112,14 +2209,15 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: YAUHEN SKRABNIOU (6A55FY4Q8A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "14FA7BA5-DDF8-4691-B66A-14F96E0D605A";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

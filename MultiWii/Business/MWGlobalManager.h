@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MWPidSettingsManager.h"
 #import "MWBoxSettingsManager.h"
-
+#import "MWTelemetryManager.h"
 typedef enum {
     MWGlobalManagerQuadTypeX,
     MWGlobalManagerQuadTypeTricopter,
@@ -37,6 +37,7 @@ typedef enum {
 @property (nonatomic, strong) MWMultiwiiProtocolManager* protocolManager;
 @property (nonatomic, strong) MWPidSettingsManager* pidManager;
 @property (nonatomic, strong) MWBoxSettingsManager* boxManager;
+@property (nonatomic, strong) MWTelemetryManager* telemetryManager;
 @property (nonatomic, strong) MWBluetoothManager* bluetoothManager;
 
 @property (nonatomic, readonly) MWGlobalManagerQuadType copterType;
