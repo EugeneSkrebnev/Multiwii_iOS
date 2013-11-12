@@ -1637,7 +1637,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 5U67EGLCUP;
+						DevelopmentTeam = 6A55FY4Q8A;
 					};
 				};
 			};
@@ -1981,7 +1981,7 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Pupkin (H36A84TWVC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -2003,7 +2003,7 @@
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52C65E68-45F8-4949-B748-974A1B2B6A69";
+				PROVISIONING_PROFILE = "14FA7BA5-DDF8-4691-B66A-14F96E0D605A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
