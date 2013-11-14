@@ -7,8 +7,9 @@
 //
 
 #import "MWTelemetryBaseViewController.h"
-
+#import "MW3dModelView.h"
 @interface MWOrientationViewController : MWTelemetryBaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet MW3dModelView *model3dView;
 
 @end

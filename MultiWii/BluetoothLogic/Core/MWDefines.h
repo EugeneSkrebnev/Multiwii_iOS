@@ -21,9 +21,12 @@ return _sharedObject; \
 
 #define SPASH_ENABLED_ON NO
 //#define SPASH_ENABLED_ON YES
-#define WRITE_UART_MESSAGES YES
+//#define WRITE_UART_MESSAGES YES
+#define WRITE_UART_MESSAGES NO
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+
 
 static NSString *const kDidDisconnectWithErrorNotification = @"__didDisconnectWithErrorNotification__";

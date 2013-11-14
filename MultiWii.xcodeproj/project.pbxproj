@@ -37,6 +37,7 @@
 		4409DDDD1821037900B11C9C /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4409DDD61821037900B11C9C /* icon_57.png */; };
 		4409DDDE1821037900B11C9C /* icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4409DDD71821037900B11C9C /* icon_58.png */; };
 		4409DDE01821049400B11C9C /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 4409DDDF1821049400B11C9C /* icon_80.png */; };
+		441AB0A31834361500730439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441AB0A21834361500730439 /* CoreMotion.framework */; };
 		44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222593180D45BD00D53DE3 /* slider_maximum@2x.png */; };
 		44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222594180D45BD00D53DE3 /* slider_minimum@2x.png */; };
 		44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222595180D45BD00D53DE3 /* slider_tab@2x.png */; };
@@ -63,6 +64,9 @@
 		4423F225181C8757008B0260 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4423F200181C8757008B0260 /* iRate.bundle */; };
 		4423F226181C8757008B0260 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423F202181C8757008B0260 /* iRate.m */; };
 		4423F227181C8757008B0260 /* iRate.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4423F203181C8757008B0260 /* iRate.podspec */; };
+		4430D68118340A4E00F4D22E /* quadr.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4430D67E18340A4E00F4D22E /* quadr.dae */; };
+		4430D68218340A4E00F4D22E /* quadr.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4430D67F18340A4E00F4D22E /* quadr.mtl */; };
+		4430D68318340A4E00F4D22E /* quadr.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4430D68018340A4E00F4D22E /* quadr.obj */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -257,6 +261,9 @@
 		44DD95921832D40600B82B24 /* MWRawImuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95911832D40600B82B24 /* MWRawImuEntity.m */; };
 		44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */; };
 		44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */; };
+		44DD959A183378B300B82B24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DD9599183378B300B82B24 /* OpenGLES.framework */; };
+		44DD959C183378E300B82B24 /* NinevehGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DD959B183378E300B82B24 /* NinevehGL.framework */; };
+		44DD95A018337A8200B82B24 /* MW3dModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD959F18337A8200B82B24 /* MW3dModelView.m */; };
 		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 		44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA31814133C00417C79 /* NSObject+SBJson.m */; };
 		44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA61814133C00417C79 /* SBJsonParser.m */; };
@@ -312,6 +319,7 @@
 		4409DDD61821037900B11C9C /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57.png; sourceTree = "<group>"; };
 		4409DDD71821037900B11C9C /* icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58.png; sourceTree = "<group>"; };
 		4409DDDF1821049400B11C9C /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
+		441AB0A21834361500730439 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		44222593180D45BD00D53DE3 /* slider_maximum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum@2x.png"; sourceTree = "<group>"; };
 		44222594180D45BD00D53DE3 /* slider_minimum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum@2x.png"; sourceTree = "<group>"; };
 		44222595180D45BD00D53DE3 /* slider_tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab@2x.png"; sourceTree = "<group>"; };
@@ -351,6 +359,9 @@
 		4423F204181C8757008B0260 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.md; sourceTree = "<group>"; };
 		4423F205181C8757008B0260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4423F206181C8757008B0260 /* RELEASE NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RELEASE NOTES.md"; sourceTree = "<group>"; };
+		4430D67E18340A4E00F4D22E /* quadr.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = quadr.dae; sourceTree = "<group>"; };
+		4430D67F18340A4E00F4D22E /* quadr.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.mtl; sourceTree = "<group>"; };
+		4430D68018340A4E00F4D22E /* quadr.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.obj; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -607,6 +618,10 @@
 		44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAttitude.m; sourceTree = "<group>"; };
 		44DD95961832DA0300B82B24 /* MWTelemetryAltitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryAltitude.h; sourceTree = "<group>"; };
 		44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAltitude.m; sourceTree = "<group>"; };
+		44DD9599183378B300B82B24 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		44DD959B183378E300B82B24 /* NinevehGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NinevehGL.framework; path = "../../../../../../../../../Library/Developer/Xcode/Templates/Project Templates/NinevehGL/NinevehGL Base.xctemplate/Frameworks/NinevehGL.framework"; sourceTree = "<group>"; };
+		44DD959E18337A8200B82B24 /* MW3dModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MW3dModelView.h; sourceTree = "<group>"; };
+		44DD959F18337A8200B82B24 /* MW3dModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MW3dModelView.m; sourceTree = "<group>"; };
 		44FC0B9C1814083600417C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44FC0BA21814133C00417C79 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		44FC0BA31814133C00417C79 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -645,6 +660,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441AB0A31834361500730439 /* CoreMotion.framework in Frameworks */,
+				44DD959C183378E300B82B24 /* NinevehGL.framework in Frameworks */,
+				44DD959A183378B300B82B24 /* OpenGLES.framework in Frameworks */,
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
 				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
@@ -848,6 +866,16 @@
 			path = iRate;
 			sourceTree = "<group>";
 		};
+		4430D67D18340A4E00F4D22E /* quadrocopter */ = {
+			isa = PBXGroup;
+			children = (
+				4430D67E18340A4E00F4D22E /* quadr.dae */,
+				4430D67F18340A4E00F4D22E /* quadr.mtl */,
+				4430D68018340A4E00F4D22E /* quadr.obj */,
+			);
+			path = quadrocopter;
+			sourceTree = "<group>";
+		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -868,6 +896,9 @@
 		44453C9E17518F6900929EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				441AB0A21834361500730439 /* CoreMotion.framework */,
+				44DD959B183378E300B82B24 /* NinevehGL.framework */,
+				44DD9599183378B300B82B24 /* OpenGLES.framework */,
 				448ABAA21816A0AB0056DD4A /* QuartzCore.framework */,
 				44FC0BCB1814842700417C79 /* MessageUI.framework */,
 				44FC0B9C1814083600417C79 /* StoreKit.framework */,
@@ -1225,6 +1256,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44DD959D18337A4500B82B24 /* 3dModelView */,
 				447BD3111822F1F600E27FA7 /* SignalIndicatorView */,
 				448ABA9E18168D090056DD4A /* RadarActivityIndicator */,
 				44C7CA98178A1C250059C199 /* Cells */,
@@ -1463,6 +1495,7 @@
 		44DD94F71832BD4800B82B24 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
+				4430D67D18340A4E00F4D22E /* quadrocopter */,
 				44DD94F81832BD4800B82B24 /* enterprise */,
 			);
 			path = 3DModels;
@@ -1742,6 +1775,15 @@
 			path = Orientation;
 			sourceTree = "<group>";
 		};
+		44DD959D18337A4500B82B24 /* 3dModelView */ = {
+			isa = PBXGroup;
+			children = (
+				44DD959E18337A8200B82B24 /* MW3dModelView.h */,
+				44DD959F18337A8200B82B24 /* MW3dModelView.m */,
+			);
+			path = 3dModelView;
+			sourceTree = "<group>";
+		};
 		44FC0BA01814133C00417C79 /* SBJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -1822,7 +1864,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 6A55FY4Q8A;
+						DevelopmentTeam = 5U67EGLCUP;
 					};
 				};
 			};
@@ -1899,6 +1941,7 @@
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
 				44068BB7180409EB00E8ABCC /* separator_normal_normal@2x.png in Resources */,
 				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
+				4430D68118340A4E00F4D22E /* quadr.dae in Resources */,
 				448ABAB7181839CC0056DD4A /* save@2x.png in Resources */,
 				44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */,
 				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
@@ -1977,6 +2020,7 @@
 				44B9AB99181DC784005E511F /* about_author.html in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
+				4430D68218340A4E00F4D22E /* quadr.mtl in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
 				44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */,
 				44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */,
@@ -1995,6 +2039,7 @@
 				44519D34179B4ACD006E4EB7 /* aux_pressed@2x.png in Resources */,
 				44519D36179B4B7F006E4EB7 /* MWPidAdjustCell.xib in Resources */,
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
+				4430D68318340A4E00F4D22E /* quadr.obj in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
 				44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
@@ -2076,6 +2121,7 @@
 				44DD955A1832C21800B82B24 /* MWMainViewController.m in Sources */,
 				44DD95511832C21800B82B24 /* MWBuyFullVersionViewController.m in Sources */,
 				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
+				44DD95A018337A8200B82B24 /* MW3dModelView.m in Sources */,
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */,
 				44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */,
@@ -2193,13 +2239,17 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Pupkin (H36A84TWVC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_DEVELOPER_DIR)/Xcode/Templates/Project\\ Templates/NinevehGL/NinevehGL\\ Base.xctemplate/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -2209,13 +2259,17 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Pupkin (H36A84TWVC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_DEVELOPER_DIR)/Xcode/Templates/Project\\ Templates/NinevehGL/NinevehGL\\ Base.xctemplate/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

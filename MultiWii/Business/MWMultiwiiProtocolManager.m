@@ -90,8 +90,8 @@
     
     NSLog(@"begin message");
     NSLog(@"message with length : %d", message.length);
-    if (message.length == 13)
-        NSLog(@"something wrong");
+//    if (message.length == 13)
+//        NSLog(@"something wrong");
     for (int i = 0; i < message.length; i++)
     {
         unsigned char *x = (unsigned char*)message.bytes;
