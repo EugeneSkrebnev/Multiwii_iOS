@@ -19,6 +19,7 @@
 {
     int _savedSelectedSegmentIndex;
 }
+
 -(void) customizeSegmentControl
 {
     self.segmentControlForAuxChannel.height = 45;
