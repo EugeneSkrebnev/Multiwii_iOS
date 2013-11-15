@@ -15,11 +15,13 @@
 {
     int _paidAmount;
 }
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
     [MWGlobalManager sharedInstance]; //init all systems
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
+    [iRate sharedInstance].appStoreID = 735311586;
     [iRate sharedInstance].daysUntilPrompt = 10;
     [iRate sharedInstance].usesUntilPrompt = 12;
     
