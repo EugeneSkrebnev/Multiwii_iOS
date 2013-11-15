@@ -188,9 +188,9 @@
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
 		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
-		44B161621836BE9100FEA6FF /* libBuddySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B1615F1836BE9100FEA6FF /* libBuddySDK.a */; };
-		44B161631836BE9100FEA6FF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 44B161601836BE9100FEA6FF /* LICENSE.md */; };
-		44B161641836BE9100FEA6FF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 44B161611836BE9100FEA6FF /* README.md */; };
+		44B162011836CC4E00FEA6FF /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */; };
+		44B162871836CC4E00FEA6FF /* libFlurryAds_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */; };
+		44B162921836CC4E00FEA6FF /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB92181D32E3005E511F /* MWFindMultiwiiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */; };
 		44B9AB95181DBAD1005E511F /* MWAboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB94181DBAD1005E511F /* MWAboutDetailViewController.m */; };
@@ -495,64 +495,12 @@
 		44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
-		44B161281836BE9100FEA6FF /* BuddyAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyAll.h; sourceTree = "<group>"; };
-		44B161291836BE9100FEA6FF /* BuddyApplicationStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyApplicationStatistics.h; sourceTree = "<group>"; };
-		44B1612A1836BE9100FEA6FF /* BuddyAppMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyAppMetadata.h; sourceTree = "<group>"; };
-		44B1612B1836BE9100FEA6FF /* BuddyAuthenticatedUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyAuthenticatedUser.h; sourceTree = "<group>"; };
-		44B1612C1836BE9100FEA6FF /* BuddyBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyBlob.h; sourceTree = "<group>"; };
-		44B1612D1836BE9100FEA6FF /* BuddyBlobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyBlobs.h; sourceTree = "<group>"; };
-		44B1612E1836BE9100FEA6FF /* BuddyBoolResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyBoolResponse.h; sourceTree = "<group>"; };
-		44B1612F1836BE9100FEA6FF /* BuddyCallbackParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyCallbackParams.h; sourceTree = "<group>"; };
-		44B161301836BE9100FEA6FF /* BuddyCheckInLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyCheckInLocation.h; sourceTree = "<group>"; };
-		44B161311836BE9100FEA6FF /* BuddyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyClient.h; sourceTree = "<group>"; };
-		44B161321836BE9100FEA6FF /* BuddyCommerce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyCommerce.h; sourceTree = "<group>"; };
-		44B161331836BE9100FEA6FF /* BuddyDataResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyDataResponses.h; sourceTree = "<group>"; };
-		44B161341836BE9100FEA6FF /* BuddyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyDevice.h; sourceTree = "<group>"; };
-		44B161351836BE9100FEA6FF /* BuddyEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyEnums.h; sourceTree = "<group>"; };
-		44B161361836BE9100FEA6FF /* BuddyFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyFile.h; sourceTree = "<group>"; };
-		44B161371836BE9100FEA6FF /* BuddyFriendRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyFriendRequests.h; sourceTree = "<group>"; };
-		44B161381836BE9100FEA6FF /* BuddyFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyFriends.h; sourceTree = "<group>"; };
-		44B161391836BE9100FEA6FF /* BuddyGameBoards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGameBoards.h; sourceTree = "<group>"; };
-		44B1613A1836BE9100FEA6FF /* BuddyGamePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGamePlayer.h; sourceTree = "<group>"; };
-		44B1613B1836BE9100FEA6FF /* BuddyGamePlayers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGamePlayers.h; sourceTree = "<group>"; };
-		44B1613C1836BE9100FEA6FF /* BuddyGameScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGameScore.h; sourceTree = "<group>"; };
-		44B1613D1836BE9100FEA6FF /* BuddyGameScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGameScores.h; sourceTree = "<group>"; };
-		44B1613E1836BE9100FEA6FF /* BuddyGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGameState.h; sourceTree = "<group>"; };
-		44B1613F1836BE9100FEA6FF /* BuddyGameStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGameStates.h; sourceTree = "<group>"; };
-		44B161401836BE9100FEA6FF /* BuddyGroupMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyGroupMessage.h; sourceTree = "<group>"; };
-		44B161411836BE9100FEA6FF /* BuddyIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyIdentity.h; sourceTree = "<group>"; };
-		44B161421836BE9100FEA6FF /* BuddyIdentityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyIdentityItem.h; sourceTree = "<group>"; };
-		44B161431836BE9100FEA6FF /* BuddyIdentityItemSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyIdentityItemSearchResult.h; sourceTree = "<group>"; };
-		44B161441836BE9100FEA6FF /* BuddyMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMessage.h; sourceTree = "<group>"; };
-		44B161451836BE9100FEA6FF /* BuddyMessageGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMessageGroup.h; sourceTree = "<group>"; };
-		44B161461836BE9100FEA6FF /* BuddyMessageGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMessageGroups.h; sourceTree = "<group>"; };
-		44B161471836BE9100FEA6FF /* BuddyMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMessages.h; sourceTree = "<group>"; };
-		44B161481836BE9100FEA6FF /* BuddyMetadataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMetadataItem.h; sourceTree = "<group>"; };
-		44B161491836BE9100FEA6FF /* BuddyMetadataSum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMetadataSum.h; sourceTree = "<group>"; };
-		44B1614A1836BE9100FEA6FF /* BuddyMetroArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyMetroArea.h; sourceTree = "<group>"; };
-		44B1614B1836BE9100FEA6FF /* BuddyNotificationsApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyNotificationsApple.h; sourceTree = "<group>"; };
-		44B1614C1836BE9100FEA6FF /* BuddyPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPhotoAlbum.h; sourceTree = "<group>"; };
-		44B1614D1836BE9100FEA6FF /* BuddyPhotoAlbumPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPhotoAlbumPublic.h; sourceTree = "<group>"; };
-		44B1614E1836BE9100FEA6FF /* BuddyPhotoAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPhotoAlbums.h; sourceTree = "<group>"; };
-		44B1614F1836BE9100FEA6FF /* BuddyPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPicture.h; sourceTree = "<group>"; };
-		44B161501836BE9100FEA6FF /* BuddyPicturePublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPicturePublic.h; sourceTree = "<group>"; };
-		44B161511836BE9100FEA6FF /* BuddyPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPlace.h; sourceTree = "<group>"; };
-		44B161521836BE9100FEA6FF /* BuddyPlaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyPlaces.h; sourceTree = "<group>"; };
-		44B161531836BE9100FEA6FF /* BuddyReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyReceipt.h; sourceTree = "<group>"; };
-		44B161541836BE9100FEA6FF /* BuddyRegisteredDeviceApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyRegisteredDeviceApple.h; sourceTree = "<group>"; };
-		44B161551836BE9100FEA6FF /* BuddySounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddySounds.h; sourceTree = "<group>"; };
-		44B161561836BE9100FEA6FF /* BuddyStartup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyStartup.h; sourceTree = "<group>"; };
-		44B161571836BE9100FEA6FF /* BuddyStartups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyStartups.h; sourceTree = "<group>"; };
-		44B161581836BE9100FEA6FF /* BuddyStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyStoreItem.h; sourceTree = "<group>"; };
-		44B161591836BE9100FEA6FF /* BuddyUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyUser.h; sourceTree = "<group>"; };
-		44B1615A1836BE9100FEA6FF /* BuddyUserMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyUserMetadata.h; sourceTree = "<group>"; };
-		44B1615B1836BE9100FEA6FF /* BuddyVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyVideo.h; sourceTree = "<group>"; };
-		44B1615C1836BE9100FEA6FF /* BuddyVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyVideos.h; sourceTree = "<group>"; };
-		44B1615D1836BE9100FEA6FF /* BuddyVirtualAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyVirtualAlbum.h; sourceTree = "<group>"; };
-		44B1615E1836BE9100FEA6FF /* BuddyVirtualAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyVirtualAlbums.h; sourceTree = "<group>"; };
-		44B1615F1836BE9100FEA6FF /* libBuddySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBuddySDK.a; sourceTree = "<group>"; };
-		44B161601836BE9100FEA6FF /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
-		44B161611836BE9100FEA6FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		44B161681836CC4E00FEA6FF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
+		44B161F21836CC4E00FEA6FF /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
+		44B161F31836CC4E00FEA6FF /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
+		44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.3.0.a; sourceTree = "<group>"; };
+		44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44B9AB90181D32E3005E511F /* MWFindMultiwiiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFindMultiwiiViewController.h; sourceTree = "<group>"; };
@@ -646,10 +594,11 @@
 			files = (
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
+				44B162011836CC4E00FEA6FF /* libFlurry_4.3.0.a in Frameworks */,
 				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
 				4422268D181407CB00D53DE3 /* Security.framework in Frameworks */,
 				44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */,
-				44B161621836BE9100FEA6FF /* libBuddySDK.a in Frameworks */,
+				44B162871836CC4E00FEA6FF /* libFlurryAds_4.3.0.a in Frameworks */,
 				44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */,
 				44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */,
 				44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */,
@@ -1338,77 +1287,41 @@
 			path = Sensors;
 			sourceTree = "<group>";
 		};
-		44B161261836BE9100FEA6FF /* Buddy_iOS_SDK */ = {
+		44B161651836CC4E00FEA6FF /* Flurry iPhone SDK viPhone 4.3.0 */ = {
 			isa = PBXGroup;
 			children = (
-				44B161271836BE9100FEA6FF /* Headers */,
-				44B1615F1836BE9100FEA6FF /* libBuddySDK.a */,
-				44B161601836BE9100FEA6FF /* LICENSE.md */,
-				44B161611836BE9100FEA6FF /* README.md */,
+				44B161661836CC4E00FEA6FF /* Flurry-iOS-4.3.0 */,
+				44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */,
 			);
-			path = Buddy_iOS_SDK;
+			path = "Flurry iPhone SDK viPhone 4.3.0";
 			sourceTree = "<group>";
 		};
-		44B161271836BE9100FEA6FF /* Headers */ = {
+		44B161661836CC4E00FEA6FF /* Flurry-iOS-4.3.0 */ = {
 			isa = PBXGroup;
 			children = (
-				44B161281836BE9100FEA6FF /* BuddyAll.h */,
-				44B161291836BE9100FEA6FF /* BuddyApplicationStatistics.h */,
-				44B1612A1836BE9100FEA6FF /* BuddyAppMetadata.h */,
-				44B1612B1836BE9100FEA6FF /* BuddyAuthenticatedUser.h */,
-				44B1612C1836BE9100FEA6FF /* BuddyBlob.h */,
-				44B1612D1836BE9100FEA6FF /* BuddyBlobs.h */,
-				44B1612E1836BE9100FEA6FF /* BuddyBoolResponse.h */,
-				44B1612F1836BE9100FEA6FF /* BuddyCallbackParams.h */,
-				44B161301836BE9100FEA6FF /* BuddyCheckInLocation.h */,
-				44B161311836BE9100FEA6FF /* BuddyClient.h */,
-				44B161321836BE9100FEA6FF /* BuddyCommerce.h */,
-				44B161331836BE9100FEA6FF /* BuddyDataResponses.h */,
-				44B161341836BE9100FEA6FF /* BuddyDevice.h */,
-				44B161351836BE9100FEA6FF /* BuddyEnums.h */,
-				44B161361836BE9100FEA6FF /* BuddyFile.h */,
-				44B161371836BE9100FEA6FF /* BuddyFriendRequests.h */,
-				44B161381836BE9100FEA6FF /* BuddyFriends.h */,
-				44B161391836BE9100FEA6FF /* BuddyGameBoards.h */,
-				44B1613A1836BE9100FEA6FF /* BuddyGamePlayer.h */,
-				44B1613B1836BE9100FEA6FF /* BuddyGamePlayers.h */,
-				44B1613C1836BE9100FEA6FF /* BuddyGameScore.h */,
-				44B1613D1836BE9100FEA6FF /* BuddyGameScores.h */,
-				44B1613E1836BE9100FEA6FF /* BuddyGameState.h */,
-				44B1613F1836BE9100FEA6FF /* BuddyGameStates.h */,
-				44B161401836BE9100FEA6FF /* BuddyGroupMessage.h */,
-				44B161411836BE9100FEA6FF /* BuddyIdentity.h */,
-				44B161421836BE9100FEA6FF /* BuddyIdentityItem.h */,
-				44B161431836BE9100FEA6FF /* BuddyIdentityItemSearchResult.h */,
-				44B161441836BE9100FEA6FF /* BuddyMessage.h */,
-				44B161451836BE9100FEA6FF /* BuddyMessageGroup.h */,
-				44B161461836BE9100FEA6FF /* BuddyMessageGroups.h */,
-				44B161471836BE9100FEA6FF /* BuddyMessages.h */,
-				44B161481836BE9100FEA6FF /* BuddyMetadataItem.h */,
-				44B161491836BE9100FEA6FF /* BuddyMetadataSum.h */,
-				44B1614A1836BE9100FEA6FF /* BuddyMetroArea.h */,
-				44B1614B1836BE9100FEA6FF /* BuddyNotificationsApple.h */,
-				44B1614C1836BE9100FEA6FF /* BuddyPhotoAlbum.h */,
-				44B1614D1836BE9100FEA6FF /* BuddyPhotoAlbumPublic.h */,
-				44B1614E1836BE9100FEA6FF /* BuddyPhotoAlbums.h */,
-				44B1614F1836BE9100FEA6FF /* BuddyPicture.h */,
-				44B161501836BE9100FEA6FF /* BuddyPicturePublic.h */,
-				44B161511836BE9100FEA6FF /* BuddyPlace.h */,
-				44B161521836BE9100FEA6FF /* BuddyPlaces.h */,
-				44B161531836BE9100FEA6FF /* BuddyReceipt.h */,
-				44B161541836BE9100FEA6FF /* BuddyRegisteredDeviceApple.h */,
-				44B161551836BE9100FEA6FF /* BuddySounds.h */,
-				44B161561836BE9100FEA6FF /* BuddyStartup.h */,
-				44B161571836BE9100FEA6FF /* BuddyStartups.h */,
-				44B161581836BE9100FEA6FF /* BuddyStoreItem.h */,
-				44B161591836BE9100FEA6FF /* BuddyUser.h */,
-				44B1615A1836BE9100FEA6FF /* BuddyUserMetadata.h */,
-				44B1615B1836BE9100FEA6FF /* BuddyVideo.h */,
-				44B1615C1836BE9100FEA6FF /* BuddyVideos.h */,
-				44B1615D1836BE9100FEA6FF /* BuddyVirtualAlbum.h */,
-				44B1615E1836BE9100FEA6FF /* BuddyVirtualAlbums.h */,
+				44B161671836CC4E00FEA6FF /* Flurry */,
+				44B161F11836CC4E00FEA6FF /* FlurryAds */,
 			);
-			path = Headers;
+			path = "Flurry-iOS-4.3.0";
+			sourceTree = "<group>";
+		};
+		44B161671836CC4E00FEA6FF /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				44B161681836CC4E00FEA6FF /* Flurry.h */,
+				44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		44B161F11836CC4E00FEA6FF /* FlurryAds */ = {
+			isa = PBXGroup;
+			children = (
+				44B161F21836CC4E00FEA6FF /* FlurryAdDelegate.h */,
+				44B161F31836CC4E00FEA6FF /* FlurryAds.h */,
+				44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */,
+			);
+			path = FlurryAds;
 			sourceTree = "<group>";
 		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
@@ -1466,7 +1379,7 @@
 		44B4BB691780E09700CE91A8 /* Extesions */ = {
 			isa = PBXGroup;
 			children = (
-				44B161261836BE9100FEA6FF /* Buddy_iOS_SDK */,
+				44B161651836CC4E00FEA6FF /* Flurry iPhone SDK viPhone 4.3.0 */,
 				4423F1B9181C8756008B0260 /* iRate-master */,
 				44FC0BA01814133C00417C79 /* SBJson */,
 				442226451814059100D53DE3 /* MKStoreKit */,
@@ -1852,7 +1765,6 @@
 				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
 				447BD32A1824D19900E27FA7 /* text_finder_pattern_m@2x.png in Resources */,
 				44C7CA96178A19300059C199 /* cell@2x.png in Resources */,
-				44B161631836BE9100FEA6FF /* LICENSE.md in Resources */,
 				44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */,
 				44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */,
 				44068BB3180409EB00E8ABCC /* left_pressed@2x.png in Resources */,
@@ -1895,8 +1807,8 @@
 				44A6BDB9178D9B0B00DC95C6 /* pid_sensors_pressed@2x.png in Resources */,
 				44A6BDC3178DA6AD00DC95C6 /* StoryboardiPhone.storyboard in Resources */,
 				448ABA9C18168C580056DD4A /* radar@2x.png in Resources */,
+				44B162921836CC4E00FEA6FF /* ProjectApiKey.txt in Resources */,
 				44A6BDC5178DA7ED00DC95C6 /* MWMainMenuCell.xib in Resources */,
-				44B161641836BE9100FEA6FF /* README.md in Resources */,
 				44A6BDC7178DA8F200DC95C6 /* MWMenuSubtitleCell.xib in Resources */,
 				44A6BDDA178E020300DC95C6 /* about_author@2x.png in Resources */,
 				44A6BDDB178E020300DC95C6 /* about_author_pressed@2x.png in Resources */,
@@ -2129,6 +2041,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Buddy_iOS_SDK,
+					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
+					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2149,6 +2063,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Buddy_iOS_SDK,
+					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
+					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
