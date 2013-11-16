@@ -2035,8 +2035,7 @@
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -2049,7 +2048,7 @@
 					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F116C8C4-2121-41B6-ACDA-E1AA19A8CE6D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2057,8 +2056,7 @@
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YAUHEN SKRABNIOU (6A55FY4Q8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -2071,7 +2069,7 @@
 					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "14FA7BA5-DDF8-4691-B66A-14F96E0D605A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
