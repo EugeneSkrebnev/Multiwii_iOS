@@ -8,22 +8,19 @@
 
 #import "MW3dModelView.h"
 #import <CoreMotion/CoreMotion.h>
-#define CAMERA_HEIGHT 2
+#define CAMERA_HEIGHT 20
 
 @implementation MW3dModelView
 {
     NGLMesh* _mesh;
     NGLCamera* _camera;
     BOOL _wasInited;
-    int _startRollAngle;
-    int _startPitchAngle;
-    int _startHeading;
+
     CMMotionManager* _cmm;
-    float ang;
+    float roll_a;
+    float pitch_a;
+    float yaw_a;
     
-    float rx;
-    float ry;
-    float rz;
 }
 //    [_mesh rotateToX:-(self.pitchAngle + _startPitchAngle) toY:-(self.heading + _startHeading) toZ:-(self.rollAngle + _startRollAngle)];
 //    self.heading = (self.heading + 1) % 360;
@@ -54,8 +51,7 @@
 //    float yawDeg = radiansToDegrees(yaw);
     
     
-//    float R = CAMERA_HEIGHT;
-    ang = ang + 1;
+
 //    _camera.rotateX = ang;
 //    [_camera translateToX:R*cosf(nglDegreesToRadians(ang)) toY:R*sinf(nglDegreesToRadians(ang)) toZ:0];
 //    rx += 0.1;
@@ -74,28 +70,76 @@
 //
 //    NSLog(@"roll : %f; pitch : %f; yaw : %f", rollDeg, pitchDeg, yawDeg);
 //    roll = 0;
+    
+    float R = CAMERA_HEIGHT;
 
-//    _camera.rotateX += 0.1;
-//    [_camera rebaseWithMatrix:1 scale:1 compatibility:1];
-//    [_camera translateToX:R*cosf(nglDegreesToRadians(ang)) toY:0 toZ:R*sinf(nglDegreesToRadians(ang))];
-//    NSLog(@"parcing = %f", _mesh.parsing.progress);
-//    [_camera translateToX:R*cosf(pitch)*sinf(roll) toY:R*cosf(pitch)*cosf(roll) toZ:R*sinf(pitch)];
+//    pitch works
+    pitch_a += 1;
+    _camera.rotateX = -pitch_a;
+    float pitch = nglDegreesToRadians(pitch_a);
+    [_camera translateToX:0
+                      toY:R*sinf(pitch)
+                      toZ:R*cosf(pitch)];
     
-//    float matrix[] = {R*cosf(nglDegreesToRadians(ang)), 0, R*sinf(nglDegreesToRadians(ang)),1,1,1,20,20,20};
-//    [_camera rebaseWithMatrix:matrix scale:1 compatibility:NGLRebaseNone];
-//    [_camera lookAtPointX:0 toY:0 toZ:0];
-//    _camera.matrix
-//    [_camera lookAtObject:_mesh];x
-//    [_camera translateToX:R*cosf(nglDegreesToRadians(ang)) toY:R*sinf(nglDegreesToRadians(ang)) toZ:0];
+    //    roll works
+    roll_a += 1;
+    _camera.rotateY = roll_a;
+    _camera.rotateX = -90;
+    float roll = nglDegreesToRadians(roll_a);
+    [_camera translateToX:R*sinf(roll)
+                      toY:R*cosf(roll)
+                      toZ:0];
     
+
+//    pitch_a += 1;
+    roll_a += 1;
+
+
+    float pitch = nglDegreesToRadians(pitch_a);
+    float roll = nglDegreesToRadians(roll_a);
+    
+    [_camera translateToX:R*sinf(roll)*sinf(pitch)
+                      toY:R*cosf(roll)*sinf(pitch)
+                      toZ:R*cosf(pitch)];
+    
+    [_camera lookAtPointX:0 toY:0 toZ:0];
+
+    //    roll works
+
+
+
+
+    
+
+    
+    
+//    yaw_a += 1;
+//    _camera.rotateY = yaw_a;
+//    _camera.rotateZ = roll_a;
+    
+//    roll_a  += 1;
+//    _camera.rotateX = -90;
+//    _camera.rotateY += 1;
+//    _camera.rotateX = roll_a;
 //    [_camera lookAtPointX:0 toY:0 toZ:0];
-//    if ((int)ang % 180 == 1)
-//        _mesh.rotateZ -= 1;
-//    _camera.rotateX += 1;
-//    NGLQuaternion
-//    [_camera translateToX:cosf(nglDegreesToRadians(myYaw))*CAMERA_HEIGHT toY:0 toZ:sinf(nglDegreesToRadians(myYaw))*CAMERA_HEIGHT];
-//    [_camera translateRelativeToX:0 toY:cosf(nglDegreesToRadians(myRoll))*CAMERA_HEIGHT toZ:0];
-//    [self cmm];
+//    float roll = nglDegreesToRadians(roll_a);
+////
+//    [_camera translateToX:R*sinf(roll)
+//                      toY:R*cosf(roll)
+//                      toZ:0];
+
+//    [_camera translateToX:R*sinf(pitch)
+//                      toY:R*cosf(pitch)*cosf(roll)
+//                      toZ:R*cosf(pitch)*sinf(roll)];
+//    
+//    [_camera translateToX:R*sinf(roll)
+//                      toY:R*cosf(roll)*cosf(pitch)
+//                      toZ:R*cosf(roll)*sinf(pitch)];
+//
+    
+//    NSLog(@"%f%f", R, roll);
+    
+//    NSLog(@"%f%f", R, roll);
 	[_camera drawCamera];
 }
 //-(void) cmm
@@ -111,7 +155,9 @@
 {
     if (!_wasInited)
     {
-        ang = 0;
+        roll_a = 0;
+        pitch_a = 0;
+        yaw_a = 0;
 //        _cmm = [[CMMotionManager alloc] init];
 //        [_cmm startDeviceMotionUpdates];
 //        _startPitchAngle = 90;//90;
@@ -124,33 +170,37 @@
         nglGlobalLightEffects(NGLLightEffectsON);
         nglGlobalFlush();
         
-//        NGLLight *light = [NGLLight defaultLight];
-//        light.attenuation = 20;
+        NGLLight *light = [NGLLight defaultLight];
+        light.attenuation = 140;
 
 
-//        [light translateToX:0 toY:CAMERA_HEIGHT * 0.6 toZ:0];
-//        light.type = NGLLightTypeSky;
+        [light translateToX:CAMERA_HEIGHT * 3.8 toY:CAMERA_HEIGHT * 0.8 toZ:0];
+        light.type = NGLLightTypeSky;
         self.antialias = NGLAntialias4X;
         _wasInited = YES;
         NSDictionary *settings;
         
-        settings = @{/*kNGLMeshKeyOriginal: kNGLMeshOriginalYes,*/
+        settings = @{//kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
                      kNGLMeshKeyCentralize: kNGLMeshCentralizeYes,
-                     kNGLMeshKeyNormalize: @"2"
+                     kNGLMeshKeyNormalize: @(CAMERA_HEIGHT).stringValue
                      };
-        _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:nil];
-//        self.
+        
+        _mesh = [[NGLMesh alloc] initWithFile:@"quadr_old.dae" settings:settings delegate:nil];
+//        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
+//        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
         
         [_camera autoAdjustAspectRatio:YES animated:YES];
-
+        _camera.rotationOrder = NGLRotationOrderXYZ;
 
 //        NSLog(@"x = %f y = %f z = %f", _camera.rotateX, _camera.rotateY, _camera.rotateZ);
         [_camera translateToX:0
-                          toY:0.4
-                          toZ:CAMERA_HEIGHT];
+                          toY:10
+                          toZ:0];
+        _camera.rotationOrder = NGLRotationOrderYXZ;
 //        [_camera lookAtPointX:0 toY:0 toZ:0 ];
 //        _camera.lookAtTarget = _mesh;
+//        [_mesh translateToX:0 toY:0 toZ:0];
 
 
         self.delegate = self;

@@ -174,6 +174,8 @@
 		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
+		44B162941836DFD900FEA6FF /* quadr_old.dae in Resources */ = {isa = PBXBuildFile; fileRef = 44B162931836DFD900FEA6FF /* quadr_old.dae */; };
+		44B162961836E06400FEA6FF /* 3d_model2.dae in Resources */ = {isa = PBXBuildFile; fileRef = 44B162951836E06400FEA6FF /* 3d_model2.dae */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB99181DC784005E511F /* about_author.html in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB98181DC784005E511F /* about_author.html */; };
 		44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB9A181DC7B6005E511F /* how_to_connect.html */; };
@@ -212,25 +214,6 @@
 		44C7CA96178A19300059C199 /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA94178A19300059C199 /* cell@2x.png */; };
 		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
 		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
-		44DD950C1832BD4800B82B24 /* bneck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94F91832BD4800B82B24 /* bneck.jpg */; };
-		44DD950D1832BD4800B82B24 /* bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FA1832BD4800B82B24 /* bridge.jpg */; };
-		44DD950E1832BD4800B82B24 /* g2_DEF01.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */; };
-		44DD950F1832BD4800B82B24 /* g2_DEFLE.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FC1832BD4800B82B24 /* g2_DEFLE.BMP */; };
-		44DD95101832BD4800B82B24 /* g2_MAINT.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FD1832BD4800B82B24 /* g2_MAINT.BMP */; };
-		44DD95111832BD4800B82B24 /* g2_orang.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FE1832BD4800B82B24 /* g2_orang.BMP */; };
-		44DD95121832BD4800B82B24 /* gun_turr.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FF1832BD4800B82B24 /* gun_turr.jpg */; };
-		44DD95131832BD4800B82B24 /* hullbott.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95001832BD4800B82B24 /* hullbott.jpg */; };
-		44DD95141832BD4800B82B24 /* hulltop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95011832BD4800B82B24 /* hulltop.jpg */; };
-		44DD95151832BD4800B82B24 /* Metal_Ro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95021832BD4800B82B24 /* Metal_Ro.jpg */; };
-		44DD95161832BD4800B82B24 /* nkside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95031832BD4800B82B24 /* nkside.jpg */; };
-		44DD95171832BD4800B82B24 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95041832BD4800B82B24 /* readme.txt */; };
-		44DD95181832BD4800B82B24 /* Sabot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95051832BD4800B82B24 /* Sabot.jpg */; };
-		44DD95191832BD4800B82B24 /* saucer_t.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95061832BD4800B82B24 /* saucer_t.jpg */; };
-		44DD951A1832BD4800B82B24 /* thrustto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95071832BD4800B82B24 /* thrustto.jpg */; };
-		44DD951B1832BD4800B82B24 /* uerbribu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95081832BD4800B82B24 /* uerbribu.jpg */; };
-		44DD951C1832BD4800B82B24 /* uss_thor.3ds in Resources */ = {isa = PBXBuildFile; fileRef = 44DD95091832BD4800B82B24 /* uss_thor.3ds */; };
-		44DD951D1832BD4800B82B24 /* uss_thor.obj in Resources */ = {isa = PBXBuildFile; fileRef = 44DD950A1832BD4800B82B24 /* uss_thor.obj */; };
-		44DD951E1832BD4800B82B24 /* uss_thor.obj.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 44DD950B1832BD4800B82B24 /* uss_thor.obj.mtl */; };
 		44DD954F1832C21800B82B24 /* MWAboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95231832C21800B82B24 /* MWAboutDetailViewController.m */; };
 		44DD95501832C21800B82B24 /* MWAuxSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95261832C21800B82B24 /* MWAuxSelectViewController.m */; };
 		44DD95511832C21800B82B24 /* MWBuyFullVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95291832C21800B82B24 /* MWBuyFullVersionViewController.m */; };
@@ -494,6 +477,8 @@
 		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
+		44B162931836DFD900FEA6FF /* quadr_old.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = quadr_old.dae; sourceTree = "<group>"; };
+		44B162951836E06400FEA6FF /* 3d_model2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = 3d_model2.dae; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44B9AB98181DC784005E511F /* about_author.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_author.html; sourceTree = "<group>"; };
@@ -539,25 +524,6 @@
 		44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseTableViewCell.m; sourceTree = "<group>"; };
 		44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainMenuCell.h; sourceTree = "<group>"; };
 		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
-		44DD94F91832BD4800B82B24 /* bneck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bneck.jpg; sourceTree = "<group>"; };
-		44DD94FA1832BD4800B82B24 /* bridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bridge.jpg; sourceTree = "<group>"; };
-		44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_DEF01.BMP; sourceTree = "<group>"; };
-		44DD94FC1832BD4800B82B24 /* g2_DEFLE.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_DEFLE.BMP; sourceTree = "<group>"; };
-		44DD94FD1832BD4800B82B24 /* g2_MAINT.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_MAINT.BMP; sourceTree = "<group>"; };
-		44DD94FE1832BD4800B82B24 /* g2_orang.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_orang.BMP; sourceTree = "<group>"; };
-		44DD94FF1832BD4800B82B24 /* gun_turr.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gun_turr.jpg; sourceTree = "<group>"; };
-		44DD95001832BD4800B82B24 /* hullbott.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hullbott.jpg; sourceTree = "<group>"; };
-		44DD95011832BD4800B82B24 /* hulltop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hulltop.jpg; sourceTree = "<group>"; };
-		44DD95021832BD4800B82B24 /* Metal_Ro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Metal_Ro.jpg; sourceTree = "<group>"; };
-		44DD95031832BD4800B82B24 /* nkside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nkside.jpg; sourceTree = "<group>"; };
-		44DD95041832BD4800B82B24 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		44DD95051832BD4800B82B24 /* Sabot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sabot.jpg; sourceTree = "<group>"; };
-		44DD95061832BD4800B82B24 /* saucer_t.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saucer_t.jpg; sourceTree = "<group>"; };
-		44DD95071832BD4800B82B24 /* thrustto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thrustto.jpg; sourceTree = "<group>"; };
-		44DD95081832BD4800B82B24 /* uerbribu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = uerbribu.jpg; sourceTree = "<group>"; };
-		44DD95091832BD4800B82B24 /* uss_thor.3ds */ = {isa = PBXFileReference; lastKnownFileType = file; path = uss_thor.3ds; sourceTree = "<group>"; };
-		44DD950A1832BD4800B82B24 /* uss_thor.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uss_thor.obj; sourceTree = "<group>"; };
-		44DD950B1832BD4800B82B24 /* uss_thor.obj.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uss_thor.obj.mtl; sourceTree = "<group>"; };
 		44DD95221832C21800B82B24 /* MWAboutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAboutDetailViewController.h; sourceTree = "<group>"; };
 		44DD95231832C21800B82B24 /* MWAboutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAboutDetailViewController.m; sourceTree = "<group>"; };
 		44DD95251832C21800B82B24 /* MWAuxSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAuxSelectViewController.h; sourceTree = "<group>"; };
@@ -869,7 +835,9 @@
 		4430D67D18340A4E00F4D22E /* quadrocopter */ = {
 			isa = PBXGroup;
 			children = (
+				44B162931836DFD900FEA6FF /* quadr_old.dae */,
 				4430D67E18340A4E00F4D22E /* quadr.dae */,
+				44B162951836E06400FEA6FF /* 3d_model2.dae */,
 				4430D67F18340A4E00F4D22E /* quadr.mtl */,
 				4430D68018340A4E00F4D22E /* quadr.obj */,
 			);
@@ -1496,35 +1464,8 @@
 			isa = PBXGroup;
 			children = (
 				4430D67D18340A4E00F4D22E /* quadrocopter */,
-				44DD94F81832BD4800B82B24 /* enterprise */,
 			);
 			path = 3DModels;
-			sourceTree = "<group>";
-		};
-		44DD94F81832BD4800B82B24 /* enterprise */ = {
-			isa = PBXGroup;
-			children = (
-				44DD94F91832BD4800B82B24 /* bneck.jpg */,
-				44DD94FA1832BD4800B82B24 /* bridge.jpg */,
-				44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */,
-				44DD94FC1832BD4800B82B24 /* g2_DEFLE.BMP */,
-				44DD94FD1832BD4800B82B24 /* g2_MAINT.BMP */,
-				44DD94FE1832BD4800B82B24 /* g2_orang.BMP */,
-				44DD94FF1832BD4800B82B24 /* gun_turr.jpg */,
-				44DD95001832BD4800B82B24 /* hullbott.jpg */,
-				44DD95011832BD4800B82B24 /* hulltop.jpg */,
-				44DD95021832BD4800B82B24 /* Metal_Ro.jpg */,
-				44DD95031832BD4800B82B24 /* nkside.jpg */,
-				44DD95041832BD4800B82B24 /* readme.txt */,
-				44DD95051832BD4800B82B24 /* Sabot.jpg */,
-				44DD95061832BD4800B82B24 /* saucer_t.jpg */,
-				44DD95071832BD4800B82B24 /* thrustto.jpg */,
-				44DD95081832BD4800B82B24 /* uerbribu.jpg */,
-				44DD95091832BD4800B82B24 /* uss_thor.3ds */,
-				44DD950A1832BD4800B82B24 /* uss_thor.obj */,
-				44DD950B1832BD4800B82B24 /* uss_thor.obj.mtl */,
-			);
-			path = enterprise;
 			sourceTree = "<group>";
 		};
 		44DD951F1832C21800B82B24 /* ViewControllers */ = {
@@ -1919,11 +1860,8 @@
 				447BD3281824CE7000E27FA7 /* text_finder_pattern@2x.png in Resources */,
 				44C7CA7B1789D9860059C199 /* locked_icon@2x.png in Resources */,
 				44C7CA7C1789D9860059C199 /* slider@2x.png in Resources */,
-				44DD95131832BD4800B82B24 /* hullbott.jpg in Resources */,
-				44DD95171832BD4800B82B24 /* readme.txt in Resources */,
 				4409DDDB1821037900B11C9C /* icon_29.png in Resources */,
 				4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */,
-				44DD951B1832BD4800B82B24 /* uerbribu.jpg in Resources */,
 				44C7CA7D1789D9860059C199 /* switch_locked@2x.png in Resources */,
 				447BD30D1822F1C200E27FA7 /* finder_arrow@2x.png in Resources */,
 				44C7CA7E1789D9860059C199 /* switch_unlocked@2x.png in Resources */,
@@ -1946,18 +1884,13 @@
 				44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */,
 				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
 				447BD32A1824D19900E27FA7 /* text_finder_pattern_m@2x.png in Resources */,
-				44DD950E1832BD4800B82B24 /* g2_DEF01.BMP in Resources */,
-				44DD950C1832BD4800B82B24 /* bneck.jpg in Resources */,
-				44DD951D1832BD4800B82B24 /* uss_thor.obj in Resources */,
 				44C7CA96178A19300059C199 /* cell@2x.png in Resources */,
 				44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */,
 				44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */,
 				44068BB3180409EB00E8ABCC /* left_pressed@2x.png in Resources */,
 				44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */,
 				44A6BD7F178D5C3700DC95C6 /* connect_pressed@2x.png in Resources */,
-				44DD95181832BD4800B82B24 /* Sabot.jpg in Resources */,
 				44068BB5180409EB00E8ABCC /* right_pressed@2x.png in Resources */,
-				44DD95151832BD4800B82B24 /* Metal_Ro.jpg in Resources */,
 				44A6BD80178D5C3700DC95C6 /* control@2x.png in Resources */,
 				44A6BD81178D5C3700DC95C6 /* control_pressed@2x.png in Resources */,
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
@@ -1968,7 +1901,6 @@
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
 				4409DDD81821037900B11C9C /* icon_1024.png in Resources */,
 				44A6BD8B178D744B00DC95C6 /* circle@2x.png in Resources */,
-				44DD951C1832BD4800B82B24 /* uss_thor.3ds in Resources */,
 				44A6BD8F178D7DE000DC95C6 /* arrow_press@2x.png in Resources */,
 				447BD32E1824D9A300E27FA7 /* finder@2x.png in Resources */,
 				44A6BD90178D7DE000DC95C6 /* arrow@2x.png in Resources */,
@@ -1981,7 +1913,6 @@
 				44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */,
 				4409DDDC1821037900B11C9C /* icon_512.png in Resources */,
 				442226611814059100D53DE3 /* MKStoreKitConfigs.plist in Resources */,
-				44DD951E1832BD4800B82B24 /* uss_thor.obj.mtl in Resources */,
 				44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */,
 				447BD30E1822F1C200E27FA7 /* finder_circle@2x.png in Resources */,
 				44A6BDB0178D9B0B00DC95C6 /* aux@2x.png in Resources */,
@@ -1991,7 +1922,6 @@
 				44A6BDB5178D9B0B00DC95C6 /* pid_fly_pressed@2x.png in Resources */,
 				442226631814059100D53DE3 /* README.mdown in Resources */,
 				44A6BDB6178D9B0B00DC95C6 /* pid_gps@2x.png in Resources */,
-				44DD95161832BD4800B82B24 /* nkside.jpg in Resources */,
 				44A6BDB7178D9B0B00DC95C6 /* pid_gps_pressed@2x.png in Resources */,
 				44A6BDB8178D9B0B00DC95C6 /* pid_sensors@2x.png in Resources */,
 				44A6BDB9178D9B0B00DC95C6 /* pid_sensors_pressed@2x.png in Resources */,
@@ -2012,12 +1942,14 @@
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,
 				44A6BDE1178E020300DC95C6 /* bug_pressed@2x.png in Resources */,
 				44A6BDE2178E020300DC95C6 /* feedback@2x.png in Resources */,
+				44B162961836E06400FEA6FF /* 3d_model2.dae in Resources */,
 				44A6BDE3178E020300DC95C6 /* feedback_pressed2@2x.png in Resources */,
 				44A6BDE4178E020300DC95C6 /* how_to_connect@2x.png in Resources */,
 				4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */,
 				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
 				44B9AB99181DC784005E511F /* about_author.html in Resources */,
+				44B162941836DFD900FEA6FF /* quadr_old.dae in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
 				4430D68218340A4E00F4D22E /* quadr.mtl in Resources */,
@@ -2025,14 +1957,11 @@
 				44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */,
 				44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */,
 				4409DDDA1821037900B11C9C /* icon_120.png in Resources */,
-				44DD95121832BD4800B82B24 /* gun_turr.jpg in Resources */,
-				44DD95191832BD4800B82B24 /* saucer_t.jpg in Resources */,
 				44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */,
 				44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */,
 				44A6BE1C178EE92000DC95C6 /* site@2x.png in Resources */,
 				448ABA9D18168C580056DD4A /* radar_bg@2x.png in Resources */,
 				44A6BE1D178EE92000DC95C6 /* top_bar_button_pressed@2x.png in Resources */,
-				44DD95141832BD4800B82B24 /* hulltop.jpg in Resources */,
 				44A6BE1E178EE92000DC95C6 /* top_bar_button@2x.png in Resources */,
 				44519D31179B1BD7006E4EB7 /* separator.png in Resources */,
 				44519D32179B1BD7006E4EB7 /* separator@2x.png in Resources */,
@@ -2046,15 +1975,11 @@
 				4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */,
 				44519D43179B6A30006E4EB7 /* calibrate_mag_pressed@2x.png in Resources */,
 				44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */,
-				44DD95111832BD4800B82B24 /* g2_orang.BMP in Resources */,
 				4403BCBA17EF7ABC00B5A4E1 /* level@2x.png in Resources */,
-				44DD951A1832BD4800B82B24 /* thrustto.jpg in Resources */,
 				4403BCBB17EF7ABC00B5A4E1 /* pitch@2x.png in Resources */,
 				4403BCBC17EF7ABC00B5A4E1 /* roll@2x.png in Resources */,
 				4422259C180D4B2000D53DE3 /* field@2x.png in Resources */,
 				447BD30F1822F1C200E27FA7 /* finder_mask@2x.png in Resources */,
-				44DD950D1832BD4800B82B24 /* bridge.jpg in Resources */,
-				44DD950F1832BD4800B82B24 /* g2_DEFLE.BMP in Resources */,
 				4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */,
 				4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */,
 				44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */,
@@ -2062,7 +1987,6 @@
 				44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */,
 				44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */,
 				44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */,
-				44DD95101832BD4800B82B24 /* g2_MAINT.BMP in Resources */,
 				44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
