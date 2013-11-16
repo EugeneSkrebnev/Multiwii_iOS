@@ -81,28 +81,28 @@
                       toY:R*sinf(pitch)
                       toZ:R*cosf(pitch)];
     
-    //    roll works
-    roll_a += 1;
-    _camera.rotateY = roll_a;
-    _camera.rotateX = -90;
-    float roll = nglDegreesToRadians(roll_a);
-    [_camera translateToX:R*sinf(roll)
-                      toY:R*cosf(roll)
-                      toZ:0];
+//    //    roll works
+//    roll_a += 1;
+//    _camera.rotateY = roll_a;
+//    _camera.rotateX = -90;
+//    float roll = nglDegreesToRadians(roll_a);
+//    [_camera translateToX:R*sinf(roll)
+//                      toY:R*cosf(roll)
+//                      toZ:0];
     
 
-//    pitch_a += 1;
-    roll_a += 1;
-
-
-    float pitch = nglDegreesToRadians(pitch_a);
-    float roll = nglDegreesToRadians(roll_a);
-    
-    [_camera translateToX:R*sinf(roll)*sinf(pitch)
-                      toY:R*cosf(roll)*sinf(pitch)
-                      toZ:R*cosf(pitch)];
-    
-    [_camera lookAtPointX:0 toY:0 toZ:0];
+////    pitch_a += 1;
+//    roll_a += 1;
+//
+////    NGLmat4
+//    float pitch = nglDegreesToRadians(pitch_a);
+//    float roll = nglDegreesToRadians(roll_a);
+//    
+//    [_camera translateToX:R*sinf(roll)*sinf(pitch)
+//                      toY:R*cosf(roll)*sinf(pitch)
+//                      toZ:R*cosf(pitch)];
+//    
+//    [_camera lookAtPointX:0 toY:0 toZ:0];
 
     //    roll works
 

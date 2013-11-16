@@ -17,7 +17,7 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    
     [MWGlobalManager sharedInstance]; //init all systems
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].appStoreID = 735311586;
