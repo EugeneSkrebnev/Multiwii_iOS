@@ -23,4 +23,5 @@
 #import "MWMultiwiiProtocolManager.h"
 #import "MWGlobalManager.h"
 #import "iRate.h"
+#import "Flurry.h"
 #import "MWAppDelegate.h"

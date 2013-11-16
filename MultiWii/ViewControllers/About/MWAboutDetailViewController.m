@@ -32,23 +32,27 @@
 {
     if (!request.URL.path)
         return YES;
-    NSLog(@"%@", request.URL.path);
+
     if ([request.URL.path isEqualToString:@"/pub/eugene-skrebnev/49/b03/598"])
     {
+        [Flurry logEvent:@"Open LinkedIn Eugene Skrebnev"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.linkedin.com/pub/eugene-skrebnev/49/b03/598"]];
     }
     
     if ([request.URL.path isEqualToString:@"/profile/view"])
     {
+        [Flurry logEvent:@"Open LinkedIn Olga Ladnova"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://goo.gl/pTDiVU"]];
     }
     
     if ([request.URL.path isEqualToString:@"/forum/viewtopic.php"])
     {
+        [Flurry logEvent:@"Open Multiwii forum page"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwii.com/forum/viewtopic.php?f=8&t=3584"]];
     }
     if ([request.URL.path isEqualToString:@"/www.multiwiiforios.com/main"])
     {
+        [Flurry logEvent:@"Open Multiwiiforios site"];                
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwiiforios.com"]];
     }
     

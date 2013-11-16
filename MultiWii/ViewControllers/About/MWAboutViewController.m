@@ -8,6 +8,7 @@
 
 #import "MWAboutViewController.h"
 #import "MWAboutDetailViewController.h"
+
 @interface MWAboutViewController ()
 
 @end
@@ -46,6 +47,7 @@
     if (indexPath.row == 4)
     {
         [[iRate sharedInstance] promptForRating];
+        [Flurry logEvent:@"Prompt For Rating"];
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
@@ -53,22 +55,17 @@
     {
         if ([MFMailComposeViewController canSendMail])
         {
+            
             [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
-            [self launchMailAppWithSubject:indexPath.row == 2 ? @"Got some questions" : @"Submit a bug"];
+            NSString* subj = indexPath.row == 2 ? @"Got some questions" : @"Submit a bug";
+            [self launchMailAppWithSubject:subj];
+            [Flurry logEvent:[NSString stringWithFormat:@"Open mail for %@", subj]];
 
-//            MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-//            NSString* subject = indexPath.row == 2 ? @"Got some question" : @"!!!BUG!!!";
-//            mailViewController.mailComposeDelegate = self;
-//            [mailViewController setSubject:subject];
-//            [mailViewController setToRecipients:@[@"multiwii.for.ios@gmail.com"]];
-//            [mailViewController setMessageBody:@"" isHTML:NO];
-//            mailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-//
-//            [self presentModalViewController:mailViewController animated:YES];
         }
         else
         {
             [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+            [Flurry logEvent:@"No Mail account for feedback"];
             [UIAlertView alertResultWithTitle:@"Error" message:@"No mail account setup on device. Go to Settings -> Mail." buttonNames:@[/*@"Go to settings",*/ @"Cancel"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
 //                if (buttonIndex == 0)
 //                {
@@ -142,6 +139,7 @@
 }
 - (IBAction)siteButtonTapped:(id)sender
 {
+    [Flurry logEvent:@"Visit site button tapped"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.multiwiiForiOS.com"]];
 }
 

@@ -115,6 +115,11 @@
     [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
         
         cell.titleLabel.text = [MWGlobalManager sharedInstance].copterTypeString;
+
+        if (![__delegate isFullVersionUnlocked])
+            [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes on limited version to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
+        else
+            [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
         
     }];
     double delayInSeconds = 5.0;
@@ -123,9 +128,10 @@
         if (![MWGlobalManager sharedInstance].multiwiiSuccesConnect)
         {
             [UIAlertView alertWithTitle:@"Error" message:@"Can't detect multiwii board, please check your rx-tx connections, and serial speed."];
+            [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes but multiwii fail : %@", cell.titleLabel.text]];
         }
     });
-//    [self testRCTunning]; test
+
 }
 
 -(void) setSpinnerHidden:(BOOL) hidden forDeviceAtIndex:(int) index animated:(BOOL) animated
@@ -212,6 +218,10 @@
     
     if (!device.isConnected)
     {
+        NSString* deviceName = device.name;
+        if (!deviceName)
+            deviceName = [[MWBluetoothManager sharedInstance] metaDataForDevice:device][@"kCBAdvDataLocalName"];
+        [Flurry logEvent:[NSString stringWithFormat:@"Connect to device : %@", deviceName]];
         [self setSpinnerHidden:NO forDeviceAtIndex:indexPath.row animated:YES];
         [[MWBluetoothManager sharedInstance] connectToDevice:device];
     }

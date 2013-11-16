@@ -16,6 +16,18 @@
 
 @synthesize viewControllerTitle = _viewControllerTitle;
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [Flurry logEvent:[NSString stringWithFormat:@"Open %@", NSStringFromClass([self class])]];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [Flurry logEvent:[NSString stringWithFormat:@"Close %@", NSStringFromClass([self class])]];
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];

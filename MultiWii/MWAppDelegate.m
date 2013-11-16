@@ -11,6 +11,8 @@
 #import "MKSKProduct.h"
 #import "MWBuyFullVersionViewController.h"
 #import "MWMainViewController.h"
+
+
 @implementation MWAppDelegate
 {
     int _paidAmount;
@@ -19,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+    [Flurry startSession:@"R8W8QZ9G3B6PN8JVTHPX"];
     [MWGlobalManager sharedInstance]; //init all systems
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].appStoreID = 735311586;
@@ -47,8 +50,8 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if ((self.paidAmount == 0) && [[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
         {
-            [UIAlertView alertWithTitle:@"Error use restore purchase!" message:@"You are cool hacker! Are you? Of course you are."];
-//            [self lalalaMessage];
+            [UIAlertView alertWithTitle:@"Error use restore purchase please" message:@"Vodka, Lukashenko, Belarus, Potatoes"];
+            [Flurry logEvent:@"Hacker detected"];
         }
     });
     
@@ -60,16 +63,6 @@
 
 }
 
--(void) lalalaMessage
-{
-    [UIAlertView alertWithTitle:@"lalala" message:@"la la La Hello from Belarus! Lukashenko, Vodka, Potatoes"];
-    double delayInSeconds = 10.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if (self.paidAmount == 0)
-            [self lalalaMessage];
-    });
-}
 
 -(int)paidAmount
 {
@@ -82,16 +75,18 @@
             _paidAmount += i;
         }
     }
-//    return 10;
+
     return _paidAmount;
 }
 
 -(void) showBuyDialogFromVC:(UIViewController*) vc
 {
+    [Flurry logEvent:@"Show buy dialog"];    
     NSString* message = @"This function is availiable only in full version. Buy it now?";
     [UIAlertView alertResultWithTitle:@"Multiwii Configurator" message:message buttonNames:@[@"NO", @"YES"] block:^(UIAlertView *alert, NSInteger buttonIndex) {
         if (buttonIndex == 1)
         {
+            [Flurry logEvent:@"Buy dialog 'Yes' tapped"];
             NSString* buyVcId = @"MWBuyFullVersionViewControllerID";
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
             MWBuyFullVersionViewController *buyVC = (MWBuyFullVersionViewController*)[storyboard instantiateViewControllerWithIdentifier:buyVcId];
@@ -99,6 +94,9 @@
             [vc presentViewController:buyVC animated:YES completion:^{
                 
             }];
+        } else
+        {
+            [Flurry logEvent:@"Buy dialog 'No' tapped"];
         }
     }];
 

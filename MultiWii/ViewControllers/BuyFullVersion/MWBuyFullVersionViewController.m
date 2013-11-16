@@ -118,8 +118,9 @@
 
 - (IBAction)restorePurchaseBtnTapped:(id)sender
 {
+    [Flurry logEvent:@"Restore purchase button tapped"];
     [[MKStoreManager sharedManager] restorePreviousTransactionsOnComplete:^{
-//        NSLog(@"%d", __delegate.paidAmount);
+        [Flurry logEvent:@"Restore purchase success" withParameters:@{@"paid": @(__delegate.paidAmount)}];
         [UIAlertView alertWithTitle:@"Purchase restored" message:@"Thank you for your support."];
         double delayInSeconds = .8;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -130,6 +131,7 @@
 
     } onError:^(NSError *error) {
         [UIAlertView alertErrorWithMessage:error.localizedDescription];
+        [Flurry logEvent:@"Restore purchase error"];
     }];
 }
 
@@ -141,23 +143,25 @@
 
 - (IBAction)buyButtonTapped:(id)sender
 {
+    [Flurry logEvent:@"Attempt to buy app"];
     int price = (int)self.priceSelectKnobView.value;
     NSString* featureID = [NSString stringWithFormat:kFeatureId, price];
     [[MKStoreManager sharedManager] buyFeature:featureID onComplete:^(NSString *purchasedFeature, NSData *purchasedReceipt, NSArray *availableDownloads) {
-//        [UIAlertView alertWithTitle:@"SUCCES" message:featureID];
+
+        NSString* purchasedReceiptStr = [[NSString alloc] initWithData:purchasedReceipt encoding:NSUTF8StringEncoding];
+
+        [Flurry logEvent:[NSString stringWithFormat:@"Bought feature %@", featureID] withParameters:@{@"purchasedReceipt" : purchasedReceiptStr}];
         [UIAlertView alertWithTitle:@"Success" message:@"Write and Save functions are now unlocked. Thank you for your support."];
         [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"FULL_VERSION_UNLOCKED"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         double delayInSeconds = .8;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//            [self dismissModalViewControllerAnimated:YES];
             [self dismissViewControllerAnimated:YES completion:nil];
         });
 
     } onCancelled:^{
-//        [UIAlertView alertWithTitle:@"ERROR_OR_CANCEL" message:featureID];
-        NSLog(@"purchase canceled");
+        [Flurry logEvent:@"Purchase canceled"];
     }];
 }
 
