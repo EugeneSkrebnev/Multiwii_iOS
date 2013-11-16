@@ -171,21 +171,21 @@
         nglGlobalFlush();
         
         NGLLight *light = [NGLLight defaultLight];
-        light.attenuation = 140;
+        light.attenuation = 20;
 
 
-        [light translateToX:CAMERA_HEIGHT * 3.8 toY:CAMERA_HEIGHT * 0.8 toZ:0];
+        [light translateToX:CAMERA_HEIGHT * 0.8 toY:CAMERA_HEIGHT * 0.8 toZ:0];
         light.type = NGLLightTypeSky;
         self.antialias = NGLAntialias4X;
         _wasInited = YES;
         NSDictionary *settings;
         
-        settings = @{//kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
+        settings = @{kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
                      kNGLMeshKeyCentralize: kNGLMeshCentralizeYes,
                      kNGLMeshKeyNormalize: @(CAMERA_HEIGHT).stringValue
                      };
         
-        _mesh = [[NGLMesh alloc] initWithFile:@"quadr_old.dae" settings:settings delegate:nil];
+        _mesh = [[NGLMesh alloc] initWithFile:@"quadr.dae" settings:settings delegate:nil];
 //        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
 //        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];

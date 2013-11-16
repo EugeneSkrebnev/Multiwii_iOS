@@ -65,8 +65,6 @@
 		4423F226181C8757008B0260 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423F202181C8757008B0260 /* iRate.m */; };
 		4423F227181C8757008B0260 /* iRate.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4423F203181C8757008B0260 /* iRate.podspec */; };
 		4430D68118340A4E00F4D22E /* quadr.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4430D67E18340A4E00F4D22E /* quadr.dae */; };
-		4430D68218340A4E00F4D22E /* quadr.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 4430D67F18340A4E00F4D22E /* quadr.mtl */; };
-		4430D68318340A4E00F4D22E /* quadr.obj in Resources */ = {isa = PBXBuildFile; fileRef = 4430D68018340A4E00F4D22E /* quadr.obj */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -174,8 +172,6 @@
 		44AE5A9717FCCB1D00AAAC30 /* baro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9517FCCB1D00AAAC30 /* baro@2x.png */; };
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
-		44B162941836DFD900FEA6FF /* quadr_old.dae in Resources */ = {isa = PBXBuildFile; fileRef = 44B162931836DFD900FEA6FF /* quadr_old.dae */; };
-		44B162961836E06400FEA6FF /* 3d_model2.dae in Resources */ = {isa = PBXBuildFile; fileRef = 44B162951836E06400FEA6FF /* 3d_model2.dae */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB99181DC784005E511F /* about_author.html in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB98181DC784005E511F /* about_author.html */; };
 		44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */ = {isa = PBXBuildFile; fileRef = 44B9AB9A181DC7B6005E511F /* how_to_connect.html */; };
@@ -343,8 +339,6 @@
 		4423F205181C8757008B0260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4423F206181C8757008B0260 /* RELEASE NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RELEASE NOTES.md"; sourceTree = "<group>"; };
 		4430D67E18340A4E00F4D22E /* quadr.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = quadr.dae; sourceTree = "<group>"; };
-		4430D67F18340A4E00F4D22E /* quadr.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.mtl; sourceTree = "<group>"; };
-		4430D68018340A4E00F4D22E /* quadr.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.obj; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -477,8 +471,6 @@
 		44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mag@2x.png"; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
-		44B162931836DFD900FEA6FF /* quadr_old.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = quadr_old.dae; sourceTree = "<group>"; };
-		44B162951836E06400FEA6FF /* 3d_model2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = 3d_model2.dae; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44B9AB98181DC784005E511F /* about_author.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_author.html; sourceTree = "<group>"; };
@@ -835,11 +827,7 @@
 		4430D67D18340A4E00F4D22E /* quadrocopter */ = {
 			isa = PBXGroup;
 			children = (
-				44B162931836DFD900FEA6FF /* quadr_old.dae */,
 				4430D67E18340A4E00F4D22E /* quadr.dae */,
-				44B162951836E06400FEA6FF /* 3d_model2.dae */,
-				4430D67F18340A4E00F4D22E /* quadr.mtl */,
-				4430D68018340A4E00F4D22E /* quadr.obj */,
 			);
 			path = quadrocopter;
 			sourceTree = "<group>";
@@ -1942,17 +1930,14 @@
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,
 				44A6BDE1178E020300DC95C6 /* bug_pressed@2x.png in Resources */,
 				44A6BDE2178E020300DC95C6 /* feedback@2x.png in Resources */,
-				44B162961836E06400FEA6FF /* 3d_model2.dae in Resources */,
 				44A6BDE3178E020300DC95C6 /* feedback_pressed2@2x.png in Resources */,
 				44A6BDE4178E020300DC95C6 /* how_to_connect@2x.png in Resources */,
 				4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */,
 				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
 				44B9AB99181DC784005E511F /* about_author.html in Resources */,
-				44B162941836DFD900FEA6FF /* quadr_old.dae in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
-				4430D68218340A4E00F4D22E /* quadr.mtl in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
 				44A6BE0F178EDDBF00DC95C6 /* icon_button@2x.png in Resources */,
 				44068B961802EDD900E8ABCC /* MWRateAdjustCell.xib in Resources */,
@@ -1968,7 +1953,6 @@
 				44519D34179B4ACD006E4EB7 /* aux_pressed@2x.png in Resources */,
 				44519D36179B4B7F006E4EB7 /* MWPidAdjustCell.xib in Resources */,
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
-				4430D68318340A4E00F4D22E /* quadr.obj in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
 				44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
