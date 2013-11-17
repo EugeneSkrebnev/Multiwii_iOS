@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XHs-9z-AIV">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -524,6 +524,21 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
             </objects>
             <point key="canvasLocation" x="2235" y="1929"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ctv-Xv-bPK">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="XHs-9z-AIV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="osM-86-Afx">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Poq-n1-XKt" kind="relationship" relationship="rootViewController" id="fcG-zV-jW7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58B-Ee-Wfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2141" y="-1287"/>
+        </scene>
         <!--Telemetry Sub Menu View Controller-->
         <scene sceneID="h8o-DG-0i5">
             <objects>
@@ -590,5 +605,6 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="RBP-WU-6fC"/>
+        <segue reference="fcG-zV-jW7"/>
     </inferredMetricsTieBreakers>
 </document>

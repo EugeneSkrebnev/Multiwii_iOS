@@ -243,7 +243,7 @@
 		44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */; };
 		44DD959A183378B300B82B24 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DD9599183378B300B82B24 /* OpenGLES.framework */; };
 		44DD959C183378E300B82B24 /* NinevehGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DD959B183378E300B82B24 /* NinevehGL.framework */; };
-		44DD95A018337A8200B82B24 /* MW3dModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD959F18337A8200B82B24 /* MW3dModelView.m */; };
+		44DD95A018337A8200B82B24 /* MW3dModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD959F18337A8200B82B24 /* MW3dModelView.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 		44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA31814133C00417C79 /* NSObject+SBJson.m */; };
 		44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA61814133C00417C79 /* SBJsonParser.m */; };
