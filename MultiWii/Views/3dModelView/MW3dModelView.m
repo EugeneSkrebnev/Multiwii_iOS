@@ -8,6 +8,7 @@
 
 #import "MW3dModelView.h"
 #import <CoreMotion/CoreMotion.h>
+
 #define CAMERA_HEIGHT 10
 
 @implementation MW3dModelView
@@ -43,13 +44,20 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     nglMatrixMultiply(transform, inpInvers, output);
 };
 
+void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
+{
+    NGLmat4 inpInvers;
+    nglMatrixInverse(input, inpInvers);
+    nglMatrixMultiply(inpInvers, transform, output);
+};
+
 - (void) drawView
 {
     if (!_mesh.parsing.isComplete)
         return;
     NSLog(@"draw view");
-    i += 0.1;
-    ang =  i;
+    i += 1;
+    ang = i;
     ang2 = 180 - ang;
     
     NGLmat4 identity;
@@ -61,6 +69,9 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         (float)0., (float)0., (float)1., (float)0.,
         (float)0., (float)0., (float)0., (float)1.};
     
+    float x = 0;
+    float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2));
+    float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
     float translationMatrix[] =
     {
         1., 0., 0., 0,
@@ -70,7 +81,8 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //        0., sinf(nglDegreesToRadians(-ang)), cosf(nglDegreesToRadians(-ang)), 0,
 //        0., 0., 10., 1};
 //        1, 3*fabsf(sinf(nglDegreesToRadians(ang2))), CAMERA_HEIGHT*fabsf(sinf(nglDegreesToRadians(ang))), (float)1.};
-        0, CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2)), CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2)), (float)1.
+//        0, 0, 0, 1.
+        0, y, z, 1.
     };
     float rotateMatrixX[] =
     {
@@ -81,10 +93,10 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     };
     float rotateMatrixZ[] =
     {
-        cosf(nglDegreesToRadians(-ang)), 0., sinf(nglDegreesToRadians(-ang)), 0,
+        -cosf(nglDegreesToRadians(-ang)), 0., sinf(nglDegreesToRadians(-ang)), 0,
         0., 1, 0, 0,
-        -sinf(nglDegreesToRadians(-ang)), 0, cosf(nglDegreesToRadians(-ang)), 0,
-        0., 0., 0., 1
+        -sinf(nglDegreesToRadians(-ang)), 0, -cosf(nglDegreesToRadians(-ang)), 0,
+        0., 0., 0., 1.
     };
     float rotateMatrixY[] =
     {
@@ -98,18 +110,28 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     NGLmat4 cameraMatrix;
     NGLmat4 cameraMatrixInvX;
     NGLmat4 initMatrx;
-    
-
+    NGLmat4 outMatrix;
+    NGLmat4 outMatrix2;
     nglMatrixIdentity(initMatrx);
     applyMatrix(initMatrx, translationMatrix, cameraMatrix);
-    
+
     applyMatrix(cameraMatrix, rotateMatrixX, cameraMatrixWithoutTranslate);
-    
+    applyMatrix( rotateMatrixZ, cameraMatrixWithoutTranslate, outMatrix);
+    applyMatrix( rotateMatrixY, outMatrix, outMatrix2);
 //    applyMatrix(cameraMatrixWithoutTranslate, xInverse, cameraMatrixInvX);
+//    [_camera translateToX:x toY:y toZ:z];
     
-    [_camera rebaseWithMatrix:cameraMatrixWithoutTranslate scale:1.0 compatibility:NGLRebaseQualcommAR];
-    [[NGLLight defaultLight] rebaseWithMatrix:cameraMatrixWithoutTranslate scale:1 compatibility:(NGLRebaseQualcommAR)];
-//    writeMatrix(cameraMatrixInvX);
+    
+    [_camera rebaseWithMatrix:outMatrix scale:1.0 compatibility:NGLRebaseQualcommAR];
+
+
+
+    x = 0;
+    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2-90));
+    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2-90));
+    [[NGLLight defaultLight] translateToX:x toY:y toZ:z];
+    
+    //    writeMatrix(cameraMatrixInvX);
 //    nglMatrixMultiply(identityQualcomInverse, rotateMatrix, cameraMatrixWithoutTranslate);
 //    nglMatrixMultiply(cameraMatrixWithoutTranslate, translationMatrix, cameraMatrix);
 //
@@ -161,7 +183,7 @@ void applyMatrix(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 
         _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
-        _mesh.rotateX = 180;
+//        _mesh.rotateX = 180;
         
 //        [_camera translateToX:0
 //                          toY:3
