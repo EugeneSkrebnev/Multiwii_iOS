@@ -38,6 +38,8 @@
 		4409DDDE1821037900B11C9C /* icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4409DDD71821037900B11C9C /* icon_58.png */; };
 		4409DDE01821049400B11C9C /* icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 4409DDDF1821049400B11C9C /* icon_80.png */; };
 		441AB0A31834361500730439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441AB0A21834361500730439 /* CoreMotion.framework */; };
+		441C130B1838460400BAFFE6 /* quadr.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 441C13091838460400BAFFE6 /* quadr.mtl */; };
+		441C130C1838460400BAFFE6 /* quadr.obj in Resources */ = {isa = PBXBuildFile; fileRef = 441C130A1838460400BAFFE6 /* quadr.obj */; };
 		44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222593180D45BD00D53DE3 /* slider_maximum@2x.png */; };
 		44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222594180D45BD00D53DE3 /* slider_minimum@2x.png */; };
 		44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44222595180D45BD00D53DE3 /* slider_tab@2x.png */; };
@@ -64,7 +66,6 @@
 		4423F225181C8757008B0260 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4423F200181C8757008B0260 /* iRate.bundle */; };
 		4423F226181C8757008B0260 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423F202181C8757008B0260 /* iRate.m */; };
 		4423F227181C8757008B0260 /* iRate.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4423F203181C8757008B0260 /* iRate.podspec */; };
-		4430D68118340A4E00F4D22E /* quadr.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4430D67E18340A4E00F4D22E /* quadr.dae */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -299,6 +300,8 @@
 		4409DDD71821037900B11C9C /* icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58.png; sourceTree = "<group>"; };
 		4409DDDF1821049400B11C9C /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
 		441AB0A21834361500730439 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		441C13091838460400BAFFE6 /* quadr.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.mtl; sourceTree = "<group>"; };
+		441C130A1838460400BAFFE6 /* quadr.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quadr.obj; sourceTree = "<group>"; };
 		44222593180D45BD00D53DE3 /* slider_maximum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_maximum@2x.png"; sourceTree = "<group>"; };
 		44222594180D45BD00D53DE3 /* slider_minimum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_minimum@2x.png"; sourceTree = "<group>"; };
 		44222595180D45BD00D53DE3 /* slider_tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider_tab@2x.png"; sourceTree = "<group>"; };
@@ -338,7 +341,6 @@
 		4423F204181C8757008B0260 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.md; sourceTree = "<group>"; };
 		4423F205181C8757008B0260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4423F206181C8757008B0260 /* RELEASE NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RELEASE NOTES.md"; sourceTree = "<group>"; };
-		4430D67E18340A4E00F4D22E /* quadr.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = quadr.dae; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -827,7 +829,8 @@
 		4430D67D18340A4E00F4D22E /* quadrocopter */ = {
 			isa = PBXGroup;
 			children = (
-				4430D67E18340A4E00F4D22E /* quadr.dae */,
+				441C13091838460400BAFFE6 /* quadr.mtl */,
+				441C130A1838460400BAFFE6 /* quadr.obj */,
 			);
 			path = quadrocopter;
 			sourceTree = "<group>";
@@ -1825,6 +1828,7 @@
 				448ABAAA181726B90056DD4A /* radar2@2x.png in Resources */,
 				44C7CA401789C5520059C199 /* Splash5@2x.png in Resources */,
 				44068BB4180409EB00E8ABCC /* right_normal@2x.png in Resources */,
+				441C130C1838460400BAFFE6 /* quadr.obj in Resources */,
 				4409DDD91821037900B11C9C /* icon_114.png in Resources */,
 				44C7CA411789C5520059C199 /* Splash@2x.png in Resources */,
 				4422261F1810247100D53DE3 /* aux_border@2x.png in Resources */,
@@ -1867,7 +1871,6 @@
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
 				44068BB7180409EB00E8ABCC /* separator_normal_normal@2x.png in Resources */,
 				44C7CA90178A0D610059C199 /* MontserratSubrayada-Bold.ttf in Resources */,
-				4430D68118340A4E00F4D22E /* quadr.dae in Resources */,
 				448ABAB7181839CC0056DD4A /* save@2x.png in Resources */,
 				44C7CA91178A0D610059C199 /* MontserratSubrayada-Regular.ttf in Resources */,
 				44C7CA95178A19300059C199 /* bg_pattern@2x.png in Resources */,
@@ -1966,6 +1969,7 @@
 				447BD30F1822F1C200E27FA7 /* finder_mask@2x.png in Resources */,
 				4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */,
 				4403BCBD17EF7ABC00B5A4E1 /* yaw@2x.png in Resources */,
+				441C130B1838460400BAFFE6 /* quadr.mtl in Resources */,
 				44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */,
 				4409DDDE1821037900B11C9C /* icon_58.png in Resources */,
 				44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */,

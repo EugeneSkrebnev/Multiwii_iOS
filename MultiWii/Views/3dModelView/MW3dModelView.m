@@ -8,7 +8,7 @@
 
 #import "MW3dModelView.h"
 #import <CoreMotion/CoreMotion.h>
-#define CAMERA_HEIGHT 20
+#define CAMERA_HEIGHT 1
 
 @implementation MW3dModelView
 {
@@ -71,18 +71,24 @@
 //    NSLog(@"roll : %f; pitch : %f; yaw : %f", rollDeg, pitchDeg, yawDeg);
 //    roll = 0;
     
-    float R = CAMERA_HEIGHT;
+//    float R = CAMERA_HEIGHT;
 
 //    pitch works
-    pitch_a += 1;
-    _camera.rotateX = -pitch_a;
-    float pitch = nglDegreesToRadians(pitch_a);
-    [_camera translateToX:0
-                      toY:R*sinf(pitch)
-                      toZ:R*cosf(pitch)];
-    
+    pitch_a += 2;
+//    _mesh.rotateZ = pitch_a;
+    _mesh.rotateY = pitch_a;
+//    _mesh.rotateZ = pitch_a / 2;
+//    _camera.rotateX = -pitch_a / 2;
+//    float pitch = nglDegreesToRadians(pitch_a);
+//    [_camera translateToX:0
+//                      toY:R*sinf(pitch)
+//                      toZ:R*cosf(pitch)];
+    [_camera lookAtObject:_mesh];
 //    //    roll works
-//    roll_a += 1;
+//    roll_a += 4;
+//    _mesh.scaleY = fabsf(1*sinf(nglDegreesToRadians(roll_a)));
+//    _mesh.scaleX = fabsf(1*sinf(nglDegreesToRadians(roll_a)));
+//    _mesh.scaleZ = fabsf(1*sinf(nglDegreesToRadians(roll_a)));
 //    _camera.rotateY = roll_a;
 //    _camera.rotateX = -90;
 //    float roll = nglDegreesToRadians(roll_a);
@@ -140,7 +146,8 @@
 //    NSLog(@"%f%f", R, roll);
     
 //    NSLog(@"%f%f", R, roll);
-	[_camera drawCamera];
+    if (_mesh.parsing.isComplete)
+        [_camera drawCamera];
 }
 //-(void) cmm
 //{
@@ -155,14 +162,17 @@
 {
     if (!_wasInited)
     {
+        _wasInited = YES;
         roll_a = 0;
         pitch_a = 0;
         yaw_a = 0;
+        
 //        _cmm = [[CMMotionManager alloc] init];
 //        [_cmm startDeviceMotionUpdates];
 //        _startPitchAngle = 90;//90;
 //        _startRollAngle = -40;
 //        _startHeading = 180;
+        
         self.backgroundColor = [UIColor clearColor];
         nglGlobalColorFormat(NGLColorFormatRGBA);
         nglGlobalTextureOptimize(NGLTextureOptimizeNone);
@@ -171,44 +181,41 @@
         nglGlobalFlush();
         
         NGLLight *light = [NGLLight defaultLight];
-        light.attenuation = 20;
+        light.attenuation = 200;
 
 
         [light translateToX:CAMERA_HEIGHT * 0.8 toY:CAMERA_HEIGHT * 0.8 toZ:0];
         light.type = NGLLightTypeSky;
         self.antialias = NGLAntialias4X;
-        _wasInited = YES;
-        NSDictionary *settings;
+
+
         
-        settings = @{kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
-                     kNGLMeshKeyCentralize: kNGLMeshCentralizeYes,
-                     kNGLMeshKeyNormalize: @(CAMERA_HEIGHT).stringValue
-                     };
+        NSDictionary *settings = @{kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
+                                   kNGLMeshKeyCentralize: kNGLMeshCentralizeYes,
+                                   kNGLMeshKeyNormalize: @(CAMERA_HEIGHT*0.7).stringValue
+                                   };
         
-        _mesh = [[NGLMesh alloc] initWithFile:@"quadr.dae" settings:settings delegate:nil];
-//        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
-//        _mesh = [[NGLMesh alloc] initWithFile:@"3d_model2.dae" settings:settings delegate:nil];
+
+        _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
+
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
-        
-        [_camera autoAdjustAspectRatio:YES animated:YES];
-        _camera.rotationOrder = NGLRotationOrderXYZ;
 
-//        NSLog(@"x = %f y = %f z = %f", _camera.rotateX, _camera.rotateY, _camera.rotateZ);
         [_camera translateToX:0
-                          toY:10
+                          toY:CAMERA_HEIGHT
                           toZ:0];
-        _camera.rotationOrder = NGLRotationOrderYXZ;
-//        [_camera lookAtPointX:0 toY:0 toZ:0 ];
-//        _camera.lookAtTarget = _mesh;
-//        [_mesh translateToX:0 toY:0 toZ:0];
 
-
-        self.delegate = self;
-
-        
         
         [[NGLDebug debugMonitor] startWithView:self];
     }
+}
+- (void) meshLoadingProgress:(NGLParsing)parsing
+{
+    NSLog(@"%f", parsing.progress);
+}
+
+- (void) meshLoadingDidFinish:(NGLParsing)parsing
+{
+    self.delegate = self;
 }
 
 - (id)init

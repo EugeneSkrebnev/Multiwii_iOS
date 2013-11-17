@@ -8,7 +8,7 @@
 
 #import <NinevehGL/NinevehGL.h>
 
-@interface MW3dModelView : NGLView<NGLViewDelegate>
+@interface MW3dModelView : NGLView<NGLViewDelegate,NGLMeshDelegate>
 
 @property (nonatomic, assign) float rollAngle;
 @property (nonatomic, assign) float pitchAngle;
