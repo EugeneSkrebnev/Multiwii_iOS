@@ -30,7 +30,8 @@
     float ang5;
     float ang6;
     
-    
+    float roll__;
+    float yaw__;
     float i;
 }
 
@@ -65,13 +66,18 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         return;
     NSLog(@"draw view");
     i += 0.5;
-    ang =  +90 + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
+    
+    
+    
+//    ang =  90;// + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
     
-    ang3 = 70 * sinf(nglDegreesToRadians(i));
+//    roll__ = 0;// 70 * sinf(nglDegreesToRadians(i));
+//    yaw__ = 20 * sinf(nglDegreesToRadians(i));
+    ang3 = cosf(nglDegreesToRadians(ang)) * yaw__ + sinf(nglDegreesToRadians(ang)) * roll__;// 70 * sinf(nglDegreesToRadians(i));
     ang4 = ang3;//10;//10;
 
-    ang5 = 20 * sinf(nglDegreesToRadians(i));;//0;//180 * sinf(nglDegreesToRadians(i)) ;
+    ang5 = sinf(nglDegreesToRadians(ang)) * yaw__ + cosf(nglDegreesToRadians(ang)) * roll__;;//0 ;20 * sinf(nglDegreesToRadians(i));;//0;//180 * sinf(nglDegreesToRadians(i)) ;
     ang6 = 0;
 
     NGLmat4 identity;
