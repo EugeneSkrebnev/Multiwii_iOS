@@ -83,9 +83,14 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
     float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
     float ___myYaw = (2*(quat.x*quat.y + quat.w*quat.z));
+    
     float rollDeg = nglRadiansToDegrees(roll);
     float pitchDeg = nglRadiansToDegrees(pitch);
     float yawDeg = nglRadiansToDegrees(___myYaw);
+
+//    float rollDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.roll);
+//    float pitchDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.pitch);
+//    float yawDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.yaw);
 
     NSLog(@"rollDeg = %f; pitchDeg = %f; yawDeg = %f ", rollDeg, pitchDeg, yawDeg);
     yaw__ = roundf(-yawDeg * 10) / 10.;
@@ -96,21 +101,23 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     
 //    roll__ = 0;// 70 * sinf(nglDegreesToRadians(i));
 //    yaw__ = 20 * sinf(nglDegreesToRadians(i));
-    ang3 = cosf(nglDegreesToRadians(ang)) * yaw__ + sinf(nglDegreesToRadians(ang)) * roll__;// 70 * sinf(nglDegreesToRadians(i));
+    ang3 = roll__;
+//    ang3 = cosf(nglDegreesToRadians(ang)) * yaw__ + sinf(nglDegreesToRadians(ang)) * roll__;// 70 * sinf(nglDegreesToRadians(i));
     ang4 = ang3;//10;//10;
 
-    ang5 = sinf(nglDegreesToRadians(ang)) * yaw__ + cosf(nglDegreesToRadians(ang)) * roll__;;//0 ;20 * sinf(nglDegreesToRadians(i));;//0;//180 * sinf(nglDegreesToRadians(i)) ;
+    ang5 = yaw__;
+//    ang5 = sinf(nglDegreesToRadians(ang)) * yaw__ + cosf(nglDegreesToRadians(ang)) * roll__;;//0 ;20 * sinf(nglDegreesToRadians(i));;//0;//180 * sinf(nglDegreesToRadians(i)) ;
     ang6 = 0;
 
     NGLmat4 identity;
     nglMatrixIdentity(identity);
     
-    float xInverse[] =
-       {(float)-1., (float)0., (float)0., (float)0.,
-        (float)0., (float)1., (float)0., (float)0.,
-        (float)0., (float)0., (float)1., (float)0.,
-        (float)0., (float)0., (float)0., (float)1.};
-    
+//    float xInverse[] =
+//       {(float)-1., (float)0., (float)0., 0,
+//        (float)0., (float)1., (float)0., (float)0.,
+//        (float)0., (float)0., (float)1., (float)0.,
+//        (float)0., (float)0., (float)0., (float)1.};
+
     float x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));
     float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2)) * cosf(nglDegreesToRadians(ang4));
     float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
@@ -254,6 +261,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         
 
         _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
+        _mesh.material = [NGLMaterial materialCooper];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
         _mesh.rotateX = 180;
         
