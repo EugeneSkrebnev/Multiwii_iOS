@@ -23,6 +23,14 @@
     float yaw_a;
     float ang;
     float ang2;
+    
+    float ang3;
+    float ang4;
+    
+    float ang5;
+    float ang6;
+    
+    
     float i;
 }
 
@@ -57,9 +65,15 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         return;
     NSLog(@"draw view");
     i += 1;
-    ang = i;
-    ang2 = 180 - ang;
+    ang =  45;//45;
+    ang2 = 180 + ang;
     
+    ang3 = 30 * sinf(nglDegreesToRadians(i));
+    ang4 = 0;
+
+    ang5 = i;
+    ang6 = 0;
+
     NGLmat4 identity;
     nglMatrixIdentity(identity);
     
@@ -72,7 +86,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     float x = 0;
     float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2));
     float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
-    float translationMatrix[] =
+    float translationPitch[] =
     {
         1., 0., 0., 0,
         0., 1., 0., 0,
@@ -93,36 +107,47 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     };
     float rotateMatrixZ[] =
     {
-        -cosf(nglDegreesToRadians(-ang)), 0., sinf(nglDegreesToRadians(-ang)), 0,
+        cosf(nglDegreesToRadians(-ang5)), 0., sinf(nglDegreesToRadians(-ang5)), 0,
         0., 1, 0, 0,
-        -sinf(nglDegreesToRadians(-ang)), 0, -cosf(nglDegreesToRadians(-ang)), 0,
+        -sinf(nglDegreesToRadians(-ang5)), 0, cosf(nglDegreesToRadians(-ang5)), 0,
         0., 0., 0., 1.
     };
     float rotateMatrixY[] =
     {
-        cosf(nglDegreesToRadians(-ang)),  sinf(nglDegreesToRadians(-ang)), 0, 0,
-        -sinf(nglDegreesToRadians(-ang)), cosf(nglDegreesToRadians(-ang)), 0, 0,
+        cosf(nglDegreesToRadians(-ang3)),  sinf(nglDegreesToRadians(-ang3)), 0, 0,
+        -sinf(nglDegreesToRadians(-ang3)), cosf(nglDegreesToRadians(-ang3)), 0, 0,
         0, 0, 1, 0,
         0., 0., 0., 1
     };
     
-    NGLmat4 cameraMatrixWithoutTranslate;
     NGLmat4 cameraMatrix;
-    NGLmat4 cameraMatrixInvX;
-    NGLmat4 initMatrx;
-    NGLmat4 outMatrix;
-    NGLmat4 outMatrix2;
-    nglMatrixIdentity(initMatrx);
-    applyMatrix(initMatrx, translationMatrix, cameraMatrix);
 
-    applyMatrix(cameraMatrix, rotateMatrixX, cameraMatrixWithoutTranslate);
-    applyMatrix( rotateMatrixZ, cameraMatrixWithoutTranslate, outMatrix);
-    applyMatrix( rotateMatrixY, outMatrix, outMatrix2);
+    nglMatrixIdentity(cameraMatrix);
+
+    applyMatrix(rotateMatrixX, cameraMatrix, cameraMatrix);
+    applyMatrix(rotateMatrixY, cameraMatrix, cameraMatrix);
+
+    applyMatrix(translationPitch, cameraMatrix , cameraMatrix);
+    applyMatrix(rotateMatrixZ, cameraMatrix, cameraMatrix); // если после переноса то крутиться коптер как не крути, если до то камера
+    
+//    applyMatrix( rotateMatrixY, cameraMatrix, outMatrix);
+//    applyMatrix( rotateMatrixZ, cameraMatrix, outMatrix);
+
+//    _camera.rotateZ += 1;
+
+
+////    applyMatrix(rotateMatrixX, initMatrx, cameraMatrix);
+////    //    applyMatrix( rotateMatrixY, cameraMatrix, outMatrix);
+////    //    applyMatrix( rotateMatrixZ, cameraMatrix, outMatrix);
+////    applyMatrix(translationMatrix, cameraMatrix , cameraMatrixWithoutTranslate);
+////    //    _camera.rotateZ += 1;
+
+//    applyMatrix( rotateMatrixY, outMatrix, outMatrix2);
 //    applyMatrix(cameraMatrixWithoutTranslate, xInverse, cameraMatrixInvX);
 //    [_camera translateToX:x toY:y toZ:z];
     
     
-    [_camera rebaseWithMatrix:outMatrix scale:1.0 compatibility:NGLRebaseQualcommAR];
+    [_camera rebaseWithMatrix:cameraMatrix scale:1.0 compatibility:NGLRebaseQualcommAR];
 
 
 
@@ -183,7 +208,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 
         _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
-//        _mesh.rotateX = 180;
+        _mesh.rotateX = 180;
         
 //        [_camera translateToX:0
 //                          toY:3
