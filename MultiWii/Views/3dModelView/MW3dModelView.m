@@ -60,27 +60,37 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     nglMatrixMultiply(inpInvers, transform, output);
 };
 
+
+//-(void) cmm
+//{
+//
+//    NSLog(@"roll = %f; pitch = %f; yaw = %f",
+//        nglRadiansToDegrees(_cmm.deviceMotion.attitude.roll),
+//        nglRadiansToDegrees(_cmm.deviceMotion.attitude.pitch),
+//        nglRadiansToDegrees(_cmm.deviceMotion.attitude.yaw));
+//
+//}
+
 - (void) drawView
 {
     if (!_mesh.parsing.isComplete)
         return;
-    NSLog(@"draw view");
+
 //    i += 0.5;
     CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
     float yaw = (float)_cmm.deviceMotion.attitude.yaw;
 
     float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
     float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
-    
-    
-    
-    
-    float rollDeg = radiansToDegrees(roll);
-    float pitchDeg = radiansToDegrees(pitch);
-    float yawDeg = radiansToDegrees(yaw);
+    float ___myYaw = (2*(quat.x*quat.y + quat.w*quat.z));
+    float rollDeg = nglRadiansToDegrees(roll);
+    float pitchDeg = nglRadiansToDegrees(pitch);
+    float yawDeg = nglRadiansToDegrees(___myYaw);
 
-    
-    
+    NSLog(@"rollDeg = %f; pitchDeg = %f; yawDeg = %f ", rollDeg, pitchDeg, yawDeg);
+    yaw__ = roundf(-yawDeg * 10) / 10.;
+    ang =  roundf((-pitchDeg +90)*10) / 10.;
+    roll__ = roundf(-rollDeg*10) / 10.;
 //    ang =  90;// + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
     
@@ -275,7 +285,8 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         self.delegate = self;
     });
-
+    _cmm = [[CMMotionManager alloc] init];
+    [_cmm startDeviceMotionUpdates];
 
 }
 
