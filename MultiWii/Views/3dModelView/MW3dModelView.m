@@ -65,8 +65,20 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     if (!_mesh.parsing.isComplete)
         return;
     NSLog(@"draw view");
-    i += 0.5;
+//    i += 0.5;
+    CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
+    float yaw = (float)_cmm.deviceMotion.attitude.yaw;
+
+    float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
+    float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
     
+    
+    
+    
+    float rollDeg = radiansToDegrees(roll);
+    float pitchDeg = radiansToDegrees(pitch);
+    float yawDeg = radiansToDegrees(yaw);
+
     
     
 //    ang =  90;// + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
@@ -207,7 +219,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         pitch_a = 0;
         yaw_a = 0;
 
-        
+
         self.backgroundColor = [UIColor clearColor];
         nglGlobalColorFormat(NGLColorFormatRGBA);
         nglGlobalTextureOptimize(NGLTextureOptimizeNone);
