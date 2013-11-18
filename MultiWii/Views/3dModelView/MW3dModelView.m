@@ -64,14 +64,14 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     if (!_mesh.parsing.isComplete)
         return;
     NSLog(@"draw view");
-    i += 1;
-    ang =  45;//45;
+    i += 2;
+    ang =  180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
     
-    ang3 = 30 * sinf(nglDegreesToRadians(i));
+//    ang3 = 30 * sinf(nglDegreesToRadians(i));
     ang4 = 0;
 
-    ang5 = i;
+    ang5 = 180 * sinf(nglDegreesToRadians(i)) ;
     ang6 = 0;
 
     NGLmat4 identity;
