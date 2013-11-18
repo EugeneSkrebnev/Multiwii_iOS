@@ -64,14 +64,14 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     if (!_mesh.parsing.isComplete)
         return;
     NSLog(@"draw view");
-    i += 2;
-    ang =  180 * sinf(nglDegreesToRadians(i));//45;
+    i += 0.5;
+    ang =  +90 + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
     
-//    ang3 = 30 * sinf(nglDegreesToRadians(i));
-    ang4 = 0;
+    ang3 = 70 * sinf(nglDegreesToRadians(i));
+    ang4 = ang3;//10;//10;
 
-    ang5 = 180 * sinf(nglDegreesToRadians(i)) ;
+    ang5 = 20 * sinf(nglDegreesToRadians(i));;//0;//180 * sinf(nglDegreesToRadians(i)) ;
     ang6 = 0;
 
     NGLmat4 identity;
@@ -83,8 +83,8 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         (float)0., (float)0., (float)1., (float)0.,
         (float)0., (float)0., (float)0., (float)1.};
     
-    float x = 0;
-    float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2));
+    float x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));
+    float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2)) * cosf(nglDegreesToRadians(ang4));
     float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
     float translationPitch[] =
     {
@@ -96,8 +96,26 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //        0., 0., 10., 1};
 //        1, 3*fabsf(sinf(nglDegreesToRadians(ang2))), CAMERA_HEIGHT*fabsf(sinf(nglDegreesToRadians(ang))), (float)1.};
 //        0, 0, 0, 1.
-        0, y, z, 1.
+        x, y, z, 1.
     };
+    
+    float x2 = 0;
+    float y2 = 0;//y;// CAMERA_HEIGHT* cosf(nglDegreesToRadians(ang4+180));;
+    float z2 = 0;
+    float translationRoll[] =
+    {
+        1., 0., 0., 0,
+        0., 1., 0., 0,
+        0., 0., 1., 0,
+        //        0., cosf(nglDegreesToRadians(-ang)), -sinf(nglDegreesToRadians(-ang)), 0,
+        //        0., sinf(nglDegreesToRadians(-ang)), cosf(nglDegreesToRadians(-ang)), 0,
+        //        0., 0., 10., 1};
+        //        1, 3*fabsf(sinf(nglDegreesToRadians(ang2))), CAMERA_HEIGHT*fabsf(sinf(nglDegreesToRadians(ang))), (float)1.};
+        //        0, 0, 0, 1.
+        x2, y2, z2, 1.
+    };
+
+    
     float rotateMatrixX[] =
     {
         1., 0., 0., 0,
@@ -128,6 +146,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     applyMatrix(rotateMatrixY, cameraMatrix, cameraMatrix);
 
     applyMatrix(translationPitch, cameraMatrix , cameraMatrix);
+//    applyMatrix(translationRoll, cameraMatrix , cameraMatrix);
     applyMatrix(rotateMatrixZ, cameraMatrix, cameraMatrix); // если после переноса то крутиться коптер как не крути, если до то камера
     
 //    applyMatrix( rotateMatrixY, cameraMatrix, outMatrix);
