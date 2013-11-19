@@ -39,7 +39,7 @@
 
 #define kReceiptStringKey @"MK_STOREKIT_RECEIPTS_STRING"
 
-#ifndef NDEBUG
+#ifdef DEBUG
 #define kReceiptValidationURL @"https://sandbox.itunes.apple.com/verifyReceipt"
 #else
 #define kReceiptValidationURL @"https://buy.itunes.apple.com/verifyReceipt"
