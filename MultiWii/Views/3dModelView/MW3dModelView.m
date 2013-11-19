@@ -33,6 +33,10 @@
     float roll__;
     float yaw__;
     float i;
+    
+    float rollDeg;
+    float pitchDeg;
+    float yawDeg;
 }
 
 void writeMatrix(NGLmat4 x)
@@ -75,6 +79,31 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 {
     if (!_mesh.parsing.isComplete)
         return;
+    CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
+    float yaw = (float)_cmm.deviceMotion.attitude.yaw;
+    
+    float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
+    float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
+    float ___myYaw = (2*(quat.x*quat.y + quat.w*quat.z));
+
+    float rollDeg = nglRadiansToDegrees(roll);
+    float pitchDeg = nglRadiansToDegrees(-pitch);
+    float yawDeg = nglRadiansToDegrees(___myYaw);
+
+    
+    float x =  CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg))*cosf(nglDegreesToRadians(pitchDeg));
+    float y = CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg)) * sinf(nglDegreesToRadians(pitchDeg));
+    float z = CAMERA_HEIGHT*sinf(nglDegreesToRadians(rollDeg));
+
+    [_camera translateToX:x toY:y toZ:z];
+    [_camera lookAtObject:_mesh];
+    
+    [_camera drawCamera];
+}
+- (void) drawView2
+{
+    if (!_mesh.parsing.isComplete)
+        return;
 
 //    i += 0.5;
     CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
@@ -87,15 +116,22 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     float rollDeg = nglRadiansToDegrees(roll);
     float pitchDeg = nglRadiansToDegrees(pitch);
     float yawDeg = nglRadiansToDegrees(___myYaw);
-
+    
 //    float rollDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.roll);
 //    float pitchDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.pitch);
 //    float yawDeg = nglRadiansToDegrees(_cmm.deviceMotion.attitude.yaw);
+//    rollDeg = MIN(90, rollDeg);
+//    rollDeg = MAX(-90, rollDeg);
+    
+//    rollDeg = (int)(rollDeg + 1) % 180;
+//    pitchDeg = (int)(pitchDeg + 2) % 180;
+//    yawDeg +=3;
+    
 
-    NSLog(@"rollDeg = %f; pitchDeg = %f; yawDeg = %f ", rollDeg, pitchDeg, yawDeg);
-    yaw__ = roundf(-yawDeg * 10) / 10.;
-    ang =  roundf((-pitchDeg +90)*10) / 10.;
-    roll__ = roundf(-rollDeg*10) / 10.;
+    yaw__ = fabsf ( roundf(-yawDeg * 10) / 10. );
+    ang =  fabsf ( roundf((-pitchDeg +90)*10) / 10. );
+    roll__ = fabsf ( roundf(-rollDeg*10) / 10. );
+    NSLog(@"rollDeg = %.1f; pitchDeg = %.1f; yawDeg = %.1f ", rollDeg, pitchDeg, yawDeg);
 //    ang =  90;// + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
     
@@ -121,6 +157,13 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     float x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));
     float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2)) * cosf(nglDegreesToRadians(ang4));
     float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
+//    if ((y > 0) || (yawDeg > ))
+    
+    if (y > 0)
+    {
+        [_camera drawCamera];
+        return;
+    }
     float translationPitch[] =
     {
         1., 0., 0., 0,
@@ -205,9 +248,13 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 
 
 
-    x = 0;
-    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2-90));
-    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2-90));
+//    x = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));;
+//    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2-90));
+//    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2-90));
+    x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang4+180))*sinf(nglDegreesToRadians(-ang2 - 90 +180));
+    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2 - 90)) * cosf(nglDegreesToRadians(-ang4));
+    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2 - 90));
+    
     [[NGLLight defaultLight] translateToX:x toY:y toZ:z];
     
     //    writeMatrix(cameraMatrixInvX);
@@ -263,7 +310,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
         _mesh.material = [NGLMaterial materialCooper];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
-        _mesh.rotateX = 180;
+//        _mesh.rotateX = 180;
         
 //        [_camera translateToX:0
 //                          toY:3
