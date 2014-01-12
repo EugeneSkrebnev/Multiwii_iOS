@@ -14,6 +14,7 @@
 @property (nonatomic, assign) float pitchAngle;
 @property (nonatomic, assign) float heading;
 
+@property (nonatomic, assign) float cameraHeigth;
 
 @property (nonatomic, assign) float deviceRollAngle;
 @property (nonatomic, assign) float devicePitchAngle;

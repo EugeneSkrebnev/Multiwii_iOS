@@ -74,38 +74,39 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //        nglRadiansToDegrees(_cmm.deviceMotion.attitude.yaw));
 //
 //}
+//
+//- (void) drawView
+//{
+//    if (!_mesh.parsing.isComplete)
+//        return;
+//    CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
+//    float yaw = (float)_cmm.deviceMotion.attitude.yaw;
+//    
+//    float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
+//    float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
+//    float ___myYaw = (2*(quat.x*quat.y + quat.w*quat.z));
+//
+//    float rollDeg = nglRadiansToDegrees(roll);
+//    float pitchDeg = nglRadiansToDegrees(-pitch);
+//    float yawDeg = nglRadiansToDegrees(___myYaw);
+//
+//    
+//    float x =  CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg))*cosf(nglDegreesToRadians(pitchDeg));
+//    float y = CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg)) * sinf(nglDegreesToRadians(pitchDeg));
+//    float z = CAMERA_HEIGHT*sinf(nglDegreesToRadians(rollDeg));
+//
+//    [_camera translateToX:x toY:y toZ:z];
+//    [_camera lookAtObject:_mesh];
+//    
+//    [_camera drawCamera];
+//}
 
 - (void) drawView
 {
     if (!_mesh.parsing.isComplete)
         return;
-    CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
-    float yaw = (float)_cmm.deviceMotion.attitude.yaw;
-    
-    float pitch = atan2(2*(quat.x*quat.w + quat.y*quat.z), 1 - 2*quat.x*quat.x - 2*quat.z*quat.z);
-    float roll  = atan2(2*(quat.y*quat.w - quat.x*quat.z), 1 - 2*quat.y*quat.y - 2*quat.z*quat.z);
-    float ___myYaw = (2*(quat.x*quat.y + quat.w*quat.z));
 
-    float rollDeg = nglRadiansToDegrees(roll);
-    float pitchDeg = nglRadiansToDegrees(-pitch);
-    float yawDeg = nglRadiansToDegrees(___myYaw);
 
-    
-    float x =  CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg))*cosf(nglDegreesToRadians(pitchDeg));
-    float y = CAMERA_HEIGHT*cosf(nglDegreesToRadians(rollDeg)) * sinf(nglDegreesToRadians(pitchDeg));
-    float z = CAMERA_HEIGHT*sinf(nglDegreesToRadians(rollDeg));
-
-    [_camera translateToX:x toY:y toZ:z];
-    [_camera lookAtObject:_mesh];
-    
-    [_camera drawCamera];
-}
-- (void) drawView2
-{
-    if (!_mesh.parsing.isComplete)
-        return;
-
-//    i += 0.5;
     CMQuaternion quat = _cmm.deviceMotion.attitude.quaternion;
     float yaw = (float)_cmm.deviceMotion.attitude.yaw;
 
@@ -128,9 +129,10 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //    yawDeg +=3;
     
 
-    yaw__ = fabsf ( roundf(-yawDeg * 10) / 10. );
-    ang =  fabsf ( roundf((-pitchDeg +90)*10) / 10. );
-    roll__ = fabsf ( roundf(-rollDeg*10) / 10. );
+    yaw__ =  ( roundf(-yawDeg * 10) / 10. );
+    ang =   ( roundf((-pitchDeg +90)*10) / 10. );
+    roll__ =  ( roundf(-rollDeg*10) / 10. );
+
     NSLog(@"rollDeg = %.1f; pitchDeg = %.1f; yawDeg = %.1f ", rollDeg, pitchDeg, yawDeg);
 //    ang =  90;// + 70 * sinf(nglDegreesToRadians(i));//90;//0;//30 * sinf(nglDegreesToRadians(i));//90;// sinf(nglDegreesToRadians(i))*90; //180 * sinf(nglDegreesToRadians(i));//45;
     ang2 = 180 + ang;
@@ -154,16 +156,10 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //        (float)0., (float)0., (float)1., (float)0.,
 //        (float)0., (float)0., (float)0., (float)1.};
 
-    float x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));
-    float y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang2)) * cosf(nglDegreesToRadians(ang4));
-    float z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(ang2));
-//    if ((y > 0) || (yawDeg > ))
-    
-    if (y > 0)
-    {
-        [_camera drawCamera];
-        return;
-    }
+    float x =  self.cameraHeigth*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));
+    float y = self.cameraHeigth*sinf(nglDegreesToRadians(ang2)) * cosf(nglDegreesToRadians(ang4));
+    float z = self.cameraHeigth*cosf(nglDegreesToRadians(ang2));
+
     float translationPitch[] =
     {
         1., 0., 0., 0,
@@ -245,15 +241,18 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     
     
     [_camera rebaseWithMatrix:cameraMatrix scale:1.0 compatibility:NGLRebaseQualcommAR];
+    NGLmat4 light;
+    nglMatrixInverse(cameraMatrix, light);
+//    [[NGLLight defaultLight] rebaseWithMatrix:light scale:1.0 compatibility:NGLRebaseQualcommAR];
 
 
-
-//    x = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));;
-//    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2-90));
-//    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2-90));
-    x =  CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang4+180))*sinf(nglDegreesToRadians(-ang2 - 90 +180));
-    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2 - 90)) * cosf(nglDegreesToRadians(-ang4));
-    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2 - 90));
+    x = CAMERA_HEIGHT*sinf(nglDegreesToRadians(ang4+180))*sinf(nglDegreesToRadians(ang2+180));;
+    y = CAMERA_HEIGHT*sinf(nglDegreesToRadians(-ang2-90));
+    z = CAMERA_HEIGHT*cosf(nglDegreesToRadians(-ang2-90));
+    x =  self.cameraHeigth*sinf(nglDegreesToRadians(-ang4+180))*sinf(nglDegreesToRadians(-ang2 - 90 +180));
+    y = self.cameraHeigth*sinf(nglDegreesToRadians(-ang2 - 90)) * cosf(nglDegreesToRadians(-ang4));
+//    z = 0;
+    z = self.cameraHeigth*cosf(nglDegreesToRadians(-ang2 - 90));
     
     [[NGLLight defaultLight] translateToX:x toY:y toZ:z];
     
@@ -269,7 +268,10 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
 //    [_camera rebaseWithMatrix:cameraMatrix scale:1.0 compatibility:NGLRebaseQualcommAR];
 //    [_camera rebaseWithMatrix:cameraMatrixWithoutRotate scale:1.0 compatibility:NGLRebaseQualcommAR];
 
-
+    _mesh.rotateX = -self.pitchAngle;
+    _mesh.rotateY = -self.heading;
+    _mesh.rotateZ = self.rollAngle + 180;
+    
     if (_mesh.parsing.isComplete)
         [_camera drawCamera];
 }
@@ -282,7 +284,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         roll_a = 0;
         pitch_a = 0;
         yaw_a = 0;
-
+        self.cameraHeigth = CAMERA_HEIGHT + 3;
 
         self.backgroundColor = [UIColor clearColor];
         nglGlobalColorFormat(NGLColorFormatRGBA);
@@ -295,7 +297,7 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         light.attenuation = 200;
 
 
-        [light translateToX:0 toY:CAMERA_HEIGHT * 0.8 toZ:0];
+        [light translateToX:0 toY:self.cameraHeigth * 0.8 toZ:0];
         light.type = NGLLightTypeSky;
         self.antialias = NGLAntialias4X;
 
@@ -303,26 +305,14 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
         
         NSDictionary *settings = @{//kNGLMeshKeyOriginal: kNGLMeshOriginalYes,
                                    kNGLMeshKeyCentralize: kNGLMeshCentralizeYes,
-                                   kNGLMeshKeyNormalize: @(CAMERA_HEIGHT*0.7).stringValue
+                                   kNGLMeshKeyNormalize: @(self.cameraHeigth*0.7).stringValue
                                    };
         
 
         _mesh = [[NGLMesh alloc] initWithFile:@"quadr.obj" settings:settings delegate:self];
-        _mesh.material = [NGLMaterial materialCooper];
+//        _mesh.material = [NGLMaterial materialCooper];
         _camera = [[NGLCamera alloc] initWithMeshes:_mesh, nil];
-//        _mesh.rotateX = 180;
-        
-//        [_camera translateToX:0
-//                          toY:3
-//                          toZ:CAMERA_HEIGHT];
-        
-//        [_camera translateToX:0
-//                          toY:0.05
-//                          toZ:0];
-
-//        [_camera translateToX:2
-//                          toY:0
-//                          toZ:0];
+        _mesh.rotateX = 180;
 
         
         [[NGLDebug debugMonitor] startWithView:self];
@@ -342,9 +332,34 @@ void applyMatrixInv(NGLmat4 input, NGLmat4 transform, NGLmat4 output)
     });
     _cmm = [[CMMotionManager alloc] init];
     [_cmm startDeviceMotionUpdates];
-
+    
+    delayInSeconds = 10;
+    popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self updateSmth];
+    });
 }
 
+-(void) updateSmth
+{
+    [_cmm stopDeviceMotionUpdates];
+
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [_cmm startDeviceMotionUpdates];
+        double delayInSeconds = 10;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            
+            [self updateSmth];
+        });
+
+    });
+
+    
+    
+}
 - (id)init
 {
     self = [super init];

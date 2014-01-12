@@ -33,7 +33,7 @@
             {
                 [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRequest) object:nil];
                 [self performSelector:@selector(sendRequest) withObject:nil afterDelay:0.0];
-        //        self.model3dView.heading = [MWTelemetryManager sharedInstance].attitude.heading;
+                self.model3dView.heading = [MWTelemetryManager sharedInstance].attitude.heading;
                 self.model3dView.rollAngle = [MWTelemetryManager sharedInstance].attitude.rollAngle / 10;
                 self.model3dView.pitchAngle = [MWTelemetryManager sharedInstance].attitude.pitchAngle / 10;
                 NSLog(@"roll = %.0f ; pitch = %.0f", self.model3dView.rollAngle, self.model3dView.pitchAngle);
