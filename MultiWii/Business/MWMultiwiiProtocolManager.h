@@ -28,7 +28,7 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 
 
 @interface MWMultiwiiProtocolManager : NSObject
-+ (MWMultiwiiProtocolManager *)sharedInstance;
+//+ (MWMultiwiiProtocolManager *)sharedInstance;
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData;
 -(void) sendRequestWithId:(int) identifier andPayload:(NSData*) payload responseBlock:(MWMultiwiiProtocolManagerRecieveDataBlock) callBackBlock;

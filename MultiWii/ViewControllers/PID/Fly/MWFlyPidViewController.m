@@ -27,7 +27,7 @@
     _titles = @[@"ROLL", @"PITCH", @"YAW", @"LEVEL"];
     _iconsTitles = @[@"roll.png", @"pitch.png", @"yaw.png", @"level.png"];
     
-    MWFlyPidSettings* flyPid = [MWPidSettingsManager sharedInstance].flyPid;
+    MWFlyPidSettings* flyPid = PID_MANAGER.flyPid;
     _pids = @[flyPid.roll, flyPid.pitch, flyPid.yaw, flyPid.level];
 
     [self.tableView reloadData];
@@ -39,8 +39,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    MWFlyPidSettings* flyPid = [MWPidSettingsManager sharedInstance].flyPid;
-    [flyPid.roll.p addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.roll)];
+    MWFlyPidSettings* flyPid = PID_MANAGER.flyPid;
+    [flyPid.roll.p addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.roll)]; //(__bridge void *) bad bad seems nothing good in this code
     [flyPid.roll.i addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.roll)];
     [flyPid.roll.d addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:(__bridge void *)(flyPid.roll)];
     
@@ -54,7 +54,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-     MWFlyPidSettings* flyPid = [MWPidSettingsManager sharedInstance].flyPid;
+     MWFlyPidSettings* flyPid = PID_MANAGER.flyPid;
     [flyPid.roll.p removeObserver:self forKeyPath:@"value"];
     [flyPid.roll.i removeObserver:self forKeyPath:@"value"];
     [flyPid.roll.d removeObserver:self forKeyPath:@"value"];
@@ -68,7 +68,7 @@
 {
     if (self.rollPitchLockSwitch.locked)
     {
-        MWFlyPidSettings* flyPid = [MWPidSettingsManager sharedInstance].flyPid;
+        MWFlyPidSettings* flyPid = PID_MANAGER.flyPid;
 
         if (context == (__bridge void *)(flyPid.roll))
         {

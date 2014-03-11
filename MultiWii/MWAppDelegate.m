@@ -20,22 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-    [Flurry startSession:@"R8W8QZ9G3B6PN8JVTHPX"];
     [MWGlobalManager sharedInstance]; //init all systems
+    [Flurry startSession:@"R8W8QZ9G3B6PN8JVTHPX"];
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].appStoreID = 735311586;
     [iRate sharedInstance].daysUntilPrompt = 10;
     [iRate sharedInstance].usesUntilPrompt = 12;
     
-    [MWBluetoothManager sharedInstance].didDisconnectWithErrorBlock =
+    BLUETOOTH_MANAGER.didDisconnectWithErrorBlock =
     ^(NSError* err, CBPeripheral* device){
         [UIAlertView alertErrorWithMessage:[NSString stringWithFormat:@"%@ Please reconnect.", err.localizedDescription]];
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidDisconnectWithErrorNotification object:nil];
     };
     
-    [MWBluetoothManager sharedInstance].didUpdateStateBlock = ^{
-        if (![MWBluetoothManager sharedInstance].isReadyToUse)
+    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{
+        if (!BLUETOOTH_MANAGER.isReadyToUse)
         {
 //            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
         }

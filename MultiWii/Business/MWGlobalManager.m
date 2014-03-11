@@ -22,10 +22,10 @@
     self = [super init];
     if (self)
     {
-        self.bluetoothManager = [MWBluetoothManager sharedInstance];
-        self.pidManager = [MWPidSettingsManager sharedInstance];
-        self.protocolManager = [MWMultiwiiProtocolManager sharedInstance];
-        self.boxManager = [MWBoxSettingsManager sharedInstance];
+        self.bluetoothManager = [[MWBluetoothManager alloc] init];
+        self.pidManager = [[MWPidSettingsManager alloc] init];
+        self.protocolManager = [[MWMultiwiiProtocolManager alloc] init];
+        self.boxManager = [[MWBoxSettingsManager alloc] init];
         [self initDefaultHandlers];
         [MKStoreManager sharedManager];
     }

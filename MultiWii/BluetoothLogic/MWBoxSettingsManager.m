@@ -15,11 +15,11 @@
 
 #pragma mark - init section
 
-+ (MWBoxSettingsManager *)sharedInstance {
-    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-        return [[self alloc] init];
-    });
-}
+//+ (MWBoxSettingsManager *)sharedInstance {
+//    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+//        return [[self alloc] init];
+//    });
+//}
 
 - (id)init
 {

@@ -136,7 +136,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = ^(NSError* err, CBPeripheral* device)
+    BLUETOOTH_MANAGER.didFailToFindService = ^(NSError* err, CBPeripheral* device)
     {
         if (!device)
         {
@@ -149,16 +149,15 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = nil;
+    BLUETOOTH_MANAGER.didFailToFindService = nil;
 }
 
 
 -(void) readBoxesButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:^(NSData *recieveData) {
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_BOX_NAMES andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"boxes names read success");
-    
-        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_BOXES andPayload:nil responseBlock:^(NSData *recieveData) {
+        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_BOXES andPayload:nil responseBlock:^(NSData *recieveData) {
             NSLog(@"boxes values read success");
             [self.tableView reloadData];
         }];
@@ -171,11 +170,11 @@
     
     if (__delegate.isFullVersionUnlocked)
     {
-        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_BOXES
-                                                           andPayload:[[MWGlobalManager sharedInstance].boxManager payloadFromBoxes]
-                                                        responseBlock:^(NSData *recieveData) {
-                                                            NSLog(@"write success");
-                                                        }];
+        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_BOXES
+                                 andPayload:[[MWGlobalManager sharedInstance].boxManager payloadFromBoxes]
+                              responseBlock:^(NSData *recieveData) {
+                                  NSLog(@"write success");
+                              }];
     }
     else
     {

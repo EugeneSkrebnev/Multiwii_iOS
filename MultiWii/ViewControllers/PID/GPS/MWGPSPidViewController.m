@@ -27,7 +27,7 @@
     _titles = @[@"POS HOLD", @"POS HOLD RATE", @"NAVIGATION RATE"];
     _iconsTitles = @[@"roll.png", @"roll.png", @"roll.png"];
     
-    MWGPSPidSettings* gpsPid = [MWPidSettingsManager sharedInstance].gpsPid;
+    MWGPSPidSettings* gpsPid = PID_MANAGER.gpsPid;
     _pids = @[gpsPid.posHold, gpsPid.posHoldRate, gpsPid.navigationRate];
     [self.tableView reloadData];
 }

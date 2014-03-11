@@ -15,12 +15,12 @@
     NSMutableDictionary* _defaultHandlers;
 }
 
-+ (MWMultiwiiProtocolManager *)sharedInstance
-{
-    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-        return [[self alloc] init];
-    });
-}
+//+ (MWMultiwiiProtocolManager *)sharedInstance
+//{
+//    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+//        return [[self alloc] init];
+//    });
+//}
 
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData

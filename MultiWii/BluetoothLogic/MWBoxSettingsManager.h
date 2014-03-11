@@ -11,7 +11,7 @@
 
 @interface MWBoxSettingsManager : NSObject
 
-+ (MWBoxSettingsManager *)sharedInstance;
+//+ (MWBoxSettingsManager *)sharedInstance;
 
 - (MWBoxAuxSettingEntity*) boxEntityForIndex:(int) index;
 - (int) boxesCount;

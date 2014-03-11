@@ -26,7 +26,7 @@
     
     _titles = @[@"BARO", @"MAG"];
     _iconsTitles = @[@"baro", @"mag.png"];
-    MWSensorsPidSettings* sensorsPid = [MWPidSettingsManager sharedInstance].sensorsPid;
+    MWSensorsPidSettings* sensorsPid = PID_MANAGER.sensorsPid;
     _pids = @[sensorsPid.baro, sensorsPid.mag];
 
     self.calibrateAccButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:14];
@@ -54,7 +54,7 @@
 
 -(void) calibrateAccButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_ACC_CALIBRATION andPayload:nil responseBlock:^(NSData *recieveData)
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_ACC_CALIBRATION andPayload:nil responseBlock:^(NSData *recieveData)
     {
         NSLog(@"read success");
     }];
@@ -62,7 +62,7 @@
 
 -(void) calibrateMagButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_MAG_CALIBRATION andPayload:nil responseBlock:^(NSData *recieveData)
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_MAG_CALIBRATION andPayload:nil responseBlock:^(NSData *recieveData)
      {
          NSLog(@"read success");
      }];

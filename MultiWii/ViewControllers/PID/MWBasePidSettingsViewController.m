@@ -39,7 +39,7 @@
 
 -(void) readPidButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_PID andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"read success");
     }];
     
@@ -49,11 +49,11 @@
 {
     if (__delegate.isFullVersionUnlocked)
     {
-        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
-                                                           andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
-                                                        responseBlock:^(NSData *recieveData) {
-                                                            NSLog(@"write success");
-                                                        }];
+        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
+                                 andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
+                              responseBlock:^(NSData *recieveData) {
+                                  NSLog(@"write success");
+                              }];
     }
     else
     {

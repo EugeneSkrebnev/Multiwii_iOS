@@ -35,11 +35,11 @@
 }
 #pragma mark - init section
 
-+ (MWBluetoothManager *)sharedInstance {
-    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-        return [[self alloc] init];
-    });
-}
+//+ (MWBluetoothManager *)sharedInstance {
+//    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+//        return [[self alloc] init];
+//    });
+//}
 
 - (id)init
 {

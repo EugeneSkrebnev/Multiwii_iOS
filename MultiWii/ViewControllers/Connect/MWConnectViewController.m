@@ -112,7 +112,7 @@
     cell.titleLabel.textColor = [UIColor greenColor];
 
     [MWGlobalManager sharedInstance].multiwiiSuccesConnect = NO;
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
         
         cell.titleLabel.text = [MWGlobalManager sharedInstance].copterTypeString;
 

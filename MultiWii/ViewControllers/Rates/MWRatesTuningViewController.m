@@ -35,7 +35,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = ^(NSError* err, CBPeripheral* device)
+    BLUETOOTH_MANAGER.didFailToFindService = ^(NSError* err, CBPeripheral* device)
     {
         if (!device)
         {
@@ -48,7 +48,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = nil;
+    BLUETOOTH_MANAGER.didFailToFindService = nil;
 }
 
 -(void) createReadWriteBtns
@@ -72,7 +72,7 @@
 
 -(void) readRCRatesButtonTapped
 {
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_RC_TUNNING andPayload:nil responseBlock:^(NSData *recieveData) {
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_RC_TUNNING andPayload:nil responseBlock:^(NSData *recieveData) {
         NSLog(@"RCRates read success");
     }];
 }
@@ -81,11 +81,11 @@
 {
     if (__delegate.isFullVersionUnlocked)
     {
-        [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_SET_RC_TUNNING
-                                                           andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromRcTunning]
-                                                        responseBlock:^(NSData *recieveData) {
-                                                            NSLog(@"write RCRates success");
-                                                        }];
+        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_RC_TUNNING
+                                 andPayload:[PID_MANAGER payloadFromRcTunning]
+                              responseBlock:^(NSData *recieveData) {
+                                  NSLog(@"write RCRates success");
+                              }];
     }
     else
     {
