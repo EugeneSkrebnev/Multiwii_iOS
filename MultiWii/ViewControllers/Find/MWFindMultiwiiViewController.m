@@ -169,9 +169,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MWBluetoothManager sharedInstance].rssiNotificationOn = YES;
+    BLUETOOTH_MANAGER.rssiNotificationOn = YES;
     _rssi[0] = MAGICAL_INIT_VALUE;
-    [MWBluetoothManager sharedInstance].didUpdateRssi = ^(CBPeripheral* device)
+    BLUETOOTH_MANAGER.didUpdateRssi = ^(CBPeripheral* device)
     {
         [self updateRssiLabelWithNewValue:device.RSSI.floatValue];
     };
@@ -196,8 +196,8 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MWBluetoothManager sharedInstance].rssiNotificationOn = NO;
-    [MWBluetoothManager sharedInstance].didUpdateRssi = nil;
+    BLUETOOTH_MANAGER.rssiNotificationOn = NO;
+    BLUETOOTH_MANAGER.didUpdateRssi = nil;
 }
 
 @end

@@ -135,6 +135,7 @@
         [selfWeak.boxManager saveBoxes];
     } forRequestWith:MWI_BLE_MESSAGE_SET_BOXES];
 }
+
 -(NSString *)copterTypeString
 {
     NSString* result = @"Unknown copter type";

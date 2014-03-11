@@ -201,7 +201,7 @@
     [self writeMessageDebug:messageToSend];
     if (callBackBlock)
         [_callbacks setObject:callBackBlock forKey:@(identifier)];
-    [[MWBluetoothManager sharedInstance] sendData:messageToSend];
+    [BLUETOOTH_MANAGER sendData:messageToSend];
 }
 
 - (id)init
@@ -212,7 +212,7 @@
         _buffer = [[NSMutableData alloc] init];
         _callbacks = [[NSMutableDictionary alloc] init];
         _defaultHandlers = [[NSMutableDictionary alloc] init];
-        [MWBluetoothManager sharedInstance].didRecieveData = ^(CBPeripheral* connectedDevice, NSData* incomingData)
+        BLUETOOTH_MANAGER.didRecieveData = ^(CBPeripheral* connectedDevice, NSData* incomingData)
         {
             [self didReceiveDataFromBluetooth:incomingData];
         };

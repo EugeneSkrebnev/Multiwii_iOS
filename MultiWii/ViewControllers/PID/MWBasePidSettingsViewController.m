@@ -108,7 +108,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = ^(NSError* err, CBPeripheral* device)
+    BLUETOOTH_MANAGER.didFailToFindService = ^(NSError* err, CBPeripheral* device)
     {
         if (!device)
         {
@@ -120,6 +120,6 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [MWBluetoothManager sharedInstance].didFailToFindService = nil;
+    BLUETOOTH_MANAGER.didFailToFindService = nil;
 }
 @end

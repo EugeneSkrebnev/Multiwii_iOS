@@ -62,9 +62,6 @@
 		4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B3181C7069008B0260 /* ribbon_green@2x.png */; };
 		4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */; };
 		4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B7181C825F008B0260 /* feedback2@2x.png */; };
-		4423F225181C8757008B0260 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4423F200181C8757008B0260 /* iRate.bundle */; };
-		4423F226181C8757008B0260 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4423F202181C8757008B0260 /* iRate.m */; };
-		4423F227181C8757008B0260 /* iRate.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4423F203181C8757008B0260 /* iRate.podspec */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -189,9 +186,6 @@
 		44AE5A9817FCCB1D00AAAC30 /* mag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9617FCCB1D00AAAC30 /* mag@2x.png */; };
 		44AE5A9F17FF573E00AAAC30 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */; };
 		44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */; };
-		44B162011836CC4E00FEA6FF /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */; };
-		44B162871836CC4E00FEA6FF /* libFlurryAds_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */; };
-		44B162921836CC4E00FEA6FF /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */; };
 		44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */; };
 		44B9AB92181D32E3005E511F /* MWFindMultiwiiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB91181D32E3005E511F /* MWFindMultiwiiViewController.m */; };
 		44B9AB95181DBAD1005E511F /* MWAboutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B9AB94181DBAD1005E511F /* MWAboutDetailViewController.m */; };
@@ -250,6 +244,7 @@
 		44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0BCB1814842700417C79 /* MessageUI.framework */; };
 		44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		44FC0BD31814943500417C79 /* MWInAppButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BD21814943500417C79 /* MWInAppButton.m */; };
+		8731B9AD8C1F41339A81F143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A9D9AAD86480A96232E8A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,13 +320,6 @@
 		4423F1B3181C7069008B0260 /* ribbon_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_green@2x.png"; sourceTree = "<group>"; };
 		4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_blue@2x.png"; sourceTree = "<group>"; };
 		4423F1B7181C825F008B0260 /* feedback2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback2@2x.png"; sourceTree = "<group>"; };
-		4423F200181C8757008B0260 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
-		4423F201181C8757008B0260 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
-		4423F202181C8757008B0260 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
-		4423F203181C8757008B0260 /* iRate.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iRate.podspec; sourceTree = "<group>"; };
-		4423F204181C8757008B0260 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.md; sourceTree = "<group>"; };
-		4423F205181C8757008B0260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		4423F206181C8757008B0260 /* RELEASE NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "RELEASE NOTES.md"; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -497,12 +485,6 @@
 		44AE5A9E17FF573D00AAAC30 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
 		44AE5AA017FF615A00AAAC30 /* MWBoxSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxSettingsManager.h; sourceTree = "<group>"; };
 		44AE5AA117FF615A00AAAC30 /* MWBoxSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxSettingsManager.m; sourceTree = "<group>"; };
-		44B161681836CC4E00FEA6FF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
-		44B161F21836CC4E00FEA6FF /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
-		44B161F31836CC4E00FEA6FF /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
-		44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.3.0.a; sourceTree = "<group>"; };
-		44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
 		44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		44B4BB6B1780E0E700CE91A8 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		44B9AB90181D32E3005E511F /* MWFindMultiwiiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFindMultiwiiViewController.h; sourceTree = "<group>"; };
@@ -587,6 +569,8 @@
 		44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Alert.m"; sourceTree = "<group>"; };
 		44FC0BD11814943500417C79 /* MWInAppButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWInAppButton.h; sourceTree = "<group>"; };
 		44FC0BD21814943500417C79 /* MWInAppButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWInAppButton.m; sourceTree = "<group>"; };
+		AC4A9D9AAD86480A96232E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99984C112A647058BAED6EF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -597,14 +581,13 @@
 				44AB0D0E1837BAA2009FEB33 /* SystemConfiguration.framework in Frameworks */,
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
-				44B162011836CC4E00FEA6FF /* libFlurry_4.3.0.a in Frameworks */,
 				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
 				4422268D181407CB00D53DE3 /* Security.framework in Frameworks */,
 				44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */,
-				44B162871836CC4E00FEA6FF /* libFlurryAds_4.3.0.a in Frameworks */,
 				44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */,
 				44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */,
 				44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */,
+				8731B9AD8C1F41339A81F143 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,34 +770,13 @@
 			path = Externals;
 			sourceTree = "<group>";
 		};
-		4423F1B9181C8756008B0260 /* iRate-master */ = {
-			isa = PBXGroup;
-			children = (
-				4423F1FF181C8757008B0260 /* iRate */,
-				4423F203181C8757008B0260 /* iRate.podspec */,
-				4423F204181C8757008B0260 /* LICENCE.md */,
-				4423F205181C8757008B0260 /* README.md */,
-				4423F206181C8757008B0260 /* RELEASE NOTES.md */,
-			);
-			path = "iRate-master";
-			sourceTree = "<group>";
-		};
-		4423F1FF181C8757008B0260 /* iRate */ = {
-			isa = PBXGroup;
-			children = (
-				4423F200181C8757008B0260 /* iRate.bundle */,
-				4423F201181C8757008B0260 /* iRate.h */,
-				4423F202181C8757008B0260 /* iRate.m */,
-			);
-			path = iRate;
-			sourceTree = "<group>";
-		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
 				44453CA517518F6900929EC8 /* MultiWii */,
 				44453C9E17518F6900929EC8 /* Frameworks */,
 				44453C9D17518F6900929EC8 /* Products */,
+				E99984C112A647058BAED6EF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -838,6 +800,7 @@
 				44453C9F17518F6900929EC8 /* UIKit.framework */,
 				44453CA117518F6900929EC8 /* Foundation.framework */,
 				44453CA317518F6900929EC8 /* CoreGraphics.framework */,
+				AC4A9D9AAD86480A96232E8A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1291,43 +1254,6 @@
 			path = Sensors;
 			sourceTree = "<group>";
 		};
-		44B161651836CC4E00FEA6FF /* Flurry iPhone SDK viPhone 4.3.0 */ = {
-			isa = PBXGroup;
-			children = (
-				44B161661836CC4E00FEA6FF /* Flurry-iOS-4.3.0 */,
-				44B162001836CC4E00FEA6FF /* ProjectApiKey.txt */,
-			);
-			path = "Flurry iPhone SDK viPhone 4.3.0";
-			sourceTree = "<group>";
-		};
-		44B161661836CC4E00FEA6FF /* Flurry-iOS-4.3.0 */ = {
-			isa = PBXGroup;
-			children = (
-				44B161671836CC4E00FEA6FF /* Flurry */,
-				44B161F11836CC4E00FEA6FF /* FlurryAds */,
-			);
-			path = "Flurry-iOS-4.3.0";
-			sourceTree = "<group>";
-		};
-		44B161671836CC4E00FEA6FF /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				44B161681836CC4E00FEA6FF /* Flurry.h */,
-				44B161691836CC4E00FEA6FF /* libFlurry_4.3.0.a */,
-			);
-			path = Flurry;
-			sourceTree = "<group>";
-		};
-		44B161F11836CC4E00FEA6FF /* FlurryAds */ = {
-			isa = PBXGroup;
-			children = (
-				44B161F21836CC4E00FEA6FF /* FlurryAdDelegate.h */,
-				44B161F31836CC4E00FEA6FF /* FlurryAds.h */,
-				44B161F41836CC4E00FEA6FF /* libFlurryAds_4.3.0.a */,
-			);
-			path = FlurryAds;
-			sourceTree = "<group>";
-		};
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1383,8 +1309,6 @@
 		44B4BB691780E09700CE91A8 /* Extesions */ = {
 			isa = PBXGroup;
 			children = (
-				44B161651836CC4E00FEA6FF /* Flurry iPhone SDK viPhone 4.3.0 */,
-				4423F1B9181C8756008B0260 /* iRate-master */,
 				44FC0BA01814133C00417C79 /* SBJson */,
 				442226451814059100D53DE3 /* MKStoreKit */,
 				44B4BB6A1780E0E700CE91A8 /* UIViewAdditions.h */,
@@ -1666,9 +1590,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44453CB917518F6900929EC8 /* Build configuration list for PBXNativeTarget "MultiWii" */;
 			buildPhases = (
+				4220E22C890046A89FB6DBB2 /* Check Pods Manifest.lock */,
 				44453C9817518F6900929EC8 /* Sources */,
 				44453C9917518F6900929EC8 /* Frameworks */,
 				44453C9A17518F6900929EC8 /* Resources */,
+				435B25F27AF8448499D6C36F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1780,7 +1706,6 @@
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
 				44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */,
 				4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */,
-				4423F225181C8757008B0260 /* iRate.bundle in Resources */,
 				44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */,
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
 				4409DDD81821037900B11C9C /* icon_1024.png in Resources */,
@@ -1811,7 +1736,6 @@
 				44A6BDB9178D9B0B00DC95C6 /* pid_sensors_pressed@2x.png in Resources */,
 				44A6BDC3178DA6AD00DC95C6 /* StoryboardiPhone.storyboard in Resources */,
 				448ABA9C18168C580056DD4A /* radar@2x.png in Resources */,
-				44B162921836CC4E00FEA6FF /* ProjectApiKey.txt in Resources */,
 				44A6BDC5178DA7ED00DC95C6 /* MWMainMenuCell.xib in Resources */,
 				44A6BDC7178DA8F200DC95C6 /* MWMenuSubtitleCell.xib in Resources */,
 				44A6BDDA178E020300DC95C6 /* about_author@2x.png in Resources */,
@@ -1821,7 +1745,6 @@
 				44A6BDDD178E020300DC95C6 /* about_program_pressed@2x.png in Resources */,
 				442225A5180DE8C300D53DE3 /* point@2x.png in Resources */,
 				44A6BDDE178E020300DC95C6 /* ask@2x.png in Resources */,
-				4423F227181C8757008B0260 /* iRate.podspec in Resources */,
 				447BD3241824C5B100E27FA7 /* feedback_pressed@2x.png in Resources */,
 				44A6BDDF178E020300DC95C6 /* ask_pressed@2x.png in Resources */,
 				44A6BDE0178E020300DC95C6 /* bug@2x.png in Resources */,
@@ -1873,6 +1796,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4220E22C890046A89FB6DBB2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		435B25F27AF8448499D6C36F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44453C9817518F6900929EC8 /* Sources */ = {
@@ -1952,7 +1908,6 @@
 				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
 				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
 				44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */,
-				4423F226181C8757008B0260 /* iRate.m in Sources */,
 				44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */,
 				44FC0BC21814133C00417C79 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */,
@@ -2034,6 +1989,7 @@
 		};
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2055,6 +2011,7 @@
 		};
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: YAUHEN SKRABNIOU (6A55FY4Q8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
