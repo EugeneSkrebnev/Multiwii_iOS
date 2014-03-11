@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MWGlobalManager sharedInstance]; //init all systems
+    [MWGlobalManager initBluetoothLink];
     [Flurry startSession:@"R8W8QZ9G3B6PN8JVTHPX"];
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].appStoreID = 735311586;

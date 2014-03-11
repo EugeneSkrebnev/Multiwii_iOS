@@ -33,7 +33,7 @@ typedef enum {
 
 @interface MWGlobalManager : NSObject
 + (MWGlobalManager *)sharedInstance;
-
++ (void) initBluetoothLink;
 @property (nonatomic, strong) MWMultiwiiProtocolManager* protocolManager;
 @property (nonatomic, strong) MWPidSettingsManager* pidManager;
 @property (nonatomic, strong) MWBoxSettingsManager* boxManager;

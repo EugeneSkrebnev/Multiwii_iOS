@@ -17,6 +17,11 @@
     });
 }
 
++ (void) initBluetoothLink
+{
+    [self sharedInstance].protocolManager = [[MWMultiwiiProtocolManager alloc] init];
+}
+
 - (id)init
 {
     self = [super init];
@@ -24,7 +29,6 @@
     {
         self.bluetoothManager = [[MWBluetoothManager alloc] init];
         self.pidManager = [[MWPidSettingsManager alloc] init];
-        self.protocolManager = [[MWMultiwiiProtocolManager alloc] init];
         self.boxManager = [[MWBoxSettingsManager alloc] init];
         [self initDefaultHandlers];
         [MKStoreManager sharedManager];
