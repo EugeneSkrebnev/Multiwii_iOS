@@ -162,10 +162,6 @@
 		44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE21178EF6B300DC95C6 /* MWHeader3LabelView.m */; };
 		44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE24178EFC5600DC95C6 /* MWPidAdjustCell.m */; };
 		44AB0D0E1837BAA2009FEB33 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AB0D0D1837BAA2009FEB33 /* SystemConfiguration.framework */; };
-		44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A95180047410088760D /* MWFlyPidViewController.m */; };
-		44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A98180047410088760D /* MWGPSPidViewController.m */; };
-		44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4A9B180047410088760D /* MWSensorsPidViewController.m */; };
-		44AD4AA1180047FF0088760D /* MWBasePidSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD4AA0180047FF0088760D /* MWBasePidSettingsViewController.m */; };
 		44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A8F17FC231400AAAC30 /* title_element@2x.png */; };
 		44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */; };
 		44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */; };
@@ -473,14 +469,6 @@
 		44A6BE23178EFC5600DC95C6 /* MWPidAdjustCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPidAdjustCell.h; sourceTree = "<group>"; };
 		44A6BE24178EFC5600DC95C6 /* MWPidAdjustCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPidAdjustCell.m; sourceTree = "<group>"; };
 		44AB0D0D1837BAA2009FEB33 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		44AD4A94180047410088760D /* MWFlyPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidViewController.h; sourceTree = "<group>"; };
-		44AD4A95180047410088760D /* MWFlyPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidViewController.m; sourceTree = "<group>"; };
-		44AD4A97180047410088760D /* MWGPSPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidViewController.h; sourceTree = "<group>"; };
-		44AD4A98180047410088760D /* MWGPSPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSPidViewController.m; sourceTree = "<group>"; };
-		44AD4A9A180047410088760D /* MWSensorsPidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSensorsPidViewController.h; sourceTree = "<group>"; };
-		44AD4A9B180047410088760D /* MWSensorsPidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSensorsPidViewController.m; sourceTree = "<group>"; };
-		44AD4A9F180047FF0088760D /* MWBasePidSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBasePidSettingsViewController.h; sourceTree = "<group>"; };
-		44AD4AA0180047FF0088760D /* MWBasePidSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBasePidSettingsViewController.m; sourceTree = "<group>"; };
 		44AE5A8F17FC231400AAAC30 /* title_element@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_element@2x.png"; sourceTree = "<group>"; };
 		44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_v2@2x.png"; sourceTree = "<group>"; };
 		44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pattern_100@2x.png"; sourceTree = "<group>"; };
@@ -2128,10 +2116,6 @@
 				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,
 				442225A3180D62CB00D53DE3 /* MWRatesGraphicView.m in Sources */,
 				44068BC318040AF700E8ABCC /* MWGraphicView.m in Sources */,
-				44B9AB95181DBAD1005E511F /* MWAboutDetailViewController.m in Sources */,
-				44AD4A9C180047410088760D /* MWFlyPidViewController.m in Sources */,
-				44AD4A9D180047410088760D /* MWGPSPidViewController.m in Sources */,
-				44AD4A9E180047410088760D /* MWSensorsPidViewController.m in Sources */,
 				44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */,
 				44DD957B1832CABA00B82B24 /* MWFlyPidSettings.m in Sources */,
 				44DD95661832C8D400B82B24 /* MWTelemetryManager.m in Sources */,

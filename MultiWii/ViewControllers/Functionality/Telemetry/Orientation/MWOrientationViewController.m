@@ -24,7 +24,7 @@
 -(void) sendRequest
 {
     NSLog(@"enter send request");
-    [[MWMultiwiiProtocolManager sharedInstance] sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData) {
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData) {
     NSLog(@"enter request answer");    
         unsigned char *bytes = (unsigned char*)recieveData.bytes;
         short val1 = ((short)bytes[2] << 8) | (short)bytes[1];
