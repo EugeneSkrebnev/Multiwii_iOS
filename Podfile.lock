@@ -1,14 +1,21 @@
 PODS:
+  - CocoaLumberjack (1.8.1):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.8.1)
+  - CocoaLumberjack/Extensions (1.8.1):
+    - CocoaLumberjack/Core
   - FlurrySDK (4.3.2):
     - FlurrySDK/FlurrySDK
   - FlurrySDK/FlurrySDK (4.3.2)
   - iRate (1.9.3)
 
 DEPENDENCIES:
+  - CocoaLumberjack
   - FlurrySDK
   - iRate
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
   FlurrySDK: 0ba42379fd272d69246ae06386a2c5688516ffd8
   iRate: 99aef520b335a1eb4a14a8d9ba5e8db4e1d95bbe
 
