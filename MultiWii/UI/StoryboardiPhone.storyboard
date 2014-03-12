@@ -46,7 +46,7 @@
                                 <rect key="frame" x="20" y="69" width="280" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">You can buy this application for any price within $5-$20. The higher is your price, the more opportunities you are giving me to cover my operation expenses, research new hardware options, and in general improve this amazing application. To set your price, please use the knob to the right of the Buy button.
+                                <string key="text">You can buy this application for any price within $10-$30. The higher is your price, the more opportunities you are giving me to cover my operation expenses, research new hardware options, and in general improve this amazing application. To set your price, please use the knob to the right of the Buy button.
 
 Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedback’, or by posting on the Multiwii forum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -545,6 +545,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                     <connections>
                         <outlet property="tableViewForMenu" destination="VFx-0C-e4k" id="oDv-xk-s3Z"/>
                         <segue destination="Poq-n1-XKt" kind="push" identifier="1" id="BX2-ba-T0U"/>
+                        <segue destination="g9Q-bm-OWc" kind="push" identifier="0" id="MhS-gP-mQ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIu-KL-AOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -576,7 +577,22 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmK-da-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="-575"/>
+            <point key="canvasLocation" x="2656" y="-423"/>
+        </scene>
+        <!--Radio And Motor View Controller-->
+        <scene sceneID="rRY-px-hTw">
+            <objects>
+                <viewController id="g9Q-bm-OWc" customClass="MWRadioAndMotorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="INn-Ol-POx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1e9-lX-GLN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BdM-h2-X56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672" y="-1028"/>
         </scene>
     </scenes>
     <resources>

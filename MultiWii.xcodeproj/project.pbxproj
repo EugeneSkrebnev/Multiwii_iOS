@@ -255,6 +255,7 @@
 		44DD95921832D40600B82B24 /* MWRawImuEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95911832D40600B82B24 /* MWRawImuEntity.m */; };
 		44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */; };
 		44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */; };
+		44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */; };
 		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 		44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA31814133C00417C79 /* NSObject+SBJson.m */; };
 		44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA61814133C00417C79 /* SBJsonParser.m */; };
@@ -600,6 +601,8 @@
 		44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAttitude.m; sourceTree = "<group>"; };
 		44DD95961832DA0300B82B24 /* MWTelemetryAltitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryAltitude.h; sourceTree = "<group>"; };
 		44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAltitude.m; sourceTree = "<group>"; };
+		44EA103918D076570087D078 /* MWRadioAndMotorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRadioAndMotorViewController.h; sourceTree = "<group>"; };
+		44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadioAndMotorViewController.m; sourceTree = "<group>"; };
 		44FC0B9C1814083600417C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44FC0BA21814133C00417C79 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		44FC0BA31814133C00417C79 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -1706,6 +1709,7 @@
 				44DD95831832CCDF00B82B24 /* MWTelemetryBaseViewController.h */,
 				44DD95841832CCDF00B82B24 /* MWTelemetryBaseViewController.m */,
 				44DD95891832CF6500B82B24 /* Orientation */,
+				44EA103818D075A00087D078 /* RadioAndMotor */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -1717,6 +1721,15 @@
 				44DD958B1832CF6500B82B24 /* MWOrientationViewController.m */,
 			);
 			path = Orientation;
+			sourceTree = "<group>";
+		};
+		44EA103818D075A00087D078 /* RadioAndMotor */ = {
+			isa = PBXGroup;
+			children = (
+				44EA103918D076570087D078 /* MWRadioAndMotorViewController.h */,
+				44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */,
+			);
+			path = RadioAndMotor;
 			sourceTree = "<group>";
 		};
 		44FC0BA01814133C00417C79 /* SBJson */ = {
@@ -2111,6 +2124,7 @@
 				442226691814059100D53DE3 /* VerificationController.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
+				44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,

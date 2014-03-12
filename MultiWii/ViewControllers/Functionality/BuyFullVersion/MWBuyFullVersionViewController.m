@@ -98,14 +98,14 @@
         self.priceSelectKnobView.top -= 30;
     }
     MWSettingsEntity* priceDescriptor = [[MWSettingsEntity alloc] init];
-    priceDescriptor.minValue = 5;
-    priceDescriptor.maxValue = 20;
-    priceDescriptor.step = 1;
+    priceDescriptor.minValue = 10;
+    priceDescriptor.maxValue = 30;
+    priceDescriptor.step = 2;
 
 
     self.priceSelectKnobView.settingEntity = priceDescriptor;
     self.priceSelectKnobView.spinCount = 2;
-    priceDescriptor.value = 10;
+    priceDescriptor.value = 12;
     
     [self.priceSelectKnobView addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial) context:nil];
 
