@@ -76,18 +76,19 @@ static BOOL firstTimeShow = YES;
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT"];
+    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT"]; //need to update bluetooth engine for control
 }
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"connect", @"telemetry_gray", @"settings", @"finder"/*, @"control"*/, @"about"];
+    return @[@"connect", @"telemetry", @"settings", @"finder"/*, @"control"*/, @"about"];
 }
 
 -(void) checkFullVersion
 {
     self.buyButton.hidden = __delegate.isFullVersionUnlocked;
 }
+
 -(void) doubleCheckFullVersion
 {
     [self checkFullVersion];
@@ -109,13 +110,12 @@ static BOOL firstTimeShow = YES;
     {
 
         firstTimeShow = NO;
-//        TODO: remove on release
+
         if (SPASH_ENABLED_ON) // uncomment for enable splash
         {
 //            self.navigationController.navigationBarHidden = YES;
             _splash = [[MWSplashView alloc] init];
             [self.view addSubview:_splash];
-        
 //            self.navigationController.navigationBar.alpha = 0;
 //            [self.navigationController setNavigationBarHidden:NO animated:NO]; //Animated must be NO!
             [UINavigationBar setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -131,25 +131,4 @@ static BOOL firstTimeShow = YES;
     [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell* cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    if (indexPath.row == 1)
-    {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        MWMainMenuCell* menuCell = (MWMainMenuCell*)cell;
-        menuCell.circleImageView.hidden = YES;
-        menuCell.arrowImageView.hidden = YES;
-        menuCell.labelForTitle.textColor = [UIColor colorWithRed:106./255 green:106./255 blue:106./255 alpha:1];
-        UIImageView* ribbonView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ribbon_green.png"]];
-        ribbonView.left = menuCell.width - ribbonView.width;
-        ribbonView.top = 0;
-        UIView* blackView = [[UIView alloc] initWithFrame:cell.bounds];
-        blackView.backgroundColor = [UIColor blackColor];
-        blackView.alpha = 0.3;
-        [cell addSubview:blackView];
-        [menuCell addSubview:ribbonView];
-    }
-    return cell;
-}
 @end
