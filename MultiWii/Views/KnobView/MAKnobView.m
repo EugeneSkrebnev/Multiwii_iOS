@@ -155,6 +155,7 @@
 {
     _backgroundView.transform = CGAffineTransformMakeRotation(_internalValue / 180. * M_PI);
 }
+
 - (void)handlePan:(UIPanGestureRecognizer*)recognizer
 {
     UIView* viewForTranslation;

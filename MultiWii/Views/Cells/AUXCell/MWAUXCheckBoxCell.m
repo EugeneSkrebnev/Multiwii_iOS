@@ -65,6 +65,7 @@
 {
     [self updateSavedValues];
 }
+
 -(void)setSelectedAuxChannel:(int)selectedAuxChannel
 {
     _selectedAuxChannel = selectedAuxChannel;

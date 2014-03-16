@@ -102,6 +102,6 @@
 -(void)setRoll:(double)roll
 {
     _roll = roll;
-    _scaleViewContainer.transform = CGAffineTransformMakeRotation(M_PI_4);
+    _scaleViewContainer.transform = CGAffineTransformMakeRotation(roll * (M_PI / 180));
 }
 @end

@@ -23,43 +23,57 @@
 
 -(void) makeInit
 {
-    UIImage* backgroud = [UIImage imageNamed:@"finder_mask.png"];
-    self.width = backgroud.size.width-4;
-    self.height = backgroud.size.height;
+    _backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_mask.png"]];
+    _backgroundImageView.frame = CGRectInset(self.bounds, -2, 0);
+    self.width =  _backgroundImageView.width;
+    self.height = _backgroundImageView.height;
+
 
     self.backgroundColor = [UIColor clearColor];
     self.clipsToBounds = YES;
-    _backgroundImageView = [[UIImageView alloc] initWithImage:backgroud];
-    _backgroundImageView.frame = CGRectInset(self.bounds, -2, 0);
-
+    
     int redSectorYoffset = 25;
-    _redView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
-    _redView.backgroundColor = RGB(255, 53, 0);
 
-    _grayView = [[UIView alloc] initWithFrame:CGRectMake(self.width / 2, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
-    _grayView.backgroundColor = RGB(37, 37, 37);
-
+    [self addSubview:({
+        _dimView = [[UIView alloc] initWithFrame:self.bounds];
+        _dimView.alpha = 0.2;
+        _dimView.backgroundColor = [UIColor blackColor];
+        _dimView;
+    })];
     
-    _redsectorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_sector.png"]];
-    _redsectorImageView.frame = CGRectMake((self.width - _redsectorImageView.width) / 2, self.height - (_redsectorImageView.height / 2) - redSectorYoffset, _redsectorImageView.width, _redsectorImageView.height);
-
-    _dimView = [[UIView alloc] initWithFrame:self.bounds];
-    _dimView.alpha = 0.2;
-    _dimView.backgroundColor = [UIColor blackColor];
+    [self addSubview:({
+        _redsectorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_sector.png"]];
+        _redsectorImageView.frame = CGRectMake((self.width - _redsectorImageView.width) / 2, self.height - (_redsectorImageView.height / 2) - redSectorYoffset, _redsectorImageView.width, _redsectorImageView.height);
+        _redsectorImageView;
+    })];
     
-    _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_arrow.png"]];
-    _arrowCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_circle.png"]];
+    [self addSubview:({
+        _grayView = [[UIView alloc] initWithFrame:CGRectMake(self.width / 2, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
+        _grayView.backgroundColor = RGB(37, 37, 37);
+        _grayView;
+    })];
     
-    _arrowCircle.center = _redsectorImageView.center;
-    _arrow.center = _redsectorImageView.center;
+    [self addSubview:({
+        _redView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - redSectorYoffset, self.width / 2, redSectorYoffset)];
+        _redView.backgroundColor = RGB(255, 53, 0);
+        _redView;
+    })];
     
-    [self addSubview:_dimView];
-    [self addSubview:_redsectorImageView];
-    [self addSubview:_grayView];
-    [self addSubview:_redView];
-    [self addSubview:_backgroundImageView];
-    [self addSubview:_arrowCircle];
-    [self addSubview:_arrow];
+    [self addSubview:({
+        _backgroundImageView;
+    })];
+    
+    [self addSubview:({
+        _arrowCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_circle.png"]];
+        _arrowCircle.center = _redsectorImageView.center;
+        _arrowCircle;
+    })];
+    
+    [self addSubview:({
+        _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finder_arrow.png"]];
+        _arrow.center = _redsectorImageView.center;
+        _arrow;
+    })];
     
     CGPoint labelsCenter[5];
     labelsCenter[0].x = 40;

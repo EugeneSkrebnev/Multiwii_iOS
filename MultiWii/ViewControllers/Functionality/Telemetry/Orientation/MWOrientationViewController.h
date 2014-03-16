@@ -8,8 +8,11 @@
 
 #import "MWTelemetryBaseViewController.h"
 #import "MWArtificialHorizonView.h"
+#import "MWCompassView.h"
+
 @interface MWOrientationViewController : MWTelemetryBaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet MWArtificialHorizonView *horizonView;
+@property (weak, nonatomic) IBOutlet MWCompassView *compassView;
 
 @end

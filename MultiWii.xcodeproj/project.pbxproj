@@ -102,6 +102,7 @@
 		448ABAB7181839CC0056DD4A /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAB6181839CC0056DD4A /* save@2x.png */; };
 		449345F918D318E100093D93 /* orientation_control_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 449345F818D318E100093D93 /* orientation_control_bg@2x.png */; };
 		44961A2118D510FA005D1025 /* multiwii3_orientation-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */; };
+		44961A2318D531A4005D1025 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44961A2218D531A4005D1025 /* CoreMotion.framework */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -407,6 +408,7 @@
 		448ABAB6181839CC0056DD4A /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
 		449345F818D318E100093D93 /* orientation_control_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orientation_control_bg@2x.png"; sourceTree = "<group>"; };
 		44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "multiwii3_orientation-1.png"; path = "../../../../../../Design/telemetry/multiwii3_orientation-1.png"; sourceTree = "<group>"; };
+		44961A2218D531A4005D1025 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44961A2318D531A4005D1025 /* CoreMotion.framework in Frameworks */,
 				44AB0D0E1837BAA2009FEB33 /* SystemConfiguration.framework in Frameworks */,
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
@@ -864,6 +867,7 @@
 		44453C9E17518F6900929EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44961A2218D531A4005D1025 /* CoreMotion.framework */,
 				44AB0D0D1837BAA2009FEB33 /* SystemConfiguration.framework */,
 				448ABAA21816A0AB0056DD4A /* QuartzCore.framework */,
 				44FC0BCB1814842700417C79 /* MessageUI.framework */,

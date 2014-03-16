@@ -7,27 +7,28 @@
 //
 
 #import "MWOrientationViewController.h"
-
+#import <CoreMotion/CoreMotion.h>
 @interface MWOrientationViewController ()
 
 @end
 
 @implementation MWOrientationViewController
-
+{
+    CMMotionManager* _cmm;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" ORIENTATION ";
-//    [self sendRequest];
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [UIView animateWithDuration:2 animations:^{
-            self.horizonView.pitch = -20;
-            self.horizonView.roll = 0;
-        }];
-        
-    });
+    _cmm = [[CMMotionManager alloc] init];
+    [_cmm startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
+                              withHandler:^(CMDeviceMotion *motion, NSError *error) {
+
+                                  self.horizonView.pitch = motion.attitude.pitch * (180 / M_PI);
+                                  self.horizonView.roll = motion.attitude.roll * (180 / M_PI);
+                                  self.compassView.direction = motion.attitude.yaw* (180 / M_PI);
+                              }];
+
 }
 
 -(void) sendRequest
