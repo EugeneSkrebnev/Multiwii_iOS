@@ -34,7 +34,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidDisconnectWithErrorNotification object:nil];
     };
     
-    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{
+    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{ //leak? looks like leak
         if (!BLUETOOTH_MANAGER.isReadyToUse)
         {
 //            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];

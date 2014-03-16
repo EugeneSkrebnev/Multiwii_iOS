@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OXz-zJ-XeP">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -556,28 +556,45 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
         <scene sceneID="8fP-4N-drR">
             <objects>
                 <viewController id="Poq-n1-XKt" customClass="MWOrientationViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A6p-zW-0al">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="A6p-zW-0al">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="36G-aC-9pj">
-                                <rect key="frame" x="93" y="189" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multiwii3_orientation-1.png" id="3KT-Ku-N8b">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="HYJ-YO-g9L" customClass="MWArtificialHorizonView">
+                                <rect key="frame" x="76" y="253" width="168" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="uOw-IB-BdB"/>
                     <connections>
-                        <outlet property="statusLabel" destination="36G-aC-9pj" id="NOI-qt-XQS"/>
+                        <outlet property="horizonView" destination="HYJ-YO-g9L" id="MLP-pq-qU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmK-da-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2656" y="-423"/>
+            <point key="canvasLocation" x="2672" y="-423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oee-0z-fY8">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="OXz-zJ-XeP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r2c-qN-sTr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Poq-n1-XKt" kind="relationship" relationship="rootViewController" id="rVa-CK-JIP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9C-8W-cJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="354"/>
         </scene>
         <!--Radio And Motor View Controller-->
         <scene sceneID="rRY-px-hTw">
@@ -600,6 +617,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
         <image name="calibrate_acc_pressed.png" width="288" height="53"/>
         <image name="calibrate_mag.png" width="288" height="53"/>
         <image name="calibrate_mag_pressed.png" width="288" height="53"/>
+        <image name="multiwii3_orientation-1.png" width="640" height="960"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -608,5 +626,6 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="RBP-WU-6fC"/>
+        <segue reference="rVa-CK-JIP"/>
     </inferredMetricsTieBreakers>
 </document>

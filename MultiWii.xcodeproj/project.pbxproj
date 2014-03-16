@@ -100,6 +100,8 @@
 		448ABAAA181726B90056DD4A /* radar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAA9181726B90056DD4A /* radar2@2x.png */; };
 		448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 448ABAB418180DF90056DD4A /* MWSaveEpromButton.m */; };
 		448ABAB7181839CC0056DD4A /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448ABAB6181839CC0056DD4A /* save@2x.png */; };
+		449345F918D318E100093D93 /* orientation_control_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 449345F818D318E100093D93 /* orientation_control_bg@2x.png */; };
+		44961A2118D510FA005D1025 /* multiwii3_orientation-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -256,6 +258,11 @@
 		44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */; };
 		44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */; };
 		44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */; };
+		44EA104018D1F1F00087D078 /* MWCompassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EA103F18D1F1F00087D078 /* MWCompassView.m */; };
+		44EA104418D1F3A70087D078 /* compass_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EA104218D1F3A70087D078 /* compass_arrow@2x.png */; };
+		44EA104518D1F3A70087D078 /* compass_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EA104318D1F3A70087D078 /* compass_bg@2x.png */; };
+		44EA104918D209800087D078 /* MWHorizonScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EA104818D209800087D078 /* MWHorizonScaleView.m */; };
+		44EA104C18D20AFA0087D078 /* MWArtificialHorizonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EA104B18D20AFA0087D078 /* MWArtificialHorizonView.m */; };
 		44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC0B9C1814083600417C79 /* StoreKit.framework */; };
 		44FC0BBB1814133C00417C79 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA31814133C00417C79 /* NSObject+SBJson.m */; };
 		44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BA61814133C00417C79 /* SBJsonParser.m */; };
@@ -398,6 +405,8 @@
 		448ABAB318180DF90056DD4A /* MWSaveEpromButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSaveEpromButton.h; sourceTree = "<group>"; };
 		448ABAB418180DF90056DD4A /* MWSaveEpromButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSaveEpromButton.m; sourceTree = "<group>"; };
 		448ABAB6181839CC0056DD4A /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
+		449345F818D318E100093D93 /* orientation_control_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orientation_control_bg@2x.png"; sourceTree = "<group>"; };
+		44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "multiwii3_orientation-1.png"; path = "../../../../../../Design/telemetry/multiwii3_orientation-1.png"; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -603,6 +612,14 @@
 		44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryAltitude.m; sourceTree = "<group>"; };
 		44EA103918D076570087D078 /* MWRadioAndMotorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRadioAndMotorViewController.h; sourceTree = "<group>"; };
 		44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadioAndMotorViewController.m; sourceTree = "<group>"; };
+		44EA103E18D1F1F00087D078 /* MWCompassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCompassView.h; sourceTree = "<group>"; };
+		44EA103F18D1F1F00087D078 /* MWCompassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCompassView.m; sourceTree = "<group>"; };
+		44EA104218D1F3A70087D078 /* compass_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass_arrow@2x.png"; sourceTree = "<group>"; };
+		44EA104318D1F3A70087D078 /* compass_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass_bg@2x.png"; sourceTree = "<group>"; };
+		44EA104718D209800087D078 /* MWHorizonScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHorizonScaleView.h; sourceTree = "<group>"; };
+		44EA104818D209800087D078 /* MWHorizonScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWHorizonScaleView.m; sourceTree = "<group>"; };
+		44EA104A18D20AFA0087D078 /* MWArtificialHorizonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWArtificialHorizonView.h; sourceTree = "<group>"; };
+		44EA104B18D20AFA0087D078 /* MWArtificialHorizonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWArtificialHorizonView.m; sourceTree = "<group>"; };
 		44FC0B9C1814083600417C79 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		44FC0BA21814133C00417C79 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		44FC0BA31814133C00417C79 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -996,6 +1013,14 @@
 			path = SaveEpromButton;
 			sourceTree = "<group>";
 		};
+		449345F718D318E100093D93 /* ArtificialHorizonView */ = {
+			isa = PBXGroup;
+			children = (
+				449345F818D318E100093D93 /* orientation_control_bg@2x.png */,
+			);
+			path = ArtificialHorizonView;
+			sourceTree = "<group>";
+		};
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1206,6 +1231,8 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44EA104618D209010087D078 /* ArtificialHorizonView */,
+				44EA103D18D1F1490087D078 /* CompassView */,
 				447BD3111822F1F600E27FA7 /* SignalIndicatorView */,
 				448ABA9E18168D090056DD4A /* RadarActivityIndicator */,
 				44C7CA98178A1C250059C199 /* Cells */,
@@ -1264,6 +1291,8 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				449345F718D318E100093D93 /* ArtificialHorizonView */,
+				44EA104118D1F3A70087D078 /* CompassView */,
 				44DD94F71832BD4800B82B24 /* 3DModels */,
 				447BD3081822F1C200E27FA7 /* SignalIndicatorView */,
 				4409DDD01821037900B11C9C /* appIcons */,
@@ -1717,6 +1746,7 @@
 		44DD95891832CF6500B82B24 /* Orientation */ = {
 			isa = PBXGroup;
 			children = (
+				44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */,
 				44DD958A1832CF6500B82B24 /* MWOrientationViewController.h */,
 				44DD958B1832CF6500B82B24 /* MWOrientationViewController.m */,
 			);
@@ -1730,6 +1760,35 @@
 				44EA103A18D076570087D078 /* MWRadioAndMotorViewController.m */,
 			);
 			path = RadioAndMotor;
+			sourceTree = "<group>";
+		};
+		44EA103D18D1F1490087D078 /* CompassView */ = {
+			isa = PBXGroup;
+			children = (
+				44EA103E18D1F1F00087D078 /* MWCompassView.h */,
+				44EA103F18D1F1F00087D078 /* MWCompassView.m */,
+			);
+			path = CompassView;
+			sourceTree = "<group>";
+		};
+		44EA104118D1F3A70087D078 /* CompassView */ = {
+			isa = PBXGroup;
+			children = (
+				44EA104218D1F3A70087D078 /* compass_arrow@2x.png */,
+				44EA104318D1F3A70087D078 /* compass_bg@2x.png */,
+			);
+			path = CompassView;
+			sourceTree = "<group>";
+		};
+		44EA104618D209010087D078 /* ArtificialHorizonView */ = {
+			isa = PBXGroup;
+			children = (
+				44EA104718D209800087D078 /* MWHorizonScaleView.h */,
+				44EA104818D209800087D078 /* MWHorizonScaleView.m */,
+				44EA104A18D20AFA0087D078 /* MWArtificialHorizonView.h */,
+				44EA104B18D20AFA0087D078 /* MWArtificialHorizonView.m */,
+			);
+			path = ArtificialHorizonView;
 			sourceTree = "<group>";
 		};
 		44FC0BA01814133C00417C79 /* SBJson */ = {
@@ -1886,6 +1945,7 @@
 				44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */,
 				44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */,
 				44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */,
+				44EA104418D1F3A70087D078 /* compass_arrow@2x.png in Resources */,
 				4409DDDD1821037900B11C9C /* icon_57.png in Resources */,
 				44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */,
 				44C7CA8F178A0D610059C199 /* MontserratAlternates-Regular.ttf in Resources */,
@@ -1912,6 +1972,7 @@
 				44A6BD82178D5C3700DC95C6 /* settings@2x.png in Resources */,
 				44A6BD84178D5C3700DC95C6 /* telemetry@2x.png in Resources */,
 				4422259D180D4B2000D53DE3 /* field_active@2x.png in Resources */,
+				44EA104518D1F3A70087D078 /* compass_bg@2x.png in Resources */,
 				44A6BD85178D5C3700DC95C6 /* telemetry_pressed@2x.png in Resources */,
 				44A6BD89178D703B00DC95C6 /* settings_pressed@2x.png in Resources */,
 				4409DDD81821037900B11C9C /* icon_1024.png in Resources */,
@@ -1953,6 +2014,7 @@
 				4409DDE01821049400B11C9C /* icon_80.png in Resources */,
 				44A6BDDD178E020300DC95C6 /* about_program_pressed@2x.png in Resources */,
 				442225A5180DE8C300D53DE3 /* point@2x.png in Resources */,
+				44961A2118D510FA005D1025 /* multiwii3_orientation-1.png in Resources */,
 				44A6BDDE178E020300DC95C6 /* ask@2x.png in Resources */,
 				447BD3241824C5B100E27FA7 /* feedback_pressed@2x.png in Resources */,
 				44A6BDDF178E020300DC95C6 /* ask_pressed@2x.png in Resources */,
@@ -1987,6 +2049,7 @@
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
 				44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */,
+				449345F918D318E100093D93 /* orientation_control_bg@2x.png in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
 				4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */,
 				44519D43179B6A30006E4EB7 /* calibrate_mag_pressed@2x.png in Resources */,
@@ -2056,6 +2119,7 @@
 				44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */,
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
 				44DD958F1832D3BF00B82B24 /* MWTelemetryRawImu.m in Sources */,
+				44EA104C18D20AFA0087D078 /* MWArtificialHorizonView.m in Sources */,
 				44B4BB6C1780E0E700CE91A8 /* UIViewAdditions.m in Sources */,
 				44C7CA4B1789CCEC0059C199 /* MWSplashView.m in Sources */,
 				442226621814059100D53DE3 /* MKStoreManager.m in Sources */,
@@ -2115,6 +2179,7 @@
 				442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */,
 				44DD957E1832CABA00B82B24 /* MWSensorsPidSettings.m in Sources */,
 				44DD95531832C21800B82B24 /* MWFindMultiwiiViewController.m in Sources */,
+				44EA104918D209800087D078 /* MWHorizonScaleView.m in Sources */,
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
 				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
@@ -2125,6 +2190,7 @@
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */,
+				44EA104018D1F1F00087D078 /* MWCompassView.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,
@@ -2223,12 +2289,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Buddy_iOS_SDK,
-					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
-					"/Users/eugene/Documents/intellectSoftWork/projects/MyProjects/Multiwii/releaseProject/MultiWii/MultiWii/Extesions/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "595685A9-B390-4753-B496-C479DA8E02A6";
 				VALID_ARCHS = "arm64 armv7";

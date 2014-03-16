@@ -13,8 +13,6 @@
 #import "MWRatesSettings.h"
 @interface MWPidSettingsManager : NSObject
 
-//+ (MWPidSettingsManager *)sharedInstance;
-
 @property (nonatomic, strong) MWFlyPidSettings* flyPid;
 @property (nonatomic, strong) MWSensorsPidSettings* sensorsPid;
 @property (nonatomic, strong) MWGPSPidSettings* gpsPid;
@@ -29,6 +27,5 @@
 
 -(void) savePids;
 -(void) saveRCRates;
-
 
 @end

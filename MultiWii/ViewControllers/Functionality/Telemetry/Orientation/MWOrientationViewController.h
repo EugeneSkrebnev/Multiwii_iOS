@@ -7,8 +7,9 @@
 //
 
 #import "MWTelemetryBaseViewController.h"
-
+#import "MWArtificialHorizonView.h"
 @interface MWOrientationViewController : MWTelemetryBaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet MWArtificialHorizonView *horizonView;
 
 @end
