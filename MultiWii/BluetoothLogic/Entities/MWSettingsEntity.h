@@ -16,6 +16,7 @@
 @property (nonatomic, assign)  float  value;
 @property (nonatomic, assign)  BOOL  saved;
 @property (nonatomic, assign)  float  savedValue;
+@property (nonatomic, strong) NSString* name;
 
 -(void) setValueWithoutNotification:(float)value;
 -(void)setValueWithoutKVO:(float)value;

@@ -15,5 +15,10 @@
 @implementation MWRadioAndMotorViewController
 
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.viewControllerTitle = @" RADIO/MOTOR VALUES ";
+}
 
 @end

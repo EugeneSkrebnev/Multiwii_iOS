@@ -103,6 +103,14 @@
 		449345F918D318E100093D93 /* orientation_control_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 449345F818D318E100093D93 /* orientation_control_bg@2x.png */; };
 		44961A2118D510FA005D1025 /* multiwii3_orientation-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */; };
 		44961A2318D531A4005D1025 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44961A2218D531A4005D1025 /* CoreMotion.framework */; };
+		44961A2718D6FC2E005D1025 /* MWValueSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44961A2618D6FC2E005D1025 /* MWValueSliderView.m */; };
+		44961A2D18D70126005D1025 /* values_horizontal_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2918D70126005D1025 /* values_horizontal_gray@2x.png */; };
+		44961A2E18D70126005D1025 /* values_horizontal_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2A18D70126005D1025 /* values_horizontal_orange@2x.png */; };
+		44961A2F18D70126005D1025 /* values_vertical_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2B18D70126005D1025 /* values_vertical_gray@2x.png */; };
+		44961A3018D70126005D1025 /* values_vertical_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44961A2C18D70126005D1025 /* values_vertical_orange@2x.png */; };
+		44961A3318D708E6005D1025 /* MWValueSliderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44961A3218D708E6005D1025 /* MWValueSliderContainer.m */; };
+		44961A3818D722B8005D1025 /* MWTelemetryRadioValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44961A3618D722B8005D1025 /* MWTelemetryRadioValuesCell.m */; };
+		44961A3918D722B8005D1025 /* MWTelemetryRadioValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44961A3718D722B8005D1025 /* MWTelemetryRadioValuesCell.xib */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -409,6 +417,17 @@
 		449345F818D318E100093D93 /* orientation_control_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orientation_control_bg@2x.png"; sourceTree = "<group>"; };
 		44961A2018D510FA005D1025 /* multiwii3_orientation-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "multiwii3_orientation-1.png"; path = "../../../../../../Design/telemetry/multiwii3_orientation-1.png"; sourceTree = "<group>"; };
 		44961A2218D531A4005D1025 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		44961A2518D6FC2E005D1025 /* MWValueSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWValueSliderView.h; sourceTree = "<group>"; };
+		44961A2618D6FC2E005D1025 /* MWValueSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWValueSliderView.m; sourceTree = "<group>"; };
+		44961A2918D70126005D1025 /* values_horizontal_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "values_horizontal_gray@2x.png"; sourceTree = "<group>"; };
+		44961A2A18D70126005D1025 /* values_horizontal_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "values_horizontal_orange@2x.png"; sourceTree = "<group>"; };
+		44961A2B18D70126005D1025 /* values_vertical_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "values_vertical_gray@2x.png"; sourceTree = "<group>"; };
+		44961A2C18D70126005D1025 /* values_vertical_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "values_vertical_orange@2x.png"; sourceTree = "<group>"; };
+		44961A3118D708E6005D1025 /* MWValueSliderContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWValueSliderContainer.h; sourceTree = "<group>"; };
+		44961A3218D708E6005D1025 /* MWValueSliderContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWValueSliderContainer.m; sourceTree = "<group>"; };
+		44961A3518D722B8005D1025 /* MWTelemetryRadioValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryRadioValuesCell.h; sourceTree = "<group>"; };
+		44961A3618D722B8005D1025 /* MWTelemetryRadioValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryRadioValuesCell.m; sourceTree = "<group>"; };
+		44961A3718D722B8005D1025 /* MWTelemetryRadioValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWTelemetryRadioValuesCell.xib; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -1025,6 +1044,38 @@
 			path = ArtificialHorizonView;
 			sourceTree = "<group>";
 		};
+		44961A2418D6FC1E005D1025 /* ValueSliderView */ = {
+			isa = PBXGroup;
+			children = (
+				44961A2518D6FC2E005D1025 /* MWValueSliderView.h */,
+				44961A2618D6FC2E005D1025 /* MWValueSliderView.m */,
+				44961A3118D708E6005D1025 /* MWValueSliderContainer.h */,
+				44961A3218D708E6005D1025 /* MWValueSliderContainer.m */,
+			);
+			path = ValueSliderView;
+			sourceTree = "<group>";
+		};
+		44961A2818D70126005D1025 /* ValuesSliderView */ = {
+			isa = PBXGroup;
+			children = (
+				44961A2918D70126005D1025 /* values_horizontal_gray@2x.png */,
+				44961A2A18D70126005D1025 /* values_horizontal_orange@2x.png */,
+				44961A2B18D70126005D1025 /* values_vertical_gray@2x.png */,
+				44961A2C18D70126005D1025 /* values_vertical_orange@2x.png */,
+			);
+			path = ValuesSliderView;
+			sourceTree = "<group>";
+		};
+		44961A3418D722B8005D1025 /* TelemetryRadioValuesCell */ = {
+			isa = PBXGroup;
+			children = (
+				44961A3518D722B8005D1025 /* MWTelemetryRadioValuesCell.h */,
+				44961A3618D722B8005D1025 /* MWTelemetryRadioValuesCell.m */,
+				44961A3718D722B8005D1025 /* MWTelemetryRadioValuesCell.xib */,
+			);
+			path = TelemetryRadioValuesCell;
+			sourceTree = "<group>";
+		};
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1286,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44961A2418D6FC1E005D1025 /* ValueSliderView */,
 				44EA104618D209010087D078 /* ArtificialHorizonView */,
 				44EA103D18D1F1490087D078 /* CompassView */,
 				447BD3111822F1F600E27FA7 /* SignalIndicatorView */,
@@ -1295,6 +1347,7 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44961A2818D70126005D1025 /* ValuesSliderView */,
 				449345F718D318E100093D93 /* ArtificialHorizonView */,
 				44EA104118D1F3A70087D078 /* CompassView */,
 				44DD94F71832BD4800B82B24 /* 3DModels */,
@@ -1442,6 +1495,7 @@
 		44C7CA98178A1C250059C199 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				44961A3418D722B8005D1025 /* TelemetryRadioValuesCell */,
 				44068B971802FCC000E8ABCC /* RatesGraphicAdjustCell */,
 				44068B911802EC7900E8ABCC /* RatesAdjustCell */,
 				44519D6C179D7FB7006E4EB7 /* DevicePreviewCell */,
@@ -1918,6 +1972,7 @@
 				44068BB2180409EB00E8ABCC /* left_normal@2x.png in Resources */,
 				44B9AB9D181DC7C4005E511F /* about_program.html in Resources */,
 				44C7CA741789D9860059C199 /* knob@2x.png in Resources */,
+				44961A2D18D70126005D1025 /* values_horizontal_gray@2x.png in Resources */,
 				44C7CA751789D9860059C199 /* knob_active@2x.png in Resources */,
 				44068BB6180409EB00E8ABCC /* separator_left_pressed@2x.png in Resources */,
 				44C7CA761789D9860059C199 /* knob_handle@2x.png in Resources */,
@@ -1949,6 +2004,7 @@
 				44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */,
 				44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */,
 				44C7CA8E178A0D610059C199 /* MontserratAlternates-Bold.ttf in Resources */,
+				44961A3018D70126005D1025 /* values_vertical_orange@2x.png in Resources */,
 				44EA104418D1F3A70087D078 /* compass_arrow@2x.png in Resources */,
 				4409DDDD1821037900B11C9C /* icon_57.png in Resources */,
 				44222598180D45BD00D53DE3 /* slider_tab@2x.png in Resources */,
@@ -2003,6 +2059,7 @@
 				44A6BDB4178D9B0B00DC95C6 /* pid_fly@2x.png in Resources */,
 				44A6BDB5178D9B0B00DC95C6 /* pid_fly_pressed@2x.png in Resources */,
 				442226631814059100D53DE3 /* README.mdown in Resources */,
+				44961A2F18D70126005D1025 /* values_vertical_gray@2x.png in Resources */,
 				44A6BDB6178D9B0B00DC95C6 /* pid_gps@2x.png in Resources */,
 				44DD95161832BD4800B82B24 /* nkside.jpg in Resources */,
 				44A6BDB7178D9B0B00DC95C6 /* pid_gps_pressed@2x.png in Resources */,
@@ -2040,6 +2097,7 @@
 				44DD95121832BD4800B82B24 /* gun_turr.jpg in Resources */,
 				44DD95191832BD4800B82B24 /* saucer_t.jpg in Resources */,
 				44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */,
+				44961A3918D722B8005D1025 /* MWTelemetryRadioValuesCell.xib in Resources */,
 				44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */,
 				44A6BE1C178EE92000DC95C6 /* site@2x.png in Resources */,
 				448ABA9D18168C580056DD4A /* radar_bg@2x.png in Resources */,
@@ -2053,6 +2111,7 @@
 				44519D40179B6A30006E4EB7 /* calibrate_acc@2x.png in Resources */,
 				44519D41179B6A30006E4EB7 /* calibrate_acc_pressed@2x.png in Resources */,
 				44B9AB9B181DC7B6005E511F /* how_to_connect.html in Resources */,
+				44961A2E18D70126005D1025 /* values_horizontal_orange@2x.png in Resources */,
 				449345F918D318E100093D93 /* orientation_control_bg@2x.png in Resources */,
 				44519D42179B6A30006E4EB7 /* calibrate_mag@2x.png in Resources */,
 				4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */,
@@ -2155,6 +2214,7 @@
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
 				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
 				44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */,
+				44961A3318D708E6005D1025 /* MWValueSliderContainer.m in Sources */,
 				44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */,
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
 				44DD958C1832CF6500B82B24 /* MWOrientationViewController.m in Sources */,
@@ -2180,6 +2240,7 @@
 				44DD954F1832C21800B82B24 /* MWAboutDetailViewController.m in Sources */,
 				44519D5D179C04D1006E4EB7 /* MWPidSettingsManager.m in Sources */,
 				44DD95571832C21800B82B24 /* MWSensorsPidViewController.m in Sources */,
+				44961A2718D6FC2E005D1025 /* MWValueSliderView.m in Sources */,
 				442225A0180D613F00D53DE3 /* MWThrottleGraphicView.m in Sources */,
 				44DD957E1832CABA00B82B24 /* MWSensorsPidSettings.m in Sources */,
 				44DD95531832C21800B82B24 /* MWFindMultiwiiViewController.m in Sources */,
@@ -2204,6 +2265,7 @@
 				44DD957B1832CABA00B82B24 /* MWFlyPidSettings.m in Sources */,
 				44DD95661832C8D400B82B24 /* MWTelemetryManager.m in Sources */,
 				44FC0BC21814133C00417C79 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				44961A3818D722B8005D1025 /* MWTelemetryRadioValuesCell.m in Sources */,
 				44FC0BBF1814133C00417C79 /* SBJsonStreamParserAdapter.m in Sources */,
 				44DD95921832D40600B82B24 /* MWRawImuEntity.m in Sources */,
 				44DD95521832C21800B82B24 /* MWConnectViewController.m in Sources */,

@@ -109,6 +109,7 @@
 //{
 //    [super setValue:value];
 //}
+
 -(void)dealloc
 {
     if (_settingsEntity)
@@ -116,4 +117,5 @@
         [_settingsEntity removeObserver:self forKeyPath:@"value"];
     }
 }
+
 @end

@@ -591,7 +591,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Poq-n1-XKt" kind="relationship" relationship="rootViewController" id="rVa-CK-JIP"/>
+                        <segue destination="g9Q-bm-OWc" kind="relationship" relationship="rootViewController" id="MCB-1t-lOO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9C-8W-cJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -605,6 +605,12 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                     <view key="view" contentMode="scaleToFill" id="INn-Ol-POx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="rnu-wO-vwy" customClass="MWValueSliderView">
+                                <rect key="frame" x="18" y="114" width="248" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1e9-lX-GLN"/>
@@ -626,7 +632,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="MhS-gP-mQ4"/>
         <segue reference="RBP-WU-6fC"/>
-        <segue reference="rVa-CK-JIP"/>
     </inferredMetricsTieBreakers>
 </document>
