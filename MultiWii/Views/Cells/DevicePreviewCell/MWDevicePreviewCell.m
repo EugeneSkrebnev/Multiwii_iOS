@@ -15,10 +15,6 @@
     return @"MWDevicePreviewCell_ID";
 }
 
-+(MWDevicePreviewCell *)loadView
-{
-    return (MWDevicePreviewCell*) [super loadView];
-}
 
 -(void)makeInit
 {

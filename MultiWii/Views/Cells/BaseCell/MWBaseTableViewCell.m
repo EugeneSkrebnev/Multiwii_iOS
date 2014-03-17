@@ -66,7 +66,7 @@
     return NSStringFromClass(self);
 }
 
-+(MWBaseTableViewCell*) loadView
++(instancetype) loadView
 {
     MWBaseTableViewCell* res = [[[NSBundle mainBundle] loadNibNamed:[self xibName] owner:nil options:nil] lastObject];
     [res makeInit];

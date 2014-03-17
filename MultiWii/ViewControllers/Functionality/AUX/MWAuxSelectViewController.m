@@ -206,7 +206,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MWAUXCheckBoxCell* cell = (MWAUXCheckBoxCell*)[MWAUXCheckBoxCell loadView];
+    MWAUXCheckBoxCell* cell = [MWAUXCheckBoxCell loadView];
     MWBoxAuxSettingEntity* box = [[MWGlobalManager sharedInstance].boxManager boxEntityForIndex:indexPath.row];
     cell.data = box;
     cell.selectedAuxChannel = self.segmentControlForAuxChannel.selectedSegmentIndex;

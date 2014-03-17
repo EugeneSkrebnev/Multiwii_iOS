@@ -117,7 +117,7 @@
     
     if (indexPath.row == 2)
     {
-        MWRateAdjustCell* cell = (MWRateAdjustCell*)[MWRateAdjustCell loadView];
+        MWRateAdjustCell* cell = [MWRateAdjustCell loadView];
     
         cell.knobEntities = @[[MWGlobalManager sharedInstance].pidManager.RCRates.rollPitchRate,
                               [MWGlobalManager sharedInstance].pidManager.RCRates.yawRate,
@@ -126,7 +126,7 @@
     }
     else
     {
-        MWRatesGraphicAdjustCell* cell = (MWRatesGraphicAdjustCell*)[MWRatesGraphicAdjustCell loadView];
+        MWRatesGraphicAdjustCell* cell = [MWRatesGraphicAdjustCell loadView];
         if (indexPath.row == 0)
         {
             cell.titleLabelForTopValueContainer.text = @"RC Expo";

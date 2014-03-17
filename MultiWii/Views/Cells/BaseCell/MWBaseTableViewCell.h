@@ -12,6 +12,6 @@
 
 -(void) makeInit;
 +(NSString*) cellId;
-+(MWBaseTableViewCell*) loadView;
++(instancetype) loadView;
 
 @end

@@ -90,7 +90,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
-    MWPidAdjustCell* cell = (MWPidAdjustCell*)[MWPidAdjustCell loadView];
+    MWPidAdjustCell* cell = [MWPidAdjustCell loadView];
     cell.titleLabel.text = _titles[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:_iconsTitles[indexPath.row]];
     cell.pid = _pids[indexPath.row];

@@ -85,13 +85,13 @@
     
     if ((_subtitlesForCells.count > indexPath.row) && ([_subtitlesForCells[indexPath.row] length] > 0))
     {
-        cell = (MWMainMenuCell*)[MWMenuSubtitleCell loadView];
+        cell = [MWMenuSubtitleCell loadView];
         [cell makeInit];
         [(MWMenuSubtitleCell*)cell setSubtitle:_subtitlesForCells[indexPath.row]];
     }
     else
     {
-        cell = (MWMainMenuCell*)[MWMainMenuCell loadView];
+        cell = [MWMainMenuCell loadView];
         [cell makeInit];
     }
     
