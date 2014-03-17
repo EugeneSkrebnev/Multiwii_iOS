@@ -22,9 +22,9 @@
     if (!_wasInit)
     {
         _wasInit = YES;
-        _valueSlider = [[MWValueSliderView alloc] init];
-        _nameLabel   = [[UILabel alloc] init];
-        _valueLabel  = [[UILabel alloc] init];
+        _valueSlider = [[MWValueSliderView alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
+        _nameLabel   = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
+        _valueLabel  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
     }
 }
 

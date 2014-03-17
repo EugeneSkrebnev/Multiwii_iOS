@@ -30,3 +30,4 @@ static NSString *const kDidDisconnectWithErrorNotification = @"__didDisconnectWi
 #define PROTOCOL_MANAGER [MWGlobalManager sharedInstance].protocolManager
 #define BLUETOOTH_MANAGER [MWGlobalManager sharedInstance].bluetoothManager
 #define PID_MANAGER [MWGlobalManager sharedInstance].pidManager
+#define TELEMETRY_MANAGER [MWGlobalManager sharedInstance].telemetryManager

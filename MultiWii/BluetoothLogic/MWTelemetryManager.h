@@ -13,8 +13,6 @@
 
 @interface MWTelemetryManager : NSObject
 
-+ (MWTelemetryManager *)sharedInstance;
-
 @property (nonatomic, strong) MWTelemetryRawImu* raw;
 @property (nonatomic, strong) MWTelemetryAttitude* attitude;
 @property (nonatomic, strong) MWTelemetryAltitude* altitude;

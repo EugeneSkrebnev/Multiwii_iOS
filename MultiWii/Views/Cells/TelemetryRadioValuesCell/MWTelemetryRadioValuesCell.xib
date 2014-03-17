@@ -15,12 +15,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" id="0LP-Xa-xnG" customClass="MWValueSliderContainer">
-                        <rect key="frame" x="18" y="11" width="285" height="20"/>
+                        <rect key="frame" x="18" y="8" width="285" height="20"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <view contentMode="scaleToFill" id="hLk-rw-kcc" customClass="MWValueSliderContainer">
+                        <rect key="frame" x="18" y="40" width="285" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="HKH-Kl-NPn" customClass="MWValueSliderContainer">
+                        <rect key="frame" x="18" y="72" width="285" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="xyd-uW-s6H" customClass="MWValueSliderContainer">
+                        <rect key="frame" x="18" y="104" width="285" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" id="mdH-Nb-VM2">
+                        <rect key="frame" x="0.0" y="128" width="320" height="2"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outletCollection property="valueSliderContainers" destination="0LP-Xa-xnG" id="vUv-Wr-HuX"/>
+                <outletCollection property="valueSliderContainers" destination="hLk-rw-kcc" id="nlt-B3-G5D"/>
+                <outletCollection property="valueSliderContainers" destination="HKH-Kl-NPn" id="kcR-kC-Y04"/>
+                <outletCollection property="valueSliderContainers" destination="xyd-uW-s6H" id="Fh4-h5-Kdx"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="separator.png" width="315" height="2"/>
+    </resources>
 </document>

@@ -22,6 +22,7 @@
         [self setMaximumTrackImage:[[UIImage imageNamed:@"values_horizontal_gray.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:0] forState:UIControlStateNormal];
         [self setThumbImage:[[UIImage alloc] init] forState:UIControlStateNormal];
         [self setThumbImage:[[UIImage alloc] init] forState:UIControlStateHighlighted];
+//        self.userInteractionEnabled = NO;
     }
 }
 

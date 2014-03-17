@@ -30,7 +30,7 @@
         self.bluetoothManager = [[MWBluetoothManager alloc] init];
         self.pidManager = [[MWPidSettingsManager alloc] init];
         self.boxManager = [[MWBoxSettingsManager alloc] init];
-        self.telemetryManager = [MWTelemetryManager sharedInstance];
+        self.telemetryManager = [[MWTelemetryManager alloc] init];
         [self initDefaultHandlers];
         [MKStoreManager sharedManager];
     }
@@ -54,7 +54,7 @@
     
     self.version = x[1];
     int copterType = x[2];
-    
+    //refactor with array
     _copterType = MWGlobalManagerQuadTypeUnknown;
     if (copterType == 1)
         _copterType = MWGlobalManagerQuadTypeTricopter;
@@ -90,16 +90,6 @@
     if (x[7] != 0 )
         self.copterCapabilities |= MWGlobalManagerQuadBoardCapability4;
 }
-
-//-(void) copterPidDataRecieved:(NSData*) pidData
-//{
-//    [self.pidManager fillPidFromPayload:pidData];
-//}
-//
-//-(void) copterBoxNamesDataRecieved:(NSData*) boxNames
-//{
-//    [self.boxManager fillBoxesNamesFromPayload:boxNames];
-//}
 
 -(void) initDefaultHandlers
 {

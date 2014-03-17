@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MWGlobalManager sharedInstance]; //init all systems
-    [MWGlobalManager initBluetoothLink];
+    [MWGlobalManager initBluetoothLink]; //connect protocol manager to bluetooth
     [Flurry startSession:@"R8W8QZ9G3B6PN8JVTHPX"];
     [iRate sharedInstance].applicationName = @"Multiwii Configurator";
     [iRate sharedInstance].appStoreID = 735311586;
@@ -34,17 +34,19 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidDisconnectWithErrorNotification object:nil];
     };
     
-    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{ //leak? looks like leak
-        if (!BLUETOOTH_MANAGER.isReadyToUse)
-        {
-//            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
-        }
-    };
+//    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{ //leak? looks like leak
+//        if (!BLUETOOTH_MANAGER.isReadyToUse)
+//        {
+////            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
+//        }
+//    };
+    
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"FULL_VERSION_UNLOCKED"] boolValue])
     {
         [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"FULL_VERSION_UNLOCKED"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    
     double delayInSeconds = 30.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -55,14 +57,11 @@
         }
     });
     
-    
-
-//    [[MKStoreManager sharedManager] removeAllKeychainData]; // TODO: remove on release
+//    [[MKStoreManager sharedManager] removeAllKeychainData]; // TODO: remove on release //for in app testing
 
     return YES;
 
 }
-
 
 -(int)paidAmount
 {
@@ -91,9 +90,7 @@
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"StoryboardiPhone" bundle:nil];
             MWBuyFullVersionViewController *buyVC = (MWBuyFullVersionViewController*)[storyboard instantiateViewControllerWithIdentifier:buyVcId];
 //            [vc presentModalViewController:buyVC animated:YES];
-            [vc presentViewController:buyVC animated:YES completion:^{
-                
-            }];
+            [vc presentViewController:buyVC animated:YES completion:nil];
         } else
         {
             [Flurry logEvent:@"Buy dialog 'No' tapped"];
@@ -101,6 +98,7 @@
     }];
 
 }
+
 -(BOOL) isFullVersionUnlocked
 {
     return self.paidAmount >= 5;
