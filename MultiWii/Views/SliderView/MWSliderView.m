@@ -71,7 +71,7 @@
 
 }
 
--(void)setSettingsEntity:(MWSettingsEntity *)associatedSettingValue
+-(void)setSettingsEntity:(MWValueSettingsEntity *)associatedSettingValue
 {
     if (_settingsEntity)
     {

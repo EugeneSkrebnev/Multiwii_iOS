@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 @interface MWSliderView : UISlider
 
-@property (nonatomic, strong) MWSettingsEntity* settingsEntity;
+@property (nonatomic, strong) MWValueSettingsEntity* settingsEntity;
 
 @end

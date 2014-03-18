@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
 @interface MWRatesGraphicView : UIView
-@property (nonatomic, strong) MWSettingsEntity* rcExpo; //x
-@property (nonatomic, strong) MWSettingsEntity* rcRate; //y
+@property (nonatomic, strong) MWValueSettingsEntity* rcExpo; //x
+@property (nonatomic, strong) MWValueSettingsEntity* rcRate; //y
 @end

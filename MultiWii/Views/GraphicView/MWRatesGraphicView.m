@@ -98,7 +98,7 @@
     [self setNeedsDisplay];
 }
 
--(void)setRcExpo:(MWSettingsEntity *)rcExpo
+-(void)setRcExpo:(MWValueSettingsEntity *)rcExpo
 {
     if (_rcExpo)
     {
@@ -114,7 +114,7 @@
 
 }
 
--(void)setRcRate:(MWSettingsEntity *)rcRate
+-(void)setRcRate:(MWValueSettingsEntity *)rcRate
 {
     if (_rcRate)
     {

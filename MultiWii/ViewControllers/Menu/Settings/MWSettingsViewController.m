@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" SETTINGS ";
+    if (COMBINE_WRITE_AND_SAVE_EPROM)
+        self.saveButton.hidden = YES;
 }
 
 -(NSArray*) titlesForMenu
@@ -55,6 +57,7 @@
     }
     else
         [__delegate showBuyDialogFromVC:self];
+    
 }
 
 @end

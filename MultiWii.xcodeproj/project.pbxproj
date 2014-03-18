@@ -254,7 +254,7 @@
 		44DD95631832C4A800B82B24 /* MWTelemetrySubMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95621832C4A800B82B24 /* MWTelemetrySubMenuViewController.m */; };
 		44DD95661832C8D400B82B24 /* MWTelemetryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95651832C8D400B82B24 /* MWTelemetryManager.m */; };
 		44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956A1832CABA00B82B24 /* MWBoxAuxSettingEntity.m */; };
-		44DD957A1832CABA00B82B24 /* MWSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */; };
+		44DD957A1832CABA00B82B24 /* MWValueSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956C1832CABA00B82B24 /* MWValueSettingsEntity.m */; };
 		44DD957B1832CABA00B82B24 /* MWFlyPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD956F1832CABA00B82B24 /* MWFlyPidSettings.m */; };
 		44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95711832CABA00B82B24 /* MWGPSPidSettings.m */; };
 		44DD957D1832CABA00B82B24 /* MWPIDSettingsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD95731832CABA00B82B24 /* MWPIDSettingsEntity.m */; };
@@ -607,8 +607,8 @@
 		44DD95651832C8D400B82B24 /* MWTelemetryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryManager.m; sourceTree = "<group>"; };
 		44DD95691832CABA00B82B24 /* MWBoxAuxSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBoxAuxSettingEntity.h; sourceTree = "<group>"; };
 		44DD956A1832CABA00B82B24 /* MWBoxAuxSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBoxAuxSettingEntity.m; sourceTree = "<group>"; };
-		44DD956B1832CABA00B82B24 /* MWSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSettingsEntity.h; sourceTree = "<group>"; };
-		44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSettingsEntity.m; sourceTree = "<group>"; };
+		44DD956B1832CABA00B82B24 /* MWValueSettingsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWValueSettingsEntity.h; sourceTree = "<group>"; };
+		44DD956C1832CABA00B82B24 /* MWValueSettingsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWValueSettingsEntity.m; sourceTree = "<group>"; };
 		44DD956E1832CABA00B82B24 /* MWFlyPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFlyPidSettings.h; sourceTree = "<group>"; };
 		44DD956F1832CABA00B82B24 /* MWFlyPidSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFlyPidSettings.m; sourceTree = "<group>"; };
 		44DD95701832CABA00B82B24 /* MWGPSPidSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSPidSettings.h; sourceTree = "<group>"; };
@@ -1732,8 +1732,8 @@
 		44DD95671832CABA00B82B24 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				44DD956B1832CABA00B82B24 /* MWSettingsEntity.h */,
-				44DD956C1832CABA00B82B24 /* MWSettingsEntity.m */,
+				44DD956B1832CABA00B82B24 /* MWValueSettingsEntity.h */,
+				44DD956C1832CABA00B82B24 /* MWValueSettingsEntity.m */,
 				44DD95801832CBE700B82B24 /* Telemetry */,
 				44DD95681832CABA00B82B24 /* AUX */,
 				44DD956D1832CABA00B82B24 /* PID */,
@@ -2192,7 +2192,7 @@
 				44DD95601832C2BC00B82B24 /* MWMenuViewController.m in Sources */,
 				4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */,
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
-				44DD957A1832CABA00B82B24 /* MWSettingsEntity.m in Sources */,
+				44DD957A1832CABA00B82B24 /* MWValueSettingsEntity.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44DD957F1832CABA00B82B24 /* MWRatesSettings.m in Sources */,
 				44DD95591832C21800B82B24 /* MWAboutViewController.m in Sources */,

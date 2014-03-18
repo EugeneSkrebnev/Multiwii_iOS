@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
 @interface MWSettingValueContainer : UIView
 
-@property (nonatomic, strong) MWSettingsEntity* settingEntity;
+@property (nonatomic, strong) MWValueSettingsEntity* settingEntity;
 @property (nonatomic, strong) UILabel* valueLabel;
 @property (nonatomic, strong) UIImageView* backgroundImage;
 @property (nonatomic, strong) UIImageView* backgroundActiveImage;

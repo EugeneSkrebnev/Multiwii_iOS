@@ -334,7 +334,7 @@
 
 }
 
--(void)setSettingEntity:(MWSettingsEntity *)settingEntity
+-(void)setSettingEntity:(MWValueSettingsEntity *)settingEntity
 {
     _settingEntity = settingEntity;
     self.minValue = settingEntity.minValue;

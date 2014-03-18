@@ -78,7 +78,7 @@
     }
 }
 
--(void)setEntityX:(MWSettingsEntity *)entityX
+-(void)setEntityX:(MWValueSettingsEntity *)entityX
 {
     _entityX = entityX;
     if (self.graphicType == MWGraphicViewTypeThrottle)
@@ -91,7 +91,7 @@
     }
 }
 
--(void)setEntityY:(MWSettingsEntity *)entityY
+-(void)setEntityY:(MWValueSettingsEntity *)entityY
 {
     _entityY = entityY;
     if (self.graphicType == MWGraphicViewTypeThrottle)

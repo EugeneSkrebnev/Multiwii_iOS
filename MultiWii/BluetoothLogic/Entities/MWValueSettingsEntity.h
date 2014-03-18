@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MWSettingsEntity : NSObject
+@interface MWValueSettingsEntity : NSObject
 @property (nonatomic, assign)  BOOL   enabled;
 @property (nonatomic, assign)  float  minValue;
 @property (nonatomic, assign)  float  maxValue;
@@ -23,6 +23,6 @@
 -(void)setValueWithoutKVO:(float)value withStepping:(BOOL) stepping;
 -(BOOL) willChangeValueToValue:(float) newValue;
 
--(BOOL)isEqual:(MWSettingsEntity*)object;
+-(BOOL)isEqual:(MWValueSettingsEntity*)object;
 
 @end

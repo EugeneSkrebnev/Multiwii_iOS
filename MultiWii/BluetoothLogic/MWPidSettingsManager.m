@@ -135,7 +135,7 @@
 //    x[0] = identifier
     for (int i = 1; i <= 30; i++)
     {
-        MWSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
+        MWValueSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
         if (pid)
         {
             NSNumber* divider = _dividersForIndexes[@(i)];
@@ -162,7 +162,7 @@
     }
     for (NSNumber* key in _pidsPayloadIndexes)
     {
-        MWSettingsEntity* pid = _pidsPayloadIndexes[key];
+        MWValueSettingsEntity* pid = _pidsPayloadIndexes[key];
         int pidIndex = key.intValue;
         NSNumber* divider = _dividersForIndexes[key];
         bytes[pidIndex - 1] = (char)(pid.value * divider.floatValue);
@@ -175,7 +175,7 @@
     unsigned char *bytes = (unsigned char*)payload.bytes;
     for (int i = 1; i < payload.length; i++)
     {
-        MWSettingsEntity* rateEntity = self.RCRates.allSettings[i - 1];
+        MWValueSettingsEntity* rateEntity = self.RCRates.allSettings[i - 1];
         rateEntity.value = (float)bytes[i] / 100.;
         rateEntity.savedValue = rateEntity.value;
     }
@@ -188,7 +188,7 @@
     
     for (int i = 0; i < 7; i++)
     {
-        MWSettingsEntity* rateEntity = self.RCRates.allSettings[i];
+        MWValueSettingsEntity* rateEntity = self.RCRates.allSettings[i];
         bytes[i] = rateEntity.value * 100;   //100 because 0.01 step  = 1 / self.RCRates.rcRate.step
     }
 
@@ -199,7 +199,7 @@
 {
     for (int i = 1; i <= 30; i++)
     {
-        MWSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
+        MWValueSettingsEntity* pid = _pidsPayloadIndexes[@(i)];
         if (pid)
         {
             NSNumber* divider = _dividersForIndexes[@(i)];
@@ -218,7 +218,7 @@
 
 -(void) saveRCRates
 {
-    for (MWSettingsEntity* rcSetting in self.RCRates.allSettings)
+    for (MWValueSettingsEntity* rcSetting in self.RCRates.allSettings)
     {
         rcSetting.savedValue = rcSetting.value;
     }

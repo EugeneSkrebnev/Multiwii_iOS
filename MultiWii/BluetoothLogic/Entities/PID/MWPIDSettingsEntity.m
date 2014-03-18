@@ -15,9 +15,9 @@
     self = [super init];
     if (self)
     {
-        self.p = [[MWSettingsEntity alloc] init];
-        self.i = [[MWSettingsEntity alloc] init];
-        self.d = [[MWSettingsEntity alloc] init];
+        self.p = [[MWValueSettingsEntity alloc] init];
+        self.i = [[MWValueSettingsEntity alloc] init];
+        self.d = [[MWValueSettingsEntity alloc] init];
         self.pid = @[self.p, self.i, self.d];
     }
     return self;

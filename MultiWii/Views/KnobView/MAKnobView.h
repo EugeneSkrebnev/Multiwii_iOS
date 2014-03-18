@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
 
 //typedef enum {
@@ -38,7 +38,7 @@
 @property (nonatomic, assign) float step;
 @property (nonatomic, assign) float spinCount;
 
-@property (nonatomic, strong) MWSettingsEntity* settingEntity;
+@property (nonatomic, strong) MWValueSettingsEntity* settingEntity;
 
 //@property (nonatomic, assign) MAKnobControlType controlType;
 @end

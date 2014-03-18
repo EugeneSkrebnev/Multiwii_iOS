@@ -123,7 +123,7 @@
     [self setNeedsDisplay];
 }
 
--(void)setThrExpo:(MWSettingsEntity *)thrExpo
+-(void)setThrExpo:(MWValueSettingsEntity *)thrExpo
 {
     if (_thrExpo)
     {
@@ -139,7 +139,7 @@
     
 }
 
--(void)setThrMid:(MWSettingsEntity *)thrMid
+-(void)setThrMid:(MWValueSettingsEntity *)thrMid
 {
     if (_thrMid)
     {

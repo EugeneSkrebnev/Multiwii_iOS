@@ -15,26 +15,23 @@
     self = [super init];
     if (self)
     {
-        self.rcExpo = [[MWSettingsEntity alloc] init];
-        self.rcRate = [[MWSettingsEntity alloc] init];
+        self.rcExpo = [[MWValueSettingsEntity alloc] init];
+        self.rcRate = [[MWValueSettingsEntity alloc] init];
         
-        self.throttleMiddle = [[MWSettingsEntity alloc] init];
-        self.throttleExpo = [[MWSettingsEntity alloc] init];
+        self.throttleMiddle = [[MWValueSettingsEntity alloc] init];
+        self.throttleExpo = [[MWValueSettingsEntity alloc] init];
         
-        self.rollPitchRate = [[MWSettingsEntity alloc] init];
-        self.yawRate = [[MWSettingsEntity alloc] init];
-        self.throttlePidAttenuationRate = [[MWSettingsEntity alloc] init];
+        self.rollPitchRate = [[MWValueSettingsEntity alloc] init];
+        self.yawRate = [[MWValueSettingsEntity alloc] init];
+        self.throttlePidAttenuationRate = [[MWValueSettingsEntity alloc] init];
         
         self.allSettings = @[self.rcRate, self.rcExpo, self.rollPitchRate, self.yawRate, self.throttlePidAttenuationRate, self.throttleMiddle, self.throttleExpo];
         
-//        float i = 0.1;
-        for (MWSettingsEntity* rate in self.allSettings)
+        for (MWValueSettingsEntity* rate in self.allSettings)
         {
             rate.step = 0.01;
             rate.minValue = 0;
             rate.maxValue = 1;
-//            rate.value = i;
-//            i += 0.1;
         }
         
         self.rcRate.maxValue = 2.5;

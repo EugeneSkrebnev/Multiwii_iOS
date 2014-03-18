@@ -80,7 +80,7 @@
     [self.backgroundActiveImage setHidden:_settingEntity.saved animated:YES duration:0.6];
 }
 
--(void)setSettingEntity:(MWSettingsEntity *)settingEntity
+-(void)setSettingEntity:(MWValueSettingsEntity *)settingEntity
 {
     if (_settingEntity)
     {

@@ -11,13 +11,13 @@
 @implementation MWTelemetryRadioValuesCell
 
 
--(void) setSettingsEntity:(MWSettingsEntity*) settingEntity forIndex:(int) indx
+-(void) setSettingsEntity:(MWValueSettingsEntity*) settingEntity forIndex:(int) indx
 {
     MWValueSliderContainer* containerForIndex = self.valueSliderContainers[indx];
     containerForIndex.settingEntity = settingEntity;
 }
 
--(MWSettingsEntity*) settingEntityForIndex:(int) ind
+-(MWValueSettingsEntity*) settingEntityForIndex:(int) ind
 {
     return [self.valueSliderContainers[ind] settingEntity];
 }

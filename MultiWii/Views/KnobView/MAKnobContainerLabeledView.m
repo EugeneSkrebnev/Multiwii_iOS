@@ -154,7 +154,7 @@
     [self updateSavedState];
 }
 
--(void)setSettingEntity:(MWSettingsEntity *)settingEntity
+-(void)setSettingEntity:(MWValueSettingsEntity *)settingEntity
 {
     if (_settingEntity)
     {

@@ -29,6 +29,7 @@
     {
         self.bluetoothManager = [[MWBluetoothManager alloc] init];
         self.pidManager = [[MWPidSettingsManager alloc] init];
+
         self.boxManager = [[MWBoxSettingsManager alloc] init];
         self.telemetryManager = [[MWTelemetryManager alloc] init];
         [self initDefaultHandlers];

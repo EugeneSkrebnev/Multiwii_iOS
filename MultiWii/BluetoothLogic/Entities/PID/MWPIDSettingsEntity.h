@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 @interface MWPIDSettingsEntity : NSObject
 
-@property (nonatomic, strong) MWSettingsEntity* p;
-@property (nonatomic, strong) MWSettingsEntity* i;
-@property (nonatomic, strong) MWSettingsEntity* d;
+@property (nonatomic, strong) MWValueSettingsEntity* p;
+@property (nonatomic, strong) MWValueSettingsEntity* i;
+@property (nonatomic, strong) MWValueSettingsEntity* d;
 
 @property (nonatomic, strong) NSArray* pid;
 

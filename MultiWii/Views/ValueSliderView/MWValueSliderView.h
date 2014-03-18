@@ -10,6 +10,6 @@
 
 @interface MWValueSliderView : UISlider
 
-@property (nonatomic, strong) MWSettingsEntity* settingsEntity;
+@property (nonatomic, strong) MWValueSettingsEntity* settingsEntity;
 
 @end

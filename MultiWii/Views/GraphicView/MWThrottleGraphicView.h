@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
 @interface MWThrottleGraphicView : UIView<UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) MWSettingsEntity* thrMid; //x
-@property (nonatomic, strong) MWSettingsEntity* thrExpo; //y
+@property (nonatomic, strong) MWValueSettingsEntity* thrMid; //x
+@property (nonatomic, strong) MWValueSettingsEntity* thrExpo; //y
 
 @end

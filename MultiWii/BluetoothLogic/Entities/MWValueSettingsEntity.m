@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
 //
 
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
-@implementation MWSettingsEntity
+@implementation MWValueSettingsEntity
 
 @synthesize value = _value;
 
@@ -89,7 +89,7 @@
 
 }
 
--(BOOL)isEqual:(MWSettingsEntity*)object;
+-(BOOL)isEqual:(MWValueSettingsEntity*)object;
 {
     return fabsf(self.value - object.value) < (self.step / 5);
 }

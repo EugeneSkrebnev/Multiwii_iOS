@@ -97,7 +97,7 @@
         self.buy10.top -= 30;
         self.priceSelectKnobView.top -= 30;
     }
-    MWSettingsEntity* priceDescriptor = [[MWSettingsEntity alloc] init];
+    MWValueSettingsEntity* priceDescriptor = [[MWValueSettingsEntity alloc] init];
     priceDescriptor.minValue = 10;
     priceDescriptor.maxValue = 30;
     priceDescriptor.step = 2;

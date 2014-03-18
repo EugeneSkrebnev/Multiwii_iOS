@@ -10,7 +10,7 @@
 #import "MWRatesGraphicView.h"
 #import "MWThrottleGraphicView.h"
 
-#import "MWSettingsEntity.h"
+#import "MWValueSettingsEntity.h"
 
 typedef enum {
     MWGraphicViewTypeRates,
@@ -20,6 +20,6 @@ typedef enum {
 @interface MWGraphicView : UIView
 
 @property (nonatomic, assign) MWGraphicViewType graphicType;
-@property (nonatomic, strong) MWSettingsEntity* entityX;
-@property (nonatomic, strong) MWSettingsEntity* entityY;
+@property (nonatomic, strong) MWValueSettingsEntity* entityX;
+@property (nonatomic, strong) MWValueSettingsEntity* entityY;
 @end
