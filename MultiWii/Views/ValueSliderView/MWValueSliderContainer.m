@@ -25,6 +25,9 @@
         _valueSlider = [[MWValueSliderView alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
         _nameLabel   = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
         _valueLabel  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
+        [self addSubview:_nameLabel];
+        [self addSubview:_valueSlider];
+        [self addSubview:_valueLabel];
     }
 }
 
@@ -32,10 +35,10 @@
 {
     [super layoutSubviews];
     
-    double nameLabelWidthProportion  = 134 / 630;
-    double valueLabelWidthProportion = 116 / 630;
-    double sliderProportion          = 380 / 630;
-    int capBetweenElem = 8;
+    double nameLabelWidthProportion  = 134. / 630;
+    double valueLabelWidthProportion = 116. / 630;
+    double sliderProportion          = 380. / 630;
+    int capBetweenElem = 2;
     double totalWidth = self.width - 2. * capBetweenElem;
     
     int nameLabelWidth  = nameLabelWidthProportion  * totalWidth;
@@ -44,12 +47,21 @@
     
     _nameLabel.left  = 0;
     _nameLabel.width = nameLabelWidth;
+    _nameLabel.textColor = [UIColor whiteColor];
+    _nameLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
+    _nameLabel.text = [@[@"roll", @"pithc", @"yaw", @"throt"][rand() % 4] uppercaseString];
     
     _valueSlider.left  = _nameLabel.left + _nameLabel.width + capBetweenElem;
     _valueSlider.width = sliderWidth;
-    
+
     _valueLabel.left  = _valueSlider.left + _valueSlider.width + capBetweenElem;
     _valueLabel.width = valueLabelWidth;
+    _valueLabel.text = @(rand() % 1000 + 1000).stringValue;
+    _valueLabel.textAlignment = NSTextAlignmentRight;
+    _valueLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
+    _valueLabel.textColor = RGB(164, 164, 164);
+    
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (id)init

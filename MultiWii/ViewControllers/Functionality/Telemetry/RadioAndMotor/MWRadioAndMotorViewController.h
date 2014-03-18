@@ -8,6 +8,7 @@
 
 #import "MWTelemetryBaseViewController.h"
 
-@interface MWRadioAndMotorViewController : MWTelemetryBaseViewController
+@interface MWRadioAndMotorViewController : MWTelemetryBaseViewController<UITableViewDataSource, UITableViewDelegate>
+
 
 @end
