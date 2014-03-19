@@ -20,6 +20,7 @@
 + (void) initBluetoothLink
 {
     [self sharedInstance].protocolManager = [[MWMultiwiiProtocolManager alloc] init];
+    [[self sharedInstance] initDefaultHandlers];
 }
 
 - (id)init
@@ -32,7 +33,7 @@
 
         self.boxManager = [[MWBoxSettingsManager alloc] init];
         self.telemetryManager = [[MWTelemetryManager alloc] init];
-        [self initDefaultHandlers];
+
         [MKStoreManager sharedManager];
     }
     return self;
@@ -134,6 +135,11 @@
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.telemetryManager.attitude fillValuesFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_ATTITUDE];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.telemetryManager.radio fillRadioValuesFromPayload:recieveData];;
+    } forRequestWith:MWI_BLE_MESSAGE_GET_8_RC];
+
 }
 
 -(NSString *)copterTypeString

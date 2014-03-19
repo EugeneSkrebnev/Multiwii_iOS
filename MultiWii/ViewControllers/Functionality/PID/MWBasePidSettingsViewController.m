@@ -10,7 +10,7 @@
 #import "MWTopbarButton.h"
 #import "MWHeader3LabelView.h"
 #import "MWPidAdjustCell.h"
-
+#import "MWSaveableSettingEntity.h"
 
 @interface MWBasePidSettingsViewController ()
 
@@ -49,10 +49,22 @@
 {
     if (__delegate.isFullVersionUnlocked)
     {
+        BOOL needToSaveEprom = [MWSaveableSettingEntity haveUnsavedItems];
         [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_PID
                                  andPayload:[[MWGlobalManager sharedInstance].pidManager payloadFromPids]
                               responseBlock:^(NSData *recieveData) {
                                   NSLog(@"write success");
+                                  if (COMBINE_WRITE_AND_SAVE_EPROM)
+                                      if (needToSaveEprom)
+                                      {
+                                          [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_SAVE_EPROM
+                                                                   andPayload:nil
+                                                                responseBlock:^(NSData *recieveData)
+                                           {
+                                               NSLog(@"Eprom saved");
+                                           }];
+
+                                      }
                               }];
     }
     else

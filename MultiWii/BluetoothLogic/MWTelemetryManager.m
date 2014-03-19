@@ -19,9 +19,10 @@
     self = [super init];
     if (self)
     {
-        self.raw = [[MWTelemetryRawImu alloc] init];
+        self.raw      = [[MWTelemetryRawImu alloc] init];
         self.altitude = [[MWTelemetryAltitude alloc] init];
         self.attitude = [[MWTelemetryAttitude alloc] init];
+        self.radio    = [[MWTelemetryRadio alloc] init];
     }
     return self;
 }

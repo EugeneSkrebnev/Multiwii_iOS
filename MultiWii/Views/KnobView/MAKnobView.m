@@ -343,6 +343,7 @@
     self.spinCount = ((self.maxValue - self.minValue) / self.step) / 90;
     self.value = settingEntity.value;
     [settingEntity addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionNew) context:nil];
+    //possible bug? what if set one settings entuty and after that set another?
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

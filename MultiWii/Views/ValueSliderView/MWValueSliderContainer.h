@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MWValueSliderContainer : UIView
-@property (nonatomic, strong) MWValueSettingsEntity* settingEntity;
+@property (nonatomic, strong) MWRadioValueEntity* settingEntity;
 @end

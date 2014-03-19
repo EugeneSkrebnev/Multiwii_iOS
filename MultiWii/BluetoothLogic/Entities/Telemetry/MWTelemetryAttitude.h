@@ -14,7 +14,5 @@
 @property (nonatomic, assign) int pitchAngle;
 @property (nonatomic, assign) int heading;
 
-
 -(void) fillValuesFromPayload:(NSData*) payload;
-
 @end

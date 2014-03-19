@@ -49,14 +49,14 @@
     _nameLabel.width = nameLabelWidth;
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
-    _nameLabel.text = [@[@"roll", @"pithc", @"yaw", @"throt"][rand() % 4] uppercaseString];
+//    _nameLabel.text = [@[@"roll", @"pithc", @"yaw", @"throt"][rand() % 4] uppercaseString];
     
     _valueSlider.left  = _nameLabel.left + _nameLabel.width + capBetweenElem;
     _valueSlider.width = sliderWidth;
 
     _valueLabel.left  = _valueSlider.left + _valueSlider.width + capBetweenElem;
     _valueLabel.width = valueLabelWidth;
-    _valueLabel.text = @(rand() % 1000 + 1000).stringValue;
+//    _valueLabel.text = @(rand() % 1000 + 1000).stringValue;
     _valueLabel.textAlignment = NSTextAlignmentRight;
     _valueLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
     _valueLabel.textColor = RGB(164, 164, 164);
@@ -92,6 +92,39 @@
         [self makeInit];
     }
     return self;
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    _valueLabel.text = @(_settingEntity.value).stringValue;
+    _nameLabel.text = _settingEntity.name;
+}
+
+-(void)setSettingEntity:(MWRadioValueEntity *)settingEntity
+{
+    if (_settingEntity)
+    {
+        [_settingEntity removeObserver:self forKeyPath:@"value"];
+        [_settingEntity removeObserver:self forKeyPath:@"name"];
+    }
+
+    _settingEntity = settingEntity;
+    _valueSlider.settingEntity = settingEntity;
+    
+    if (_settingEntity)
+    {
+        [_settingEntity addObserver:self forKeyPath:@"value" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+        [_settingEntity addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+    }
+}
+
+-(void)dealloc
+{
+    if (_settingEntity)
+    {
+        [_settingEntity removeObserver:self forKeyPath:@"value"];
+        [_settingEntity removeObserver:self forKeyPath:@"name"];
+    }
 }
 
 @end

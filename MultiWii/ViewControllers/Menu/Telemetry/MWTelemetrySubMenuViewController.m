@@ -22,7 +22,7 @@
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"RADIO & MOTOR", @"ORIENTATION", @"GPS", @"RAW DATA FROM SENSORS", @"BATTERY", @"COMMAND CENTER PANEL"];
+    return @[@"RADIO"/* & MOTOR"*/, @"ORIENTATION", @"GPS", @"RAW DATA FROM SENSORS", @"BATTERY", @"COMMAND CENTER PANEL"];
 }
 
 -(NSArray*) iconsForMenu

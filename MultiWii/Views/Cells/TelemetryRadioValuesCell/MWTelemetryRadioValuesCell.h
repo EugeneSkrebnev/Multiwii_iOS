@@ -10,8 +10,8 @@
 #import "MWValueSliderContainer.h"
 @interface MWTelemetryRadioValuesCell : MWBaseTableViewCell
 
--(void) setSettingsEntity:(MWValueSettingsEntity*) settingEntity forIndex:(int) indx;
--(MWValueSettingsEntity*) settingEntityForIndex:(int) ind;
+-(void) setSettingsEntity:(MWRadioValueEntity*) settingEntity forIndex:(int) indx;
+-(MWRadioValueEntity*) settingEntityForIndex:(int) ind;
 @property (strong, nonatomic) IBOutletCollection(MWValueSliderContainer) NSArray *valueSliderContainers;
 
 @end

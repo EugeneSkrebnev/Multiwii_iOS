@@ -46,4 +46,14 @@
     [self didChangeValueForKey:@"saved"];
 }
 
+-(void)setSaved:(BOOL)saved
+{
+    self.savedBitMask = self.bitMask;
+}
+
+-(BOOL)saved
+{
+    return self.savedBitMask == self.bitMask;
+}
+
 @end

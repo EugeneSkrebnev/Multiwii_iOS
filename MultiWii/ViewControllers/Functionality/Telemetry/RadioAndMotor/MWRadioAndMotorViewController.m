@@ -20,12 +20,28 @@
 @implementation MWRadioAndMotorViewController
 
 
+-(void) sendRadioUpdateRequest
+{
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData) {
+        NSLog(@"radio updated");
+        double delayInSeconds = .3;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self sendRadioUpdateRequest];
+        });
+    }];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
+    [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:2.5]; //lag protection
+
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @" RADIO/MOTOR VALUES ";
+    self.viewControllerTitle = @" RADIO ";///MOTOR VALUES ";
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
+    [self sendRadioUpdateRequest];
 }
 
 #pragma mark - table view datasource
@@ -46,10 +62,29 @@
     if (indexPath.row == 1)
     {
         cell = [MWTelemetryRadioValuesCell loadView];
-        self.controlRadioValues = cell;
+        self.auxRadioValues = cell;
     }
 
     return cell;
+}
+
+-(void)setControlRadioValues:(MWTelemetryRadioValuesCell *)controlRadioValues
+{
+    _controlRadioValues = controlRadioValues;
+    for (int i = 0; i < 4; i++)
+    {
+        [_controlRadioValues setSettingsEntity:TELEMETRY_MANAGER.radio.allChannels[i] forIndex:i];
+    }
+
+}
+
+-(void)setAuxRadioValues:(MWTelemetryRadioValuesCell *)auxRadioValues
+{
+    _auxRadioValues = auxRadioValues;
+    for (int i = 4; i < 8; i++)
+    {
+        [_auxRadioValues setSettingsEntity:TELEMETRY_MANAGER.radio.allChannels[i] forIndex:i - 4];
+    }
 }
 
 @end

@@ -81,10 +81,23 @@
 {
     if (__delegate.isFullVersionUnlocked)
     {
+        BOOL needToSaveEprom = [MWSaveableSettingEntity haveUnsavedItems];
         [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_RC_TUNNING
                                  andPayload:[PID_MANAGER payloadFromRcTunning]
                               responseBlock:^(NSData *recieveData) {
                                   NSLog(@"write RCRates success");
+                                  if (COMBINE_WRITE_AND_SAVE_EPROM)
+                                      if (needToSaveEprom)
+                                      {
+                                          [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_SAVE_EPROM
+                                                                   andPayload:nil
+                                                                responseBlock:^(NSData *recieveData)
+                                           {
+                                               NSLog(@"Eprom saved");
+                                           }];
+                                          
+                                      }
+
                               }];
     }
     else

@@ -132,7 +132,7 @@
         }
         if (!handler)
         {
-            NSLog(@"NO HANDLER FOR :");
+            NSLog(@"NO HANDLER FOR id : %@", @(identifier));
             [self writeMessageDebug:payload];
         }
     }

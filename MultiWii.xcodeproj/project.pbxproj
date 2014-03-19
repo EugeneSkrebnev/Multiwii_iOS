@@ -217,6 +217,10 @@
 		44C7CA96178A19300059C199 /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA94178A19300059C199 /* cell@2x.png */; };
 		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
 		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
+		44DD766B18D88ED60039735E /* MWSaveableSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */; };
+		44DD766E18D890CE0039735E /* MWAbstractSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */; };
+		44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767018D9A45F0039735E /* MWRadioValueEntity.m */; };
+		44DD767418D9A56B0039735E /* MWTelemetryRadio.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767318D9A56B0039735E /* MWTelemetryRadio.m */; };
 		44DD950C1832BD4800B82B24 /* bneck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94F91832BD4800B82B24 /* bneck.jpg */; };
 		44DD950D1832BD4800B82B24 /* bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FA1832BD4800B82B24 /* bridge.jpg */; };
 		44DD950E1832BD4800B82B24 /* g2_DEF01.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */; };
@@ -552,6 +556,14 @@
 		44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseTableViewCell.m; sourceTree = "<group>"; };
 		44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainMenuCell.h; sourceTree = "<group>"; };
 		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
+		44DD766918D88ED60039735E /* MWSaveableSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSaveableSettingEntity.h; sourceTree = "<group>"; };
+		44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSaveableSettingEntity.m; sourceTree = "<group>"; };
+		44DD766C18D890CE0039735E /* MWAbstractSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAbstractSettingEntity.h; sourceTree = "<group>"; };
+		44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWAbstractSettingEntity.m; sourceTree = "<group>"; };
+		44DD766F18D9A45F0039735E /* MWRadioValueEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRadioValueEntity.h; sourceTree = "<group>"; };
+		44DD767018D9A45F0039735E /* MWRadioValueEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadioValueEntity.m; sourceTree = "<group>"; };
+		44DD767218D9A56B0039735E /* MWTelemetryRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryRadio.h; sourceTree = "<group>"; };
+		44DD767318D9A56B0039735E /* MWTelemetryRadio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryRadio.m; sourceTree = "<group>"; };
 		44DD94F91832BD4800B82B24 /* bneck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bneck.jpg; sourceTree = "<group>"; };
 		44DD94FA1832BD4800B82B24 /* bridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bridge.jpg; sourceTree = "<group>"; };
 		44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_DEF01.BMP; sourceTree = "<group>"; };
@@ -1732,8 +1744,14 @@
 		44DD95671832CABA00B82B24 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				44DD766C18D890CE0039735E /* MWAbstractSettingEntity.h */,
+				44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */,
+				44DD766918D88ED60039735E /* MWSaveableSettingEntity.h */,
+				44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */,
 				44DD956B1832CABA00B82B24 /* MWValueSettingsEntity.h */,
 				44DD956C1832CABA00B82B24 /* MWValueSettingsEntity.m */,
+				44DD766F18D9A45F0039735E /* MWRadioValueEntity.h */,
+				44DD767018D9A45F0039735E /* MWRadioValueEntity.m */,
 				44DD95801832CBE700B82B24 /* Telemetry */,
 				44DD95681832CABA00B82B24 /* AUX */,
 				44DD956D1832CABA00B82B24 /* PID */,
@@ -1778,14 +1796,16 @@
 		44DD95801832CBE700B82B24 /* Telemetry */ = {
 			isa = PBXGroup;
 			children = (
-				44DD958D1832D3BF00B82B24 /* MWTelemetryRawImu.h */,
-				44DD958E1832D3BF00B82B24 /* MWTelemetryRawImu.m */,
 				44DD95901832D40600B82B24 /* MWRawImuEntity.h */,
 				44DD95911832D40600B82B24 /* MWRawImuEntity.m */,
+				44DD958D1832D3BF00B82B24 /* MWTelemetryRawImu.h */,
+				44DD958E1832D3BF00B82B24 /* MWTelemetryRawImu.m */,
 				44DD95931832D8B300B82B24 /* MWTelemetryAttitude.h */,
 				44DD95941832D8B300B82B24 /* MWTelemetryAttitude.m */,
 				44DD95961832DA0300B82B24 /* MWTelemetryAltitude.h */,
 				44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */,
+				44DD767218D9A56B0039735E /* MWTelemetryRadio.h */,
+				44DD767318D9A56B0039735E /* MWTelemetryRadio.m */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -2207,6 +2227,7 @@
 				44FC0BBD1814133C00417C79 /* SBJsonStreamParser.m in Sources */,
 				4422265E1814059100D53DE3 /* SFHFKeychainUtils.m in Sources */,
 				44FC0BC31814133C00417C79 /* SBJsonStreamWriterState.m in Sources */,
+				44DD766B18D88ED60039735E /* MWSaveableSettingEntity.m in Sources */,
 				44A6BDBD178D9EC900DC95C6 /* MWMenuSubtitleCell.m in Sources */,
 				44A6BDEA178E06F800DC95C6 /* MWAUXCheckBoxCell.m in Sources */,
 				44DD95631832C4A800B82B24 /* MWTelemetrySubMenuViewController.m in Sources */,
@@ -2248,6 +2269,8 @@
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
 				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
+				44DD767418D9A56B0039735E /* MWTelemetryRadio.m in Sources */,
+				44DD766E18D890CE0039735E /* MWAbstractSettingEntity.m in Sources */,
 				44519D6F179D83C5006E4EB7 /* MWDevicePreviewCell.m in Sources */,
 				44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */,
 				447BD3141822F23600E27FA7 /* MWSignalIndicatorView.m in Sources */,
@@ -2256,6 +2279,7 @@
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */,
 				44EA104018D1F1F00087D078 /* MWCompassView.m in Sources */,
+				44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,

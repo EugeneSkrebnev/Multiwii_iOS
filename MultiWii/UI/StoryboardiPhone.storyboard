@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OXz-zJ-XeP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -560,15 +560,29 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="HYJ-YO-g9L" customClass="MWArtificialHorizonView">
-                                <rect key="frame" x="77" y="10" width="172" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="Eab-kJ-WDK" customClass="MWCompassView">
-                                <rect key="frame" x="64" y="200" width="192" height="192"/>
+                            <view contentMode="scaleToFill" id="BEw-Kj-Pn2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="HYJ-YO-g9L" customClass="MWArtificialHorizonView">
+                                        <rect key="frame" x="74" y="41" width="172" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.091481279200000001" green="0.62887541719999995" blue="0.67349759620000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Pwz-V5-azq">
+                                <rect key="frame" x="0.0" y="234" width="320" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="Eab-kJ-WDK" customClass="MWCompassView">
+                                        <rect key="frame" x="64" y="27" width="192" height="192"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -582,21 +596,6 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmK-da-yio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2672" y="-423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oee-0z-fY8">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="OXz-zJ-XeP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r2c-qN-sTr">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="g9Q-bm-OWc" kind="relationship" relationship="rootViewController" id="MCB-1t-lOO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J9C-8W-cJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2164" y="354"/>
         </scene>
         <!--Radio And Motor View Controller-->
         <scene sceneID="rRY-px-hTw">
@@ -636,7 +635,6 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MhS-gP-mQ4"/>
         <segue reference="RBP-WU-6fC"/>
     </inferredMetricsTieBreakers>
 </document>

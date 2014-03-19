@@ -30,6 +30,8 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 #define MWI_BLE_MESSAGE_GET_RAW_IMU 102   //out message         9 DOF
 #define MWI_BLE_MESSAGE_GET_ATTITUDE 108   //out message         2 angles 1 heading
 
+#define MWI_BLE_MESSAGE_GET_8_RC 105   //out message         8 rc chan
+
 @interface MWMultiwiiProtocolManager : NSObject
 //+ (MWMultiwiiProtocolManager *)sharedInstance;
 
