@@ -6,6 +6,11 @@
 	<dict/>
 	<key>Non-Consumables</key>
 	<array>
+		<string>com.skrebnev.multiwii.fullversion.30</string>
+		<string>com.skrebnev.multiwii.fullversion.28</string>
+		<string>com.skrebnev.multiwii.fullversion.26</string>
+		<string>com.skrebnev.multiwii.fullversion.24</string>
+		<string>com.skrebnev.multiwii.fullversion.22</string>
 		<string>com.skrebnev.multiwii.fullversion.17</string>
 		<string>com.skrebnev.multiwii.fullversion.18</string>
 		<string>com.skrebnev.multiwii.fullversion.19</string>

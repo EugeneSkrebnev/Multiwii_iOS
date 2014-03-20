@@ -7,30 +7,31 @@
 //
 
 #import "MWOrientationViewController.h"
-#import <CoreMotion/CoreMotion.h>
+#import "MWCompassViewContainer.h"
+#import "MWOrientationViewContainer.h"
+
 @interface MWOrientationViewController ()
+@property (weak, nonatomic) IBOutlet MWCompassViewContainer *compassViewContainer;
+@property (weak, nonatomic) IBOutlet MWOrientationViewContainer *orientationViewContainer;
 
 @end
 
 @implementation MWOrientationViewController
 {
-//    CMMotionManager* _cmm;
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.viewControllerTitle = @" ORIENTATION ";
-//    _cmm = [[CMMotionManager alloc] init];
-//    [_cmm startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
-//                              withHandler:^(CMDeviceMotion *motion, NSError *error) {
-//
-//                                  self.horizonView.pitch = motion.attitude.pitch * (180 / M_PI);
-//                                  self.horizonView.roll = motion.attitude.roll * (180 / M_PI);
-//                                  self.compassView.direction = motion.attitude.yaw* (180 / M_PI);
-//                              }];
-//    
+
     [self sendOrientationRequest];
+    self.orientationViewContainer.top = 0;
+    int selfHeight = self.view.height - self.navigationController.navigationBar.height - (IS_IOS7 ? 0 : 20);
+    self.orientationViewContainer.height = selfHeight / 2;
+    self.compassViewContainer.height = self.orientationViewContainer.height;
+    self.compassViewContainer.top = self.orientationViewContainer.height;
 
 }
 

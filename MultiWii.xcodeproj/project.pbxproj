@@ -221,6 +221,13 @@
 		44DD766E18D890CE0039735E /* MWAbstractSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */; };
 		44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767018D9A45F0039735E /* MWRadioValueEntity.m */; };
 		44DD767418D9A56B0039735E /* MWTelemetryRadio.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767318D9A56B0039735E /* MWTelemetryRadio.m */; };
+		44DD767818DAF7F30039735E /* MWCompassViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767718DAF7F30039735E /* MWCompassViewContainer.m */; };
+		44DD767D18DAFB170039735E /* circleOrientation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44DD767A18DAFB170039735E /* circleOrientation@2x.png */; };
+		44DD767E18DAFB170039735E /* ic_pitch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44DD767B18DAFB170039735E /* ic_pitch@2x.png */; };
+		44DD767F18DAFB170039735E /* ic_roll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44DD767C18DAFB170039735E /* ic_roll@2x.png */; };
+		44DD768218DAFC120039735E /* MWCircleValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD768118DAFC120039735E /* MWCircleValueLabel.m */; };
+		44DD768518DB04A50039735E /* MWOrientationViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD768418DB04A50039735E /* MWOrientationViewContainer.m */; };
+		44DD768818DB16400039735E /* MWCircleIconValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD768718DB16400039735E /* MWCircleIconValueView.m */; };
 		44DD950C1832BD4800B82B24 /* bneck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94F91832BD4800B82B24 /* bneck.jpg */; };
 		44DD950D1832BD4800B82B24 /* bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FA1832BD4800B82B24 /* bridge.jpg */; };
 		44DD950E1832BD4800B82B24 /* g2_DEF01.BMP in Resources */ = {isa = PBXBuildFile; fileRef = 44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */; };
@@ -564,6 +571,17 @@
 		44DD767018D9A45F0039735E /* MWRadioValueEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadioValueEntity.m; sourceTree = "<group>"; };
 		44DD767218D9A56B0039735E /* MWTelemetryRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryRadio.h; sourceTree = "<group>"; };
 		44DD767318D9A56B0039735E /* MWTelemetryRadio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryRadio.m; sourceTree = "<group>"; };
+		44DD767618DAF7F30039735E /* MWCompassViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCompassViewContainer.h; sourceTree = "<group>"; };
+		44DD767718DAF7F30039735E /* MWCompassViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCompassViewContainer.m; sourceTree = "<group>"; };
+		44DD767A18DAFB170039735E /* circleOrientation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circleOrientation@2x.png"; sourceTree = "<group>"; };
+		44DD767B18DAFB170039735E /* ic_pitch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_pitch@2x.png"; sourceTree = "<group>"; };
+		44DD767C18DAFB170039735E /* ic_roll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_roll@2x.png"; sourceTree = "<group>"; };
+		44DD768018DAFC120039735E /* MWCircleValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCircleValueLabel.h; sourceTree = "<group>"; };
+		44DD768118DAFC120039735E /* MWCircleValueLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCircleValueLabel.m; sourceTree = "<group>"; };
+		44DD768318DB04A50039735E /* MWOrientationViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWOrientationViewContainer.h; sourceTree = "<group>"; };
+		44DD768418DB04A50039735E /* MWOrientationViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWOrientationViewContainer.m; sourceTree = "<group>"; };
+		44DD768618DB16400039735E /* MWCircleIconValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCircleIconValueView.h; sourceTree = "<group>"; };
+		44DD768718DB16400039735E /* MWCircleIconValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCircleIconValueView.m; sourceTree = "<group>"; };
 		44DD94F91832BD4800B82B24 /* bneck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bneck.jpg; sourceTree = "<group>"; };
 		44DD94FA1832BD4800B82B24 /* bridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bridge.jpg; sourceTree = "<group>"; };
 		44DD94FB1832BD4800B82B24 /* g2_DEF01.BMP */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = g2_DEF01.BMP; sourceTree = "<group>"; };
@@ -1298,6 +1316,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44DD767518DAF7D50039735E /* OrientationScreenContainers */,
 				44961A2418D6FC1E005D1025 /* ValueSliderView */,
 				44EA104618D209010087D078 /* ArtificialHorizonView */,
 				44EA103D18D1F1490087D078 /* CompassView */,
@@ -1359,6 +1378,7 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44DD767918DAFAF70039735E /* OrientationScreenElements */,
 				44961A2818D70126005D1025 /* ValuesSliderView */,
 				449345F718D318E100093D93 /* ArtificialHorizonView */,
 				44EA104118D1F3A70087D078 /* CompassView */,
@@ -1537,6 +1557,31 @@
 				44A6BDC4178DA7ED00DC95C6 /* MWMainMenuCell.xib */,
 			);
 			path = MenuTableViewCell;
+			sourceTree = "<group>";
+		};
+		44DD767518DAF7D50039735E /* OrientationScreenContainers */ = {
+			isa = PBXGroup;
+			children = (
+				44DD767618DAF7F30039735E /* MWCompassViewContainer.h */,
+				44DD767718DAF7F30039735E /* MWCompassViewContainer.m */,
+				44DD768018DAFC120039735E /* MWCircleValueLabel.h */,
+				44DD768118DAFC120039735E /* MWCircleValueLabel.m */,
+				44DD768318DB04A50039735E /* MWOrientationViewContainer.h */,
+				44DD768418DB04A50039735E /* MWOrientationViewContainer.m */,
+				44DD768618DB16400039735E /* MWCircleIconValueView.h */,
+				44DD768718DB16400039735E /* MWCircleIconValueView.m */,
+			);
+			path = OrientationScreenContainers;
+			sourceTree = "<group>";
+		};
+		44DD767918DAFAF70039735E /* OrientationScreenElements */ = {
+			isa = PBXGroup;
+			children = (
+				44DD767A18DAFB170039735E /* circleOrientation@2x.png */,
+				44DD767B18DAFB170039735E /* ic_pitch@2x.png */,
+				44DD767C18DAFB170039735E /* ic_roll@2x.png */,
+			);
+			path = OrientationScreenElements;
 			sourceTree = "<group>";
 		};
 		44DD94F71832BD4800B82B24 /* 3DModels */ = {
@@ -2076,6 +2121,7 @@
 				44A6BDB0178D9B0B00DC95C6 /* aux@2x.png in Resources */,
 				44A6BDB2178D9B0B00DC95C6 /* exponents@2x.png in Resources */,
 				44A6BDB3178D9B0B00DC95C6 /* exponents_pressed@2x.png in Resources */,
+				44DD767D18DAFB170039735E /* circleOrientation@2x.png in Resources */,
 				44A6BDB4178D9B0B00DC95C6 /* pid_fly@2x.png in Resources */,
 				44A6BDB5178D9B0B00DC95C6 /* pid_fly_pressed@2x.png in Resources */,
 				442226631814059100D53DE3 /* README.mdown in Resources */,
@@ -2108,6 +2154,7 @@
 				44222596180D45BD00D53DE3 /* slider_maximum@2x.png in Resources */,
 				44A6BDE5178E020300DC95C6 /* how_to_connect_pressed@2x.png in Resources */,
 				44B9AB99181DC784005E511F /* about_author.html in Resources */,
+				44DD767F18DAFB170039735E /* ic_roll@2x.png in Resources */,
 				44A6BDEC178E070F00DC95C6 /* MWAUXCheckBoxCell.xib in Resources */,
 				44A6BDF0178E089900DC95C6 /* aux_check@2x.png in Resources */,
 				44A6BDF1178E089900DC95C6 /* aux_uncheck@2x.png in Resources */,
@@ -2116,6 +2163,7 @@
 				4409DDDA1821037900B11C9C /* icon_120.png in Resources */,
 				44DD95121832BD4800B82B24 /* gun_turr.jpg in Resources */,
 				44DD95191832BD4800B82B24 /* saucer_t.jpg in Resources */,
+				44DD767E18DAFB170039735E /* ic_pitch@2x.png in Resources */,
 				44A6BE10178EDDBF00DC95C6 /* icon_button_pressed@2x.png in Resources */,
 				44961A3918D722B8005D1025 /* MWTelemetryRadioValuesCell.xib in Resources */,
 				44A6BE1B178EE92000DC95C6 /* buy@2x.png in Resources */,
@@ -2199,6 +2247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44453CAC17518F6900929EC8 /* main.m in Sources */,
+				44DD768818DB16400039735E /* MWCircleIconValueView.m in Sources */,
 				44068B9A1802FF2A00E8ABCC /* MWRatesGraphicAdjustCell.m in Sources */,
 				44453CB017518F6900929EC8 /* MWAppDelegate.m in Sources */,
 				44DD958F1832D3BF00B82B24 /* MWTelemetryRawImu.m in Sources */,
@@ -2213,6 +2262,7 @@
 				4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */,
 				44C7CA561789CDA40059C199 /* MAKnobContainerLabeledView.m in Sources */,
 				44DD957A1832CABA00B82B24 /* MWValueSettingsEntity.m in Sources */,
+				44DD767818DAF7F30039735E /* MWCompassViewContainer.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44DD957F1832CABA00B82B24 /* MWRatesSettings.m in Sources */,
 				44DD95591832C21800B82B24 /* MWAboutViewController.m in Sources */,
@@ -2275,6 +2325,7 @@
 				44DD95981832DA0300B82B24 /* MWTelemetryAltitude.m in Sources */,
 				447BD3141822F23600E27FA7 /* MWSignalIndicatorView.m in Sources */,
 				442226691814059100D53DE3 /* VerificationController.m in Sources */,
+				44DD768518DB04A50039735E /* MWOrientationViewContainer.m in Sources */,
 				44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */,
 				44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */,
 				44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */,
@@ -2295,6 +2346,7 @@
 				44DD95521832C21800B82B24 /* MWConnectViewController.m in Sources */,
 				44DD95551832C21800B82B24 /* MWGPSPidViewController.m in Sources */,
 				44FC0BC61814133C00417C79 /* SBJsonWriter.m in Sources */,
+				44DD768218DAFC120039735E /* MWCircleValueLabel.m in Sources */,
 				44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

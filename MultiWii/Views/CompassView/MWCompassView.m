@@ -21,7 +21,7 @@
     if (!_wasInited)
     {
         _wasInited = YES;
-
+        self.backgroundColor = [UIColor clearColor];
         [self addSubview:({
             _background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"compass_bg.png"]];
             _background.center = CGPointMake(self.width / 2, self.height / 2);
@@ -43,7 +43,7 @@
             _angleLabel.height = 50;
             _angleLabel.textAlignment = NSTextAlignmentCenter;
             _angleLabel.backgroundColor = [UIColor clearColor];
-            _angleLabel.text = @"155";
+            _angleLabel.text = @"155.0";
             _angleLabel.shadowOffset = CGSizeMake(0, 1);
             _angleLabel.shadowColor = [UIColor whiteColor];
             _angleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:11];
