@@ -96,7 +96,8 @@
     _scaleView.value = pitch;
 //    self.roll = M_PI_4;
     _scaleView.transform = [_scaleView transformForPitch:pitch / 10.];
-    _horizonView.transform = _scaleView.transform;
+
+    _horizonView.transform = [_scaleView transformForPitchInverted:pitch / 10.];// _scaleView.transform;
 }
 
 -(void)setRoll:(int)roll

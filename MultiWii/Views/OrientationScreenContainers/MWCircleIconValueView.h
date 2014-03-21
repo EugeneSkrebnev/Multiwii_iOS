@@ -10,4 +10,5 @@
 
 @interface MWCircleIconValueView : UIView
 
+@property (nonatomic, assign) int value;
 @end

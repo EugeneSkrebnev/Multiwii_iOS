@@ -77,12 +77,14 @@
 {
     [self.horizonView setRoll:roll];
     self.rollValueLabel.text = @(roll / 10.).stringValue;
+    self.rollIconView.value = roll;
 }
 
 -(void) setPitch : (int) pitch
 {
     [self.horizonView setPitch:pitch];
     self.pitchValueLabel.text = @(pitch / 10.).stringValue;
+    self.pitchIconView.value = pitch;
 }
 
 @end

@@ -59,7 +59,7 @@
         UILabel* leftLabel = _leftLabels[intKey];
         UILabel* rightLabel = _rightLabels[intKey];
         UIView* line = _lines[intKey];
-        if (self.value < key.intValue)
+        if (self.value / 10. < key.intValue)
         {
             UIColor* color = RGB(115, 155, 155);
             leftLabel.textColor = color;
@@ -211,6 +211,12 @@
 {
     double scale = (self.height - self.topCap - self.bottomCap) / (self.maxValue - self.minValue);
     return CGAffineTransformMakeTranslation(0, value * scale);
+}
+
+-(CGAffineTransform) transformForPitchInverted:(int) value
+{
+    double scale = (self.height - self.topCap - self.bottomCap) / (self.maxValue - self.minValue);
+    return CGAffineTransformMakeTranslation(0, -value * scale / 2);
 }
 
 -(void)setValue:(int)value

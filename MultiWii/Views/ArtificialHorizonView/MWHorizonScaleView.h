@@ -15,4 +15,5 @@
 @property (nonatomic, assign) int value;
 
 -(CGAffineTransform) transformForPitch:(int) value;
+-(CGAffineTransform) transformForPitchInverted:(int) value;
 @end

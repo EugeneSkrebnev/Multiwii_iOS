@@ -31,7 +31,7 @@
         });
     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
-    [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:1.5]; //lag protection
+    [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:.3]; //lag protection
 }
 
 -(void)viewDidLoad

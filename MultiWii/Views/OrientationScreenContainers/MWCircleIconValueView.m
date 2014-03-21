@@ -14,7 +14,7 @@
     UIImageView* _backgroundCircle;
     UIImageView* _iconView;
 }
-
+#define ICON_IMAGE_SCALE 0.7
 -(void) makeInit
 {
     if (!_wasInited)
@@ -30,7 +30,7 @@
             _iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_pitch.png"]];
         _iconView.center = CGPointMake(self.width / 2, self.height / 2);
 
-        _iconView.transform = CGAffineTransformMakeScale(0.7, 0.7);
+        _iconView.transform = CGAffineTransformMakeScale(ICON_IMAGE_SCALE, ICON_IMAGE_SCALE);
 
 
         [self addSubview:_backgroundCircle];
@@ -69,6 +69,10 @@
     return self;
 }
 
-
+-(void)setValue:(int)value
+{
+    _value = value;
+    _iconView.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(value / 10. * (M_PI / 180)), ICON_IMAGE_SCALE, ICON_IMAGE_SCALE);
+}
 
 @end

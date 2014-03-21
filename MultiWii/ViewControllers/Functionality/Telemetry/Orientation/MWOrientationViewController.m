@@ -31,7 +31,7 @@
         });
     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
-    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:1.5]; // bluetooth firmware lag or code bug protection
+    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:.3]; // bluetooth firmware lag or code bug protection
 }
 
 -(void)viewWillAppear:(BOOL)animated
