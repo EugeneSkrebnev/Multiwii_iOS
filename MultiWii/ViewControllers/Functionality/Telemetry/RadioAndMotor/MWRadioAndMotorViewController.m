@@ -22,17 +22,16 @@
 
 -(void) sendRadioUpdateRequest
 {
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData) {
-        NSLog(@"radio updated");
-        double delayInSeconds = .3;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self sendRadioUpdateRequest];
+    __weak typeof(self) weakSelf = self;
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            [weakSelf sendRadioUpdateRequest];
         });
     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
-    [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:2.5]; //lag protection
-
+    [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:1.5]; //lag protection
 }
 
 -(void)viewDidLoad
@@ -41,7 +40,18 @@
     self.viewControllerTitle = @" RADIO ";///MOTOR VALUES ";
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self sendRadioUpdateRequest];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
+    [super viewWillDisappear:animated];
 }
 
 #pragma mark - table view datasource
@@ -75,7 +85,6 @@
     {
         [_controlRadioValues setSettingsEntity:TELEMETRY_MANAGER.radio.allChannels[i] forIndex:i];
     }
-
 }
 
 -(void)setAuxRadioValues:(MWTelemetryRadioValuesCell *)auxRadioValues
@@ -86,5 +95,10 @@
         [_auxRadioValues setSettingsEntity:TELEMETRY_MANAGER.radio.allChannels[i] forIndex:i - 4];
     }
 }
+
+//- (void)dealloc
+//{
+//    NSLog(@"dealoc radio val VC");
+//}
 
 @end
