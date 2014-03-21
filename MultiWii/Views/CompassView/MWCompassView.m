@@ -83,10 +83,10 @@
     return self;
 }
 
--(void)setDirection:(double)direction
+-(void)setDirection:(int)direction
 {
     _direction = direction;
     _arrow.transform = CGAffineTransformMakeRotation(direction * (M_PI / 180));
-    _angleLabel.text = [NSString stringWithFormat:@"%.1f", direction];
+    _angleLabel.text = [NSString stringWithFormat:@"%.1f", direction / 10.];
 }
 @end

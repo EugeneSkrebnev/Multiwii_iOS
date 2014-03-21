@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MWCircleValueLabel : UIView
-
+@property (nonatomic, readonly) UILabel* valueLabel;
 @end

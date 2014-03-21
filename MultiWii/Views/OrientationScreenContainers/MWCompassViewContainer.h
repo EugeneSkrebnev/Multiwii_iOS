@@ -12,4 +12,6 @@
 @interface MWCompassViewContainer : UIView
 @property (weak, nonatomic) IBOutlet MWCompassView *compassView;
 @property (weak, nonatomic) IBOutlet MWCircleValueLabel* valueCircle;
+
+-(void) setHeading:(int) heading;
 @end

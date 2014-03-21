@@ -54,4 +54,10 @@
                                           (self.valueCircle.height / 2) + 10);
 }
 
+-(void) setHeading:(int) heading
+{
+    self.compassView.direction = heading;
+    self.valueCircle.valueLabel.text = @(heading).stringValue;
+}
+
 @end

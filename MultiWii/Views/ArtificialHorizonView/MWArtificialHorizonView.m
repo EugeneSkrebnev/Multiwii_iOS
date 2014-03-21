@@ -90,18 +90,18 @@
     return self;
 }
 
--(void)setPitch:(double)pitch
+-(void)setPitch:(int)pitch
 {
     _pitch = pitch;
     _scaleView.value = pitch;
 //    self.roll = M_PI_4;
-    _scaleView.transform = [_scaleView transformForPitch:pitch];
+    _scaleView.transform = [_scaleView transformForPitch:pitch / 10.];
     _horizonView.transform = _scaleView.transform;
 }
 
--(void)setRoll:(double)roll
+-(void)setRoll:(int)roll
 {
     _roll = roll;
-    _scaleViewContainer.transform = CGAffineTransformMakeRotation(roll * (M_PI / 180));
+    _scaleViewContainer.transform = CGAffineTransformMakeRotation(roll / 10. * (M_PI / 180));
 }
 @end

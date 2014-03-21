@@ -36,6 +36,7 @@
             _valueLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:16];
             _valueLabel;
         })];
+
     }
 }
 
@@ -67,6 +68,11 @@
         [self makeInit];
     }
     return self;
+}
+
+-(UILabel *)valueLabel
+{
+    return _valueLabel;
 }
 
 @end

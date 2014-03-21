@@ -29,7 +29,10 @@
         else
             _iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_pitch.png"]];
         _iconView.center = CGPointMake(self.width / 2, self.height / 2);
+
         _iconView.transform = CGAffineTransformMakeScale(0.7, 0.7);
+
+
         [self addSubview:_backgroundCircle];
         [self addSubview:_iconView];
         self.backgroundColor = [UIColor clearColor];

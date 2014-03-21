@@ -10,6 +10,7 @@
 
 @interface MWArtificialHorizonView : UIView
 
-@property (nonatomic, assign) double roll;
-@property (nonatomic, assign) double pitch;
+@property (nonatomic, assign) int roll;
+@property (nonatomic, assign) int pitch;
+
 @end

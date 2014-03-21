@@ -10,6 +10,6 @@
 
 @interface MWCompassView : UIView
 
-@property (nonatomic, assign) double direction;
+@property (nonatomic, assign) int direction;
 
 @end

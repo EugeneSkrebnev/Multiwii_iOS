@@ -36,7 +36,7 @@
 
 -(void) fillbitMaskFromLowBits:(int) lowbits andHighBits:(int) highBits
 {
-    self.bitMask = lowbits | highBits << 8;
+    self.bitMask = lowbits | (highBits << 8);
 }
 
 -(void)setSavedBitMask:(int)savedBitMask

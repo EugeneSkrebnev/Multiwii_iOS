@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet MWCircleIconValueView* pitchIconView;
 @property (weak, nonatomic) IBOutlet MWCircleIconValueView* rollIconView;
 
+
+-(void) setRoll  : (int) roll;
+-(void) setPitch : (int) pitch;
 @end
