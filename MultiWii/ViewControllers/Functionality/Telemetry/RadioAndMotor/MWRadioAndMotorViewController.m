@@ -18,17 +18,29 @@
 @end
 
 @implementation MWRadioAndMotorViewController
-
+{
+    int _radioRequestCount;
+    BOOL _isOnScreen;
+}
 
 -(void) sendRadioUpdateRequest
 {
     __weak typeof(self) weakSelf = self;
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
     {
+        typeof(self) selfSt = weakSelf;
+        if (!selfSt->_isOnScreen)
+            return ;
+        selfSt->_radioRequestCount++;
         dispatch_async(dispatch_get_main_queue(), ^
         {
-            [weakSelf sendRadioUpdateRequest];
+            [selfSt sendRadioUpdateRequest];
         });
+        if (selfSt->_radioRequestCount > 100)
+        {
+            selfSt->_radioRequestCount = 0;
+            [selfSt showBuyDialog];
+        }
     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
     [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:.3]; //lag protection
@@ -40,16 +52,29 @@
     self.viewControllerTitle = @" RADIO ";///MOTOR VALUES ";
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
+    _radioRequestCount = 0;
+}
+
+-(void) showBuyDialog
+{
+    if (!__delegate.isFullVersionUnlocked)
+        [__delegate showBuyDialogFromVC:self];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self sendRadioUpdateRequest];
+    
+    [self showBuyDialog];
+    self->_radioRequestCount = 0;
+    _isOnScreen = YES;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    _isOnScreen = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
     [super viewWillDisappear:animated];
 }

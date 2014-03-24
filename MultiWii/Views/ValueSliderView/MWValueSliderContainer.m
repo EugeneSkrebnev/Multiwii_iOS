@@ -35,9 +35,10 @@
 {
     [super layoutSubviews];
     
-    double nameLabelWidthProportion  = 134. / 630;
-    double valueLabelWidthProportion = 116. / 630;
-    double sliderProportion          = 380. / 630;
+    double nameLabelWidthProportion  = 144. / 630;
+    double sliderProportion          = 410. / 630;
+    double valueLabelWidthProportion = 76. / 630;
+
     int capBetweenElem = 2;
     double totalWidth = self.width - 2. * capBetweenElem;
     

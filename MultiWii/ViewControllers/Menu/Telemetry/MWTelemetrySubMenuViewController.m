@@ -27,7 +27,7 @@
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"", @"",  @"pid_gps", @"pid_sensors", @"", @""];
+    return @[@"control", @"",  @"pid_gps", @"pid_sensors", @"", @""];
 }
 
 -(NSArray*) subtitlesForMenu

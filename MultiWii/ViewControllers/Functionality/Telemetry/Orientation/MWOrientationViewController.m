@@ -63,9 +63,18 @@
     self.compassViewContainer.top = self.orientationViewContainer.height;
     if (IS_IPHONE_5)
         self.compassViewContainer.top -= 20;
+    else
+    {
+        if (IS_IOS7)
+            self.compassViewContainer.top -= 15;
+        else
+            self.compassViewContainer.top += 5;
+    }
     _separator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"separator.png"]];
     _separator.width = self.view.width;
     _separator.top = self.compassViewContainer.top;
+    if (!IS_IPHONE_5 && !IS_IOS7)
+        _separator.top -= 7;
     [self.view addSubview:_separator];
 }
 
