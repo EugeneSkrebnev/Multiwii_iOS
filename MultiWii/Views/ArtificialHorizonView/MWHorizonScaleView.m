@@ -58,13 +58,16 @@
         int intKey = [_viewIndexForValue[key] intValue];
         UILabel* leftLabel = _leftLabels[intKey];
         UILabel* rightLabel = _rightLabels[intKey];
-        UIView* line = _lines[intKey];
+        UIImageView* line = _lines[intKey];
         if (self.value / 10. < key.intValue)
         {
             UIColor* color = RGB(115, 155, 155);
             leftLabel.textColor = color;
             rightLabel.textColor = color;
             line.backgroundColor = color;
+//            line.image = [[UIImage imageNamed:@"line_gray.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+
+
         }
         else
         {
@@ -72,6 +75,8 @@
             leftLabel.textColor = color;
             rightLabel.textColor = color;
             line.backgroundColor = color;
+//            line.image = [[UIImage imageNamed:@"line_white.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+
         }
     }
 }
@@ -110,14 +115,25 @@
     
     for (int i = self.maxValue; i >= self.minValue; i-=self.scaleStep)
     {
+//        UIImageView* line = [[UIImageView alloc] initWithFrame:CGRectMake(self.leftCap,
+//                                                                          self.topCap + yVal,
+//                                                                          self.width - self.leftCap - self.rightCap,
+//                                                                          2)];
+
         UIView* line = [[UIView alloc] initWithFrame:CGRectMake(self.leftCap,
                                                                 self.topCap + yVal,
                                                                 self.width - self.leftCap - self.rightCap,
                                                                 1)];
+        
         if (i > 0)
             line.backgroundColor = RGB(122, 122, 122);
         else
             line.backgroundColor = [UIColor whiteColor];
+//            if (i > 0)
+//                line.image = [[UIImage imageNamed:@"line_gray.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+//            else
+//                line.image = [[UIImage imageNamed:@"line_white.png"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
+
         
         yVal += scaleStepInPexels;
         _viewIndexForValue[@(i)] = @(lines.count);

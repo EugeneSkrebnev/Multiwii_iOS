@@ -82,9 +82,5 @@
     [self updateOrientation];
 }
 
-//-(void)dealloc
-//{
-//    NSLog(@"self orientation VC dealloc");
-//}
 
 @end

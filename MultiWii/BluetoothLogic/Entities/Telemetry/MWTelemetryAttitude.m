@@ -17,7 +17,5 @@
     self.rollAngle   = (short)((short)bytes[2] << 8) | (short)bytes[1];
     self.pitchAngle  = (short)((short)bytes[4] << 8) | (short)bytes[3];
     self.heading     = (short)((short)bytes[6] << 8) | (short)bytes[5];
-    
-    NSLog(@"roll = %d; pitch = %d; heading = %d", self.rollAngle, self.pitchAngle, self.heading);
 }
 @end

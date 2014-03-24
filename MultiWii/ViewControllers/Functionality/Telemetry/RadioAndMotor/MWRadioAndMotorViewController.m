@@ -58,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2; //3
+    return 2; //3 3- for motor values
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,9 +96,5 @@
     }
 }
 
-//- (void)dealloc
-//{
-//    NSLog(@"dealoc radio val VC");
-//}
 
 @end
