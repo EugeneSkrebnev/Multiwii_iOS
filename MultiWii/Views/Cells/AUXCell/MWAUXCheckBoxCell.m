@@ -74,7 +74,7 @@
 
 -(void) checkBoxChange:(MACheckBox*) checkBox
 {
-    [self.data setValue:checkBox.selected forAux:self.selectedAuxChannel andPosition:checkBox.tag];
+    [self.data setValue:checkBox.selected forAux:self.selectedAuxChannel andPosition:(int)checkBox.tag];
 }
 
 -(void)dealloc

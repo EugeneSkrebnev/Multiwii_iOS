@@ -473,7 +473,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     {
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_RX_UUID]])
         {
-            data_len = characteristic.value.length;
+            data_len = (int)characteristic.value.length;
             NSLog(@"%d bits of new data", data_len);
             [characteristic.value getBytes:data length:data_len];
             
@@ -505,7 +505,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
         }
         else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_VENDOR_NAME_UUID]])
         {
-            data_len = characteristic.value.length;
+            data_len = (int)characteristic.value.length;
             [characteristic.value getBytes:_vendor_name length:data_len];
 //            NSLog(@"Vendor: %s", _vendor_name);
         }

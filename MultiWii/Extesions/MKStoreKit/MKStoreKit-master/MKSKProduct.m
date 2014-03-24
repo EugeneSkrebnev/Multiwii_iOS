@@ -183,7 +183,7 @@ static NSMutableData *sDataFromConnection;
     [theRequest setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSString *length = [NSString stringWithFormat:@"%d", [json length]];
+    NSString *length = [NSString stringWithFormat:@"%d", (int)[json length]];
     [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];
     NSHTTPURLResponse* urlResponse = nil;
     NSError *error = [[NSError alloc] init];

@@ -7,7 +7,7 @@
 //
 
 #import "MWTelemetrySubMenuViewController.h"
-
+#import "MWMainMenuCell.h"
 @interface MWTelemetrySubMenuViewController ()
 
 @end
@@ -22,7 +22,7 @@
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"RADIO"/* & MOTOR"*/, @"ORIENTATION", @"GPS", @"RAW DATA FROM SENSORS", @"BATTERY", @"COMMAND CENTER PANEL"];
+    return @[@"RADIO"/* & MOTOR"*/, @"ORIENTATION", @"GPS", /*@"RAW DATA FROM SENSORS",*/ @"BATTERY"/*, @"COMMAND CENTER PANEL"*/];
 }
 
 -(NSArray*) iconsForMenu
@@ -35,4 +35,10 @@
     return @[@"", @"", @"", @"", @"", @""];
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MWMainMenuCell* cell = (MWMainMenuCell*)[super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.commingsoon = indexPath.row > 1;
+    return cell;
+}
 @end

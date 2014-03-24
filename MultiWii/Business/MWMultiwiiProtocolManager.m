@@ -89,7 +89,7 @@
         return;
     
     NSLog(@"begin message");
-    NSLog(@"message with length : %d", message.length);
+    NSLog(@"message with length : %lu", (unsigned long)message.length);
     if (message.length == 13)
         NSLog(@"something wrong");
     for (int i = 0; i < message.length; i++)

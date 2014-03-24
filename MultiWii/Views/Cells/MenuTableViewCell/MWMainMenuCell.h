@@ -20,4 +20,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
 
 @property (nonatomic, strong) NSString* title;
+@property (nonatomic, assign) BOOL commingsoon;
 @end

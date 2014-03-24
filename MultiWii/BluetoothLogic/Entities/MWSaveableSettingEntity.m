@@ -30,7 +30,7 @@ static NSMutableArray* _allObjects; //tricky
 
 +(void) removeObjectFromStore:(MWSaveableSettingEntity*) saveableEntity
 {
-    __block int indToDelete = -1;
+    __block NSUInteger indToDelete = -1;
     
     [_allObjects enumerateObjectsUsingBlock:^(WeakObjectStoreBlock storeBlock, NSUInteger idx, BOOL *stop)
     {

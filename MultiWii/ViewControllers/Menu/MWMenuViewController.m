@@ -96,8 +96,8 @@
     }
     
     cell.title = _titlesForCells[indexPath.row];
-    cell.imageViewForIcon.image = [self imageForMenuItemAtIndex:indexPath.row andSelected:NO];
-    cell.selectedImageViewForIcon.image = [self imageForMenuItemAtIndex:indexPath.row andSelected:YES];
+    cell.imageViewForIcon.image = [self imageForMenuItemAtIndex:(int)indexPath.row andSelected:NO];
+    cell.selectedImageViewForIcon.image = [self imageForMenuItemAtIndex:(int)indexPath.row andSelected:YES];
 
 
     return cell;
@@ -121,6 +121,8 @@
         
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
         [self cantSelectRowAtIndexPath:indexPath];
+        MWMainMenuCell* cell = (MWMainMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
+        cell.commingsoon = YES;
     }
 }
 

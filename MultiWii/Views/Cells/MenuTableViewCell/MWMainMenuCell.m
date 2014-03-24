@@ -9,7 +9,10 @@
 #import "MWMainMenuCell.h"
 
 @implementation MWMainMenuCell
-
+{
+    UIView* _dimGrayView;
+    UIImageView* _ribbonView;
+}
 @synthesize title = _title;
 
 +(NSString*) cellId
@@ -37,5 +40,36 @@
 -(NSString *)title
 {
     return _title;
+}
+
+
+
+-(void)setCommingsoon:(BOOL)commingsoon
+{
+    if (commingsoon && !_commingsoon)
+    {
+        if (!_dimGrayView)
+        {
+            _dimGrayView = [[UIView alloc] init];
+            _ribbonView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ribbon_green.png"]];
+        }
+        _dimGrayView.backgroundColor = [UIColor blackColor];
+        _dimGrayView.frame = self.bounds;
+        _dimGrayView.alpha = 0.3;
+        _ribbonView.left = self.width - _ribbonView.width;
+        _ribbonView.top = 0;
+
+        [self addSubview:_dimGrayView];
+        [self addSubview:_ribbonView];
+    }
+    
+    if (!commingsoon && _commingsoon)
+    {
+        [_dimGrayView removeFromSuperview];
+    }
+    
+    _commingsoon = commingsoon;
+    self.arrowImageView.hidden = commingsoon;
+    self.selectionStyle = commingsoon ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
 }
 @end

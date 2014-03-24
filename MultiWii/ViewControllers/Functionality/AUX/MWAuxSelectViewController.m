@@ -211,7 +211,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    _savedSelectedSegmentIndex = self.segmentControlForAuxChannel.selectedSegmentIndex;
+    _savedSelectedSegmentIndex = (int)self.segmentControlForAuxChannel.selectedSegmentIndex;
     return [[MWGlobalManager sharedInstance].boxManager boxesCount];
 }
 
@@ -219,9 +219,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MWAUXCheckBoxCell* cell = [MWAUXCheckBoxCell loadView];
-    MWBoxAuxSettingEntity* box = [[MWGlobalManager sharedInstance].boxManager boxEntityForIndex:indexPath.row];
+    MWBoxAuxSettingEntity* box = [[MWGlobalManager sharedInstance].boxManager boxEntityForIndex:(int)indexPath.row];
     cell.data = box;
-    cell.selectedAuxChannel = self.segmentControlForAuxChannel.selectedSegmentIndex;
+    cell.selectedAuxChannel = (int)self.segmentControlForAuxChannel.selectedSegmentIndex;
 
     return cell;
 }

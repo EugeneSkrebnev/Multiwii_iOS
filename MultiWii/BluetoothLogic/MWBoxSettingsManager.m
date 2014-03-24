@@ -80,7 +80,7 @@
 
 -(NSData*) payloadFromBoxes
 {
-    int size = _boxEntities.count * 2;
+    int size = (int)_boxEntities.count * 2;
     unsigned char bytes[100]; // 100 is magic number
     for (int i = 0; i < 100; i++)
         bytes[i] = 0;
@@ -112,6 +112,6 @@
 
 - (int) boxesCount
 {
-    return _boxEntities.count;
+    return (int)_boxEntities.count;
 }
 @end

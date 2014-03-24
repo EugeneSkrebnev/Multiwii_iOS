@@ -83,7 +83,7 @@
         NSLog(@"%@", err);
         if (err.code == 1002)
         {
-            int connectedIndex = [BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
+            int connectedIndex = (int)[BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
             [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
 
         }
@@ -107,7 +107,7 @@
 
 -(void) didConnectBluetoothUart
 {
-    int connectedIndex = [BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
+    int connectedIndex = (int)[BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
     cell.titleLabel.textColor = [UIColor greenColor];
@@ -225,7 +225,7 @@
         if (!deviceName)
             deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
         [Flurry logEvent:[NSString stringWithFormat:@"Connect to device : %@", deviceName]];
-        [self setSpinnerHidden:NO forDeviceAtIndex:indexPath.row animated:YES];
+        [self setSpinnerHidden:NO forDeviceAtIndex:(int)indexPath.row animated:YES];
         [BLUETOOTH_MANAGER connectToDevice:device];
     }
     else
