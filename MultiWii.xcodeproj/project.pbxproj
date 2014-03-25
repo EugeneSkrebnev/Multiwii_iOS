@@ -111,6 +111,8 @@
 		44961A3318D708E6005D1025 /* MWValueSliderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44961A3218D708E6005D1025 /* MWValueSliderContainer.m */; };
 		44961A3818D722B8005D1025 /* MWTelemetryRadioValuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44961A3618D722B8005D1025 /* MWTelemetryRadioValuesCell.m */; };
 		44961A3918D722B8005D1025 /* MWTelemetryRadioValuesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44961A3718D722B8005D1025 /* MWTelemetryRadioValuesCell.xib */; };
+		44A4F23418E1BD1000F0A2BC /* orientation_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4F23218E1BD1000F0A2BC /* orientation_pressed@2x.png */; };
+		44A4F23518E1BD1000F0A2BC /* orientation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A4F23318E1BD1000F0A2BC /* orientation@2x.png */; };
 		44A6BD7C178D5C3700DC95C6 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD72178D5C3700DC95C6 /* about@2x.png */; };
 		44A6BD7D178D5C3700DC95C6 /* about_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */; };
 		44A6BD7E178D5C3700DC95C6 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BD74178D5C3700DC95C6 /* connect@2x.png */; };
@@ -440,6 +442,8 @@
 		44961A3518D722B8005D1025 /* MWTelemetryRadioValuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryRadioValuesCell.h; sourceTree = "<group>"; };
 		44961A3618D722B8005D1025 /* MWTelemetryRadioValuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryRadioValuesCell.m; sourceTree = "<group>"; };
 		44961A3718D722B8005D1025 /* MWTelemetryRadioValuesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MWTelemetryRadioValuesCell.xib; sourceTree = "<group>"; };
+		44A4F23218E1BD1000F0A2BC /* orientation_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orientation_pressed@2x.png"; sourceTree = "<group>"; };
+		44A4F23318E1BD1000F0A2BC /* orientation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orientation@2x.png"; sourceTree = "<group>"; };
 		44A6BD72178D5C3700DC95C6 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
 		44A6BD73178D5C3700DC95C6 /* about_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about_pressed@2x.png"; sourceTree = "<group>"; };
 		44A6BD74178D5C3700DC95C6 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
@@ -1108,6 +1112,8 @@
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				44A4F23218E1BD1000F0A2BC /* orientation_pressed@2x.png */,
+				44A4F23318E1BD1000F0A2BC /* orientation@2x.png */,
 				447BD32B1824D9A300E27FA7 /* finder_pressed@2x.png */,
 				447BD32C1824D9A300E27FA7 /* finder@2x.png */,
 				4423F1B3181C7069008B0260 /* ribbon_green@2x.png */,
@@ -2055,6 +2061,7 @@
 				44C7CA7B1789D9860059C199 /* locked_icon@2x.png in Resources */,
 				44C7CA7C1789D9860059C199 /* slider@2x.png in Resources */,
 				44DD95131832BD4800B82B24 /* hullbott.jpg in Resources */,
+				44A4F23518E1BD1000F0A2BC /* orientation@2x.png in Resources */,
 				44DD95171832BD4800B82B24 /* readme.txt in Resources */,
 				4409DDDB1821037900B11C9C /* icon_29.png in Resources */,
 				4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */,
@@ -2140,6 +2147,7 @@
 				44A6BDC7178DA8F200DC95C6 /* MWMenuSubtitleCell.xib in Resources */,
 				44A6BDDA178E020300DC95C6 /* about_author@2x.png in Resources */,
 				44A6BDDB178E020300DC95C6 /* about_author_pressed@2x.png in Resources */,
+				44A4F23418E1BD1000F0A2BC /* orientation_pressed@2x.png in Resources */,
 				44A6BDDC178E020300DC95C6 /* about_program@2x.png in Resources */,
 				4409DDE01821049400B11C9C /* icon_80.png in Resources */,
 				44A6BDDD178E020300DC95C6 /* about_program_pressed@2x.png in Resources */,

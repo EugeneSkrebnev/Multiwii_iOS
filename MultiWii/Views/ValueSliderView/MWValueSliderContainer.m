@@ -25,6 +25,8 @@
         _valueSlider = [[MWValueSliderView alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
         _nameLabel   = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
         _valueLabel  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, self.height)];
+        _valueLabel.backgroundColor = [UIColor clearColor];
+        _nameLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_nameLabel];
         [self addSubview:_valueSlider];
         [self addSubview:_valueLabel];
