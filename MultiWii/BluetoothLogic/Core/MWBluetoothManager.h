@@ -22,8 +22,6 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
     UInt16 _libver;
 }
 
-//+ (MWBluetoothManager *)sharedInstance;
-
 //values
 @property (nonatomic, readonly) CBCentralManager* centralManager;
 @property (nonatomic, readonly) NSArray* deviceList;

@@ -16,11 +16,6 @@
 
 #pragma mark - init section
 
-//+ (MWPidSettingsManager *)sharedInstance {
-//    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-//        return [[self alloc] init];
-//    });
-//}
 
 - (id)init
 {

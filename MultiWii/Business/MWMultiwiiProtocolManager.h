@@ -33,7 +33,6 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 #define MWI_BLE_MESSAGE_GET_8_RC 105   //out message         8 rc chan
 
 @interface MWMultiwiiProtocolManager : NSObject
-//+ (MWMultiwiiProtocolManager *)sharedInstance;
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData;
 -(void) sendRequestWithId:(int) identifier andPayload:(NSData*) payload responseBlock:(MWMultiwiiProtocolManagerRecieveDataBlock) callBackBlock;

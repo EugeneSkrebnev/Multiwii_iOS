@@ -15,12 +15,7 @@
     NSMutableDictionary* _defaultHandlers;
 }
 
-//+ (MWMultiwiiProtocolManager *)sharedInstance
-//{
-//    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-//        return [[self alloc] init];
-//    });
-//}
+
 
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData
@@ -106,8 +101,6 @@
     [self writeMessageDebug:message];
     
     unsigned char *bytes = (unsigned char*)message.bytes;
-    
-
 
     int length = bytes[3];
     NSData* payload = [message subdataWithRange:NSMakeRange(4, length + 1)];
@@ -139,9 +132,7 @@
     else
     {
         NSLog(@"CRC ERROR");
-        NSLog(@"CRC ERROR");
         [self writeMessageDebug:message];
-        NSLog(@"CRC ERROR");
         NSLog(@"CRC ERROR");
     }
 }
@@ -198,8 +189,7 @@
     
     unsigned char crc[1];
     crc[0] = [self crcForPayload:payload andId:identifier];
-//    if (payload.length > 0)
-//        crc[0] = crc[0] ^ bytes[3] ^ bytes[4];
+
     [messageToSend appendData:[NSData dataWithBytes:crc length:sizeof(crc)]];
     
     [self writeMessageDebug:messageToSend];

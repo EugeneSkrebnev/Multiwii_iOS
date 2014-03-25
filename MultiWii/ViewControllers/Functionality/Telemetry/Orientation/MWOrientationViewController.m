@@ -19,6 +19,7 @@
 @implementation MWOrientationViewController
 {
     UIImageView* _separator;
+    BOOL _isOnScreen;
 }
 
 -(void) sendOrientationRequest
@@ -26,28 +27,35 @@
     __weak typeof(self) weakSelf = self;
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData)
     {
+        typeof(self) selfSt = weakSelf;
+        if (!selfSt->_isOnScreen)
+            return ;
+        [selfSt updateOrientation];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf sendOrientationRequest];
+            [selfSt sendOrientationRequest];
         });
     }];
+    
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
-    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:.3]; // bluetooth firmware lag or code bug protection
+    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:.5]; // bluetooth firmware lag or code bug protection
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"rollAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
-    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"pitchAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
-    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"heading" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+    _isOnScreen = YES;
+//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"rollAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"pitchAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"heading" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
     [self sendOrientationRequest];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"rollAngle"];
-    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"pitchAngle"];
-    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"heading"];
+    _isOnScreen = NO;
+//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"rollAngle"];
+//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"pitchAngle"];
+//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"heading"];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
     [super viewWillDisappear:animated];
 }
@@ -86,10 +94,10 @@
     [self.compassViewContainer setHeading   : TELEMETRY_MANAGER.attitude.heading    ];
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    [self updateOrientation];
-}
+//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+//{
+//    [self updateOrientation];
+//}
 
 
 @end

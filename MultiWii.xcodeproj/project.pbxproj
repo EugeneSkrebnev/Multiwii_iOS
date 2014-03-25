@@ -55,7 +55,6 @@
 		442226621814059100D53DE3 /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 442226531814059100D53DE3 /* MKStoreManager.m */; };
 		442226631814059100D53DE3 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 442226541814059100D53DE3 /* README.mdown */; };
 		442226691814059100D53DE3 /* VerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4422265C1814059100D53DE3 /* VerificationController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		4422268D181407CB00D53DE3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4422268C181407CB00D53DE3 /* Security.framework */; };
 		4423F1B2181C6F96008B0260 /* telemetry_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B1181C6F96008B0260 /* telemetry_gray@2x.png */; };
 		4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B3181C7069008B0260 /* ribbon_green@2x.png */; };
 		4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */; };
@@ -173,7 +172,6 @@
 		44A6BE1E178EE92000DC95C6 /* top_bar_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A6BE1A178EE92000DC95C6 /* top_bar_button@2x.png */; };
 		44A6BE22178EF6B300DC95C6 /* MWHeader3LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE21178EF6B300DC95C6 /* MWHeader3LabelView.m */; };
 		44A6BE25178EFC5600DC95C6 /* MWPidAdjustCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A6BE24178EFC5600DC95C6 /* MWPidAdjustCell.m */; };
-		44AB0D0E1837BAA2009FEB33 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AB0D0D1837BAA2009FEB33 /* SystemConfiguration.framework */; };
 		44AE5A9017FC231400AAAC30 /* title_element@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A8F17FC231400AAAC30 /* title_element@2x.png */; };
 		44AE5A9217FCA4D300AAAC30 /* bg_pattern_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9117FCA4D300AAAC30 /* bg_pattern_v2@2x.png */; };
 		44AE5A9417FCC1DD00AAAC30 /* bg_pattern_100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44AE5A9317FCC1DD00AAAC30 /* bg_pattern_100@2x.png */; };
@@ -715,11 +713,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44961A2318D531A4005D1025 /* CoreMotion.framework in Frameworks */,
-				44AB0D0E1837BAA2009FEB33 /* SystemConfiguration.framework in Frameworks */,
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
 				44FC0B9D1814083600417C79 /* StoreKit.framework in Frameworks */,
-				4422268D181407CB00D53DE3 /* Security.framework in Frameworks */,
 				44519D4D179BF749006E4EB7 /* CoreBluetooth.framework in Frameworks */,
 				44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */,
 				44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */,
@@ -2439,7 +2435,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "595685A9-B390-4753-B496-C479DA8E02A6";
+				PROVISIONING_PROFILE = "41384122-8FF9-43C0-86F7-B9ED5DD2543F";
 				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};

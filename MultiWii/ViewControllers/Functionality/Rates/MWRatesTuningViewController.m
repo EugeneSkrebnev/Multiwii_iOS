@@ -132,9 +132,9 @@
     {
         MWRateAdjustCell* cell = [MWRateAdjustCell loadView];
     
-        cell.knobEntities = @[[MWGlobalManager sharedInstance].pidManager.RCRates.rollPitchRate,
-                              [MWGlobalManager sharedInstance].pidManager.RCRates.yawRate,
-                              [MWGlobalManager sharedInstance].pidManager.RCRates.throttlePidAttenuationRate];
+        cell.knobEntities = @[PID_MANAGER.RCRates.rollPitchRate,
+                              PID_MANAGER.RCRates.yawRate,
+                              PID_MANAGER.RCRates.throttlePidAttenuationRate];
         result = cell;
     }
     else
@@ -147,14 +147,14 @@
             cell.titleLabelForRightSlider.text = @"RC Rate";
             cell.titleLabelForBottomSlider.text = @"RC Expo";
             
-            cell.sliderRight.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
-            cell.sliderBottom.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
+            cell.sliderRight.settingsEntity = PID_MANAGER.RCRates.rcRate;
+            cell.sliderBottom.settingsEntity = PID_MANAGER.RCRates.rcExpo;
             
-            cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
-            cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+            cell.settingsValueContainerTop.settingEntity = PID_MANAGER.RCRates.rcExpo;
+            cell.settingsValueContainerBottom.settingEntity = PID_MANAGER.RCRates.rcRate;
             
-            cell.graphicView.entityX = [MWGlobalManager sharedInstance].pidManager.RCRates.rcExpo;
-            cell.graphicView.entityY = [MWGlobalManager sharedInstance].pidManager.RCRates.rcRate;
+            cell.graphicView.entityX = PID_MANAGER.RCRates.rcExpo;
+            cell.graphicView.entityY = PID_MANAGER.RCRates.rcRate;
             
             cell.graphicView.graphicType = MWGraphicViewTypeRates;
             
@@ -166,14 +166,14 @@
             cell.titleLabelForRightSlider.text = @"Thr. Expo";
             cell.titleLabelForBottomSlider.text = @"Thr. Mid.";
             
-            cell.sliderRight.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
-            cell.sliderBottom.settingsEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
+            cell.sliderRight.settingsEntity = PID_MANAGER.RCRates.throttleExpo;
+            cell.sliderBottom.settingsEntity = PID_MANAGER.RCRates.throttleMiddle;
             
-            cell.settingsValueContainerTop.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
-            cell.settingsValueContainerBottom.settingEntity = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+            cell.settingsValueContainerTop.settingEntity = PID_MANAGER.RCRates.throttleMiddle;
+            cell.settingsValueContainerBottom.settingEntity = PID_MANAGER.RCRates.throttleExpo;
             
-            cell.graphicView.entityX = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleMiddle;
-            cell.graphicView.entityY = [MWGlobalManager sharedInstance].pidManager.RCRates.throttleExpo;
+            cell.graphicView.entityX = PID_MANAGER.RCRates.throttleMiddle;
+            cell.graphicView.entityY = PID_MANAGER.RCRates.throttleExpo;
             
             cell.graphicView.graphicType = MWGraphicViewTypeThrottle;
 

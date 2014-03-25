@@ -19,7 +19,8 @@
 
 + (void) initBluetoothLink
 {
-    [self sharedInstance].protocolManager = [[MWMultiwiiProtocolManager alloc] init];
+    
+    PROTOCOL_MANAGER = [[MWMultiwiiProtocolManager alloc] init];
     [[self sharedInstance] initDefaultHandlers];
 }
 
