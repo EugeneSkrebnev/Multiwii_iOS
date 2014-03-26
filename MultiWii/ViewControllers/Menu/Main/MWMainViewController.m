@@ -49,7 +49,6 @@ static BOOL firstTimeShow = YES;
 
             }];
             
-            
         });
     }
     else
@@ -71,17 +70,29 @@ static BOOL firstTimeShow = YES;
         });
 
     });
-
+    if (!IS_IPHONE_5)
+    {
+        if (self.buyButton.tag != 1)
+        {
+            self.buyButton.tag = 1;
+            self.buyButton.top += 20;
+        }
+    }
 }
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT"]; //need to update bluetooth engine for control
+    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT", @"YOUR BEST MULTIWII GADGETS"]; //need to update bluetooth engine for control
 }
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"connect", @"telemetry", @"settings", @"finder"/*, @"control"*/, @"about"];
+    return @[@"connect", @"telemetry", @"settings", @"finder"/*, @"control"*/, @"about", @"basket"];
+}
+
+-(NSArray*) subtitlesForMenu
+{
+    return @[@"", @"", @"", @"", @"", @"witespyquad.gostorego.com"];
 }
 
 -(void) checkFullVersion
@@ -92,12 +103,9 @@ static BOOL firstTimeShow = YES;
 -(void) doubleCheckFullVersion
 {
     [self checkFullVersion];
-    double delayInSeconds = 5.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self checkFullVersion];
     });
-
 }
 -(void)viewDidLoad
 {
@@ -129,6 +137,20 @@ static BOOL firstTimeShow = YES;
 -(void) cantSelectRowAtIndexPath:(NSIndexPath*) indexPath
 {
     [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    if (indexPath.row == 5)
+    {
+        if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://witespyquad.gostorego.com/"]])
+            [Flurry logEvent:@"Open ReadyToFly Site"];
+        else
+            [Flurry logEvent:@"Fail to open ReadyToFly Site"];
+    }
+    
 }
 
 @end

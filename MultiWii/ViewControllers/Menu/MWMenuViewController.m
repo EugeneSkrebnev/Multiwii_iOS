@@ -121,8 +121,8 @@
         
         [self.tableViewForMenu deselectRowAtIndexPath:indexPath animated:YES];
         [self cantSelectRowAtIndexPath:indexPath];
-        MWMainMenuCell* cell = (MWMainMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
-        cell.commingsoon = YES;
+//        MWMainMenuCell* cell = (MWMainMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
+//        cell.commingsoon = YES;
     }
 }
 

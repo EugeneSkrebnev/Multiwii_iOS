@@ -1,6 +1,6 @@
 //
 //  MWDefines.h
-//  TestCoreBl
+//  Multiwii
 //
 //  Created by Eugene Skrebnev on 6/16/13.
 //  Copyright (c) 2013 EugeneSkrebnev. All rights reserved.
@@ -19,8 +19,8 @@ return _sharedObject; \
 #define IOS_VER ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define __delegate ((MWAppDelegate*)[[UIApplication sharedApplication] delegate])
 
-#define SPASH_ENABLED_ON NO
-//#define SPASH_ENABLED_ON YES
+//#define SPASH_ENABLED_ON NO
+#define SPASH_ENABLED_ON YES
 #define WRITE_UART_MESSAGES NO
 #define COMBINE_WRITE_AND_SAVE_EPROM NO
 
