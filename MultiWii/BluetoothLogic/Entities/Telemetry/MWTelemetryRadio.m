@@ -42,7 +42,7 @@
 -(void) fillRadioValuesFromPayload:(NSData*) payload
 {
     unsigned char *bytes = (unsigned char*)payload.bytes;
-    if (payload.length == 17) //2bytes for 8 channels and message code bit
+    if (payload.length >= 17) //2bytes for 8 channels and message code bit
     {
         for (int i = 0; i < 8; i++)
         {

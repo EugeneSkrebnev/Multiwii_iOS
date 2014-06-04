@@ -22,7 +22,7 @@
 {
     if (newData)
         [_buffer appendData:newData];
-    [self writeMessageDebug:newData];
+//    [self writeMessageDebug:newData];
     unsigned char *rawData = (unsigned char*)_buffer.bytes;
     //"$M>"
     if (_buffer.length > 4) //or maybe 5? $M>
