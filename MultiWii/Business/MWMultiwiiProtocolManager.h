@@ -32,6 +32,8 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 
 #define MWI_BLE_MESSAGE_GET_8_RC 105   //out message         8 rc chan
 
+#define MWI_BLE_MESSAGE_GET_RAW_GPS 106   //out message         fix, numsat, lat, lon, alt, speed, ground course
+//MSP_SET_RAW_GPS MSP_
 @interface MWMultiwiiProtocolManager : NSObject
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData;

@@ -138,9 +138,12 @@
     } forRequestWith:MWI_BLE_MESSAGE_GET_ATTITUDE];
     
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
-        [selfWeak.telemetryManager.radio fillRadioValuesFromPayload:recieveData];;
+        [selfWeak.telemetryManager.radio fillRadioValuesFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_8_RC];
 
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+        [selfWeak.telemetryManager.gps fillGPSValuesFromPayload:recieveData];
+    } forRequestWith:MWI_BLE_MESSAGE_GET_RAW_GPS];
 }
 
 -(NSString *)copterTypeString

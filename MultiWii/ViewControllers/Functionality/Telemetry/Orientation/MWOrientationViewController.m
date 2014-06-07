@@ -44,18 +44,12 @@
 {
     [super viewWillAppear:animated];
     _isOnScreen = YES;
-//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"rollAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
-//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"pitchAngle" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
-//    [TELEMETRY_MANAGER.attitude addObserver:self forKeyPath:@"heading" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
     [self sendOrientationRequest];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     _isOnScreen = NO;
-//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"rollAngle"];
-//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"pitchAngle"];
-//    [TELEMETRY_MANAGER.attitude removeObserver:self forKeyPath:@"heading"];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
     [super viewWillDisappear:animated];
 }
@@ -94,10 +88,6 @@
     [self.compassViewContainer setHeading   : TELEMETRY_MANAGER.attitude.heading    ];
 }
 
-//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//    [self updateOrientation];
-//}
 
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MWTelemetryBaseViewController.h"
-
+// move continius update requests to base telemetry sendOrientationRequest
 @interface MWTelemetryBaseViewController ()
 
 @end

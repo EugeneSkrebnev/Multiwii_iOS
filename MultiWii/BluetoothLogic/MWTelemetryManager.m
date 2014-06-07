@@ -23,6 +23,7 @@
         self.altitude = [[MWTelemetryAltitude alloc] init];
         self.attitude = [[MWTelemetryAttitude alloc] init];
         self.radio    = [[MWTelemetryRadio alloc] init];
+        self.gps      = [[MWTelemetryGPS alloc] init];
     }
     return self;
 }

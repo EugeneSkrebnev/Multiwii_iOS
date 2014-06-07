@@ -59,6 +59,9 @@
 		4423F1B5181C7069008B0260 /* ribbon_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B3181C7069008B0260 /* ribbon_green@2x.png */; };
 		4423F1B6181C7069008B0260 /* ribbon_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */; };
 		4423F1B8181C825F008B0260 /* feedback2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4423F1B7181C825F008B0260 /* feedback2@2x.png */; };
+		4434A48519433FA200076E63 /* MWGPSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4434A48419433FA200076E63 /* MWGPSMapViewController.m */; };
+		4434A4881943469C00076E63 /* MWTelemetryGPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4434A4871943469C00076E63 /* MWTelemetryGPS.m */; };
+		4434A48A19434C9C00076E63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4434A48919434C9C00076E63 /* MapKit.framework */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -355,6 +358,11 @@
 		4423F1B3181C7069008B0260 /* ribbon_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_green@2x.png"; sourceTree = "<group>"; };
 		4423F1B4181C7069008B0260 /* ribbon_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_blue@2x.png"; sourceTree = "<group>"; };
 		4423F1B7181C825F008B0260 /* feedback2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback2@2x.png"; sourceTree = "<group>"; };
+		4434A48319433FA200076E63 /* MWGPSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSMapViewController.h; sourceTree = "<group>"; };
+		4434A48419433FA200076E63 /* MWGPSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSMapViewController.m; sourceTree = "<group>"; };
+		4434A4861943469C00076E63 /* MWTelemetryGPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryGPS.h; sourceTree = "<group>"; };
+		4434A4871943469C00076E63 /* MWTelemetryGPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryGPS.m; sourceTree = "<group>"; };
+		4434A48919434C9C00076E63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -701,6 +709,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4434A48A19434C9C00076E63 /* MapKit.framework in Frameworks */,
 				44961A2318D531A4005D1025 /* CoreMotion.framework in Frameworks */,
 				448ABAA31816A0AB0056DD4A /* QuartzCore.framework in Frameworks */,
 				44FC0BCC1814842700417C79 /* MessageUI.framework in Frameworks */,
@@ -883,6 +892,15 @@
 			path = Externals;
 			sourceTree = "<group>";
 		};
+		4434A48219433FA200076E63 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				4434A48319433FA200076E63 /* MWGPSMapViewController.h */,
+				4434A48419433FA200076E63 /* MWGPSMapViewController.m */,
+			);
+			path = GPS;
+			sourceTree = "<group>";
+		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +922,7 @@
 		44453C9E17518F6900929EC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4434A48919434C9C00076E63 /* MapKit.framework */,
 				44961A2218D531A4005D1025 /* CoreMotion.framework */,
 				44AB0D0D1837BAA2009FEB33 /* SystemConfiguration.framework */,
 				448ABAA21816A0AB0056DD4A /* QuartzCore.framework */,
@@ -1845,6 +1864,8 @@
 				44DD95971832DA0300B82B24 /* MWTelemetryAltitude.m */,
 				44DD767218D9A56B0039735E /* MWTelemetryRadio.h */,
 				44DD767318D9A56B0039735E /* MWTelemetryRadio.m */,
+				4434A4861943469C00076E63 /* MWTelemetryGPS.h */,
+				4434A4871943469C00076E63 /* MWTelemetryGPS.m */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -1854,6 +1875,7 @@
 			children = (
 				44DD95831832CCDF00B82B24 /* MWTelemetryBaseViewController.h */,
 				44DD95841832CCDF00B82B24 /* MWTelemetryBaseViewController.m */,
+				4434A48219433FA200076E63 /* GPS */,
 				44DD95891832CF6500B82B24 /* Orientation */,
 				44EA103818D075A00087D078 /* RadioAndMotor */,
 			);
@@ -2262,6 +2284,7 @@
 				44A6BDEA178E06F800DC95C6 /* MWAUXCheckBoxCell.m in Sources */,
 				44DD95631832C4A800B82B24 /* MWTelemetrySubMenuViewController.m in Sources */,
 				448ABAA118168D260056DD4A /* MWRadarActivityIndicator.m in Sources */,
+				4434A48519433FA200076E63 /* MWGPSMapViewController.m in Sources */,
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
 				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
 				44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */,
@@ -2277,6 +2300,7 @@
 				44A6BE0B178EDC4000DC95C6 /* MWIconBaseButton.m in Sources */,
 				44DD955A1832C21800B82B24 /* MWMainViewController.m in Sources */,
 				44DD95511832C21800B82B24 /* MWBuyFullVersionViewController.m in Sources */,
+				4434A4881943469C00076E63 /* MWTelemetryGPS.m in Sources */,
 				44A6BE13178EE50F00DC95C6 /* MWBuyButton.m in Sources */,
 				44A6BE16178EE5F200DC95C6 /* MWVisitSiteButton.m in Sources */,
 				44068BC61804210D00E8ABCC /* MWSettingValueContainer.m in Sources */,
@@ -2410,7 +2434,7 @@
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "41384122-8FF9-43C0-86F7-B9ED5DD2543F";
@@ -2423,12 +2447,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: YAUHEN SKRABNIOU (6A55FY4Q8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "14FA7BA5-DDF8-4691-B66A-14F96E0D605A";

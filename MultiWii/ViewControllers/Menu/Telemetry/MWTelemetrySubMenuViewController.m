@@ -38,7 +38,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MWMainMenuCell* cell = (MWMainMenuCell*)[super tableView:tableView cellForRowAtIndexPath:indexPath];
-    cell.commingsoon = indexPath.row > 1;
+    cell.commingsoon = indexPath.row > 2;
     return cell;
 }
 @end
