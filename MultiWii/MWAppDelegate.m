@@ -65,6 +65,7 @@
 
 -(int)paidAmount
 {
+    return 100;
     _paidAmount = 0;
     for (int i = 5; i <= 20; i++)
     {

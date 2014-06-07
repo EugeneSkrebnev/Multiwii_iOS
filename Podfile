@@ -1,4 +1,5 @@
-platform :ios, '5.0'
+platform :ios, '6.0'
 pod 'iRate'
 pod 'FlurrySDK'
 pod 'CocoaLumberjack'
+pod 'Masonry'

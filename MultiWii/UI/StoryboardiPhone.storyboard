@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -116,6 +116,30 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-iT-1P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="229"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gLM-Vm-6L9">
+            <objects>
+                <viewController id="4zn-Nx-fJR" customClass="MWGPSMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iwE-r2-QRc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Zwc-90-vIC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q5Q-M9-wjW"/>
+                    <connections>
+                        <outlet property="mapView" destination="Zwc-90-vIC" id="e6I-kh-dmf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLC-1v-PqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672" y="211"/>
         </scene>
         <!--Find Multiwii View Controller-->
         <scene sceneID="rpF-RM-vpg">
@@ -546,6 +570,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                         <outlet property="tableViewForMenu" destination="VFx-0C-e4k" id="oDv-xk-s3Z"/>
                         <segue destination="Poq-n1-XKt" kind="push" identifier="1" id="BX2-ba-T0U"/>
                         <segue destination="g9Q-bm-OWc" kind="push" identifier="0" id="MhS-gP-mQ4"/>
+                        <segue destination="4zn-Nx-fJR" kind="push" identifier="2" id="SOf-US-H66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIu-KL-AOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
