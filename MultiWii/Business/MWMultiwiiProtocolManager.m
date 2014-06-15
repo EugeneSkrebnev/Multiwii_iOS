@@ -7,63 +7,74 @@
 //
 
 #import "MWMultiwiiProtocolManager.h"
+@interface MWMultiwiiProtocolManager()
+@property (nonatomic, strong) dispatch_queue_t protocolManagerQueue;
+@end;
 
 @implementation MWMultiwiiProtocolManager
 {
     NSMutableData* _buffer;
     NSMutableDictionary* _callbacks;
     NSMutableDictionary* _defaultHandlers;
+    
 }
 
-
+- (dispatch_queue_t)protocolManagerQueue {
+    if (!_protocolManagerQueue) {
+        _protocolManagerQueue = dispatch_queue_create("protocol manager queue", DISPATCH_QUEUE_SERIAL);
+    }
+    return _protocolManagerQueue;
+}
 
 
 -(void) didReceiveDataFromBluetooth:(NSData*) newData
 {
-    if (newData)
-        [_buffer appendData:newData];
-//    [self writeMessageDebug:newData];
-    unsigned char *rawData = (unsigned char*)_buffer.bytes;
-    //"$M>"
-    if (_buffer.length > 4) //or maybe 5? $M>
-    {
-        int beginMessageIndex = -1;
-        for (int i = 0; i < _buffer.length - 3; i++)
+//    dispatch_sync(self.protocolManagerQueue, ^{
+        if (newData)
+            [_buffer appendData:newData];
+    //    [self writeMessageDebug:newData];
+        unsigned char *rawData = (unsigned char*)_buffer.bytes;
+        //"$M>"
+        if (_buffer.length > 4) //or maybe 5? $M>
         {
-            int startSymb1 = rawData[i]; 
-            int startSymb2 = rawData[i + 1];
-            int direction = rawData[i + 2];
-            if ((startSymb1 == 36/* $ */) && (startSymb2 == 77/* M */) && (direction == 62/* > */))
+            int beginMessageIndex = -1;
+            for (int i = 0; i < _buffer.length - 3; i++)
             {
-                beginMessageIndex = i;
-                break; // use while but... anybody care?
+                int startSymb1 = rawData[i]; 
+                int startSymb2 = rawData[i + 1];
+                int direction = rawData[i + 2];
+                if ((startSymb1 == 36/* $ */) && (startSymb2 == 77/* M */) && (direction == 62/* > */))
+                {
+                    beginMessageIndex = i;
+                    break; // use while but... anybody care?
+                }
             }
-        }
-        if (beginMessageIndex != -1)
-        {
-            int messageLength = rawData[beginMessageIndex + 3];
-            [_buffer replaceBytesInRange:NSMakeRange(0, beginMessageIndex) withBytes:NULL length:0];
-            [self writeMessageDebug:_buffer];
+            if (beginMessageIndex != -1)
+            {
+                int messageLength = rawData[beginMessageIndex + 3];
+                [_buffer replaceBytesInRange:NSMakeRange(0, beginMessageIndex) withBytes:NULL length:0];
+                [self writeMessageDebug:_buffer];
 
-            int fullLength = 3/* "$M>" */ + 3 /* lenght crc messagetype*/ + messageLength;
-            if (_buffer.length >= fullLength)
-            {
-                NSData* message = [_buffer subdataWithRange:NSMakeRange(0, fullLength)];
-                [_buffer replaceBytesInRange:NSMakeRange(0, fullLength) withBytes:NULL length:0];
-                dispatch_async(dispatch_get_current_queue(), ^{
-                    [self processMessage:message];
-                });
+                int fullLength = 3/* "$M>" */ + 3 /* lenght crc messagetype*/ + messageLength;
+                if (_buffer.length >= fullLength)
+                {
+                    NSData* message = [_buffer subdataWithRange:NSMakeRange(0, fullLength)];
+                    [_buffer replaceBytesInRange:NSMakeRange(0, fullLength) withBytes:NULL length:0];
+                    dispatch_async(dispatch_get_current_queue(), ^{
+                        [self processMessage:message];
+                    });
 
-                if (_buffer.length > 0)
-                    [self didReceiveDataFromBluetooth:[NSData data]];
+                    if (_buffer.length > 0)
+                        [self didReceiveDataFromBluetooth:[NSData data]];
+                }
+                else
+                {
+                    NSLog(@"waiting for next portion of data");
+                }
             }
-            else
-            {
-                NSLog(@"waiting for next portion of data");
-            }
+            
         }
-        
-    }
+//    });
 }
 
 -(BOOL) checkMessageCRC:(NSData*) message

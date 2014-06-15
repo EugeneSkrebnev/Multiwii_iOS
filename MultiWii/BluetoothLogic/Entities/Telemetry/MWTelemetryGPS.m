@@ -30,18 +30,14 @@
 -(void) fillGPSValuesFromPayload:(NSData*) payload
 {
     unsigned char *bytes = (unsigned char*)payload.bytes;
-    if (payload.length >= 7) //2bytes for 8 channels and message code bit
+    if (payload.length >= 10) //2bytes for 8 channels and message code bit
     {
-        self.head = [self value16LowBits8:bytes[1] andHigh8:bytes[2]];
-        self.fix = bytes[1];
-        self.satelliteCount = bytes[2];        
+//        self.head = [self value16LowBits8:bytes[1] andHigh8:bytes[2]];
+        self.fix = (bytes[1] != 0);
+        self.satelliteCount = bytes[2];
+        
         self.latitude = [self value32bits0:bytes[3] bits1:bytes[4] bits2:bytes[5] bits3:bytes[6]] / (double)10000000.;
-
         self.longitude = [self value32bits0:bytes[7] bits1:bytes[8] bits2:bytes[9] bits3:bytes[10]] / (double)10000000.;
-        
-        NSLog(@"lat = %f", self.latitude);
-        NSLog(@"lon = %f", self.longitude);
-        
     }
 
 }

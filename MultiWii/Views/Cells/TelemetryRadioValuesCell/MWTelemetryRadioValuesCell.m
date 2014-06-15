@@ -25,12 +25,14 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    int cap = (self.height - ( 4 * [self.valueSliderContainers.firstObject height] )) / 5;
+    UIView* firstContainer = self.valueSliderContainers.firstObject;
+    int cap = (self.height - ( 4 * firstContainer.height )) / 5;
     __block int startY = cap;
     
     [self.valueSliderContainers enumerateObjectsUsingBlock:^(UIView* valueSliderContainer, NSUInteger idx, BOOL *stop) {
         valueSliderContainer.top = startY;
-        startY += [self.valueSliderContainers.firstObject height] + cap;
+        UIView* firstContainer = self.valueSliderContainers.firstObject;
+        startY += firstContainer.height + cap;
     }];
 }
 

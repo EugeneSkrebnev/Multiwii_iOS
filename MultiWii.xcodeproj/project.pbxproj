@@ -62,6 +62,7 @@
 		4434A48519433FA200076E63 /* MWGPSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4434A48419433FA200076E63 /* MWGPSMapViewController.m */; };
 		4434A4881943469C00076E63 /* MWTelemetryGPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4434A4871943469C00076E63 /* MWTelemetryGPS.m */; };
 		4434A48A19434C9C00076E63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4434A48919434C9C00076E63 /* MapKit.framework */; };
+		4434A48E1943D54C00076E63 /* MWGPSSatInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4434A48D1943D54C00076E63 /* MWGPSSatInfoView.m */; };
 		44453CA017518F6900929EC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453C9F17518F6900929EC8 /* UIKit.framework */; };
 		44453CA217518F6900929EC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA117518F6900929EC8 /* Foundation.framework */; };
 		44453CA417518F6900929EC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44453CA317518F6900929EC8 /* CoreGraphics.framework */; };
@@ -363,6 +364,8 @@
 		4434A4861943469C00076E63 /* MWTelemetryGPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTelemetryGPS.h; sourceTree = "<group>"; };
 		4434A4871943469C00076E63 /* MWTelemetryGPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTelemetryGPS.m; sourceTree = "<group>"; };
 		4434A48919434C9C00076E63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4434A48C1943D54C00076E63 /* MWGPSSatInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGPSSatInfoView.h; sourceTree = "<group>"; };
+		4434A48D1943D54C00076E63 /* MWGPSSatInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGPSSatInfoView.m; sourceTree = "<group>"; };
 		44453C9C17518F6900929EC8 /* MultiWii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44453C9F17518F6900929EC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		44453CA117518F6900929EC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -901,6 +904,15 @@
 			path = GPS;
 			sourceTree = "<group>";
 		};
+		4434A48B1943D4C200076E63 /* GPSSatInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				4434A48C1943D54C00076E63 /* MWGPSSatInfoView.h */,
+				4434A48D1943D54C00076E63 /* MWGPSSatInfoView.m */,
+			);
+			path = GPSSatInfoView;
+			sourceTree = "<group>";
+		};
 		44453C9317518F6900929EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -1327,6 +1339,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4434A48B1943D4C200076E63 /* GPSSatInfoView */,
 				44DD767518DAF7D50039735E /* OrientationScreenContainers */,
 				44961A2418D6FC1E005D1025 /* ValueSliderView */,
 				44EA104618D209010087D078 /* ArtificialHorizonView */,
@@ -2271,6 +2284,7 @@
 				44DD957D1832CABA00B82B24 /* MWPIDSettingsEntity.m in Sources */,
 				44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */,
 				44DD95541832C21800B82B24 /* MWFlyPidViewController.m in Sources */,
+				4434A48E1943D54C00076E63 /* MWGPSSatInfoView.m in Sources */,
 				44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */,
 				4422265D1814059100D53DE3 /* NSData+MKBase64.m in Sources */,
 				44DD95561832C21800B82B24 /* MWBasePidSettingsViewController.m in Sources */,
@@ -2432,7 +2446,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -2449,7 +2463,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "MultiWii/MultiWii-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";

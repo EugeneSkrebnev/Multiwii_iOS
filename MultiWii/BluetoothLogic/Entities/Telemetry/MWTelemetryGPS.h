@@ -10,7 +10,7 @@
 
 @interface MWTelemetryGPS : NSObject
 @property (nonatomic, assign) int head; //16 bit
-@property (nonatomic, assign) int fix; //8 bit
+@property (nonatomic, assign) BOOL fix; //8 bit
 @property (nonatomic, assign) int satelliteCount; //8 bit
 @property (nonatomic, assign) double latitude; //32 bit
 @property (nonatomic, assign) double longitude;//32 bit

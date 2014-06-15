@@ -8,12 +8,12 @@
 
 #import "MWGPSMapViewController.h"
 #import <MapKit/MapKit.h>
-//#import "MWTelemetryManager.h"
-//#import "MWGlobalManager.h"
+#import "MWGPSSatInfoView.h"
 
 @interface MWGPSMapViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) MWGPSSatInfoView *satInfoView;
 @end
 
 @implementation MWGPSMapViewController
@@ -21,6 +21,13 @@
     int _radioRequestCount;
     BOOL _isOnScreen;
     MKPointAnnotation *_copterPin;
+}
+
+- (MWGPSSatInfoView *)satInfoView {
+    if (!_satInfoView) {
+        _satInfoView = [[MWGPSSatInfoView alloc] initWithFrame:CGRectMake(0, 0, 70, 44)];
+    }
+    return _satInfoView;
 }
 
 -(void) sendRadioUpdateRequest
@@ -50,12 +57,13 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.viewControllerTitle = @" GPS ";///MOTOR VALUES ";
+    self.viewControllerTitle = @" GPS ";
     _radioRequestCount = 0;
     _copterPin = [[MKPointAnnotation alloc] init];
     _copterPin.title = @"X";
     self.mapView.mapType = MKMapTypeHybrid;
-
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.satInfoView];
 }
 
 -(void) showBuyDialog
@@ -72,12 +80,18 @@
     [self showBuyDialog];
     self->_radioRequestCount = 0;
     _isOnScreen = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectError) name:kDidDisconnectWithErrorNotification object:nil];
+//    self.satInfoView.satelliteFix = YES;
+//    self.satInfoView.satellitesEnabled = YES;
+//    self.satInfoView.satelliteCount = 10;
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     _isOnScreen = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewWillDisappear:animated];
 }
 
@@ -88,6 +102,16 @@
     coordinate.latitude = TELEMETRY_MANAGER.gps.latitude;
     _copterPin.coordinate = coordinate;
     [self.mapView addAnnotation:_copterPin];
+    self.satInfoView.satelliteCount = TELEMETRY_MANAGER.gps.satelliteCount;
+    self.satInfoView.satelliteFix = TELEMETRY_MANAGER.gps.fix;
+    self.satInfoView.satellitesEnabled = YES;
 }
+
+-(void) connectError
+{
+    self.satInfoView.satellitesEnabled = NO;
+    self.satInfoView.satelliteFix = NO;
+}
+
 
 @end

@@ -9,17 +9,26 @@ PODS:
   - FlurrySDK/FlurrySDK (5.0.0)
   - iRate (1.10.2)
   - Masonry (0.5.2)
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
 
 DEPENDENCIES:
   - CocoaLumberjack
   - FlurrySDK
   - iRate
   - Masonry
+  - ReactiveCocoa
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 5766cdd1d0a24bcf15a133c6023747346bf786dd
   FlurrySDK: 1fa28436e86e533e51ab1164c43d8f3b5f8ff99f
   iRate: 7d204971bab2f727195b868e32e05216fe257681
   Masonry: ec0189e1a07af00913e4a1a335ea76887adc86e1
+  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
 
 COCOAPODS: 0.33.1
