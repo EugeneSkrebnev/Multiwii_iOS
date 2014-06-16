@@ -110,7 +110,7 @@
 -(void) processMessage:(NSData*) message
 {
     [self writeMessageDebug:message];
-    
+
     unsigned char *bytes = (unsigned char*)message.bytes;
 
     int length = bytes[3];

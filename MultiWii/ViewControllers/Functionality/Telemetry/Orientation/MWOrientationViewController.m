@@ -26,18 +26,28 @@
 {
     __weak typeof(self) weakSelf = self;
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData)
-    {
-        typeof(self) selfSt = weakSelf;
-        if (!selfSt->_isOnScreen)
-            return ;
-        [selfSt updateOrientation];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [selfSt sendOrientationRequest];
-        });
-    }];
-    
+     {
+         typeof(self) selfSt = weakSelf;
+         if (!selfSt->_isOnScreen)
+             return ;
+         [selfSt updateOrientation];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [selfSt sendOrientationRequest];
+         });
+     }];
+
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData)
+     {
+         typeof(self) selfSt = weakSelf;
+         if (!selfSt->_isOnScreen)
+             return ;
+         [selfSt updateOrientation];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [selfSt sendOrientationRequest];
+         });
+     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
-    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:.5]; // bluetooth firmware lag or code bug protection
+    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:5]; // bluetooth firmware lag or code bug protection
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -80,9 +90,19 @@
     [self.view addSubview:_separator];
 }
 
+static int requests = 0;
 
 -(void) updateOrientation
 {
+    static NSDate* dat;
+    NSLog(@"requests per sec: %@", @((double)requests / [[NSDate date] timeIntervalSinceDate:dat]));
+    if (requests == 0) {
+        dat = [NSDate date];
+    }
+    requests++;
+    if (requests > 100)
+        requests = 0;
+
     [self.orientationViewContainer setRoll  : TELEMETRY_MANAGER.attitude.rollAngle  ];
     [self.orientationViewContainer setPitch : TELEMETRY_MANAGER.attitude.pitchAngle ];
     [self.compassViewContainer setHeading   : TELEMETRY_MANAGER.attitude.heading    ];

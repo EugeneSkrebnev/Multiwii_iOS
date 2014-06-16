@@ -8,26 +8,16 @@
 
 #import "MWBluetoothManager.h"
 
+#define RBL_SERVICE_UUID                         "713D0000-503E-4C75-BA94-3148F18D941E"
+#define RBL_CHAR_TX_UUID                         "713D0002-503E-4C75-BA94-3148F18D941E"
+#define RBL_CHAR_RX_UUID                         "713D0003-503E-4C75-BA94-3148F18D941E"
+#define RBL_CHAR_BAUD_UUID                       "713D0004-503E-4C75-BA94-3148F18D941E"
+#define RBL_CHAR_NAME_UUID                       "713D0005-503E-4C75-BA94-3148F18D941E"
+
+#define RBL_BLE_FRAMEWORK_VER                    0x0200
+
 #define RSSI_KEY @"RSSIKEY"
 #define ADVDATA_KEY @"ADVDATAKEY"
-
-// BLE Device Service
-#define BLE_DEVICE_SERVICE_UUID                         "713D0000-503E-4C75-BA94-3148F18D941E"
-
-#define BLE_DEVICE_VENDOR_NAME_UUID                     "713D0001-503E-4C75-BA94-3148F18D941E"
-
-#define BLE_DEVICE_RX_UUID                              "713D0002-503E-4C75-BA94-3148F18D941E"
-#define BLE_DEVICE_RX_READ_LEN                               20
-
-#define BLE_DEVICE_TX_UUID                              "713D0003-503E-4C75-BA94-3148F18D941E"
-#define BLE_DEVICE_TX_WRITE_LEN                              20
-
-#define BLE_DEVICE_RESET_RX_UUID                        "713D0004-503E-4C75-BA94-3148F18D941E"
-
-#define BLE_DEVICE_LIB_VERSION_UUID                     "713D0005-503E-4C75-BA94-3148F18D941E"
-
-#define BLE_FRAMEWORK_VERSION                           0x0102
-
 
 @implementation MWBluetoothManager
 {
@@ -42,7 +32,7 @@
     {
         _deviceList = [[NSMutableArray alloc] init];
         _metaDataForDevices = [[NSMutableDictionary alloc] init];
-//        _vendor_name = {0};
+        //        _vendor_name = {0};
         _libver = 0;
         _sendBuffer = [[NSMutableData alloc] init];
         
@@ -71,137 +61,250 @@
         [_currentConnectedDevice readRSSI];
 }
 #pragma mark - methods copy/paste from BLE framework and refactor
--(CBService *) findServiceForUUID:(CBUUID *)UUID onDevice:(CBPeripheral *)device
+
+
+-(void) read
 {
+    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_TX_UUID];
     
-    for (CBService* srv in device.services)
+    [self readValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice];
+}
+
+-(void) write:(NSData *)d
+{
+    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_RX_UUID];
+    
+    [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:d];
+}
+
+-(void) enableReadNotification:(CBPeripheral *)p
+{
+    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_TX_UUID];
+    
+    [self notification:uuid_service characteristicUUID:uuid_char p:p on:YES];
+}
+
+-(void) notification:(CBUUID *)serviceUUID characteristicUUID:(CBUUID *)characteristicUUID p:(CBPeripheral *)p on:(BOOL)on
+{
+    CBService *service = [self findServiceFromUUID:serviceUUID p:p];
+    
+    if (!service)
     {
-        if ([srv.UUID isEqual:UUID]) //is equal works? test
-            return srv;
+        NSLog(@"Could not find service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
     }
-//    for(int i = 0; i < p.services.count; i++)
-//    {
-//        CBService *s = [p.services objectAtIndex:i];
-//        if ([self compareCBUUID:s.UUID UUID2:UUID]) return s;
-//    }
-//
-    if (self.didFailToFindService)
-        self.didFailToFindService([NSError errorWithDomain:@"com.multiwi" code:404 userInfo:nil], device);
-    NSLog(@"Could not find service with UUID : %@ on device : %@", UUID.stringValue, [self metaDataForDevice:device]);
+    
+    CBCharacteristic *characteristic = [self findCharacteristicFromUUID:characteristicUUID service:service];
+    
+    if (!characteristic)
+    {
+        NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:characteristicUUID],
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
+    }
+    
+    [p setNotifyValue:on forCharacteristic:characteristic];
+}
+
+
+-(NSString *) CBUUIDToString:(CBUUID *) cbuuid;
+{
+    NSData *data = cbuuid.data;
+    
+    if ([data length] == 2)
+    {
+        const unsigned char *tokenBytes = [data bytes];
+        return [NSString stringWithFormat:@"%02x%02x", tokenBytes[0], tokenBytes[1]];
+    }
+    else if ([data length] == 16)
+    {
+        NSUUID* nsuuid = [[NSUUID alloc] initWithUUIDBytes:[data bytes]];
+        return [nsuuid UUIDString];
+    }
+    
+    return [cbuuid description];
+}
+
+-(void) readValue: (CBUUID *)serviceUUID characteristicUUID:(CBUUID *)characteristicUUID p:(CBPeripheral *)p
+{
+    CBService *service = [self findServiceFromUUID:serviceUUID p:p];
+    
+    if (!service)
+    {
+        NSLog(@"Could not find service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
+    }
+    
+    CBCharacteristic *characteristic = [self findCharacteristicFromUUID:characteristicUUID service:service];
+    
+    if (!characteristic)
+    {
+        NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:characteristicUUID],
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
+    }
+    
+    [p readValueForCharacteristic:characteristic];
+}
+-(void) writeValue:(CBUUID *)serviceUUID characteristicUUID:(CBUUID *)characteristicUUID p:(CBPeripheral *)p data:(NSData *)data withResponse:(BOOL) response
+{
+    CBService *service = [self findServiceFromUUID:serviceUUID p:p];
+    
+    if (!service)
+    {
+        NSLog(@"Could not find service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
+    }
+    
+    CBCharacteristic *characteristic = [self findCharacteristicFromUUID:characteristicUUID service:service];
+    
+    if (!characteristic)
+    {
+        NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:characteristicUUID],
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
+        
+        return;
+    }
+    
+    [p writeValue:data
+forCharacteristic:characteristic
+             type:response ? CBCharacteristicWriteWithResponse : CBCharacteristicWriteWithoutResponse];
+
+
+}
+
+-(void) writeValue:(CBUUID *)serviceUUID characteristicUUID:(CBUUID *)characteristicUUID p:(CBPeripheral *)p data:(NSData *)data
+{
+    [self writeValue:serviceUUID
+  characteristicUUID:characteristicUUID
+                   p:p
+                data:data
+        withResponse:NO];
+}
+
+-(UInt16) swap:(UInt16)s
+{
+    UInt16 temp = s << 8;
+    temp |= (s >> 8);
+    return temp;
+}
+
+
+- (BOOL) UUIDSAreEqual:(NSUUID *)UUID1 UUID2:(NSUUID *)UUID2
+{
+    if ([UUID1.UUIDString isEqualToString:UUID2.UUIDString])
+        return TRUE;
+    else
+        return FALSE;
+}
+
+
+-(int) compareCBUUID:(CBUUID *) UUID1 UUID2:(CBUUID *)UUID2
+{
+    char b1[16];
+    char b2[16];
+    [UUID1.data getBytes:b1];
+    [UUID2.data getBytes:b2];
+    
+    if (memcmp(b1, b2, UUID1.data.length) == 0)
+        return 1;
+    else
+        return 0;
+}
+
+-(int) compareCBUUIDToInt:(CBUUID *)UUID1 UUID2:(UInt16)UUID2
+{
+    char b1[16];
+    
+    [UUID1.data getBytes:b1];
+    UInt16 b2 = [self swap:UUID2];
+    
+    if (memcmp(b1, (char *)&b2, 2) == 0)
+        return 1;
+    else
+        return 0;
+}
+
+-(UInt16) CBUUIDToInt:(CBUUID *) UUID
+{
+    char b1[16];
+    [UUID.data getBytes:b1];
+    return ((b1[0] << 8) | b1[1]);
+}
+
+-(CBUUID *) IntToCBUUID:(UInt16)UUID
+{
+    char t[16];
+    t[0] = ((UUID >> 8) & 0xff); t[1] = (UUID & 0xff);
+    NSData *data = [[NSData alloc] initWithBytes:t length:16];
+    return [CBUUID UUIDWithData:data];
+}
+
+-(CBService *) findServiceFromUUID:(CBUUID *)UUID p:(CBPeripheral *)p
+{
+    for(int i = 0; i < p.services.count; i++)
+    {
+        CBService *s = [p.services objectAtIndex:i];
+        if ([self compareCBUUID:s.UUID UUID2:UUID])
+            return s;
+    }
+    
     return nil; //Service not found on this peripheral
 }
 
--(CBCharacteristic *) findCharacteristicForUUID:(CBUUID *)UUID onService:(CBService*)service
+-(CBCharacteristic *) findCharacteristicFromUUID:(CBUUID *)UUID service:(CBService*)service
 {
-    
-    for (CBCharacteristic* charact in service.characteristics)
+    for(int i=0; i < service.characteristics.count; i++)
     {
-        if ([UUID isEqual:charact.UUID])
-            return charact;
+        CBCharacteristic *c = [service.characteristics objectAtIndex:i];
+        if ([self compareCBUUID:c.UUID UUID2:UUID]) return c;
     }
-//    for(int i=0; i < service.characteristics.count; i++)
-//    {
-//        CBCharacteristic *c = [service.characteristics objectAtIndex:i];
-//        if ([self compareCBUUID:c.UUID UUID2:UUID]) return c;
-//    }
-
-    NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@", UUID.stringValue, service.UUID.stringValue, [CBUUID UUIDWithCFUUID:_currentConnectedDevice.UUID].stringValue);
     
     return nil; //Characteristic not found on this service
 }
 
--(void) writeValue:(NSData *)data
-          onDevice:(CBPeripheral *)device
-forServiceWithUUID:(CBUUID *)serviceUUID
-characteristicUUID:(CBUUID *)characteristicUUID
-{
 
-    CBService *service = [self findServiceForUUID:serviceUUID onDevice:device];
-    if (!service)
-        return;
-    
-    CBCharacteristic *characteristic = [self findCharacteristicForUUID:characteristicUUID onService:service];
-    if (!characteristic)
-        return;
-    
-    [device writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
-//    [device writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
-}
 
--(void) readValueFromDevice:(CBPeripheral *)device
-                withService:(CBUUID *)serviceUUID
-     withCharacteristicUUID:(CBUUID *)characteristicUUID
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    CBService *service = [self findServiceForUUID:serviceUUID onDevice:device];
-    if (!service)
-        return;
-    
-    CBCharacteristic *characteristic = [self findCharacteristicForUUID:characteristicUUID onService:service];
-    if (!characteristic)
-        return;
-    
-    [device readValueForCharacteristic:characteristic];
+    if (!error)
+    {
+        //        printf("Updated notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
+    }
+    else
+    {
+        NSLog(@"Error in setting notification state for characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@",
+              [self CBUUIDToString:characteristic.UUID],
+              [self CBUUIDToString:characteristic.service.UUID],
+              peripheral.identifier.UUIDString);
+        
+        NSLog(@"Error code was %s", [[error description] cStringUsingEncoding:NSStringEncodingConversionAllowLossy]);
+    }
 }
 
 
--(void) notificationForService:(CBUUID *)serviceUUID
-            characteristicUUID:(CBUUID *)characteristicUUID
-                        device:(CBPeripheral *)device
-                       enabled:(BOOL)on
-{
-    CBService *service = [self findServiceForUUID:serviceUUID onDevice:device];
-    
-    if (!service)
-        return;
-    
-    CBCharacteristic *characteristic = [self findCharacteristicForUUID:characteristicUUID onService:service];
-    if (!characteristic)
-        return;
-    
-    [device setNotifyValue:on forCharacteristic:characteristic];
-}
 
--(void) enableWrite
-{
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
-    CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_RESET_RX_UUID];
-    unsigned char bytes[] = {0x01};
-    NSData *d = [[NSData alloc] initWithBytes:bytes length:1];
 
-    [self writeValue:d
-            onDevice:_currentConnectedDevice
-  forServiceWithUUID:serviceUUID
-  characteristicUUID:characteristicUUID];
-    
-}
-
--(void) readLibVerFromPeripheral
-{
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
-    CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_LIB_VERSION_UUID];
-    
-    [self readValueFromDevice:_currentConnectedDevice
-                  withService:serviceUUID
-       withCharacteristicUUID:characteristicUUID];
-}
-
--(void) readVendorNameFromPeripheral
-{
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
-    CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_VENDOR_NAME_UUID];
-    
-    [self readValueFromDevice:_currentConnectedDevice
-                  withService:serviceUUID
-       withCharacteristicUUID:characteristicUUID];
-}
-
--(void) enableReadNotification:(CBPeripheral *)device
-{
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
-    CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_RX_UUID];
-//    [self notificationForService:serviceUUID characteristicUUID:characteristicUUID device:device enabled:NO];
-    [self notificationForService:serviceUUID characteristicUUID:characteristicUUID device:device enabled:YES];
-}
 
 #pragma mark - methods private
 
@@ -225,7 +328,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     }
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"peripheral = %@", device);
-
+    
     [_deviceList addObject:device];
     if (self.didAddDeviceToListBlock)
         self.didAddDeviceToListBlock();
@@ -237,7 +340,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     _currentConnectedDevice.delegate = self;
     [_currentConnectedDevice discoverServices:nil];
     self.rssiNotificationOn = NO;
-
+    
 }
 
 #pragma mark - methods public
@@ -271,7 +374,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 {
     [self stopScan]; //work only with one at time.
     if (!device.isConnected)
-        [_centralManager connectPeripheral:device options:nil];
+        [_centralManager connectPeripheral:device options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey : @(YES)}];
     else
     {
         NSError* err;
@@ -290,7 +393,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 {
     if (device.isConnected)
         return device.RSSI;
-
+    
     id res = _metaDataForDevices[@(device.hash)][RSSI_KEY];
     if (!res)
     {
@@ -317,7 +420,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     if (central.state == CBCentralManagerStatePoweredOn)
     {
         _isReadyToUse = YES;
-        NSLog(@"BLE init success");        
+        NSLog(@"BLE init success");
     }
     else
     {
@@ -334,8 +437,6 @@ characteristicUUID:(CBUUID *)characteristicUUID
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral
     advertisementData:(NSDictionary *)advertisementData            RSSI:(NSNumber *)RSSI
 {
-//    NSLog(@"data = %@", advertisementData);
-//    NSLog(@"rssi = %@", RSSI);
     NSDictionary* dict = [NSDictionary dictionaryWithObjects:@[RSSI, advertisementData] forKeys:@[RSSI_KEY, ADVDATA_KEY]];
     [_metaDataForDevices setObject:dict forKey:@(peripheral.hash)];
     [self addDevice:peripheral];
@@ -355,7 +456,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
         self.didFailToConnectBlock(error, peripheral);
 }
 
-#pragma mark - CBPeripheralDelegate
+
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     _currentConnectedDevice = nil;
@@ -371,6 +472,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
     }
 }
 
+#pragma mark - CBPeripheralDelegate
 -(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (error)
@@ -391,23 +493,14 @@ characteristicUUID:(CBUUID *)characteristicUUID
             self.didDiscoverServices(self.currentConnectedDevice);
         [self getAllCharacteristics];
     }
-
+    
 }
 
 
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
-//    NSLog(@"%@", peripheral);
-//
-//    for (CBService* srv in peripheral.services)
-//    {
-//        NSLog(@"Service : %@", srv.UUID.toString);
-//        for (CBCharacteristic* chr in srv.characteristics)
-//        {
-//            NSLog(@"Characteristic : %@", chr.UUID.toString);
-//        }
-//    }
+
     if (!error)
     {
         if ([((CBService*)_currentConnectedDevice.services.lastObject).UUID isEqual:service.UUID])
@@ -415,17 +508,18 @@ characteristicUUID:(CBUUID *)characteristicUUID
             //did discover all char.
             [_currentConnectedDevice readRSSI];
             _isReadyToReadWrite = YES;
-            
             [self enableReadNotification:_currentConnectedDevice];
-            [self readLibVerFromPeripheral];
-            [self readVendorNameFromPeripheral];
-                        
+            
             if (self.didDiscoverCharacteristics)
                 self.didDiscoverCharacteristics(self.currentConnectedDevice);
             
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
-            [self enableWrite];
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self setName:@"Peprprpr"];
+            });
+
         }
     }
     else
@@ -434,6 +528,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
             self.didFailToDiscoverCharacteristics(error, peripheral);
     }
 }
+
 
 -(void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error
 {
@@ -454,21 +549,19 @@ characteristicUUID:(CBUUID *)characteristicUUID
         [_currentConnectedDevice readRSSI];
     }
 }
-
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    unsigned char data[BLE_DEVICE_RX_READ_LEN];
+    unsigned char data[20];
     
     static unsigned char buf[512];
     static int len = 0;
-    int data_len;
+    NSInteger data_len;
     
     if (!error)
     {
-        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_RX_UUID]])
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@RBL_CHAR_TX_UUID]])
         {
-            data_len = (int)characteristic.value.length;
-            NSLog(@"%d bits of new data", data_len);
+            data_len = characteristic.value.length;
             [characteristic.value getBytes:data length:data_len];
             
             if (data_len == 20)
@@ -481,6 +574,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
                     NSData *newData = [NSData dataWithBytes:buf length:len];
                     if (self.didRecieveData)
                         self.didRecieveData(self.currentConnectedDevice, newData);
+
                     len = 0;
                 }
             }
@@ -488,25 +582,13 @@ characteristicUUID:(CBUUID *)characteristicUUID
             {
                 memcpy(&buf[len], data, data_len);
                 len += data_len;
+                
                 NSData *newData = [NSData dataWithBytes:buf length:len];
                 if (self.didRecieveData)
                     self.didRecieveData(self.currentConnectedDevice, newData);
 
                 len = 0;
             }
-            
-            [self enableWrite];
-        }
-        else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_VENDOR_NAME_UUID]])
-        {
-            data_len = (int)characteristic.value.length;
-            [characteristic.value getBytes:_vendor_name length:data_len];
-//            NSLog(@"Vendor: %s", _vendor_name);
-        }
-        else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@BLE_DEVICE_LIB_VERSION_UUID]])
-        {
-            [characteristic.value getBytes:&_libver length:2];
-//            NSLog(@"Lib. ver.: %X", _libver);
         }
     }
     else
@@ -516,39 +598,35 @@ characteristicUUID:(CBUUID *)characteristicUUID
     }
 }
 
--(void) write:(NSData *)data
-{
-    
-    CBUUID *serviceUUID = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
-    CBUUID *characteristicUUID = [CBUUID UUIDWithString:@BLE_DEVICE_TX_UUID];
-    
-    [self writeValue:data
-            onDevice:self.currentConnectedDevice
-  forServiceWithUUID:serviceUUID
-  characteristicUUID:characteristicUUID];    
-}
+
+
+
 
 -(void) performSendData
 {
-
+    int onePortionLength = 20;
     if (_sendBuffer.length > 0)
     {
-        if (_sendBuffer.length > 20)
+        if (_sendBuffer.length > onePortionLength)
         {
-            NSData* dataToSend = [_sendBuffer subdataWithRange:NSMakeRange(0, 20)];
-            [_sendBuffer replaceBytesInRange:NSMakeRange(0, 20) withBytes:NULL length:0];
+            NSData* dataToSend = [_sendBuffer subdataWithRange:NSMakeRange(0, onePortionLength)];
+            [_sendBuffer replaceBytesInRange:NSMakeRange(0, onePortionLength) withBytes:NULL length:0];
             [self write:dataToSend];
+            dispatch_async(dispatch_get_current_queue(), ^{
+                [self performSendData];
+            });
+
         }
         else
         {
             NSData* dataToSend = [NSData dataWithData:_sendBuffer];
-
+            
             [self write:dataToSend];
             [_sendBuffer replaceBytesInRange:NSMakeRange(0, _sendBuffer.length) withBytes:NULL length:0];
-
+            
         }
-//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
-//        [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
+        //        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
+        //        [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
     }
 }
 
@@ -564,13 +642,22 @@ characteristicUUID:(CBUUID *)characteristicUUID
     
     if (needToSend)
         [self performSendData];
-//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];    
-//    [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
-//    [self write:dataToSend];
+    //    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
+    //    [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
+    //    [self write:dataToSend];
 }
 
 -(void) clearSearchList
 {
     [_deviceList removeAllObjects];
+}
+
+-(void) setName:(NSString*) newName
+{
+    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_NAME_UUID];
+    NSData* dataName = [newName dataUsingEncoding:(NSASCIIStringEncoding)];
+    [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:dataName withResponse:YES];
+
 }
 @end

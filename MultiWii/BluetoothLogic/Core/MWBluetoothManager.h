@@ -73,4 +73,5 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 -(void) sendData:(NSData*) dataToSend;
 
 -(void) clearSearchList;
+-(void) setName:(NSString*) newName;
 @end
