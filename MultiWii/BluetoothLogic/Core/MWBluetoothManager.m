@@ -477,7 +477,7 @@ forCharacteristic:characteristic
 {
     if (error)
         NSLog(@"send error - %@", error);
-    [self performSendData];
+//    [self performSendData];
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
@@ -516,8 +516,8 @@ forCharacteristic:characteristic
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
 
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self setName:@"Peprprpr"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self setName:@"ABCDEFGHIJKLMNOPQRST"];
             });
 
         }
@@ -625,8 +625,6 @@ forCharacteristic:characteristic
             [_sendBuffer replaceBytesInRange:NSMakeRange(0, _sendBuffer.length) withBytes:NULL length:0];
             
         }
-        //        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
-        //        [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
     }
 }
 
@@ -656,8 +654,7 @@ forCharacteristic:characteristic
 {
     CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
     CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_NAME_UUID];
-    NSData* dataName = [newName dataUsingEncoding:(NSASCIIStringEncoding)];
+    NSData* dataName = [newName dataUsingEncoding:(NSUTF8StringEncoding)];
     [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:dataName withResponse:YES];
-
 }
 @end

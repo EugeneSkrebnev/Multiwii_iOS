@@ -19,8 +19,8 @@ return _sharedObject; \
 #define IOS_VER ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define __delegate ((MWAppDelegate*)[[UIApplication sharedApplication] delegate])
 
-//#define SPASH_ENABLED_ON NO
-#define SPASH_ENABLED_ON YES
+#define SPASH_ENABLED_ON NO
+//#define SPASH_ENABLED_ON YES
 #define WRITE_UART_MESSAGES NO
 #define COMBINE_WRITE_AND_SAVE_EPROM NO
 

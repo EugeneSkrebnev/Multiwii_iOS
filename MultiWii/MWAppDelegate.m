@@ -18,6 +18,7 @@
     int _paidAmount;
 }
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [MWGlobalManager sharedInstance]; //init all systems
