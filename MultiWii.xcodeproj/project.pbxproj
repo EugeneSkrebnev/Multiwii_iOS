@@ -286,6 +286,8 @@
 		44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		44FC0BD31814943500417C79 /* MWInAppButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BD21814943500417C79 /* MWInAppButton.m */; };
 		8731B9AD8C1F41339A81F143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A9D9AAD86480A96232E8A /* libPods.a */; };
+		CF28684819509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */; };
+		CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684519509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -700,6 +702,13 @@
 		44FC0BD11814943500417C79 /* MWInAppButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWInAppButton.h; sourceTree = "<group>"; };
 		44FC0BD21814943500417C79 /* MWInAppButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWInAppButton.m; sourceTree = "<group>"; };
 		AC4A9D9AAD86480A96232E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF28684219509AE100B9BD43 /* MWBluetoothManagerBiscuit1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit1.h; sourceTree = "<group>"; };
+		CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerBiscuit1.m; sourceTree = "<group>"; };
+		CF28684419509AE100B9BD43 /* MWBluetoothManagerBiscuit2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit2.h; sourceTree = "<group>"; };
+		CF28684519509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerBiscuit2.m; sourceTree = "<group>"; };
+		CF28684619509AE100B9BD43 /* MWBluetoothManagerHM10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerHM10.h; sourceTree = "<group>"; };
+		CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerHM10.m; sourceTree = "<group>"; };
+		CF28684B19509F4900B9BD43 /* MWMultiwiiBleManagerSuitable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWMultiwiiBleManagerSuitable.h; sourceTree = "<group>"; };
 		E99984C112A647058BAED6EF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -990,8 +999,15 @@
 			children = (
 				44519D45179BF655006E4EB7 /* CBUUID+StringValue.h */,
 				44519D46179BF655006E4EB7 /* CBUUID+StringValue.m */,
+				CF28684B19509F4900B9BD43 /* MWMultiwiiBleManagerSuitable.h */,
 				44519D47179BF655006E4EB7 /* MWBluetoothManager.h */,
 				44519D48179BF655006E4EB7 /* MWBluetoothManager.m */,
+				CF28684219509AE100B9BD43 /* MWBluetoothManagerBiscuit1.h */,
+				CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */,
+				CF28684419509AE100B9BD43 /* MWBluetoothManagerBiscuit2.h */,
+				CF28684519509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m */,
+				CF28684619509AE100B9BD43 /* MWBluetoothManagerHM10.h */,
+				CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */,
 				44519D49179BF655006E4EB7 /* MWDefines.h */,
 			);
 			path = Core;
@@ -2295,6 +2311,7 @@
 				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
 				44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */,
 				44961A3318D708E6005D1025 /* MWValueSliderContainer.m in Sources */,
+				CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */,
 				44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */,
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
 				44DD958C1832CF6500B82B24 /* MWOrientationViewController.m in Sources */,
@@ -2327,6 +2344,7 @@
 				44DD95531832C21800B82B24 /* MWFindMultiwiiViewController.m in Sources */,
 				44EA104918D209800087D078 /* MWHorizonScaleView.m in Sources */,
 				44FC0BBE1814133C00417C79 /* SBJsonStreamParserAccumulator.m in Sources */,
+				CF28684819509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m in Sources */,
 				44FC0BC51814133C00417C79 /* SBJsonUTF8Stream.m in Sources */,
 				448ABAB518180DF90056DD4A /* MWSaveEpromButton.m in Sources */,
 				44DD767418D9A56B0039735E /* MWTelemetryRadio.m in Sources */,
