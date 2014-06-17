@@ -193,26 +193,6 @@
     leftZeroLabel.top -= 4;
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        [self makeInit];
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        [self makeInit];
-    }
-    return self;
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
