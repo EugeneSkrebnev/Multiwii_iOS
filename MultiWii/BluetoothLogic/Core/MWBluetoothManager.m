@@ -640,9 +640,6 @@ forCharacteristic:characteristic
     
     if (needToSend)
         [self performSendData];
-    //    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSendData) object:nil];
-    //    [self performSelector:@selector(performSendData) withObject:nil afterDelay:0.1];
-    //    [self write:dataToSend];
 }
 
 -(void) clearSearchList
