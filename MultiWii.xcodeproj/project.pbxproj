@@ -220,6 +220,7 @@
 		44C7CA96178A19300059C199 /* cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44C7CA94178A19300059C199 /* cell@2x.png */; };
 		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
 		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
+		44D7EE661950EAEF00A850E6 /* MWBluetoothManagerHM10.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */; };
 		44DD766B18D88ED60039735E /* MWSaveableSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */; };
 		44DD766E18D890CE0039735E /* MWAbstractSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */; };
 		44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767018D9A45F0039735E /* MWRadioValueEntity.m */; };
@@ -560,6 +561,8 @@
 		44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseTableViewCell.m; sourceTree = "<group>"; };
 		44C7CA9E178A1C5D0059C199 /* MWMainMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMainMenuCell.h; sourceTree = "<group>"; };
 		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
+		44D7EE671950EF2D00A850E6 /* SerialGATT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerialGATT.h; sourceTree = "<group>"; };
+		44D7EE681950EF2D00A850E6 /* SerialGATT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerialGATT.m; sourceTree = "<group>"; };
 		44DD766918D88ED60039735E /* MWSaveableSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSaveableSettingEntity.h; sourceTree = "<group>"; };
 		44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSaveableSettingEntity.m; sourceTree = "<group>"; };
 		44DD766C18D890CE0039735E /* MWAbstractSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAbstractSettingEntity.h; sourceTree = "<group>"; };
@@ -1009,6 +1012,8 @@
 				CF28684619509AE100B9BD43 /* MWBluetoothManagerHM10.h */,
 				CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */,
 				44519D49179BF655006E4EB7 /* MWDefines.h */,
+				44D7EE671950EF2D00A850E6 /* SerialGATT.h */,
+				44D7EE681950EF2D00A850E6 /* SerialGATT.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2359,6 +2364,7 @@
 				44EA103B18D076570087D078 /* MWRadioAndMotorViewController.m in Sources */,
 				44EA104018D1F1F00087D078 /* MWCompassView.m in Sources */,
 				44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */,
+				44D7EE661950EAEF00A850E6 /* MWBluetoothManagerHM10.m in Sources */,
 				4403BCB417EF708300B5A4E1 /* MWTopbarButton.m in Sources */,
 				44AE5AA217FF615A00AAAC30 /* MWBoxSettingsManager.m in Sources */,
 				44DD95791832CABA00B82B24 /* MWBoxAuxSettingEntity.m in Sources */,

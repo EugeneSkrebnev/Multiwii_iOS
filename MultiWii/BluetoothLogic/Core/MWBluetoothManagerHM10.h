@@ -71,4 +71,9 @@
 
 -(void) clearSearchList;
 -(void) setName:(NSString*) newName;
+
+
+
+/// gatt methods
+
 @end

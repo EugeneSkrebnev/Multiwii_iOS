@@ -179,6 +179,11 @@
 			attributes = {
 				CLASSPREFIX = BLE;
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					E633909515AFB2FC00C7A225 = {
+						DevelopmentTeam = 6A55FY4Q8A;
+					};
+				};
 			};
 			buildConfigurationList = E633909015AFB2FC00C7A225 /* Build configuration list for PBXProject "HMSoft" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -266,7 +271,6 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -295,7 +299,6 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -312,8 +315,8 @@
 		E63390AF15AFB2FC00C7A225 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMSoft/HMSoft-Prefix.pch";
 				INFOPLIST_FILE = "HMSoft/HMSoft-Info.plist";
@@ -323,6 +326,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = HMSoft;
+				PROVISIONING_PROFILE = "34B7169D-DBC4-48EF-9C4E-AD98C59C7F71";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -331,8 +335,8 @@
 		E63390B015AFB2FC00C7A225 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMSoft/HMSoft-Prefix.pch";
 				INFOPLIST_FILE = "HMSoft/HMSoft-Info.plist";
@@ -342,6 +346,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = HMSoft;
+				PROVISIONING_PROFILE = "34B7169D-DBC4-48EF-9C4E-AD98C59C7F71";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};

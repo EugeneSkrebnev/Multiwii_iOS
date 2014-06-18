@@ -516,9 +516,9 @@ forCharacteristic:characteristic
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
 
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self setName:@"ABCDEFGHIJKLMNOPQRST"];
-            });
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                [self setName:@"ABCDEFGHIJKLMNOPQRST"];
+//            });
 
         }
     }

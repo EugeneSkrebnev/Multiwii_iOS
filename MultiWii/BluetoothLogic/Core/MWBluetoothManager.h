@@ -22,5 +22,9 @@ typedef NS_ENUM(NSInteger, MWBluetoothManagerType) {
 
 @interface MWBluetoothManager : NSObject<MWMultiwiiBleManagerSuitable>
 
+@property (nonatomic, assign) MWBluetoothManagerType boardType;
+@property (nonatomic, strong) MWBluetoothManagerBiscuit2 *biscuitManagerOld;
+@property (nonatomic, strong) MWBluetoothManagerBiscuit1 *biscuitManagerNew;
+@property (nonatomic, strong) MWBluetoothManagerHM10 *HM10Manager;
 
 @end
