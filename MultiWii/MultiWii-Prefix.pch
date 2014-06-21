@@ -26,3 +26,6 @@
 #import "Flurry.h"
 #import "MWAppDelegate.h"
 #import <Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import "ReactiveCocoa.h"

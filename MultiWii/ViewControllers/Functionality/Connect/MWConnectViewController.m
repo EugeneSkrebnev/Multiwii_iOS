@@ -85,14 +85,11 @@
         {
             int connectedIndex = (int)[BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
             [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
-
         }
     };
     
     BLUETOOTH_MANAGER.didDiscoverCharacteristics = ^(CBPeripheral* connectedDevice)
     {
-        for (CBService* id_ in connectedDevice.services)
-            NSLog(@"Service ID: %@", id_.UUID.stringValue);
     };
     
 
@@ -141,6 +138,7 @@
 {
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     [cell.activityIndicator setHidden:hidden animated:animated];
+    
 //    if (!hidden)
 //        [cell.activityIndicator startAnimating];
 }
@@ -165,15 +163,30 @@
     [super viewDidLoad];
     self.viewControllerTitle = @" CONNECT ";
     
-    self.infoLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
+    self.infoLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
     self.infoLabel.textColor = [UIColor grayColor];
-    self.infoLabel.text = @"*Tap the item to connect";
+    self.infoLabel.text = @"*Select your bluetooth hardware model";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
 
+    self.deviceTypeSegmentControl.height = 45;
+    [self.deviceTypeSegmentControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor lightGrayColor],
+                                                              UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:10],
+                                                              UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateNormal];
+    
+    [self.deviceTypeSegmentControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blackColor]/*[UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1]*/,
+                                                              UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:10],
+                                                              UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateHighlighted];
+    [self.deviceTypeSegmentControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1],
+                                                              UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:10],
+                                                              UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateSelected];
 
+    
+    [[self.deviceTypeSegmentControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UISegmentedControl* segment) {
+        BLUETOOTH_MANAGER.boardType = (MWBluetoothManagerType)segment.selectedSegmentIndex;
+    }];
     
     MWTopbarButton* scanButton = [[MWTopbarButton alloc] init];
     self.scanButton = scanButton;
@@ -239,6 +252,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return 3;
     return BLUETOOTH_MANAGER.deviceList.count;
 }
 
@@ -250,14 +264,15 @@
     if (!cell)
         cell = [MWDevicePreviewCell loadView];
     
-    CBPeripheral* device = BLUETOOTH_MANAGER.deviceList[indexPath.row];
-    NSLog(@"%@", [BLUETOOTH_MANAGER metaDataForDevice:device]);
-    NSString* deviceName = device.name;
-    if (!deviceName)
-        deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
-    cell.titleLabel.text = [NSString stringWithFormat:@"%@", deviceName];
-    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor whiteColor];
-    
+//    CBPeripheral* device = BLUETOOTH_MANAGER.deviceList[indexPath.row];
+//    NSLog(@"%@", [BLUETOOTH_MANAGER metaDataForDevice:device]);
+//    NSString* deviceName = device.name;
+    NSString* deviceName = @"gosha";
+//    if (!deviceName)
+//        deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", deviceName]; //null string
+//    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor whiteColor];
+    cell.detailTextLabel.text = @"Tap to connect";
     
     return cell;
 }

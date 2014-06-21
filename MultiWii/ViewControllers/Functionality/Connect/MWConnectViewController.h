@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) MWRadarActivityIndicator* radar;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *deviceTypeSegmentControl;
 @end

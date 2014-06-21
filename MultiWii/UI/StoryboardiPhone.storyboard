@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -314,18 +314,28 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JjW-1Q-8Xr">
-                                <rect key="frame" x="20" y="452" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="20" y="410" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="zwI-ch-0Od">
+                                <rect key="frame" x="2" y="435" width="316" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <segments>
+                                    <segment title="Multiwii BLE"/>
+                                    <segment title="Multiwii BLE old"/>
+                                    <segment title="HM-10"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LQx-Yo-wDc"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ue0-lZ-Hdu" id="TIw-aS-S7u"/>
+                        <outlet property="deviceTypeSegmentControl" destination="zwI-ch-0Od" id="H0b-td-1Hh"/>
                         <outlet property="infoLabel" destination="JjW-1Q-8Xr" id="NfH-gw-EQh"/>
                         <outlet property="tableView" destination="pGI-Ds-2Ut" id="Y6k-sj-JGm"/>
                     </connections>

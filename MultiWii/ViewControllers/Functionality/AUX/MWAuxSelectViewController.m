@@ -19,42 +19,10 @@
 {
     int _savedSelectedSegmentIndex;
 }
+
 -(void) customizeSegmentControl
 {
     self.segmentControlForAuxChannel.height = 45;
-    [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    if (IOS_VER > 5)
-        [self.segmentControlForAuxChannel setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_normal_normal.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_left_pressed.png"] forLeftSegmentState:UIControlStateHighlighted rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_right_pressed.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    
-    
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_left_pressed.png"] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_right_pressed.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_two_pressed.png"] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    [self.segmentControlForAuxChannel setDividerImage:[UIImage imageNamed:@"separator_two_pressed.png"] forLeftSegmentState:UIControlStateHighlighted rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
-
-    
-    
-    [self.segmentControlForAuxChannel setContentPositionAdjustment:UIOffsetMake(0, -2) forSegmentType:UISegmentedControlSegmentAny barMetrics:UIBarMetricsDefault];
-    
-    [self.segmentControlForAuxChannel setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor lightGrayColor],
-                            UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
-                UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateNormal];
-    
-    [self.segmentControlForAuxChannel setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blackColor]/*[UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1]*/,
-                            UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
-                UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateHighlighted];
-    [self.segmentControlForAuxChannel setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1],
-                                                               UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
-                                                               UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateSelected];
-    
-//
 }
 
 -(void) initSwipeGR
@@ -82,6 +50,7 @@
     }
     [self auxChannelChanged];
 }
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];

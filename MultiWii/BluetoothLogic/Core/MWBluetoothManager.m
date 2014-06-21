@@ -20,7 +20,7 @@
     self = [super init];
     if (self)
     {
-        self.boardType = MWBluetoothManagerTypeHM10;
+        _boardType = MWBluetoothManagerTypeHM10;
     }
     return self;
 }
@@ -31,7 +31,7 @@
     {
         _biscuitManagerOld = [[MWBluetoothManagerBiscuit2 alloc] init];
     }
-    return @(2);//_biscuitManagerOld;
+    return _biscuitManagerOld;
 }
 
 - (MWBluetoothManagerHM10 *)HM10Manager
@@ -54,8 +54,43 @@
 
 
 - (id)forwardingTargetForSelector:(SEL)aSelector {
-    NSArray* providers = @[self.biscuitManagerOld, self.biscuitManagerNew, self.HM10Manager];
+    NSArray* providers = @[self.biscuitManagerNew, self.biscuitManagerOld, self.HM10Manager];
     return providers[self.boardType];
+}
+
+-(void)setBoardType:(MWBluetoothManagerType)boardType {
+    NSArray* providers = @[self.biscuitManagerNew, self.biscuitManagerOld, self.HM10Manager];
+    [self copyFromBluetooth:providers[_boardType] toBluetooth:providers[boardType]];
+    _boardType = boardType;
+}
+
+-(void) copyFromBluetooth:(id<MWMultiwiiBleManagerSuitable>) from toBluetooth:(id<MWMultiwiiBleManagerSuitable>) to
+{
+    //some nice code
+    to.didUpdateStateBlock = from.didUpdateStateBlock;
+    to.didAddDeviceToListBlock = from.didAddDeviceToListBlock;
+    to.didStartScan = from.didStartScan;
+    to.didStopScan = from.didStopScan;
+    to.readyForReadWriteBlock = from.readyForReadWriteBlock;
+    
+    to.didConnectBlock = from.didConnectBlock;
+    to.didFailToConnectBlock = from.didFailToConnectBlock;
+    
+    to.didDisconnectBlock = from.didDisconnectBlock;
+    to.didDisconnectWithErrorBlock = from.didDisconnectWithErrorBlock;
+    
+    to.didDiscoverServices = from.didDiscoverServices;
+    to.didFailToDiscoverServices = from.didFailToDiscoverServices;
+    
+    to.didFailToFindService = from.didFailToFindService;
+    to.didDiscoverCharacteristics = from.didDiscoverCharacteristics;
+    to.didFailToDiscoverCharacteristics = from.didFailToDiscoverCharacteristics;
+    to.didRecieveData = from.didRecieveData;
+    to.didFailUpdateCharacteristic = from.didFailUpdateCharacteristic;
+    
+    to.didUpdateRssi = from.didUpdateRssi;
+    to.didFailUpdateRssi = from.didFailUpdateRssi;
+    to.rssiNotificationOn = from.rssiNotificationOn;
 }
 
 @end

@@ -18,6 +18,48 @@
     int _paidAmount;
 }
 
+-(void)setSegmentControlAppereance
+{
+    
+    [[UISegmentedControl appearance] setBackgroundImage:[[UIImage imageNamed:@"center_normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    if (IOS_VER > 5)
+        [[UISegmentedControl appearance] setBackgroundImage:[[UIImage imageNamed:@"center_pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_normal_normal.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_left_pressed.png"] forLeftSegmentState:UIControlStateHighlighted rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_right_pressed.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_left_pressed.png"] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_right_pressed.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_two_pressed.png"] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"separator_two_pressed.png"] forLeftSegmentState:UIControlStateHighlighted rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
+    
+    
+    
+    [[UISegmentedControl appearance] setContentPositionAdjustment:UIOffsetMake(0, -2) forSegmentType:UISegmentedControlSegmentAny barMetrics:UIBarMetricsDefault];
+    
+    [[UISegmentedControl appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor lightGrayColor],
+                                                               UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
+                                                               UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateNormal];
+    
+    [[UISegmentedControl appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blackColor]/*[UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1]*/,
+                                                               UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
+                                                               UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateHighlighted];
+    [[UISegmentedControl appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithRed:250./255 green:33./255 blue:8./255 alpha:1],
+                                                               UITextAttributeFont: [UIFont fontWithName:@"Montserrat-Bold" size:14],
+                                                               UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]} forState:UIControlStateSelected];
+    
+
+}
+
+-(void)setAppereance
+{
+    [self setSegmentControlAppereance];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -28,7 +70,7 @@
     [iRate sharedInstance].appStoreID = 735311586;
     [iRate sharedInstance].daysUntilPrompt = 10;
     [iRate sharedInstance].usesUntilPrompt = 12;
-    
+    [self setAppereance];
     BLUETOOTH_MANAGER.didDisconnectWithErrorBlock =
     ^(NSError* err, CBPeripheral* device){
         [UIAlertView alertErrorWithMessage:[NSString stringWithFormat:@"%@ Please reconnect.", err.localizedDescription]];
@@ -38,7 +80,7 @@
 //    BLUETOOTH_MANAGER.didUpdateStateBlock = ^{ //leak? looks like leak
 //        if (!BLUETOOTH_MANAGER.isReadyToUse)
 //        {
-////            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
+//            [UIAlertView alertErrorWithMessage:@"Please turn bluetooth on"];
 //        }
 //    };
     
