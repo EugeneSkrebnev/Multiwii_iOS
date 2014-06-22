@@ -30,6 +30,7 @@
 -(void) didReceiveDataFromBluetooth:(NSData*) newData
 {
 //    dispatch_sync(self.protocolManagerQueue, ^{
+    dispatch_async(self.protocolManagerQueue, ^{
         if (newData)
             [_buffer appendData:newData];
     //    [self writeMessageDebug:newData];
@@ -60,7 +61,8 @@
                 {
                     NSData* message = [_buffer subdataWithRange:NSMakeRange(0, fullLength)];
                     [_buffer replaceBytesInRange:NSMakeRange(0, fullLength) withBytes:NULL length:0];
-                    dispatch_async(dispatch_get_current_queue(), ^{
+//                    dispatch_async(dispatch_get_current_queue(), ^{
+                    dispatch_async(dispatch_get_main_queue(), ^{
                         [self processMessage:message];
                     });
 
@@ -69,12 +71,12 @@
                 }
                 else
                 {
-                    NSLog(@"waiting for next portion of data");
+//                    NSLog(@"waiting for next portion of data");
                 }
             }
             
         }
-//    });
+    });
 }
 
 -(BOOL) checkMessageCRC:(NSData*) message
@@ -144,7 +146,7 @@
     {
         NSLog(@"CRC ERROR");
         [self writeMessageDebug:message];
-        NSLog(@"CRC ERROR");
+//        NSLog(@"CRC ERROR");
     }
 }
 
@@ -161,8 +163,6 @@
         int symb = x[i];
         result = result ^ symb;
     }
-    
-    NSLog(@"crc = %d", result);
     return result;
 }
 
@@ -177,8 +177,6 @@
         int symb = x[i];
         result = result ^ symb;
     }
-    
-    NSLog(@"%d", result);
     return result;
 }
 

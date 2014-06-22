@@ -150,11 +150,7 @@
     
     if (self.didRecieveData)
         self.didRecieveData(self.currentConnectedDevice, newData);
-    NSString *value = [[NSString alloc] initWithData:newData encoding:NSASCIIStringEncoding];
-    NSLog(@"val := %@", value);
-//    [delegate serialGATTCharValueUpdated:@"FFE1" value:characteristic.value];
-    
-    
+
 }
 
 -(void) getAllCharacteristicsFromKeyfob:(CBPeripheral *)p{
@@ -209,8 +205,10 @@
 {
     if (!error) {
         printf("Updated notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
-        if (self.readyForReadWriteBlock)
-            self.readyForReadWriteBlock();
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (self.readyForReadWriteBlock)
+                self.readyForReadWriteBlock();            
+        });
 
     }
     else {
@@ -630,14 +628,15 @@
 
 //-(void) performSendData
 //{
-//    int onePortionLength = 20;
+//    int onePortionLength = 3;
 //    if (_sendBuffer.length > 0)
 //    {
 //        if (_sendBuffer.length > onePortionLength)
 //        {
 //            NSData* dataToSend = [_sendBuffer subdataWithRange:NSMakeRange(0, onePortionLength)];
 //            [_sendBuffer replaceBytesInRange:NSMakeRange(0, onePortionLength) withBytes:NULL length:0];
-//            [self write:dataToSend];
+////            [self write:dataToSend];
+//            [self write:self.currentConnectedDevice data:dataToSend];
 //            dispatch_async(dispatch_get_current_queue(), ^{
 //                [self performSendData];
 //            });
@@ -647,7 +646,8 @@
 //        {
 //            NSData* dataToSend = [NSData dataWithData:_sendBuffer];
 //            
-//            [self write:dataToSend];
+////            [self write:dataToSend];
+//            [self write:self.currentConnectedDevice data:dataToSend];
 //            [_sendBuffer replaceBytesInRange:NSMakeRange(0, _sendBuffer.length) withBytes:NULL length:0];
 //            
 //        }

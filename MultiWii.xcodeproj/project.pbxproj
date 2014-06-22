@@ -221,6 +221,7 @@
 		44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9C178A1C430059C199 /* MWBaseTableViewCell.m */; };
 		44C7CAA0178A1C5D0059C199 /* MWMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */; };
 		44D7EE661950EAEF00A850E6 /* MWBluetoothManagerHM10.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */; };
+		44D9FF3019577DEB003399B1 /* MWRadioControlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D9FF2F19577DEB003399B1 /* MWRadioControlManager.m */; };
 		44DD766B18D88ED60039735E /* MWSaveableSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */; };
 		44DD766E18D890CE0039735E /* MWAbstractSettingEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD766D18D890CE0039735E /* MWAbstractSettingEntity.m */; };
 		44DD767118D9A45F0039735E /* MWRadioValueEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DD767018D9A45F0039735E /* MWRadioValueEntity.m */; };
@@ -563,6 +564,8 @@
 		44C7CA9F178A1C5D0059C199 /* MWMainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMainMenuCell.m; sourceTree = "<group>"; };
 		44D7EE671950EF2D00A850E6 /* SerialGATT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerialGATT.h; sourceTree = "<group>"; };
 		44D7EE681950EF2D00A850E6 /* SerialGATT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerialGATT.m; sourceTree = "<group>"; };
+		44D9FF2E19577DEB003399B1 /* MWRadioControlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWRadioControlManager.h; sourceTree = "<group>"; };
+		44D9FF2F19577DEB003399B1 /* MWRadioControlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWRadioControlManager.m; sourceTree = "<group>"; };
 		44DD766918D88ED60039735E /* MWSaveableSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSaveableSettingEntity.h; sourceTree = "<group>"; };
 		44DD766A18D88ED60039735E /* MWSaveableSettingEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSaveableSettingEntity.m; sourceTree = "<group>"; };
 		44DD766C18D890CE0039735E /* MWAbstractSettingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAbstractSettingEntity.h; sourceTree = "<group>"; };
@@ -1387,6 +1390,8 @@
 				44519D5C179C04D0006E4EB7 /* MWPidSettingsManager.m */,
 				44DD95641832C8D400B82B24 /* MWTelemetryManager.h */,
 				44DD95651832C8D400B82B24 /* MWTelemetryManager.m */,
+				44D9FF2E19577DEB003399B1 /* MWRadioControlManager.h */,
+				44D9FF2F19577DEB003399B1 /* MWRadioControlManager.m */,
 				44DD95671832CABA00B82B24 /* Entities */,
 				44519D44179BF655006E4EB7 /* Core */,
 			);
@@ -2319,6 +2324,7 @@
 				CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */,
 				44FC0BBC1814133C00417C79 /* SBJsonParser.m in Sources */,
 				44A6BDFD178EC6C100DC95C6 /* MASwitch.m in Sources */,
+				44D9FF3019577DEB003399B1 /* MWRadioControlManager.m in Sources */,
 				44DD958C1832CF6500B82B24 /* MWOrientationViewController.m in Sources */,
 				44DD95851832CCDF00B82B24 /* MWTelemetryBaseViewController.m in Sources */,
 				44FC0BC01814133C00417C79 /* SBJsonStreamParserState.m in Sources */,

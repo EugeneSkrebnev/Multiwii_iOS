@@ -37,20 +37,18 @@
 //        {
 //            [selfSt sendRadioUpdateRequest];
 //        });
-////        if (selfSt->_radioRequestCount > 100)
-////        {
-////            selfSt->_radioRequestCount = 0;
-////            [selfSt showBuyDialog];
-////        }
+//
 //    }];
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:nil];
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
      {
          typeof(self) selfSt = weakSelf;
          if (!selfSt->_isOnScreen)
              return ;
+         NSLog(@"request per sec = %@", @((double)selfSt->_radioRequestCount / [[NSDate date] timeIntervalSinceDate:dat]));
          if (selfSt->_radioRequestCount == 0)
              dat = [NSDate date];
-         NSLog(@"request per sec = %@", @((double)selfSt->_radioRequestCount / [[NSDate date] timeIntervalSinceDate:dat]));
+
 
          selfSt->_radioRequestCount++;
          dispatch_async(dispatch_get_main_queue(), ^

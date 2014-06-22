@@ -31,6 +31,7 @@ typedef void(^MWMultiwiiProtocolManagerRecieveDataBlock)(NSData* recieveData);
 #define MWI_BLE_MESSAGE_GET_ATTITUDE 108   //out message         2 angles 1 heading
 
 #define MWI_BLE_MESSAGE_GET_8_RC 105   //out message         8 rc chan
+#define MWI_BLE_MESSAGE_SET_RAW_RC 200   //in message          8 rc chan
 
 #define MWI_BLE_MESSAGE_GET_RAW_GPS 106   //out message         fix, numsat, lat, lon, alt, speed, ground course
 //MSP_SET_RAW_GPS MSP_

@@ -35,6 +35,7 @@
         self.boxManager = [[MWBoxSettingsManager alloc] init];
         self.telemetryManager = [[MWTelemetryManager alloc] init];
 
+        self.controlManager = [[MWRadioControlManager alloc] init];
         [MKStoreManager sharedManager];
     }
     return self;

@@ -25,29 +25,21 @@
 -(void) sendOrientationRequest
 {
     __weak typeof(self) weakSelf = self;
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData)
-     {
-         typeof(self) selfSt = weakSelf;
-         if (!selfSt->_isOnScreen)
-             return ;
-         [selfSt updateOrientation];
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [selfSt sendOrientationRequest];
-         });
-     }];
-
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:^(NSData *recieveData)
-     {
-         typeof(self) selfSt = weakSelf;
-         if (!selfSt->_isOnScreen)
-             return ;
-         [selfSt updateOrientation];
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [selfSt sendOrientationRequest];
-         });
-     }];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
-    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:5]; // bluetooth firmware lag or code bug protection
+    MWMultiwiiProtocolManagerRecieveDataBlock updateBlock = ^(NSData *recieveData)
+    {
+        typeof(self) selfSt = weakSelf;
+        if (!selfSt->_isOnScreen)
+            return ;
+        [selfSt updateOrientation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [selfSt sendOrientationRequest];
+        });
+    };
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:updateBlock];
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:updateBlock];
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
+//    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:5]; // bluetooth firmware lag or code bug protection
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -100,7 +92,7 @@ static int requests = 0;
         dat = [NSDate date];
     }
     requests++;
-    if (requests > 100)
+    if (requests > 1000)
         requests = 0;
 
     [self.orientationViewContainer setRoll  : TELEMETRY_MANAGER.attitude.rollAngle  ];
