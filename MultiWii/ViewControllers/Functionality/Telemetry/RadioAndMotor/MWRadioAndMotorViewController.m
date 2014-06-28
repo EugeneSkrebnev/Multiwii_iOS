@@ -21,46 +21,39 @@
 {
     int _radioRequestCount;
     BOOL _isOnScreen;
+    NSMutableArray* _resposes;
+    NSMutableArray* _results;
+}
+
+-(void) addResponseTime {
+    [_resposes addObject:[NSDate date]];
+    while (fabs([(NSDate*)_resposes[0] timeIntervalSinceNow]) > 1) {
+        [_resposes removeObjectAtIndex:0];
+    }
+    [_results addObject:@(_resposes.count)];
+
+    while (_results.count > 1000) {
+        [_results removeObjectAtIndex:0];
+    }
+    double sma = [[_results valueForKeyPath: @"@sum.self"] doubleValue];
+    NSLog(@"requests = %f", sma / (double)_results.count);
 }
 
 -(void) sendRadioUpdateRequest
 {
-    __weak typeof(self) weakSelf = self;
-    static NSDate* dat;
-//    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
-//    {
-//        typeof(self) selfSt = weakSelf;
-//        if (!selfSt->_isOnScreen)
-//            return ;
-//        selfSt->_radioRequestCount++;
-//        dispatch_async(dispatch_get_main_queue(), ^
-//        {
-//            [selfSt sendRadioUpdateRequest];
-//        });
-//
-//    }];
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:nil];
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
-     {
-         typeof(self) selfSt = weakSelf;
-         if (!selfSt->_isOnScreen)
-             return ;
-         NSLog(@"request per sec = %@", @((double)selfSt->_radioRequestCount / [[NSDate date] timeIntervalSinceDate:dat]));
-         if (selfSt->_radioRequestCount == 0)
-             dat = [NSDate date];
 
-
-         selfSt->_radioRequestCount++;
-         dispatch_async(dispatch_get_main_queue(), ^
+    CONTROL_MANAGER.aux1 = 2000;
+    [CONTROL_MANAGER save:^{
+        [self addResponseTime];
+    }];
+    [CONTROL_MANAGER save:^{
+        [self addResponseTime];
+    }];
+    dispatch_async(dispatch_get_main_queue(), ^
                         {
-                            [selfSt sendRadioUpdateRequest];
+                            [self sendRadioUpdateRequest];
                         });
-         if (selfSt->_radioRequestCount > 100)
-         {
-             selfSt->_radioRequestCount = 0;
-             [selfSt showBuyDialog];
-         }
-     }];
+    
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
     [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:.3]; //lag protection
 }
@@ -72,6 +65,8 @@
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
     _radioRequestCount = 0;
+    _resposes = [[NSMutableArray alloc] init];
+    _results = [[NSMutableArray alloc] init];
 }
 
 -(void) showBuyDialog

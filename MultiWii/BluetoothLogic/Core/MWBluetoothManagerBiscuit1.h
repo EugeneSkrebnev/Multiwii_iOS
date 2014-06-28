@@ -71,4 +71,6 @@
 
 -(void) clearSearchList;
 -(void) setName:(NSString*) newName;
+-(void) setSpeed:(int) speed;
+-(void) setTransmitterPower:(int) power;
 @end

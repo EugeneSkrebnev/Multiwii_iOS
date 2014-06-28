@@ -15,7 +15,7 @@
 
 -(BOOL) willChangeValueToValue:(float) newValue
 {
-    float step = self.step;
+    float step = self.step; //use double everywhere?
     if (step < 0.000001)
         step = 0.000001;
     return !((fabsf(newValue - self.value) < (step / 5)));

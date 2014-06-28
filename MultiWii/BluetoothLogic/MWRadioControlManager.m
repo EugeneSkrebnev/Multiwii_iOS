@@ -55,9 +55,10 @@
 
 
 -(NSData*) payloadFromRadioEntities {
-    unsigned char bytes[8*2]; // 8 chan * 2 bytes for each
+    int chanelsCount = 8;
+    unsigned char bytes[chanelsCount * 2]; // 8 chan * 2 bytes for each
     
-    for (int idx = 0; idx < 8; idx++) {
+    for (int idx = 0; idx < chanelsCount; idx++) {
         MWValueSettingsEntity* entity = self.allChannels[idx];
         int val = entity.value;
 
@@ -72,7 +73,8 @@
 
 -(void) save:(dispatch_block_t)callback {
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_SET_RAW_RC andPayload:[self payloadFromRadioEntities] responseBlock:^(NSData *recieveData) {
-        callback();
+        if (callback)
+            callback();
     }];
 }
 
@@ -80,6 +82,7 @@
 -(void)setThrottle:(int)throttle {
     self.throttleEntity.value = throttle;
 }
+
 -(int)throttle {
     return self.throttleEntity.value;
 }

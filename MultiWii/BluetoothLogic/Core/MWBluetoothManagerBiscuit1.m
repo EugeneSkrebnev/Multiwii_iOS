@@ -13,7 +13,7 @@
 #define RBL_CHAR_RX_UUID                         "713D0003-503E-4C75-BA94-3148F18D941E"
 #define RBL_CHAR_BAUD_UUID                       "713D0004-503E-4C75-BA94-3148F18D941E"
 #define RBL_CHAR_NAME_UUID                       "713D0005-503E-4C75-BA94-3148F18D941E"
-
+#define RBL_CHAR_POWER_UUID                      "713D0007-503E-4C75-BA94-3148F18D941E"
 #define RBL_BLE_FRAMEWORK_VER                    0x0200
 
 #define RSSI_KEY @"RSSIKEY"
@@ -516,9 +516,11 @@ forCharacteristic:characteristic
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
 
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                [self setName:@"ABCDEFGHIJKLMNOPQRST"];
-//            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self setName:@"Test control"];
+                [self setSpeed:19200];
+                [self setTransmitterPower:3];
+            });
 
         }
     }
@@ -654,4 +656,29 @@ forCharacteristic:characteristic
     NSData* dataName = [newName dataUsingEncoding:(NSUTF8StringEncoding)];
     [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:dataName withResponse:YES];
 }
+
+-(void) setSpeed:(int) speed
+{
+    NSUInteger speedIndex = [@[@9600, @19200, @38400, @57600, @115200] indexOfObject:@(speed)];
+    if (speedIndex != NSNotFound)
+    {
+        CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+        CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_BAUD_UUID];
+        unsigned char bytes[1];
+        bytes[0] = speedIndex;
+        NSData* speedData = [NSData dataWithBytes:bytes length:1];
+        [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:speedData withResponse:YES];
+    }
+}
+-(void) setTransmitterPower:(int) power
+{
+    //0 1 2 3
+    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_POWER_UUID];
+    unsigned char bytes[1];
+    bytes[0] = power;
+    NSData* powerData = [NSData dataWithBytes:bytes length:1];
+    [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:powerData withResponse:YES];
+}
+
 @end

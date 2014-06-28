@@ -65,4 +65,10 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 
 -(void) clearSearchList;
 
+@optional
+
+@property (nonatomic, assign, readonly) int bytesReceived;
+@property (nonatomic, assign, readonly) int bytesSent;
+@property (nonatomic, assign, readonly) int bytesTotal;
+@property (nonatomic, assign, readonly) int bytesTotal;
 @end

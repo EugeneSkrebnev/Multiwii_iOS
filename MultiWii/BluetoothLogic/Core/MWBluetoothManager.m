@@ -40,7 +40,7 @@
     {
         _HM10Manager = [[MWBluetoothManagerHM10 alloc] init];
     }
-    return _HM10Manager;
+    return self.biscuitManagerNew;
 }
 
 -(MWBluetoothManagerBiscuit1 *)biscuitManagerNew

@@ -145,6 +145,10 @@
     [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
         [selfWeak.telemetryManager.gps fillGPSValuesFromPayload:recieveData];
     } forRequestWith:MWI_BLE_MESSAGE_GET_RAW_GPS];
+    
+    [self.protocolManager setDefaultHandler:^(NSData *recieveData) {
+//        NSLog(@"send rc data");
+    } forRequestWith:MWI_BLE_MESSAGE_SET_RAW_RC];
 }
 
 -(NSString *)copterTypeString
