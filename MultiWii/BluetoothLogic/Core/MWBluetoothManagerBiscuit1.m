@@ -657,9 +657,14 @@ forCharacteristic:characteristic
     [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:dataName withResponse:YES];
 }
 
+
+- (NSArray *)supportedSpeeds {
+    return @[@9600, @19200, @38400, @57600, @115200];
+}
+
 -(void) setSpeed:(int) speed
 {
-    NSUInteger speedIndex = [@[@9600, @19200, @38400, @57600, @115200] indexOfObject:@(speed)];
+    NSUInteger speedIndex = [self.supportedSpeeds indexOfObject:@(speed)];
     if (speedIndex != NSNotFound)
     {
         CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
@@ -670,9 +675,14 @@ forCharacteristic:characteristic
         [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:speedData withResponse:YES];
     }
 }
+
 -(void) setTransmitterPower:(int) power
 {
-    //0 1 2 3
+//    0: -23dbm
+//    1: -6dbm
+//    2: 0dbm
+//    3: 6dbm
+    
     CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
     CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_POWER_UUID];
     unsigned char bytes[1];

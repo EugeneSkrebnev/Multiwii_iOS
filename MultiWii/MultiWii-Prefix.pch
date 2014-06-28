@@ -29,3 +29,4 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "ReactiveCocoa.h"
+#import "ObjectiveSugar.h"

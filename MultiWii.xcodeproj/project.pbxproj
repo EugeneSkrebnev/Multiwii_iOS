@@ -85,6 +85,7 @@
 		44519D71179D8507006E4EB7 /* MWDevicePreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44519D70179D8507006E4EB7 /* MWDevicePreviewCell.xib */; };
 		44519D75179DCDA8006E4EB7 /* MWGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */; };
 		44519D78179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44519D77179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m */; };
+		44667888195EF44B00F43DD5 /* MWBluetoothDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44667887195EF44B00F43DD5 /* MWBluetoothDetailViewController.m */; };
 		447BD30D1822F1C200E27FA7 /* finder_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 447BD3091822F1C200E27FA7 /* finder_arrow@2x.png */; };
 		447BD30E1822F1C200E27FA7 /* finder_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 447BD30A1822F1C200E27FA7 /* finder_circle@2x.png */; };
 		447BD30F1822F1C200E27FA7 /* finder_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 447BD30B1822F1C200E27FA7 /* finder_mask@2x.png */; };
@@ -401,6 +402,8 @@
 		44519D74179DCDA8006E4EB7 /* MWGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGlobalManager.m; sourceTree = "<group>"; };
 		44519D76179DCF88006E4EB7 /* MWMultiwiiProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMultiwiiProtocolManager.h; sourceTree = "<group>"; };
 		44519D77179DCF88006E4EB7 /* MWMultiwiiProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWMultiwiiProtocolManager.m; sourceTree = "<group>"; };
+		44667886195EF44B00F43DD5 /* MWBluetoothDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothDetailViewController.h; sourceTree = "<group>"; };
+		44667887195EF44B00F43DD5 /* MWBluetoothDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothDetailViewController.m; sourceTree = "<group>"; };
 		447BD3091822F1C200E27FA7 /* finder_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder_arrow@2x.png"; sourceTree = "<group>"; };
 		447BD30A1822F1C200E27FA7 /* finder_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder_circle@2x.png"; sourceTree = "<group>"; };
 		447BD30B1822F1C200E27FA7 /* finder_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finder_mask@2x.png"; sourceTree = "<group>"; };
@@ -1722,6 +1725,8 @@
 			children = (
 				44DD952B1832C21800B82B24 /* MWConnectViewController.h */,
 				44DD952C1832C21800B82B24 /* MWConnectViewController.m */,
+				44667886195EF44B00F43DD5 /* MWBluetoothDetailViewController.h */,
+				44667887195EF44B00F43DD5 /* MWBluetoothDetailViewController.m */,
 			);
 			path = Connect;
 			sourceTree = "<group>";
@@ -2319,6 +2324,7 @@
 				4434A48519433FA200076E63 /* MWGPSMapViewController.m in Sources */,
 				44A6BDF5178E095C00DC95C6 /* MACheckBox.m in Sources */,
 				442226601814059100D53DE3 /* MKSKSubscriptionProduct.m in Sources */,
+				44667888195EF44B00F43DD5 /* MWBluetoothDetailViewController.m in Sources */,
 				44DD957C1832CABA00B82B24 /* MWGPSPidSettings.m in Sources */,
 				44961A3318D708E6005D1025 /* MWValueSliderContainer.m in Sources */,
 				CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */,

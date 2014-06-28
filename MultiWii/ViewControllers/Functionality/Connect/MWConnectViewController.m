@@ -30,12 +30,12 @@
     
     BLUETOOTH_MANAGER.didAddDeviceToListBlock =
     ^{
-        double delayInSeconds = .7;
+        double delayInSeconds = .2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [UIView animateWithDuration:0.5 animations:^{
+            [UIView animateWithDuration:0.4 animations:^{
                 self.radar.transform = CGAffineTransformMakeScale(0.5, 0.5);
-                self.radar.center = CGPointMake(self.view.width / 2, self.view.height - 60);
+                self.radar.center = CGPointMake(self.view.width / 2, self.view.height - 110);
             } completion:^(BOOL finished) {
                 [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:(UITableViewRowAnimationLeft)];
             }];
@@ -104,21 +104,29 @@
 
 -(void) didConnectBluetoothUart
 {
+    static NSDate* lastConnect;
     int connectedIndex = (int)[BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
     [self setSpinnerHidden:YES forDeviceAtIndex:connectedIndex animated:YES];
     MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
-    cell.titleLabel.textColor = [UIColor greenColor];
-
+//    cell.titleLabel.textColor = [UIColor greenColor];
+    cell.connected = YES;
+    
     [MWGlobalManager sharedInstance].multiwiiSuccesConnect = NO;
+    for (int i = 0 ; i < 5; i++) {
+        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+        //sometimes something wrong with multiwii or buffer on ble // force 5 request to start
+    }
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
         
         cell.titleLabel.text = [MWGlobalManager sharedInstance].copterTypeString;
-
-        if (![__delegate isFullVersionUnlocked])
-            [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes on limited version to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
-        else
-            [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
-        
+        if (fabs([lastConnect timeIntervalSinceNow]) > 5 * 60) {
+            if (![__delegate isFullVersionUnlocked])
+                [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes on limited version to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
+            else
+                [Flurry logEvent:[NSString stringWithFormat:@"Connect Succes to copterType : %@", [MWGlobalManager sharedInstance].copterTypeString]];
+            
+            lastConnect = [NSDate date];
+        }
     }];
     
     
@@ -252,7 +260,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
     return BLUETOOTH_MANAGER.deviceList.count;
 }
 
@@ -264,16 +271,21 @@
     if (!cell)
         cell = [MWDevicePreviewCell loadView];
     
-//    CBPeripheral* device = BLUETOOTH_MANAGER.deviceList[indexPath.row];
-//    NSLog(@"%@", [BLUETOOTH_MANAGER metaDataForDevice:device]);
-//    NSString* deviceName = device.name;
-    NSString* deviceName = @"gosha";
-//    if (!deviceName)
-//        deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
+    CBPeripheral* device = BLUETOOTH_MANAGER.deviceList[indexPath.row];
+
+    NSString* deviceName = device.name;
+
+    if (!deviceName)
+        deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", deviceName]; //null string
-//    cell.titleLabel.textColor = device.isConnected ? [UIColor greenColor] :[UIColor whiteColor];
-    cell.detailTextLabel.text = @"Tap to connect";
-    
+    cell.connected = device.isConnected;
+    cell.tag = indexPath.row;
+    @weakify(self);
+    cell.detailsButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        [self performSegueWithIdentifier:@"bluetoothSettings" sender:nil];
+        return [RACSignal empty];
+    }];
     return cell;
 }
 

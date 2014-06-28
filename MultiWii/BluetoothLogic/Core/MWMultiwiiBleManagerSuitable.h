@@ -52,7 +52,7 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didUpdateRssi;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailUpdateRssi;
-
+@property (nonatomic, strong, readonly) NSArray *supportedSpeeds;
 //methods
 -(void) startScan;
 -(void) stopScan;
@@ -70,5 +70,8 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 @property (nonatomic, assign, readonly) int bytesReceived;
 @property (nonatomic, assign, readonly) int bytesSent;
 @property (nonatomic, assign, readonly) int bytesTotal;
-@property (nonatomic, assign, readonly) int bytesTotal;
+-(void) setName:(NSString*) newName;
+-(void) setSpeed:(int) speed;
+-(void) setTransmitterPower:(int) power;
+
 @end

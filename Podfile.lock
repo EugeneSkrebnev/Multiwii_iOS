@@ -9,6 +9,7 @@ PODS:
   - FlurrySDK/FlurrySDK (5.0.0)
   - iRate (1.10.2)
   - Masonry (0.5.2)
+  - ObjectiveSugar (1.1.0)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
   - ReactiveCocoa/Core (2.3.1):
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - FlurrySDK
   - iRate
   - Masonry
+  - ObjectiveSugar
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
@@ -29,6 +31,7 @@ SPEC CHECKSUMS:
   FlurrySDK: 1fa28436e86e533e51ab1164c43d8f3b5f8ff99f
   iRate: 7d204971bab2f727195b868e32e05216fe257681
   Masonry: ec0189e1a07af00913e4a1a335ea76887adc86e1
+  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
 
 COCOAPODS: 0.33.1

@@ -59,6 +59,14 @@
                         <rect key="frame" x="302" y="18" width="8" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VFC-hv-AWc">
+                        <rect key="frame" x="273" y="-1" width="47" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.4549019608" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -67,6 +75,7 @@
                 <outlet property="activityIndicator" destination="9" id="12"/>
                 <outlet property="bluetoothIcon" destination="hrA-KU-vbx" id="meg-TB-Qqk"/>
                 <outlet property="bluetoothIconPressed" destination="YXa-J3-Smi" id="Oog-LK-1q5"/>
+                <outlet property="detailsButton" destination="VFC-hv-AWc" id="Qkv-9A-JEZ"/>
                 <outlet property="infoLabel" destination="21f-yz-L7D" id="vLR-8Z-hh0"/>
                 <outlet property="nameLabel" destination="rT0-7d-zha" id="J9Q-Y2-RVa"/>
                 <outlet property="titleLabel" destination="4" id="8"/>

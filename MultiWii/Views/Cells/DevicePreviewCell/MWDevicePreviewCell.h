@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *BLESettingArrow;
+@property (weak, nonatomic) IBOutlet UIButton *detailsButton;
 
 @property (nonatomic, assign) BOOL connected;
 @end

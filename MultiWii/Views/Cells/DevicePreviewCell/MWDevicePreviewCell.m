@@ -29,9 +29,9 @@
     self.titleLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
     self.infoLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:10];
     self.infoLabel.textColor = [UIColor grayColor];
-    self.bluetoothIconPressed.hidden = NO;// YES;
-    [self animateBluetoothIcon];
-    self.connected = YES;
+    self.bluetoothIconPressed.hidden = YES;
+    self.BLESettingArrow.hidden = YES;
+    self.connected = NO;
 }
 
 -(void) animateBluetoothIcon
@@ -55,8 +55,14 @@
 
 -(void)setConnected:(BOOL)connected {
     _connected = connected;
-    NSLog(@"%@", @(BLUETOOTH_MANAGER.boardType));
-    self.BLESettingArrow.hidden = !(connected && BLUETOOTH_MANAGER.boardType == MWBluetoothManagerTypeBiscuit);
+    BOOL newFirmware = BLUETOOTH_MANAGER.boardType == MWBluetoothManagerTypeBiscuit;
+    self.BLESettingArrow.hidden = !(connected && newFirmware);
+    
+    self.infoLabel.text = connected ? @"Connected." :  @"* Tap to connect";
+    if (connected && newFirmware) {
+        self.infoLabel.text = @"Connected. Tap on arrow to see more options";
+    }
+    [self animateBluetoothIcon];
 }
 
 @end

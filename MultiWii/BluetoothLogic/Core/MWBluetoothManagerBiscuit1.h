@@ -59,6 +59,7 @@
 @property (nonatomic, strong) MWBluetoothManagerConnectBlock didUpdateRssi;
 @property (nonatomic, strong) MWBluetoothManagerErrorBlock didFailUpdateRssi;
 
+@property (nonatomic, strong, readonly) NSArray *supportedSpeeds;
 //methods
 -(void) startScan;
 -(void) stopScan;
