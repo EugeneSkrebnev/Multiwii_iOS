@@ -360,7 +360,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="17" id="vr0-Hu-en1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" id="vr0-Hu-en1">
                                 <rect key="frame" x="20" y="25" width="213" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -375,7 +375,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" id="Bv6-TA-ft0">
-                                <rect key="frame" x="20" y="80" width="280" height="55"/>
+                                <rect key="frame" x="20" y="76" width="280" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="haF-eT-mIu" customClass="MACheckBox">
@@ -439,7 +439,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="115200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P1D-H1-wAL">
-                                        <rect key="frame" x="220" y="10" width="60" height="36"/>
+                                        <rect key="frame" x="209" y="10" width="71" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -449,11 +449,11 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="QC2-5K-3ig">
-                                <rect key="frame" x="20" y="147" width="280" height="55"/>
+                                <rect key="frame" x="20" y="143" width="280" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m1X-SF-RPl" customClass="MACheckBox">
-                                        <rect key="frame" x="0.0" y="10" width="36" height="36"/>
+                                        <rect key="frame" x="-13" y="24" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="aux_check.png">
@@ -465,7 +465,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qYB-JV-pfE" customClass="MACheckBox">
-                                        <rect key="frame" x="44" y="10" width="36" height="36"/>
+                                        <rect key="frame" x="14" y="25" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="aux_check.png">
@@ -477,7 +477,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GZG-nt-pRf" customClass="MACheckBox">
-                                        <rect key="frame" x="88" y="10" width="36" height="36"/>
+                                        <rect key="frame" x="46" y="26" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="aux_check.png">
@@ -489,7 +489,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vwu-1F-jm2" customClass="MACheckBox">
-                                        <rect key="frame" x="132" y="10" width="36" height="36"/>
+                                        <rect key="frame" x="88" y="26" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="aux_check.png">
@@ -501,7 +501,7 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 DBM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SX5-vo-Uqc">
-                                        <rect key="frame" x="220" y="10" width="60" height="36"/>
+                                        <rect key="frame" x="187" y="10" width="93" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -510,26 +510,26 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CD1-Z8-TT7">
-                                <rect key="frame" x="20" y="133" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transmitter Power :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CD1-Z8-TT7">
+                                <rect key="frame" x="20" y="131" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TJ3-JF-awG">
-                                <rect key="frame" x="20" y="65" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UART Speed :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TJ3-JF-awG">
+                                <rect key="frame" x="20" y="64" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="lhn-lk-chd">
-                                <rect key="frame" x="2" y="197" width="316" height="2"/>
+                                <rect key="frame" x="2" y="192" width="316" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="7qH-jm-xiK">
-                                <rect key="frame" x="2" y="130" width="316" height="2"/>
+                                <rect key="frame" x="2" y="128" width="316" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="hUl-nY-FLI">

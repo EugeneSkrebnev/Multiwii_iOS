@@ -19,6 +19,13 @@
 #define RSSI_KEY @"RSSIKEY"
 #define ADVDATA_KEY @"ADVDATAKEY"
 
+@interface MWBluetoothManagerBiscuit1()
+
+@property (nonatomic, assign, readwrite) int speedIndex;
+@property (nonatomic, assign, readwrite) int powerIndex;
+
+@end
+
 @implementation MWBluetoothManagerBiscuit1
 {
     NSMutableData* _sendBuffer;
@@ -63,10 +70,10 @@
 #pragma mark - methods copy/paste from BLE framework and refactor
 
 
--(void) read
+-(void) readChar:(NSString*) charID
 {
     CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
-    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_TX_UUID];
+    CBUUID *uuid_char = [CBUUID UUIDWithString:charID];
     
     [self readValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice];
 }
@@ -508,19 +515,23 @@ forCharacteristic:characteristic
             //did discover all char.
             [_currentConnectedDevice readRSSI];
             _isReadyToReadWrite = YES;
+            [self readChar:@RBL_CHAR_NAME_UUID];
+            [self readChar:@RBL_CHAR_POWER_UUID];
+            [self readChar:@RBL_CHAR_BAUD_UUID];
+
             [self enableReadNotification:_currentConnectedDevice];
-            
+
             if (self.didDiscoverCharacteristics)
                 self.didDiscoverCharacteristics(self.currentConnectedDevice);
             
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();
 
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self setName:@"Test control"];
-                [self setSpeed:19200];
-                [self setTransmitterPower:3];
-            });
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                [self setName:@"Test control"];
+//                [self setSpeed:19200];
+//                [self setTransmitterPower:3];
+//            });
 
         }
     }
@@ -561,6 +572,23 @@ forCharacteristic:characteristic
     
     if (!error)
     {
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@RBL_CHAR_NAME_UUID]]) {
+            _name = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+        } else
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@RBL_CHAR_POWER_UUID]]) {
+            NSString* power = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+            self.powerIndex = [@[@"-23 dBm", @"-6 dBm", @"0 dBm", @"+4 dBm"] indexOfObject:power];
+
+        } else
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@RBL_CHAR_BAUD_UUID]]) {
+            NSString* baud = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+            self.speedIndex = [@[@"BAUD_9600",
+                                 @"BAUD_19200",
+                                 @"BAUD_38400",
+                                 @"BAUD_57600",
+                                 @"BAUD_115200"] indexOfObject:baud];
+
+        } else
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@RBL_CHAR_TX_UUID]])
         {
             data_len = characteristic.value.length;
@@ -681,7 +709,7 @@ forCharacteristic:characteristic
 //    0: -23dbm
 //    1: -6dbm
 //    2: 0dbm
-//    3: 6dbm
+//    3: 4dbm
     
     CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
     CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_POWER_UUID];
@@ -689,6 +717,12 @@ forCharacteristic:characteristic
     bytes[0] = power;
     NSData* powerData = [NSData dataWithBytes:bytes length:1];
     [self writeValue:uuid_service characteristicUUID:uuid_char p:_currentConnectedDevice data:powerData withResponse:YES];
+}
+
+-(void) readMetadata {
+    [self readChar:@RBL_CHAR_NAME_UUID];
+    [self readChar:@RBL_CHAR_POWER_UUID];
+    [self readChar:@RBL_CHAR_BAUD_UUID];
 }
 
 @end

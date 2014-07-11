@@ -82,7 +82,7 @@ static BOOL firstTimeShow = YES;
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT", @"YOUR BEST MULTIWII GADGETS"]; //need to update bluetooth engine for control
+    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT"];//, @"YOUR BEST MULTIWII GADGETS"]; //need to update bluetooth engine for control
 }
 
 -(NSArray*) iconsForMenu

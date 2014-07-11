@@ -74,4 +74,9 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 -(void) setSpeed:(int) speed;
 -(void) setTransmitterPower:(int) power;
 
+@property (nonatomic, strong, readonly) NSString* name;
+@property (nonatomic, assign, readonly) int speedIndex;
+@property (nonatomic, assign, readonly) int powerIndex;
+
+-(void) readMetadata; //baud name speed
 @end

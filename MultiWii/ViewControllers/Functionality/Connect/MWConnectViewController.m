@@ -112,10 +112,10 @@
     cell.connected = YES;
     
     [MWGlobalManager sharedInstance].multiwiiSuccesConnect = NO;
-    for (int i = 0 ; i < 5; i++) {
-        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
-        //sometimes something wrong with multiwii or buffer on ble // force 5 request to start
-    }
+//    for (int i = 0 ; i < 5; i++) {
+//        [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:nil];
+//        //sometimes something wrong with multiwii or buffer on ble // force 5 request to start
+//    }
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_IDENT andPayload:nil responseBlock:^(NSData *recieveData) {
         
         cell.titleLabel.text = [MWGlobalManager sharedInstance].copterTypeString;
@@ -283,6 +283,7 @@
     @weakify(self);
     cell.detailsButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self);
+        [BLUETOOTH_MANAGER readMetadata];
         [self performSegueWithIdentifier:@"bluetoothSettings" sender:nil];
         return [RACSignal empty];
     }];
@@ -296,7 +297,8 @@
     double delayInSeconds = 0.1; //hack? or
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self scanButtonTapped:nil];
+        if (!BLUETOOTH_MANAGER.isReadyToReadWrite)
+            [self scanButtonTapped:nil];
     });
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectError) name:kDidDisconnectWithErrorNotification object:nil];
 }

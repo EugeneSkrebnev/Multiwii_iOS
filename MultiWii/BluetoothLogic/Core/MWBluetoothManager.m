@@ -20,7 +20,7 @@
     self = [super init];
     if (self)
     {
-        _boardType = MWBluetoothManagerTypeHM10;
+        _boardType = MWBluetoothManagerTypeBiscuit;
     }
     return self;
 }

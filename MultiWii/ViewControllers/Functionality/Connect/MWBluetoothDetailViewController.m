@@ -51,11 +51,11 @@
         }];
     }
     
-    RAC(self.speedLabel, text) = [RACObserve(self, selectedUardSpeedIndex) map:^id(NSNumber *value) {
+    RAC(self.speedLabel, text) = [[RACObserve(self, selectedUardSpeedIndex) skip:1] map:^id(NSNumber *value) {
         return [BLUETOOTH_MANAGER.supportedSpeeds[value.intValue] stringValue];
     }];
     
-    [[RACObserve(self, selectedUardSpeedIndex) map:^id(NSNumber *value) {
+    [[[RACObserve(self, selectedUardSpeedIndex) skip:1] map:^id(NSNumber *value) {
         return BLUETOOTH_MANAGER.supportedSpeeds[value.intValue];
     }] subscribeNext:^(NSNumber *x) {
         [BLUETOOTH_MANAGER setSpeed:x.intValue];
@@ -68,8 +68,9 @@
         return ![view isKindOfClass:[UIButton class]];
     }];
 
-    
-    for (UIButton *checkbox in self.powerCheckBoxes) {
+    [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *checkbox, NSUInteger idx, BOOL *stop) {
+        checkbox.layer.anchorPoint = CGPointMake(0, 1);
+        checkbox.transform = CGAffineTransformMakeScale(0.25 * (idx+1), 0.25 * (idx+1));
         checkbox.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *btn) {
             [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *otherBtn, NSUInteger idx, BOOL *stop) {
                 otherBtn.selected = otherBtn.tag <= btn.tag;
@@ -79,18 +80,15 @@
             }];
             return [RACSignal empty];
         }];
-    }
-    //    0: -23dbm
-    //    1: -6dbm
-    //    2: 0dbm
-    //    3: 6dbm
+    }];
 
-    RAC(self.powerLabel, text) = [RACObserve(self, selectedBoardTXPowerIndex) map:^id(NSNumber *value) {
-        int power[] = {-23, -6, 0, 6};
-        return [NSString stringWithFormat:@"%d dbm", power[value.intValue]];
+
+    RAC(self.powerLabel, text) = [[RACObserve(self, selectedBoardTXPowerIndex) skip:1] map:^id(NSNumber *value) {
+        int power[] = {-23, -6, 0, 4};
+        return [NSString stringWithFormat:@"%d dBm", power[value.intValue]];
     }];
     
-    [RACObserve(self, selectedBoardTXPowerIndex) subscribeNext:^(NSNumber* power) {
+    [[RACObserve(self, selectedBoardTXPowerIndex) skip:1] subscribeNext:^(NSNumber* power) {
         [BLUETOOTH_MANAGER setTransmitterPower:power.intValue];
     }];
 
@@ -98,7 +96,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     for (UILabel* lblTitle in @[self.powerTitle, self.speedTitle, self.nameTitle]) {
-        lblTitle.font = [UIFont fontWithName:@"Montserrat-Regular" size:16];
+        lblTitle.font = [UIFont fontWithName:@"Montserrat-Regular" size:12];
         lblTitle.textColor = RGB(250, 46, 9);
     }
     self.setNameBtn.titleLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:12];
@@ -113,8 +111,9 @@
     
     self.nameTextField.font = [UIFont fontWithName:@"Montserrat-Regular" size:14];
     self.nameTextField.textColor = [UIColor whiteColor];
-    
+    @weakify(self)
     self.setNameBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
         [self.nameTextField resignFirstResponder];
         [BLUETOOTH_MANAGER setName:self.nameTextField.text];
         return [RACSignal empty];
@@ -125,6 +124,22 @@
     self.infoLabel2.font = [UIFont fontWithName:@"Montserrat-Regular" size:13];
     self.infoLabel2.textColor = [UIColor grayColor];
     self.infoLabel2.text = @"* Name changes will be available \n after recconnect";
+    
+
+    self.nameTextField.backgroundColor = RGBA(0, 0, 0, 0.3);
+    self.nameTextField.layer.cornerRadius = 12;
+    
+
+    [[[RACSignal interval:0.1 onScheduler:[RACScheduler mainThreadScheduler]] take:5] subscribeNext:^(id x) {
+        
+        UIButton* btnSelectedPower = (UIButton*)[self.view viewWithTag:2000 + BLUETOOTH_MANAGER.powerIndex];
+        [btnSelectedPower.rac_command execute:btnSelectedPower];
+        
+        UIButton* btnSelectedBaud = (UIButton*)[self.view viewWithTag:1000 + BLUETOOTH_MANAGER.speedIndex];
+        [btnSelectedBaud.rac_command execute:btnSelectedBaud];
+        
+        self.nameTextField.text = BLUETOOTH_MANAGER.name;
+    }];
 }
 
 

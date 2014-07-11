@@ -57,7 +57,7 @@
     _connected = connected;
     BOOL newFirmware = BLUETOOTH_MANAGER.boardType == MWBluetoothManagerTypeBiscuit;
     self.BLESettingArrow.hidden = !(connected && newFirmware);
-    
+    self.detailsButton.hidden = self.BLESettingArrow.hidden;
     self.infoLabel.text = connected ? @"Connected." :  @"* Tap to connect";
     if (connected && newFirmware) {
         self.infoLabel.text = @"Connected. Tap on arrow to see more options";

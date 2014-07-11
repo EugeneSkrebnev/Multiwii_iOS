@@ -37,7 +37,7 @@
     if (!_satCountLabel) {
         _satCountLabel = [[UILabel alloc] init];
         _satCountLabel.textColor = [UIColor whiteColor];
-        _satCountLabel.text = @"xx";
+        _satCountLabel.text = @"-";
         _satCountLabel.textAlignment = NSTextAlignmentRight;
     }
     return _satCountLabel;
@@ -50,16 +50,18 @@
 }
 
 - (void)setupConstrains {
-//@wea
+    @weakify(self);
     [self.satImageViewOrange mas_makeConstraints:^(MASConstraintMaker *make) {
-//@stron
+        @strongify(self);
         make.left.equalTo(self);
         make.centerY.equalTo(self);
     }];
     [self.satImageViewWhite mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
         make.center.equalTo(self.satImageViewOrange);
     }];
     [self.satCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);        
         make.right.equalTo(self);
         make.centerY.equalTo(self);
     }];

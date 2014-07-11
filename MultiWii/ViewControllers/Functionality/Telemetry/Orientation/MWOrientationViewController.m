@@ -37,7 +37,7 @@
         });
     };
     [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:updateBlock];
-    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:updateBlock];
+//    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_ATTITUDE andPayload:nil responseBlock:updateBlock];
 //    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendOrientationRequest) object:nil];
 //    [self performSelector:@selector(sendOrientationRequest) withObject:nil afterDelay:5]; // bluetooth firmware lag or code bug protection
 }
