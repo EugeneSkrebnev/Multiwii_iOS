@@ -10,7 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "MWMultiwiiBleManagerSuitable.h"
 
-@interface MWBluetoothManagerBiscuit2 : NSObject<CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface MWBluetoothManagerBiscuit2 : NSObject<CBCentralManagerDelegate, CBPeripheralDelegate, MWMultiwiiBleManagerSuitable>
 {
     CBCentralManager* _centralManager;
     NSMutableArray* _deviceList;
@@ -26,7 +26,7 @@
 @property (nonatomic, assign) BOOL rssiNotificationOn;
 
 //status
-@property (nonatomic, readonly) BOOL isReadyToUse;
+@property (nonatomic, assign) BOOL isReadyToUse; //assign fix this
 @property (nonatomic, readonly) BOOL isInScanMode;
 @property (nonatomic, readonly) BOOL isReadyToReadWrite;
 

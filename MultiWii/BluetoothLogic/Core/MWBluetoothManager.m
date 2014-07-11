@@ -40,7 +40,7 @@
     {
         _HM10Manager = [[MWBluetoothManagerHM10 alloc] init];
     }
-    return self.biscuitManagerNew;
+    return _HM10Manager;
 }
 
 -(MWBluetoothManagerBiscuit1 *)biscuitManagerNew
@@ -67,6 +67,7 @@
 -(void) copyFromBluetooth:(id<MWMultiwiiBleManagerSuitable>) from toBluetooth:(id<MWMultiwiiBleManagerSuitable>) to
 {
     //some nice code
+    to.isReadyToUse = from.isReadyToUse;
     to.didUpdateStateBlock = from.didUpdateStateBlock;
     to.didAddDeviceToListBlock = from.didAddDeviceToListBlock;
     to.didStartScan = from.didStartScan;

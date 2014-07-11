@@ -7,7 +7,7 @@
 //
 
 #import "MWBluetoothDetailViewController.h"
-
+#import "MWTXPowerView.h"
 @interface MWBluetoothDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *uartSpeedContainer;
 @property (strong, nonatomic) NSArray *uartCheckBoxes;
@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel2;
+@property (weak, nonatomic) IBOutlet MWTXPowerView *powerView;
 
 @end
 
@@ -67,20 +68,27 @@
     self.powerCheckBoxes = [self.powerContainer.subviews reject:^BOOL(UIView *view) {
         return ![view isKindOfClass:[UIButton class]];
     }];
-
-    [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *checkbox, NSUInteger idx, BOOL *stop) {
-        checkbox.layer.anchorPoint = CGPointMake(0, 1);
-        checkbox.transform = CGAffineTransformMakeScale(0.25 * (idx+1), 0.25 * (idx+1));
-        checkbox.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *btn) {
-            [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *otherBtn, NSUInteger idx, BOOL *stop) {
-                otherBtn.selected = otherBtn.tag <= btn.tag;
-                if (otherBtn.selected) {
-                    self.selectedBoardTXPowerIndex = otherBtn.tag - 2000; // some magic
-                }
-            }];
-            return [RACSignal empty];
-        }];
+    
+    [[RACSignal merge:@[
+                       [self.powerView.slider rac_signalForControlEvents:(UIControlEventTouchUpInside)],
+                       [self.powerView.slider rac_signalForControlEvents:(UIControlEventTouchUpOutside)]
+                      ]] subscribeNext:^(UISlider *slider) {
+        self.selectedBoardTXPowerIndex = slider.value - 1;
     }];
+    
+//    [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *checkbox, NSUInteger idx, BOOL *stop) {
+//        checkbox.layer.anchorPoint = CGPointMake(0, 1);
+//        checkbox.transform = CGAffineTransformMakeScale(0.25 * (idx+1), 0.25 * (idx+1));
+//        checkbox.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *btn) {
+//            [self.powerCheckBoxes enumerateObjectsUsingBlock:^(UIButton *otherBtn, NSUInteger idx, BOOL *stop) {
+//                otherBtn.selected = otherBtn.tag <= btn.tag;
+//                if (otherBtn.selected) {
+//                    self.selectedBoardTXPowerIndex = otherBtn.tag - 2000; // some magic
+//                }
+//            }];
+//            return [RACSignal empty];
+//        }];
+//    }];
 
 
     RAC(self.powerLabel, text) = [[RACObserve(self, selectedBoardTXPowerIndex) skip:1] map:^id(NSNumber *value) {
@@ -132,12 +140,11 @@
 
     [[[RACSignal interval:0.1 onScheduler:[RACScheduler mainThreadScheduler]] take:5] subscribeNext:^(id x) {
         
-        UIButton* btnSelectedPower = (UIButton*)[self.view viewWithTag:2000 + BLUETOOTH_MANAGER.powerIndex];
-        [btnSelectedPower.rac_command execute:btnSelectedPower];
-        
         UIButton* btnSelectedBaud = (UIButton*)[self.view viewWithTag:1000 + BLUETOOTH_MANAGER.speedIndex];
         [btnSelectedBaud.rac_command execute:btnSelectedBaud];
         
+        
+        self.powerView.slider.value = BLUETOOTH_MANAGER.speedIndex + 1;
         self.nameTextField.text = BLUETOOTH_MANAGER.name;
     }];
 }

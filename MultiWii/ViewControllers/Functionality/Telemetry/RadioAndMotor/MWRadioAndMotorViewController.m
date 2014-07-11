@@ -41,19 +41,25 @@
 
 -(void) sendRadioUpdateRequest
 {
+    @weakify(self);
+    [PROTOCOL_MANAGER sendRequestWithId:MWI_BLE_MESSAGE_GET_8_RC andPayload:nil responseBlock:^(NSData *recieveData)
+     {
+         @strongify(self);
 
-    CONTROL_MANAGER.aux1 = 2000;
-    [CONTROL_MANAGER save:^{
-        [self addResponseTime];
-    }];
-    [CONTROL_MANAGER save:^{
-        [self addResponseTime];
-    }];
-    dispatch_async(dispatch_get_main_queue(), ^
+         if (!self->_isOnScreen)
+             return ;
+         
+         self->_radioRequestCount++;
+         dispatch_async(dispatch_get_main_queue(), ^
                         {
                             [self sendRadioUpdateRequest];
                         });
-    
+         if (self->_radioRequestCount > 100)
+         {
+             self->_radioRequestCount = 0;
+             [self showBuyDialog];
+         }
+     }];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(sendRadioUpdateRequest) object:nil];
     [self performSelector:@selector(sendRadioUpdateRequest) withObject:nil afterDelay:.3]; //lag protection
 }

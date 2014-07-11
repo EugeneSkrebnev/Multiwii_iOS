@@ -289,6 +289,8 @@
 		44FC0BCF18148F3600417C79 /* UIAlertView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		44FC0BD31814943500417C79 /* MWInAppButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC0BD21814943500417C79 /* MWInAppButton.m */; };
 		8731B9AD8C1F41339A81F143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A9D9AAD86480A96232E8A /* libPods.a */; };
+		CF157FCD19701A25006F8546 /* MWTXPowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF157FCC19701A25006F8546 /* MWTXPowerView.m */; };
+		CF157FD019701DCE006F8546 /* transmitter_power@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */; };
 		CF28684819509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */; };
 		CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684519509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m */; };
 /* End PBXBuildFile section */
@@ -711,6 +713,9 @@
 		44FC0BD11814943500417C79 /* MWInAppButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWInAppButton.h; sourceTree = "<group>"; };
 		44FC0BD21814943500417C79 /* MWInAppButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWInAppButton.m; sourceTree = "<group>"; };
 		AC4A9D9AAD86480A96232E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF157FCB19701A25006F8546 /* MWTXPowerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTXPowerView.h; sourceTree = "<group>"; };
+		CF157FCC19701A25006F8546 /* MWTXPowerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTXPowerView.m; sourceTree = "<group>"; };
+		CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transmitter_power@2x.png"; sourceTree = "<group>"; };
 		CF28684219509AE100B9BD43 /* MWBluetoothManagerBiscuit1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit1.h; sourceTree = "<group>"; };
 		CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerBiscuit1.m; sourceTree = "<group>"; };
 		CF28684419509AE100B9BD43 /* MWBluetoothManagerBiscuit2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit2.h; sourceTree = "<group>"; };
@@ -1362,6 +1367,7 @@
 		44B4BB631780D3EB00CE91A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF157FCA197019B0006F8546 /* TXPowerView */,
 				4434A48B1943D4C200076E63 /* GPSSatInfoView */,
 				44DD767518DAF7D50039735E /* OrientationScreenContainers */,
 				44961A2418D6FC1E005D1025 /* ValueSliderView */,
@@ -1427,6 +1433,7 @@
 		44C7CA3A1789C5520059C199 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF157FCE19701DCE006F8546 /* txPower */,
 				44DD767918DAFAF70039735E /* OrientationScreenElements */,
 				44961A2818D70126005D1025 /* ValuesSliderView */,
 				449345F718D318E100093D93 /* ArtificialHorizonView */,
@@ -2017,6 +2024,23 @@
 			path = InAppButton;
 			sourceTree = "<group>";
 		};
+		CF157FCA197019B0006F8546 /* TXPowerView */ = {
+			isa = PBXGroup;
+			children = (
+				CF157FCB19701A25006F8546 /* MWTXPowerView.h */,
+				CF157FCC19701A25006F8546 /* MWTXPowerView.m */,
+			);
+			path = TXPowerView;
+			sourceTree = "<group>";
+		};
+		CF157FCE19701DCE006F8546 /* txPower */ = {
+			isa = PBXGroup;
+			children = (
+				CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */,
+			);
+			path = txPower;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2050,7 +2074,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 6A55FY4Q8A;
+						DevelopmentTeam = 4NYE5952JT;
 					};
 				};
 			};
@@ -2117,6 +2141,7 @@
 				44C7CA84178A0BF20059C199 /* gradient_title-text@2x.png in Resources */,
 				44C7CA8C178A0D610059C199 /* Montserrat-Bold.ttf in Resources */,
 				44068BB8180409EB00E8ABCC /* separator_right_pressed@2x.png in Resources */,
+				CF157FD019701DCE006F8546 /* transmitter_power@2x.png in Resources */,
 				44C7CA8D178A0D610059C199 /* Montserrat-Regular.ttf in Resources */,
 				44222597180D45BD00D53DE3 /* slider_minimum@2x.png in Resources */,
 				44068B9E1802FF4C00E8ABCC /* MWRatesGraphicAdjustCell.xib in Resources */,
@@ -2303,6 +2328,7 @@
 				44DD767818DAF7F30039735E /* MWCompassViewContainer.m in Sources */,
 				44C7CA9D178A1C430059C199 /* MWBaseTableViewCell.m in Sources */,
 				44DD957F1832CABA00B82B24 /* MWRatesSettings.m in Sources */,
+				CF157FCD19701A25006F8546 /* MWTXPowerView.m in Sources */,
 				44DD95591832C21800B82B24 /* MWAboutViewController.m in Sources */,
 				44DD957D1832CABA00B82B24 /* MWPIDSettingsEntity.m in Sources */,
 				44DD95951832D8B300B82B24 /* MWTelemetryAttitude.m in Sources */,
@@ -2471,7 +2497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YAUHEN SKRABNIOU (8V7AXC982H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Skrebnev (Y43376Q6G9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -2479,7 +2505,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "41384122-8FF9-43C0-86F7-B9ED5DD2543F";
+				PROVISIONING_PROFILE = "3C5B958D-4D95-4758-87CC-3D32F39BFC8E";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2489,6 +2515,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -2496,7 +2524,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "14FA7BA5-DDF8-4691-B66A-14F96E0D605A";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

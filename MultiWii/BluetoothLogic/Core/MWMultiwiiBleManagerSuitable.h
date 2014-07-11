@@ -20,7 +20,7 @@ typedef void(^MWBluetoothManagerRecieveDataBlock)(CBPeripheral* connectedDevice,
 @property (nonatomic, assign) BOOL rssiNotificationOn;
 
 //status
-@property (nonatomic, readonly) BOOL isReadyToUse;
+@property (nonatomic, assign) BOOL isReadyToUse;
 @property (nonatomic, readonly) BOOL isInScanMode;
 @property (nonatomic, readonly) BOOL isReadyToReadWrite;
 

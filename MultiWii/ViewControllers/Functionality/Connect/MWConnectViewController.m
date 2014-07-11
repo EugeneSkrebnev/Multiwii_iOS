@@ -193,7 +193,11 @@
 
     
     [[self.deviceTypeSegmentControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UISegmentedControl* segment) {
+        [BLUETOOTH_MANAGER stopScan];
+        [self removeCallbackBlocksFromBluetoothManager];
         BLUETOOTH_MANAGER.boardType = (MWBluetoothManagerType)segment.selectedSegmentIndex;
+        [self initBluetoothManager];
+        [self.tableView reloadData];
     }];
     
     MWTopbarButton* scanButton = [[MWTopbarButton alloc] init];
