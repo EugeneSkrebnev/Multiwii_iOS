@@ -1,21 +1,24 @@
 PODS:
-  - CocoaLumberjack (1.9.0):
+  - CocoaLumberjack (2.0.0):
+    - CocoaLumberjack/Default
     - CocoaLumberjack/Extensions
-  - CocoaLumberjack/Core (1.9.0)
-  - CocoaLumberjack/Extensions (1.9.0):
+  - CocoaLumberjack/Core (2.0.0)
+  - CocoaLumberjack/Default (2.0.0):
     - CocoaLumberjack/Core
-  - FlurrySDK (5.0.0):
+  - CocoaLumberjack/Extensions (2.0.0):
+    - CocoaLumberjack/Default
+  - FlurrySDK (6.2.0):
     - FlurrySDK/FlurrySDK
-  - FlurrySDK/FlurrySDK (5.0.0)
-  - iRate (1.10.2)
-  - Masonry (0.5.2)
+  - FlurrySDK/FlurrySDK (6.2.0)
+  - iRate (1.11.3)
+  - Masonry (0.6.1)
   - ObjectiveSugar (1.1.0)
-  - ReactiveCocoa (2.3.1):
+  - ReactiveCocoa (2.4.4):
     - ReactiveCocoa/UI
-  - ReactiveCocoa/Core (2.3.1):
+  - ReactiveCocoa/Core (2.4.4):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.3.1)
-  - ReactiveCocoa/UI (2.3.1):
+  - ReactiveCocoa/no-arc (2.4.4)
+  - ReactiveCocoa/UI (2.4.4):
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
@@ -24,14 +27,14 @@ DEPENDENCIES:
   - iRate
   - Masonry
   - ObjectiveSugar
-  - ReactiveCocoa
+  - ReactiveCocoa (= 2.4.4)
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 5766cdd1d0a24bcf15a133c6023747346bf786dd
-  FlurrySDK: 1fa28436e86e533e51ab1164c43d8f3b5f8ff99f
-  iRate: 7d204971bab2f727195b868e32e05216fe257681
-  Masonry: ec0189e1a07af00913e4a1a335ea76887adc86e1
-  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
-  ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
+  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  FlurrySDK: 6d8cc2f898589214ed72e481cf59cffa55b88fe0
+  iRate: 09ef501c74ade02013348bc33225ea48f7aa4e55
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+  ReactiveCocoa: cbe3b5eae464aa72a348a7323996b171728a9e71
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.4

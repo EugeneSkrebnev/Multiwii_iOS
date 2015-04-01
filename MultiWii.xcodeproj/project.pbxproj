@@ -291,6 +291,8 @@
 		8731B9AD8C1F41339A81F143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A9D9AAD86480A96232E8A /* libPods.a */; };
 		CF157FCD19701A25006F8546 /* MWTXPowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF157FCC19701A25006F8546 /* MWTXPowerView.m */; };
 		CF157FD019701DCE006F8546 /* transmitter_power@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */; };
+		CF221BD81AC9B7BC00BA6883 /* CLI.png in Resources */ = {isa = PBXBuildFile; fileRef = CF221BD71AC9B7BC00BA6883 /* CLI.png */; };
+		CF221BDC1AC9B9C900BA6883 /* MWCliViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF221BDB1AC9B9C900BA6883 /* MWCliViewController.m */; };
 		CF28684819509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */; };
 		CF28684919509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28684519509AE100B9BD43 /* MWBluetoothManagerBiscuit2.m */; };
 /* End PBXBuildFile section */
@@ -712,10 +714,14 @@
 		44FC0BCE18148F3600417C79 /* UIAlertView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Alert.m"; sourceTree = "<group>"; };
 		44FC0BD11814943500417C79 /* MWInAppButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWInAppButton.h; sourceTree = "<group>"; };
 		44FC0BD21814943500417C79 /* MWInAppButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWInAppButton.m; sourceTree = "<group>"; };
+		6C4BE4B89F3060CB1768D8E9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AC4A9D9AAD86480A96232E8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF157FCB19701A25006F8546 /* MWTXPowerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTXPowerView.h; sourceTree = "<group>"; };
 		CF157FCC19701A25006F8546 /* MWTXPowerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTXPowerView.m; sourceTree = "<group>"; };
 		CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transmitter_power@2x.png"; sourceTree = "<group>"; };
+		CF221BD71AC9B7BC00BA6883 /* CLI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CLI.png; sourceTree = "<group>"; };
+		CF221BDA1AC9B9C900BA6883 /* MWCliViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCliViewController.h; sourceTree = "<group>"; };
+		CF221BDB1AC9B9C900BA6883 /* MWCliViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCliViewController.m; sourceTree = "<group>"; };
 		CF28684219509AE100B9BD43 /* MWBluetoothManagerBiscuit1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit1.h; sourceTree = "<group>"; };
 		CF28684319509AE100B9BD43 /* MWBluetoothManagerBiscuit1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerBiscuit1.m; sourceTree = "<group>"; };
 		CF28684419509AE100B9BD43 /* MWBluetoothManagerBiscuit2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerBiscuit2.h; sourceTree = "<group>"; };
@@ -723,7 +729,7 @@
 		CF28684619509AE100B9BD43 /* MWBluetoothManagerHM10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBluetoothManagerHM10.h; sourceTree = "<group>"; };
 		CF28684719509AE100B9BD43 /* MWBluetoothManagerHM10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBluetoothManagerHM10.m; sourceTree = "<group>"; };
 		CF28684B19509F4900B9BD43 /* MWMultiwiiBleManagerSuitable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWMultiwiiBleManagerSuitable.h; sourceTree = "<group>"; };
-		E99984C112A647058BAED6EF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D3F7C878BEC7EC92829FF28A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -938,7 +944,7 @@
 				44453CA517518F6900929EC8 /* MultiWii */,
 				44453C9E17518F6900929EC8 /* Frameworks */,
 				44453C9D17518F6900929EC8 /* Products */,
-				E99984C112A647058BAED6EF /* Pods.xcconfig */,
+				B35953054B1187140D31F231 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1156,6 +1162,7 @@
 		44A6BD71178D5C3700DC95C6 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				CF221BD71AC9B7BC00BA6883 /* CLI.png */,
 				44E03BBC18E2DFE9006B5DDD /* basket_pressed@2x.png */,
 				44E03BBD18E2DFE9006B5DDD /* basket@2x.png */,
 				44A4F23218E1BD1000F0A2BC /* orientation_pressed@2x.png */,
@@ -1688,6 +1695,7 @@
 		44DD95201832C21800B82B24 /* Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				CF221BD91AC9B9C900BA6883 /* CLI */,
 				44DD95811832CCBF00B82B24 /* Telemetry */,
 				44DD95211832C21800B82B24 /* About */,
 				44DD95241832C21800B82B24 /* AUX */,
@@ -2024,6 +2032,15 @@
 			path = InAppButton;
 			sourceTree = "<group>";
 		};
+		B35953054B1187140D31F231 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3F7C878BEC7EC92829FF28A /* Pods.debug.xcconfig */,
+				6C4BE4B89F3060CB1768D8E9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF157FCA197019B0006F8546 /* TXPowerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2039,6 +2056,15 @@
 				CF157FCF19701DCE006F8546 /* transmitter_power@2x.png */,
 			);
 			path = txPower;
+			sourceTree = "<group>";
+		};
+		CF221BD91AC9B9C900BA6883 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				CF221BDA1AC9B9C900BA6883 /* MWCliViewController.h */,
+				CF221BDB1AC9B9C900BA6883 /* MWCliViewController.m */,
+			);
+			path = CLI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2074,7 +2100,7 @@
 				ORGANIZATIONNAME = EugeneSkrebnev;
 				TargetAttributes = {
 					44453C9B17518F6900929EC8 = {
-						DevelopmentTeam = 4NYE5952JT;
+						DevelopmentTeam = 656BFHQ3TK;
 					};
 				};
 			};
@@ -2186,6 +2212,7 @@
 				44A6BD98178D86B300DC95C6 /* gradient_menu-text.png in Resources */,
 				4409DDDC1821037900B11C9C /* icon_512.png in Resources */,
 				442226611814059100D53DE3 /* MKStoreKitConfigs.plist in Resources */,
+				CF221BD81AC9B7BC00BA6883 /* CLI.png in Resources */,
 				44A6BD99178D86B300DC95C6 /* gradient_menu-text@2x.png in Resources */,
 				447BD30E1822F1C200E27FA7 /* finder_circle@2x.png in Resources */,
 				44A6BDB0178D9B0B00DC95C6 /* aux@2x.png in Resources */,
@@ -2299,7 +2326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2320,6 +2347,7 @@
 				442226621814059100D53DE3 /* MKStoreManager.m in Sources */,
 				44C7CA541789CDA40059C199 /* MAQuadrocopterFrame.m in Sources */,
 				44C7CA551789CDA40059C199 /* MAKnobView.m in Sources */,
+				CF221BDC1AC9B9C900BA6883 /* MWCliViewController.m in Sources */,
 				44FC0BC41814133C00417C79 /* SBJsonTokeniser.m in Sources */,
 				44DD95601832C2BC00B82B24 /* MWMenuViewController.m in Sources */,
 				4422265F1814059100D53DE3 /* MKSKProduct.m in Sources */,
@@ -2495,9 +2523,9 @@
 		};
 		44453CBA17518F6900929EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
+			baseConfigurationReference = D3F7C878BEC7EC92829FF28A /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eugene Skrebnev (Y43376Q6G9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -2513,10 +2541,10 @@
 		};
 		44453CBB17518F6900929EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E99984C112A647058BAED6EF /* Pods.xcconfig */;
+			baseConfigurationReference = 6C4BE4B89F3060CB1768D8E9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiWii/MultiWii-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -2524,7 +2552,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "db20a8bf-0c12-4c55-a8f4-39666fdd943c";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

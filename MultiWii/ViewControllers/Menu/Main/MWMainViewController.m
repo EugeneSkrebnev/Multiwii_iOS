@@ -82,17 +82,17 @@ static BOOL firstTimeShow = YES;
 
 -(NSArray*) titlesForMenu
 {
-    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT"];//, @"YOUR BEST MULTIWII GADGETS"]; //need to update bluetooth engine for control
+    return @[@"CONNECT", @"TELEMETRY", @"SETTINGS", @"FIND MY MULTIWII"/*, @"CONTROL"*/, @"ABOUT", @"TEST CLI"];//, @"YOUR BEST MULTIWII GADGETS"]; //need to update bluetooth engine for control
 }
 
 -(NSArray*) iconsForMenu
 {
-    return @[@"connect", @"telemetry", @"settings", @"finder"/*, @"control"*/, @"about", @"basket"];
+    return @[@"connect", @"telemetry", @"settings", @"finder"/*, @"control"*/, @"about", @"CLI"];
 }
 
 -(NSArray*) subtitlesForMenu
 {
-    return @[@"", @"", @"", @"", @"", @"witespyquad.gostorego.com"];
+    return @[@"", @"", @"", @"", @"", @"for Kelvin Kennedy"];
 }
 
 -(void) checkFullVersion
@@ -143,13 +143,13 @@ static BOOL firstTimeShow = YES;
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     
-    if (indexPath.row == 5)
-    {
-        if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://witespyquad.gostorego.com/"]])
-            [Flurry logEvent:@"Open ReadyToFly Site"];
-        else
-            [Flurry logEvent:@"Fail to open ReadyToFly Site"];
-    }
+//    if (indexPath.row == 5)
+//    {
+//        if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://witespyquad.gostorego.com/"]])
+//            [Flurry logEvent:@"Open ReadyToFly Site"];
+//        else
+//            [Flurry logEvent:@"Fail to open ReadyToFly Site"];
+//    }
     
 }
 

@@ -12,20 +12,24 @@
 	<dict>
 		<key>93CF7815-AC2B-4B47-BBD3-095BC37A6CF3</key>
 		<string>ssh://bitbucket.org/Eugene_skr/multiwii_ios.git</string>
+		<key>B1C09924415F8BF249D49E024D2ED385D3DCA867</key>
+		<string>bitbucket.org:Eugene_skr/multiwii_ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MultiWii.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>93CF7815-AC2B-4B47-BBD3-095BC37A6CF3</key>
+		<string>../../ios_proj</string>
+		<key>B1C09924415F8BF249D49E024D2ED385D3DCA867</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://bitbucket.org/Eugene_skr/multiwii_ios.git</string>
+	<string>bitbucket.org:Eugene_skr/multiwii_ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>93CF7815-AC2B-4B47-BBD3-095BC37A6CF3</string>
+	<string>B1C09924415F8BF249D49E024D2ED385D3DCA867</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>93CF7815-AC2B-4B47-BBD3-095BC37A6CF3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ios_proj</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B1C09924415F8BF249D49E024D2ED385D3DCA867</string>
+			<key>IDESourceControlWCCName</key>
+			<string>multiwii</string>
 		</dict>
 	</array>
 </dict>

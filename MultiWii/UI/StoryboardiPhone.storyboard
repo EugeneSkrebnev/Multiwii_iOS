@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x3h-qb-qGT">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Buy Full Version View Controller-->
@@ -111,11 +111,47 @@ Please give me your opinions and advice via ‘Ask question’ or ‘Leave feedb
                         <segue destination="Bkt-Qy-xV2" kind="push" identifier="0" id="eG4-Pe-ZE6"/>
                         <segue destination="mIT-ch-HtJ" kind="push" identifier="3" id="L3S-Rw-mZp"/>
                         <segue destination="aqP-eS-ZHm" kind="push" identifier="1" id="GOQ-kO-EI0"/>
+                        <segue destination="9M1-FJ-Hgf" kind="push" identifier="5" id="f2F-8L-zwI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-iT-1P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="229"/>
+        </scene>
+        <!--Cli View Controller-->
+        <scene sceneID="D3f-rl-cwa">
+            <objects>
+                <viewController id="9M1-FJ-Hgf" customClass="MWCliViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zmi-DN-8Zd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Vuk-uP-I6b">
+                                <rect key="frame" x="16" y="0.0" width="288" height="138"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.43809937169312174" green="0.43565584957429715" blue="0.39598590402260447" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="L75-bF-zeS">
+                                <rect key="frame" x="16" y="126" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3v8-Vm-gLj"/>
+                    <connections>
+                        <outlet property="textField" destination="L75-bF-zeS" id="uRR-cp-22v"/>
+                        <outlet property="textView" destination="Vuk-uP-I6b" id="xUY-mT-EJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8LA-WI-XVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170" y="775"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="gLM-Vm-6L9">
