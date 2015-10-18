@@ -105,7 +105,7 @@
 //        if ([self compareCBUUID:c.UUID UUID2:UUID]) return c;
 //    }
 
-    NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@", UUID.stringValue, service.UUID.stringValue, [CBUUID UUIDWithCFUUID:_currentConnectedDevice.UUID].stringValue);
+//    NSLog(@"Could not find characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@", UUID.stringValue, service.UUID.stringValue, [CBUUID UUIDWithCFUUID:_currentConnectedDevice.UUID].stringValue);
     
     return nil; //Characteristic not found on this service
 }
@@ -270,7 +270,7 @@ characteristicUUID:(CBUUID *)characteristicUUID
 -(void) connectToDevice:(CBPeripheral*) device
 {
     [self stopScan]; //work only with one at time.
-    if (!device.isConnected)
+    if (device.state != CBPeripheralStateConnected)
         [_centralManager connectPeripheral:device options:nil];
     else
     {
@@ -282,13 +282,13 @@ characteristicUUID:(CBUUID *)characteristicUUID
 
 -(void) disconnectFromDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         [_centralManager cancelPeripheralConnection:device];
 }
 
 -(NSNumber*) rssiForDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         return device.RSSI;
 
     id res = _metaDataForDevices[@(device.hash)][RSSI_KEY];

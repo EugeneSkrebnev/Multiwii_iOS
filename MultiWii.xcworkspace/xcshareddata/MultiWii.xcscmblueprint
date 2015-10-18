@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B1C09924415F8BF249D49E024D2ED385D3DCA867",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B1C09924415F8BF249D49E024D2ED385D3DCA867" : 0,
+    "93CF7815-AC2B-4B47-BBD3-095BC37A6CF3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "254D91C9-0F8F-4A97-B1B0-FB3888B624E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B1C09924415F8BF249D49E024D2ED385D3DCA867" : "Multiwii\/",
+    "93CF7815-AC2B-4B47-BBD3-095BC37A6CF3" : "ios_proj"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MultiWii",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MultiWii.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/Eugene_skr\/multiwii_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "93CF7815-AC2B-4B47-BBD3-095BC37A6CF3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/Eugene_skr\/multiwii_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B1C09924415F8BF249D49E024D2ED385D3DCA867"
+    }
+  ]
+}

@@ -72,7 +72,7 @@
     
     BLUETOOTH_MANAGER.didConnectBlock = ^(CBPeripheral* connectedDevice)
     {
-        NSLog(@"connected device: %@", [[CBUUID UUIDWithCFUUID:connectedDevice.UUID] stringValue]);
+//        NSLog(@"connected device: %@", [[CBUUID UUIDWithCFUUID:connectedDevice.UUID] stringValue]);
 //        int connectedIndex = [BLUETOOTH_MANAGER.deviceList indexOfObject:BLUETOOTH_MANAGER.currentConnectedDevice];
 //        MWDevicePreviewCell* cell = (MWDevicePreviewCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:connectedIndex inSection:0]];
 //        
@@ -244,7 +244,7 @@
     [BLUETOOTH_MANAGER stopScan];
     CBPeripheral* device = BLUETOOTH_MANAGER.deviceList[indexPath.row];
     
-    if (!device.isConnected)
+    if (device.state != CBPeripheralStateConnected)
     {
         NSString* deviceName = device.name;
         if (!deviceName)
@@ -282,7 +282,7 @@
     if (!deviceName)
         deviceName = [BLUETOOTH_MANAGER metaDataForDevice:device][@"kCBAdvDataLocalName"];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", deviceName]; //null string
-    cell.connected = device.isConnected;
+    cell.connected = (device.state == CBPeripheralStateConnected);
     cell.tag = indexPath.row;
     @weakify(self);
     cell.detailsButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {

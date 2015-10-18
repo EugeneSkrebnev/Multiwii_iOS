@@ -160,7 +160,7 @@
 
 #pragma mark - Chaining
 
-- (MASConstraint *)addConstraintWithLayoutAttribute:(NSLayoutAttribute)layoutAttribute {
+- (MASConstraint *)addConstraintWithLayoutAttribute:(NSLayoutAttribute __unused)layoutAttribute {
     MASMethodNotImplemented();
 }
 
@@ -208,6 +208,42 @@
     return [self addConstraintWithLayoutAttribute:NSLayoutAttributeBaseline];
 }
 
+#if TARGET_OS_IPHONE
+
+- (MASConstraint *)leftMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeLeftMargin];
+}
+
+- (MASConstraint *)rightMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeRightMargin];
+}
+
+- (MASConstraint *)topMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeTopMargin];
+}
+
+- (MASConstraint *)bottomMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeBottomMargin];
+}
+
+- (MASConstraint *)leadingMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeLeadingMargin];
+}
+
+- (MASConstraint *)trailingMargin {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeTrailingMargin];
+}
+
+- (MASConstraint *)centerXWithinMargins {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeCenterXWithinMargins];
+}
+
+- (MASConstraint *)centerYWithinMargins {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeCenterYWithinMargins];
+}
+
+#endif
+
 #pragma mark - Abstract
 
 - (MASConstraint * (^)(CGFloat multiplier))multipliedBy { MASMethodNotImplemented(); }
@@ -220,19 +256,23 @@
 
 - (MASConstraint * (^)(id key))key { MASMethodNotImplemented(); }
 
-- (void)setInsets:(MASEdgeInsets)insets { MASMethodNotImplemented(); }
+- (void)setInsets:(MASEdgeInsets __unused)insets { MASMethodNotImplemented(); }
 
-- (void)setSizeOffset:(CGSize)sizeOffset { MASMethodNotImplemented(); }
+- (void)setSizeOffset:(CGSize __unused)sizeOffset { MASMethodNotImplemented(); }
 
-- (void)setCenterOffset:(CGPoint)centerOffset { MASMethodNotImplemented(); }
+- (void)setCenterOffset:(CGPoint __unused)centerOffset { MASMethodNotImplemented(); }
 
-- (void)setOffset:(CGFloat)offset { MASMethodNotImplemented(); }
+- (void)setOffset:(CGFloat __unused)offset { MASMethodNotImplemented(); }
 
 #if TARGET_OS_MAC && !TARGET_OS_IPHONE
 
 - (MASConstraint *)animator { MASMethodNotImplemented(); }
 
 #endif
+
+- (void)activate { MASMethodNotImplemented(); }
+
+- (void)deactivate { MASMethodNotImplemented(); }
 
 - (void)install { MASMethodNotImplemented(); }
 

@@ -75,12 +75,12 @@
     CBUUID *cu = [CBUUID UUIDWithData:cd];
     CBService *service = [self findServiceFromUUIDEx:su p:p];
     if (!service) {
-        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     CBCharacteristic *characteristic = [self findCharacteristicFromUUIDEx:cu service:service];
     if (!characteristic) {
-        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     [p setNotifyValue:on forCharacteristic:characteristic];
@@ -204,7 +204,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (!error) {
-        printf("Updated notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
+//        printf("Updated notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.readyForReadWriteBlock)
                 self.readyForReadWriteBlock();            
@@ -212,7 +212,7 @@
 
     }
     else {
-        printf("Error in setting notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
+//        printf("Error in setting notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:peripheral.UUID]);
         printf("Error code was %s\r\n",[[error description] cStringUsingEncoding:NSStringEncodingConversionAllowLossy]);
     }
 }
@@ -327,12 +327,12 @@
     CBUUID *cu = [CBUUID UUIDWithData:cd];
     CBService *service = [self findServiceFromUUIDEx:su p:p];
     if (!service) {
-        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     CBCharacteristic *characteristic = [self findCharacteristicFromUUIDEx:cu service:service];
     if (!characteristic) {
-        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     [p writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
@@ -365,12 +365,12 @@
     CBUUID *cu = [CBUUID UUIDWithData:cd];
     CBService *service = [self findServiceFromUUIDEx:su p:p];
     if (!service) {
-        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     CBCharacteristic *characteristic = [self findCharacteristicFromUUIDEx:cu service:service];
     if (!characteristic) {
-        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
+//        printf("Could not find characteristic with UUID %s on service with UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:cu],[self CBUUIDToString:su],[self UUIDToString:p.UUID]);
         return;
     }
     [p readValueForCharacteristic:characteristic];
@@ -432,7 +432,8 @@
 -(void) connectToDevice:(CBPeripheral*) device
 {
     [self stopScan]; //work only with one at time.
-    if (!device.isConnected)
+    
+    if (device.state != CBPeripheralStateConnected)
         [_centralManager connectPeripheral:device options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey : @(YES)}];
     else
     {
@@ -444,13 +445,13 @@
 
 -(void) disconnectFromDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         [_centralManager cancelPeripheralConnection:device];
 }
 
 -(NSNumber*) rssiForDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         return device.RSSI;
     
     id res = nil ;//_metaDataForDevices[@(device.hash)][RSSI_KEY];

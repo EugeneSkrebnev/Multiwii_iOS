@@ -380,7 +380,8 @@ forCharacteristic:characteristic
 -(void) connectToDevice:(CBPeripheral*) device
 {
     [self stopScan]; //work only with one at time.
-    if (!device.isConnected)
+    
+    if (device.state != CBPeripheralStateConnected)
         [_centralManager connectPeripheral:device options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey : @(YES)}];
     else
     {
@@ -392,13 +393,13 @@ forCharacteristic:characteristic
 
 -(void) disconnectFromDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         [_centralManager cancelPeripheralConnection:device];
 }
 
 -(NSNumber*) rssiForDevice:(CBPeripheral*) device
 {
-    if (device.isConnected)
+    if (device.state == CBPeripheralStateConnected)
         return device.RSSI;
     
     id res = _metaDataForDevices[@(device.hash)][RSSI_KEY];
